@@ -15,5 +15,5 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
+// footer
 document.getElementById("year").textContent = new Date().getFullYear();

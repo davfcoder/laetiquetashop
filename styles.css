@@ -1,5 +1,5 @@
 
-
+/* Aviso de Cookies */
 .cookie-banner {
     position: fixed;
     bottom: 20px;
@@ -38,13 +38,13 @@
 }
 
 .cookie-banner button:hover {
-    background: #e6b800;
+    background: #001be66b;
 }
 
 
 
 
-
+/* Footer */
 .footer {
     background: #222;
     color: white;
@@ -60,7 +60,7 @@
 }
 
 .footer a:hover {
-    color: #f8b400;
+    color: #0c00f8;
 }
 
 .social-icon {
@@ -71,7 +71,7 @@
 }
 
 .social-icon:hover {
-    color: #f8b400;
+    color: #030b75;
 }
 
 /* Responsive */

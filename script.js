@@ -13,3 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
         cookieBanner.style.display = "none";
     });
 });
+
+
+
+document.getElementById("year").textContent = new Date().getFullYear();

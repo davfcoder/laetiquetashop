@@ -1,4 +1,12 @@
 
+body {
+    font-family: "Raleway", sans-serif;
+    background-color: #d2d3d5;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Aviso de Cookies */
 .cookie-banner {
     position: fixed;

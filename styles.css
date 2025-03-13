@@ -7,6 +7,44 @@ body {
     box-sizing: border-box;
 }
 
+
+nav {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    border: red solid 1px;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: red solid 1px;
+}
+
+.link1 {
+    border: blue solid 1px;
+}
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 30px;
+    border: green solid 2px;
+}
+
+.logo-laetiqueta {
+    justify-items: center;
+    width: 40%;
+    border: #ffcc00 solid 3px;
+}
+
+.logo-laetiqueta img {
+    width: 80%;
+}
+
+
 /* Aviso de Cookies */
 .cookie-banner {
     position: fixed;

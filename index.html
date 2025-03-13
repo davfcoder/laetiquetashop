@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>La Etiqueta Shop</title>
+  <title>La Etiqueta</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,7 +11,7 @@
   <script src="https://kit.fontawesome.com/YOUR-FONT-AWESOME-KEY.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="styles.css"> <!-- Enlaza el archivo CSS externo -->
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  <link rel="icon" href="favicon/faviconazul.png">
+  <link rel="icon" href="favicon/favicon.png">
 
     </head>
 <body>
@@ -24,31 +24,34 @@
 </div>
 <!-- Seccion del navbar-->
   <header>
+    
     <nav>
-      <ul class="nav-links">
-        <li><a href="#hombre-seccion">Hombre</a></li> <!-- Enlace a la sección "Carrusel" -->
-        <li><a href="#mujer-seccion">Mujer</a></li> <!-- Enlace a la sección "Sinopsis" -->
-        <li><a href="#accesorios-seccion">Accesorios</a></li> <!-- Enlace a la sección "Galeria" -->
-      </ul>
-      
-      <div class="logo-laetiqueta">
-        <img src="./favicon/logo-horizontal.png" alt="Logo oficial de La Etiqueta Shop"> <!-- Muestra el logo -->
+      <div class="link1">
+        <ul class="nav-links">
+          <li><a href="#hombre-seccion">Hombre</a></li> <!-- Enlace a la sección "Carrusel" -->
+          <li><a href="#mujer-seccion">Mujer</a></li> <!-- Enlace a la sección "Sinopsis" -->
+          <li><a href="#accesorios-seccion">Accesorios</a></li> <!-- Enlace a la sección "Galeria" -->
+        </ul> 
       </div>
 
-      <ul>
-        <li><a href="#perfil">Perfil</a></li>
-        <li><a href="#buscar">Buscar</a></li>
-        <li><a href="#bolsa-compra"></a></li>
-      </ul>
-        <div class="font-bold text-lg">LOGO</div>
-        <div class="flex gap-4">
-            <button class="px-4 py-2 bg-white rounded-md">Perfil</button>
-            <button class="px-4 py-2 bg-white rounded-md">Buscar</button>
-            <button class="px-4 py-2 bg-white rounded-md">Bolsa</button>
+      <div class="logo">
+        <div class="logo-laetiqueta">
+          <img src="./favicon/logo-horizontal.png" alt="Logo oficial de La Etiqueta Shop"> <!-- Muestra el logo -->
         </div>
+      </div>
+
+      <div class="link1">
+        <ul class="nav-links">
+          <li><a href="#perfil">Perfil</a></li>
+          <li><a href="#buscar">Buscar</a></li>
+          <li><a href="#bolsa-compra">Bolsa</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
+
+  <!-- Seccion de carrusel-->
   <div class="slider" id="carrusel">
     <div class="item">
       <img src="./assets/Flow_1.png" alt="Flow_1" />
@@ -73,9 +76,8 @@
   </div>
 
 
-
+<!-- Seccion de descunto-->
 <div class="container text-center mt-5">
-        <!-- Título principal -->
         <h2 class="fw-bold">Suscríbete y obtén <span class="text-primary">10% OFF</span></h2>
         <p class="fw-semibold">En tu primera compra de nuestra nueva colección.</p>
 
@@ -105,6 +107,8 @@
     <script src="script.js"></script>
 </body>
 
+
+<!-- Seccion de footer-->
 <footer>
     <div class="container">
     <div class="row">

@@ -13,6 +13,20 @@ body {
     --terciario-color: #727376;
     --tono-azul: #1d1d43e8;
 }
+.header-message {
+    position: relative;
+    width: 100%;
+    background-color: black;
+    align-items: center;
+    padding: 10px;
+}
+
+.message p {
+    align-items: center;
+    color: white;
+    font-size: 15px;
+}
+
 
 nav {
     padding: 10px;

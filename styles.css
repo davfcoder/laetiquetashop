@@ -17,15 +17,16 @@ body {
     position: relative;
     width: 100%;
     background-color: black;
-    align-items: center;
-    padding: 10px;
+    padding: 8px;
 }
 
-.message p {
-    align-items: center;
+.message-text {
+    text-align: center;
+    font-weight: bold;
     color: white;
-    font-size: 15px;
+    font-size: 12px;
 }
+
 
 
 nav {

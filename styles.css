@@ -1,12 +1,18 @@
 
 body {
     font-family: "Raleway", sans-serif;
-    background-color: #d2d3d5;
-    margin: 0;
-    padding: 0;
+    background-image: url(./assets/FONDO.png);
+    margin: 0;  
+    padding: 0; 
     box-sizing: border-box;
 }
 
+:root {
+    --primario-color: #d2d3d5;
+    --secondario-color: #a9abae;
+    --terciario-color: #727376;
+    --tono-azul: #1d1d43e8;
+}
 
 nav {
     padding: 10px;
@@ -69,12 +75,12 @@ nav {
 }
 
 .cookie-banner a {
-    color: #ffcc00;
+    color: #3f3776;
     text-decoration: underline;
 }
 
 .cookie-banner button {
-    background: #ffcc00;
+    background: #afb2ff5c;
     color: #222;
     border: none;
     padding: 8px 12px;
@@ -87,6 +93,101 @@ nav {
     background: #001be66b;
 }
 
+
+.descuento {
+    background-color: var(--primario-color);
+    color: #727376;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin: auto;
+}
+
+
+/* Estilos del título */
+.titulo-suscripcion {
+    font-family: 'Playfair Display', serif;
+    color: var(--terciario-color);
+    font-weight: 700;
+    font-size: 37px;
+    text-align: center;
+}
+
+
+.subtitulo-suscripcion {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Formulario de suscripción */
+.fila-formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 900px; 
+    gap: 10px;
+    margin: auto;
+}
+
+.contenedor-email {
+    flex: 1;
+    min-width: 250px;
+}
+
+.campo-email {
+    padding: 10px;
+    width: 100%; /* Ocupa todo el ancho disponible */
+    border: 1px solid var(--secondario-color);
+    border-radius: 5px;
+    font-size: 16px; /* Tamaño de letra más grande */
+}
+
+/* Botón de envío */
+.contenedor-boton {
+    min-width: 120px;
+}
+
+.boton-enviar {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--tono-azul);
+    border: none;
+    color: var(--primario-color);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.boton-enviar:hover {
+    background-color: var(--terciario-color);
+    color: white;
+}
+
+/* Estilos para el reCAPTCHA */
+.contenedor-recaptcha {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+/* Aviso legal */
+.mensaje-legal {
+    font-size: 10px;
+    color: var(--terciario-color);
+    margin-top: 15px;
+}
+
+.politica-datos {
+    text-decoration: none;
+    color: var(--tono-azul);
+}
+
+.politica-datos:hover {
+    text-decoration: underline;
+}
 
 
 

@@ -10,11 +10,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/YOUR-FONT-AWESOME-KEY.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="styles.css"> <!-- Enlaza el archivo CSS externo -->
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script> <!-- Script para Google reCAPTCHA -->
   <link rel="icon" href="favicon/favicon.png">
+
 
     </head>
 <body>
+
 <!-- Aviso de Cookies -->
 <div id="cookie-banner" class="cookie-banner">
     <p>Usamos cookies para mejorar tu experiencia en nuestra tienda. Al continuar navegando, aceptas su uso. 
@@ -22,6 +24,7 @@
     </p>
     <button id="accept-cookies">Aceptar</button>
 </div>
+
 <!-- Seccion del navbar-->
   <header>
     
@@ -77,31 +80,34 @@
 
 
 <!-- Seccion de descunto-->
-<div class="container text-center mt-5">
-        <h2 class="fw-bold">Suscríbete y obtén <span class="text-primary">10% OFF</span></h2>
-        <p class="fw-semibold">En tu primera compra de nuestra nueva colección.</p>
+<div class="descuento">
+        <!-- Título principal -->
+        <h2 class="titulo-suscripcion">Suscríbete y obtén 10% OFF</h2>
+        <p class="subtitulo-suscripcion">En tu primera compra de nuestra nueva colección.</p>
 
-        <!-- Formulario de suscripción -->
-        <form id="subscription-form" class="row g-2 justify-content-center">
-            <div class="col-12 col-md-6">
-                <input type="email" id="email" class="form-control" placeholder="Escribe tu Email" required>
-            </div>
-            <div class="col-12 col-md-2">
-                <button type="submit" class="btn btn-primary w-100">Enviar</button>
-            </div>
-        </form>
+         <!-- Formulario de suscripción -->
+         <form id="formulario-suscripcion" class="fila-formulario">
+          <!-- Campo de entrada de email -->
+          <div class="contenedor-email">
+              <input type="email" id="correo" class="campo-email" placeholder="Escribe tu Email" required>
+          </div>
+          <!-- Botón de envío -->
+          <div class="contenedor-boton">
+              <button type="submit" class="boton-enviar">Enviar</button>
+          </div>
+      </form>
 
-        <!-- reCAPTCHA -->
-        <div class="mt-3">
-            <div class="g-recaptcha d-flex justify-content-center" data-sitekey="TU_SITE_KEY"></div>
-        </div>
+      <!-- reCAPTCHA -->
+      <div class="contenedor-recaptcha">
+          <div class="g-recaptcha" data-sitekey="TU_SITE_KEY"></div>
+      </div>
 
-        <!-- Aviso legal -->
-        <p class="mt-3 text-muted small">
-            Al registrarte, autorizas recibir ofertas y otros mensajes comerciales. También aceptas la 
-            <a href="#" class="text-decoration-none">política de tratamiento de datos</a>.
-        </p>
-    </div>
+      <!-- Aviso legal -->
+      <p class="mensaje-legal">
+          Al registrarte, autorizas recibir ofertas y otros mensajes comerciales. También aceptas la 
+          <a href="#" class="politica-datos">política de tratamiento de datos</a>.
+      </p>
+  </div>
 
 
     <script src="script.js"></script>

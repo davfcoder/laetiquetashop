@@ -27,7 +27,42 @@ body {
     font-size: 12px;
 }
 
+.header-top {
+    width: 100%;
+    padding: 10px 0 10px 0;
+    display: flex;
+    background-color: var(--primario-color);
+    align-items: center;
+    justify-content: center;
+}
 
+.header-top-menu {
+    width: 32%; 
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+}
+
+.header-top-menu img {
+    width: 65%;
+}
+
+.justify-bottoms {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+}
+
+.left-bottoms {
+    padding: 10px;
+}
+
+.left-bottoms a {
+    text-decoration: none;
+    color: black;
+}
 
 nav {
     padding: 10px;

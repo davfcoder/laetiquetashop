@@ -330,10 +330,11 @@ nav {
 
 /* Estilos generales del footer */
 footer {
-    background-color: var(--tono-azul); 
-    color: var(--primario-color); 
+    background-color: var(--tono-azul); /* Color oscuro como en la imagen */
+    color: var(--primario-color); /* Texto blanco */
     padding: 40px 0;
     text-align: center;
+    font-family: "Raleway", sans-serif;
 }
 
 /* Contenedor principal */
@@ -343,14 +344,27 @@ footer {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    justify-content: center; /* Alineación centrada */
+}
+
+/* Logo */
+.logo img {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+.logo p {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 0px;
 }
 
 /* Sección superior (Logo y Redes) */
-.logo-footer, .redes {
-    margin-bottom: 20px;
+.logo, .redes {
+    margin-bottom: 10px;
 }
 
-.logo-footer h5, .redes h5 {
+.logo h5, .redes h5 {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
@@ -365,29 +379,33 @@ footer {
 }
 
 .redes-sociales a:hover {
-    color: #ff0606; /* Cambio de color al pasar el mouse */
+    color: var(--primario-color); /* Cambio de color al pasar el mouse */
 }
 
-/* Secciones del footer (Empresa, Envíos, Contacto) */
+/* Secciones del footer (Empresa, Envíos, Comercio) */
 .secciones-footer {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 50px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    width: 100%;
+    align-items: center; /* Alineación vertical centrada */
 }
 
-.empresa, .envios, .contacto {
+.empresa, .envios, .comercio_aliados {
     text-align: left;
+    width: 19%;
+    
 }
 
-.empresa h4, .envios h4, .contacto h4 {
-    font-size: 14px;
+.empresa h4, .envios h4, .comercio_aliados h4 {
+    font-size: 17px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-.empresa a, .envios a, .contacto a {
+.empresa a, .envios a, .comercio_aliados a {
     display: block;
     color: var(--primario-color);
     text-decoration: none;
@@ -396,9 +414,27 @@ footer {
     transition: color 0.3s;
 }
 
-.empresa a:hover, .envios a:hover, .contacto a:hover {
+.empresa a:hover, .envios a:hover, .comercio_aliados a:hover {
     color: var(--primario-color);
 }
+
+/* Contenedor del mapa */
+.mapa {
+    margin: auto; /* Centrado horizontal */
+    width: 70%; /* Ancho del contenedor */ 
+    height: 100px; /* Altura del contenedor */
+    display: flex; /* Modelo de caja flexible */
+    margin-bottom: 20px;   
+  }
+
+  /* Ajuste del iframe dentro del contenedor */
+.mapa iframe {
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    border: none; /* Sin borde */
+    border-radius: 1rem; /* Bordes redondeados */
+    box-shadow: var(--color-tertiary) 0 0 10px; /* Sombra alrededor del mapa */
+  }
 
 /* Sección de enlaces legales */
 .legales {
@@ -416,7 +452,7 @@ footer {
 }
 
 .legales a:hover {
-    color: var(--primario-color);
+    color:var(--primario-color);
 }
 
 /* Derechos de autor */
@@ -425,3 +461,22 @@ footer {
     color: var(--primario-color);
 }
 
+.foto_secreta {
+    display: none; /* Oculta la imagen inicialmente */
+    position: absolute; 
+    bottom: -1000px; /* Ajusta la posición vertical */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: yellow;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.foto_secreta img {
+    width: 200px; /* Ajusta el tamaño de la imagen */
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--secondario-color);
+}

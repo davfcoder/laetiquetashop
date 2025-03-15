@@ -1,3 +1,9 @@
+:root {
+    --primario-color: #d2d3d5;
+    --secondario-color: #a9abae;
+    --terciario-color: #727376;
+    --tono-azul: #1d1d43e8;
+}
 
 body {
     font-family: "Raleway", sans-serif;
@@ -7,12 +13,6 @@ body {
     box-sizing: border-box;
 }
 
-:root {
-    --primario-color: #d2d3d5;
-    --secondario-color: #a9abae;
-    --terciario-color: #727376;
-    --tono-azul: #1d1d43e8;
-}
 .header-message {
     position: relative;
     width: 100%;
@@ -56,49 +56,103 @@ body {
 }
 
 .left-bottoms {
-    padding: 10px;
-}
-
-.left-bottoms a {
-    text-decoration: none;
-    color: black;
-}
-
-nav {
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    border: red solid 1px;
-    align-items: center;
-}
-
-.logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: red solid 1px;
-}
-
-.link1 {
-    border: blue solid 1px;
-}
-.nav-links {
-    display: flex;
-    list-style: none;
-    align-items: center;
-    gap: 30px;
-    border: green solid 2px;
+    padding: 0.7rem;
 }
 
 .logo-laetiqueta {
     justify-items: center;
     width: 40%;
-    border: #ffcc00 solid 3px;
 }
 
 .logo-laetiqueta img {
     width: 80%;
 }
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style: none;
+    padding: 0%;
+}
+
+nav {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(250, 249, 248);
+}
+
+.submenu {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    padding: 2rem 25% 3rem 25%;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    background-color: rgb(250, 249, 248);
+    z-index: 100;
+    display:grid;
+    row-gap: 1.5rem;
+    grid-template-columns: auto auto auto;
+    opacity: 0;
+    transform: translateY(-5px);
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, visibility 0.5s;
+}
+
+.submenu > li {
+    justify-content: center;
+    width: 30%;
+}
+
+.submenu li a {
+    font-weight: normal;
+    width: 10px;
+}
+
+#sale {
+    color: red;
+    font-weight: bold;
+    text-decoration: wavy;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 100%;
+    padding: 1em 0;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+.nav-links li {
+    font-size: 15px;
+    font-weight:bolder;
+}
+
+.nav-links li:hover {
+    text-decoration: underline;
+    text-underline-offset: 10px; /* Espacio entre la línea y el texto */
+}
+
+.dropdown:hover .submenu {
+    opacity: 1;
+    transform: translateY(10px);
+    visibility: visible;
+ }
+
+.submenu li:hover{
+    opacity: 0.5;
+    text-decoration: none;
+}
+
+
 
 
 /* Aviso de Cookies */

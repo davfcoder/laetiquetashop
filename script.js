@@ -63,6 +63,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+const sizeContainers = document.querySelectorAll('.size');
+
+sizeContainers.forEach((sizeContainer) => {
+    const sizeLetters = sizeContainer.querySelectorAll('.size-letter');
+    
+    sizeLetters.forEach((sizeLetter) => {  
+        sizeLetter.addEventListener('click', () => {
+            sizeLetters.forEach((otherSizeLetter) => {
+                otherSizeLetter.classList.remove('selected');
+            });
+            sizeLetter.classList.add('selected');  
+        });
+    });
+});
 
 
 

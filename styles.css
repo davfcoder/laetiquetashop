@@ -5,6 +5,7 @@
     --terciario-color: #727376;
     --tono-azul: #1d1d43e8;
     --fondo-stock: #FF9A52;
+    --color-sale: #e50010;
 }
 
 /* Estilos generales del cuerpo de la página */
@@ -151,7 +152,7 @@ nav {
 }
 
 #sale {
-    color: red;
+    color: var(--color-sale);
     font-weight: bold;
     text-decoration: wavy;
 }
@@ -191,7 +192,6 @@ nav {
 
 /* SECCION DE SALES */
 .container-sales {
-    border: red solid 1px;
     width: 100%;
 }
 
@@ -199,15 +199,13 @@ nav {
     margin: 2rem 6rem 8rem 6rem;
     padding: 3rem;
     max-width: 100%;
-    border: blue solid 1px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
 .hotsales {
-    border: solid 3px black;
-    width: 100%;
+    width: 90%;
 }
 
 .percentage-product {
@@ -240,23 +238,23 @@ nav {
 }
 
 .stock {
-    position:initial;
-    right: 0;
+    position: absolute;
     width: fit-content;
     color: black;
     background-color: var(--fondo-stock);
-    font-size: 70%;
+    font-size: 60%;
     padding: 2px 4px;
     margin-top: 4px;
     font-weight: bolder;
 }
 
 .product-title{
-    margin-top: 1rem;
-    font-size: 20px;
+    margin-top: 2rem;
+    font-size: 16px;
 }
 
 .price-discount {
+    color: var(--color-sale);
     font-weight:700;
     margin: 1rem 0.5rem 1rem 0;
 }
@@ -269,7 +267,6 @@ nav {
 }
 
 .addCart-size {
-    border: #FF9A52 solid 3px;
     display: block;
 }
 
@@ -278,8 +275,36 @@ nav {
 }
 
 .list-size {
-    display: table;
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin: 5px auto;
+}
+
+.size-letter {
+    display: inline-block;
+    padding: 0 5px;
+    margin: 5px 10px;
+    border: #333c333a solid 0.5px;
+    cursor: pointer;
+}
+
+.size-letter.selected {
+    background-color: var(--tono-azul);
+    color: var(--primario-color);
+  }
+
+.add-to-cart {
+    display: block;
+    width: 100%;
+    padding: 7px 0;
+    border: #333 solid 1.5px;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: var(--tono-azul);
+    color: var(--primario-color);
+    border: var(--tono-azul) solid 1.5px;
 }
 
 /* Aviso de Cookies */

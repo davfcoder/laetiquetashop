@@ -37,11 +37,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
     let carouselElement = document.getElementById("carousel");
     let carousel = new bootstrap.Carousel(carouselElement, {
@@ -78,6 +73,20 @@ sizeContainers.forEach((sizeContainer) => {
     });
 });
 
+
+document.getElementById("btn-contacto").addEventListener("click", function(event) {
+    event.preventDefault(); // Prevents the link from reloading the page
+
+    let element = document.getElementById("zoomTarget-whatsapp");
+
+    // Add zoom effect
+    element.classList.add("zoom");
+
+    // Remove zoom after 500ms
+    setTimeout(() => {
+        element.classList.remove("zoom");
+    }, 500);
+});
 
 
 

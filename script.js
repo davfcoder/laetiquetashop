@@ -38,23 +38,27 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// Asegurar que el carrusel inicie en la primera diapositiva
 document.addEventListener("DOMContentLoaded", function () {
-    // "DOMContentLoaded" se activa cuando el HTML ha sido completamente cargado y analizado, antes de que se carguen imágenes y hojas de estilo.
-    // Esto garantiza que el script solo se ejecute cuando el DOM esté listo.
-    
-    let carousel = new bootstrap.Carousel(document.getElementById("videoCarousel"), {
-        // Se crea una instancia del carrusel de Bootstrap.
-        // "bootstrap.Carousel()" es una función de Bootstrap 5 que permite controlar programáticamente el carrusel.
-                
-        interval: 8000, // Cambia de video cada 8 segundos
-        // "interval" define el tiempo en milisegundos entre cada cambio automático de diapositiva.
-          
+    let carouselElement = document.getElementById("carousel");
+    let carousel = new bootstrap.Carousel(carouselElement, {
+        interval: 8000, // Cambio de slide cada 8 segundos
         ride: "carousel"
-        // "indica que el carrusel comenzará automáticamente cuando se cargue la página.
-        // Esta es una propiedad de Bootstrap 5 que permite iniciar la animación sin necesidad de interacción del usuario.
+    });
+
+    let videos = document.querySelectorAll("video");
+
+    // Escuchar cuando el slide cambia
+    carouselElement.addEventListener("slide.bs.carousel", function (event) {
+        videos.forEach(video => video.pause()); // Pausa todos los videos
+        let activeSlide = event.relatedTarget; // Próxima diapositiva
+        let video = activeSlide.querySelector("video");
+        if (video) {
+            video.currentTime = 0; // Reinicia el video
+            video.play(); // Lo reproduce
+        }
     });
 });
+
 
 
 

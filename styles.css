@@ -298,6 +298,7 @@ nav {
     font-size: 14px; /* Tamaño de fuente */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para destacar el banner */
     max-width: 90%; /* Máximo ancho del banner para adaptarse a diferentes pantallas */
+    z-index: 1;
 }
 
 
@@ -310,7 +311,7 @@ nav {
 }
 
 /* Estilos para las imágenes dentro de cada slide del carrusel */
-.carousel-item img {
+.carousel-item video {
     width: 100%;      /* Hace que la imagen ocupe todo el ancho del contenedor */
     height: auto;     /* Mantiene la proporción de la imagen */
     object-fit: cover; /* Ajusta la imagen para cubrir el espacio sin deformarse */

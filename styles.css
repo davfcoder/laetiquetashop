@@ -696,3 +696,21 @@ footer {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }
+
+.nosotros-section {
+    background-image: url('./assets/fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%; /* o un ancho específico si lo necesitas */
+    height: 500px; /* ajusta la altura a lo que prefieras */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* texto blanco para contrastar con la imagen */
+    text-align: center; /* centra el texto si tiene varias líneas */
+    padding: 20px; /* opcional, para darle algo de espacio interior */
+    font-size: 2.5rem; /* tamaño grande para el texto */
+    font-weight: bold; /* aplica negrilla */
+  }
+  
+  

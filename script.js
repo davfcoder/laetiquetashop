@@ -16,42 +16,43 @@ window.addEventListener("scroll", function () {
 
 // Aviso de Cookies
 document.addEventListener("DOMContentLoaded", function () {
-    const cookieBanner = document.getElementById("cookie-banner");
-    const acceptCookies = document.getElementById("accept-cookies");
+    // Espera a que el DOM esté completamente cargado antes de ejecutar el código
 
-    // Verifica si el usuario ya aceptó las cookies
-    if (!localStorage.getItem("cookiesAccepted")) {
-        cookieBanner.style.display = "flex";
+    const cookieBanner = document.getElementById("cookie-banner"); // Obtiene el elemento del banner de cookies por su ID
+    const acceptCookies = document.getElementById("accept-cookies"); // Obtiene el botón de aceptar cookies por su ID
+
+    // Verifica si el usuario ya aceptó las cookies previamente
+    if (!localStorage.getItem("cookiesAccepted")) { 
+        cookieBanner.style.display = "flex"; // Muestra el banner si no se ha aceptado
     }
 
+    // Agrega un evento de clic al botón de aceptar cookies
     acceptCookies.addEventListener("click", function () {
-        localStorage.setItem("cookiesAccepted", "true");
-        cookieBanner.style.display = "none";
+        localStorage.setItem("cookiesAccepted", "true"); // Guarda la aceptación de cookies en el almacenamiento local
+        cookieBanner.style.display = "none"; // Oculta el banner después de aceptar
     });
 });
 
 
-// Botón de Scroll Imagen secreta
+// Asegurar que el carrusel inicie en la primera diapositiva
 document.addEventListener("DOMContentLoaded", function () {
-    let fotoSecreta = document.querySelector(".foto_secreta");
-    let timeout;
-
-    window.addEventListener("scroll", function () {
-        let scrollTop = window.scrollY || document.documentElement.scrollTop;
-        let scrollHeight = document.documentElement.scrollHeight;
-        let clientHeight = document.documentElement.clientHeight;
-
-        if (scrollTop + clientHeight >= scrollHeight - 10) {
-            clearTimeout(timeout);
-            timeout = setTimeout(() => {
-                fotoSecreta.style.display = "block";
-            }, 1000); // Se mostrará después de 1 segundo
-        } else {
-            clearTimeout(timeout);
-            fotoSecreta.style.display = "none";
-        }
+    // "DOMContentLoaded" se activa cuando el HTML ha sido completamente cargado y analizado, antes de que se carguen imágenes y hojas de estilo.
+    // Esto garantiza que el script solo se ejecute cuando el DOM esté listo.
+    
+    let carousel = new bootstrap.Carousel(document.getElementById("videoCarousel"), {
+        // Se crea una instancia del carrusel de Bootstrap.
+        // "bootstrap.Carousel()" es una función de Bootstrap 5 que permite controlar programáticamente el carrusel.
+                
+        interval: 8000, // Cambia de video cada 8 segundos
+        // "interval" define el tiempo en milisegundos entre cada cambio automático de diapositiva.
+          
+        ride: "carousel"
+        // "indica que el carrusel comenzará automáticamente cuando se cargue la página.
+        // Esta es una propiedad de Bootstrap 5 que permite iniciar la animación sin necesidad de interacción del usuario.
     });
 });
+
+
 
 
 

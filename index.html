@@ -128,31 +128,55 @@
     </nav>
   </header>
 
+<!-- Carrusel de Videos -->
+<div id="carousel" class="carousel slide" data-bs-ride="carousel">
+  <!-- Se crea un contenedor de carrusel con Bootstrap.
+    - "id=carousel": Identificador único para este carrusel.
+    - "class=carousel slide": Clases de Bootstrap para habilitar el carrusel.
+    - "data-bs-ride=carousel": Hace que el carrusel se desplace automáticamente. (Propiedad de Bootstrap)-->
 
-  <!-- Seccion de carrusel-->
-  <div class="slider" id="carrusel">
-    <div class="item">
-      <img src="./assets/Flow_1.png" alt="Flow_1" />
+  <div class="carousel-inner">
+    <!-- Contenedor de los elementos del carrusel. 
+      Bootstrap usa "carousel-inner" para definir la sección que contendrá los elementos (slides). -->
+
+    <div class="carousel-item active">
+      <!-- Cada "carousel-item" representa un slide en el carrusel.
+        - "active": Indica que este es el primer elemento visible al cargar la página.
+        (Propiedad de Bootstrap)-->
+      <img src="" alt="gif1"> <!-- Imagen en formato GIF que se muestra en el slide.-->
     </div>
-    <div class="item">
-      <img src="./assets/Flow_2.png" alt="Flow_2" />
+
+    <div class="carousel-item active">
+      <!-- Cada "carousel-item" representa un slide en el carrusel.
+        - "active": Indica que este es el primer elemento visible al cargar la página.
+        (Propiedad de Bootstrap) -->
+      <img src="" alt="gif2"> <!-- Segunda imagen en formato GIF dentro del carrusel. -->
     </div>
-    <div class="item">
-      <img src="./assets/Flow_3.png" alt="Flow_3" />
-    </div>
-    <div class="item">
-      <img src="./assets/Flow_4.png" alt="Flow_4" />
-    </div>
-    <div class="item">
-      <img src="./assets/Flow_5.png" alt="Flow_5" />
-    </div>
-    <div class="item">
-      <img src="./assets/Flow_6.png" alt="Flow_6" />
-    </div>
-    <button class="next" id="next">&#10095;</button> <!-- Botón para avanzar a la siguiente imagen del carrusel, con un ícono de flecha derecha -->
-    <button class="prev" id="prev">&#10094;</button> <!-- Botón para retroceder a la imagen anterior del carrusel, con un ícono de flecha izquierda -->
   </div>
 
+  <!-- Controles del Carrusel -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+    <!-- Botón de navegación para ir al slide anterior.
+      - "class=carousel-control-prev": Clases de Bootstrap para darle formato al botón.
+      - "type=button": Define que es un botón interactivo.
+      - "data-bs-target=#carousel": Vincula este botón con el carrusel identificado como "carousel".
+      - "data-bs-slide=prev": Indica que el botón desplaza el carrusel hacia atrás. (Bootstrap)  -->
+    <span class="carousel-control-prev-icon"></span>
+    <!-- Icono del botón de navegación.
+      - "carousel-control-prev-icon": Clase de Bootstrap para el ícono de navegación izquierda. -->
+  </button>
+
+  <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+    <!-- Botón de navegación para ir al siguiente slide.
+      - "class=carousel-control-next": Clases de Bootstrap para darle formato al botón.
+      - "type=button": Define que es un botón interactivo.
+      - "data-bs-target=#carousel": Vincula este botón con el carrusel identificado como "carousel".
+      - "data-bs-slide=next": Indica que el botón desplaza el carrusel hacia adelante. (Bootstrap) -->
+    <span class="carousel-control-next-icon"></span>
+    <!-- Icono del botón de navegación.
+      - "carousel-control-next-icon": Clase de Bootstrap para el ícono de navegación derecha. -->
+  </button>
+</div>
 
 <!-- Seccion de descunto-->
 <div class="descuento">
@@ -172,11 +196,6 @@
           </div>
       </form>
 
-      <!-- reCAPTCHA -->
-      <div class="contenedor-recaptcha">
-          <div class="g-recaptcha" data-sitekey="TU_SITE_KEY"></div>
-      </div>
-
       <!-- Aviso legal -->
       <p class="mensaje-legal">
           Al registrarte, autorizas recibir ofertas y otros mensajes comerciales. También aceptas la 
@@ -184,7 +203,7 @@
       </p>
   </div>
 
-
+</body>
 
 <!-- Seccion de footer-->
 <footer>
@@ -216,13 +235,15 @@
 
     <!-- Secciones del footer -->
     <div class="secciones-footer">
-      <div class="empresa">
+      <!-- Información sobre la empresa -->
+      <div class="empresa"> 
         <h4>SOBRE LA MARCA</h4>
         <a href="#">CULTURA</a>
         <a href="#">TRABAJA AQUÍ</a>
         <a href="#">LA VIDA EN LA ETIQUETA</a>
       </div>
 
+      <!-- Sección de envíos -->
       <div class="envios">
         <h4>AYUDA</h4>
         <a href="#">ENVÍOS</a>
@@ -230,7 +251,7 @@
         <a href="#">PREGUNTAS FRECUENTES</a>
       </div>
 
-      <!-- comercios -->
+      <!-- Comercios Aliados-->
       <div class="comercio_aliados">
         <h4>COMERCIOS ALIADOS</h4>
         <a href="https://www.instagram.com/nusaconcept_store/">Nusa Concept Store</a>
@@ -262,19 +283,9 @@
   <!-- Derechos de autor -->
   <div class="derechos">
     <p>&copy; 2025 La Etiqueta Yopal. David Ramirez, Vanessa Reyes & Tifany Carvajal. Todos los derechos reservados.</p>
-  </div>
-
-  <!-- Imagen oculta que aparece al hacer scroll -->
-<div class="foto_secreta">  
-  <img src="./assets/logo2020.png" alt="logo2020">  
-</div> 
-
+  </div> 
 </footer>
 
-
-
-
-</body>
 
 <script src="script.js"></script> <!-- Enlaza el archivo JavaScript externo -->
 

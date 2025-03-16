@@ -1,0 +1,145 @@
+/*  Estilos generales del carrito */
+.carrito-container {
+    position: fixed; /* Fija el carrito en la pantalla para que siempre esté visible */
+    top: 0; /* Se ubica en la parte superior */
+    right: 0; /* Se alinea al lado derecho de la pantalla */
+    width: 350px; /* Define el ancho del carrito */
+    background: #fff; /* Fondo blanco */
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1); /* Sombra en el borde izquierdo para dar profundidad */
+    height: 100vh; /* Altura total de la pantalla */
+    max-height: 100vh; /* Evita que el carrito crezca más que la pantalla */
+    overflow-y: auto; /* Permite el desplazamiento vertical si hay muchos productos */
+    padding: 20px; /* Espaciado interno para evitar que el contenido esté pegado a los bordes */
+    display: flex; /* Usa flexbox para organizar los elementos */
+    flex-direction: column; /* Alinea los elementos en columna */
+    z-index: 9999; /* Asegura que el carrito siempre esté por encima de otros elementos */
+    border-radius: 15px 0 0 15px; /* Borde redondeado en la esquina izquierda */
+}
+
+/*  Encabezado del carrito */
+.carrito-header {
+    display: flex; /* Usa flexbox para organizar los elementos en una fila */
+    justify-content: space-between; /* Espacia el título y el botón de cierre */
+    align-items: center; /* Alinea verticalmente los elementos */
+    font-size: 12px; /* Reduce el tamaño del título */
+    font-weight: bold; /* Hace que el texto sea más grueso */
+    padding-bottom: 10px; /* Espacio debajo del encabezado */
+    border-bottom: 1px solid #ddd; /* Línea separadora */
+}
+
+/*  Botón para cerrar el carrito (la "X") */
+.cerrar-carrito {
+    background: none; /* Elimina el fondo predeterminado del botón */
+    border: none; /* Elimina el borde */
+    font-size: 28px; /* Hace que la "X" sea más grande */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    color: black; /* Color negro para mayor visibilidad */
+}
+
+/*  Contenedor de los productos dentro del carrito */
+.carrito-items {
+    flex-grow: 1; /* Permite que el contenido crezca y llene el espacio disponible */
+    overflow-y: auto; /* Permite desplazarse verticalmente si hay muchos productos */
+    padding: 10px 0; /* Espaciado interno */
+}
+
+/*  Cada producto en el carrito */
+.carrito-item {
+    display: flex; /* Usa flexbox para organizar los elementos */
+    align-items: center; /* Alinea verticalmente los elementos */
+    justify-content: space-between; /* Espacia los elementos horizontalmente */
+    padding: 10px 0; /* Espacio entre productos */
+    border-bottom: 1px solid #eee; /* Línea separadora entre productos */
+    gap: 10px; /* Espacio entre los elementos del producto */
+}
+
+/*  Imagen del producto en el carrito */
+.carrito-img {
+    width: 50px; /* Tamaño de la imagen */
+    height: 50px; /* Mantiene una proporción cuadrada */
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    border-radius: 8px; /* Esquinas redondeadas */
+}
+
+/*  Nombre del producto */
+.nombre-producto {
+    font-weight: bold; /* Hace que el texto sea más grueso */
+    font-size: 14px; /* Define el tamaño del texto */
+    margin: 0; /* Elimina los márgenes predeterminados */
+    color: #333; /* Color gris oscuro */
+}
+
+/*  Información adicional del producto (Referencia, talla, color) */
+.detalle-producto {
+    font-size: 12px; /* Texto más pequeño */
+    color: #777; /* Color gris claro */
+    margin: 3px 0; /* Espaciado vertical */
+}
+
+/*  Precio del producto */
+.precio-producto {
+    font-weight: bold; /* Hace que el texto sea más grueso */
+    font-size: 14px; /* Tamaño del texto */
+    color: #000; /* Color negro */
+}
+
+/*  Controles para aumentar o disminuir la cantidad */
+.cantidad-control {
+    display: flex; /* Usa flexbox para organizar los botones en una fila */
+    align-items: center; /* Alinea verticalmente */
+    gap: 5px; /* Espacio entre los botones y el número */
+}
+
+/*  Botones de aumentar y disminuir cantidad */
+.cantidad-control button {
+    background: none; /* Elimina el fondo predeterminado */
+    border: 1px solid #ddd; /* Borde gris claro */
+    padding: 4px 8px; /* Tamaño del botón */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    font-size: 14px; /* Tamaño del texto en los botones */
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+/*  Botón para eliminar un producto (icono de basurero) */
+.eliminar {
+    background: none; /* Elimina el fondo del botón */
+    border: none; /* Elimina el borde */
+    font-size: 16px; /* Tamaño del icono */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    color: red; /* Color rojo para indicar peligro */
+}
+
+/*  Pie de página del carrito (total y botón de compra) */
+.carrito-footer {
+    padding-top: 10px; /* Espacio antes del pie de página */
+    border-top: 1px solid #ddd; /* Línea separadora */
+    text-align: center; /* Centra el contenido */
+    margin-top: auto; /* Empuja el pie de página hacia abajo */
+}
+
+/*  Texto de "Total estimado" */
+.total-estimado {
+    font-size: 16px; /* Tamaño del texto */
+    font-weight: bold; /* Hace que el texto sea más grueso */
+    margin: 10px 0; /* Espacio alrededor del total */
+    color: #333; /* Color gris oscuro */
+}
+
+/*  Botón de "Finalizar compra" */
+.carrito-footer button {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    background: #00c853; /* Verde brillante */
+    color: white; /* Texto blanco */
+    padding: 10px; /* Espaciado interno */
+    border: none; /* Sin bordes */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    font-size: 16px; /* Tamaño del texto */
+    font-weight: bold; /* Hace que el texto sea más grueso */
+    border-radius: 6px; /* Bordes redondeados */
+    transition: background 0.3s; /* Efecto suave al pasar el mouse */
+}
+
+/*  Efecto al pasar el mouse sobre el botón de "Finalizar compra" */
+.carrito-footer button:hover {
+    background: #009624; /* Verde más oscuro */
+}

@@ -1,13 +1,15 @@
-// Lista donde se guardarán los productos agregados al carrito. 
-// Se recupera del almacenamiento local (localStorage) para que no se pierda al recargar la página.
+// Se inicializa un array para almacenar los productos en el carrito.
+// Si existe un carrito previo guardado en el localStorage, se recupera. Si no, se inicia con un array vacío.
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-//  Se crea un contenedor para el carrito de compras (donde se mostrarán los productos).
+// Se crea el contenedor principal del carrito y se añade al DOM.
+// Este contenedor es donde se mostrarán los productos seleccionados, así como el encabezado y el pie del carrito.
 const carritoContainer = document.createElement("div");
 carritoContainer.classList.add("carrito-container");
 document.body.appendChild(carritoContainer);
 
-//  Se define la estructura del carrito (encabezado, productos y botón de finalizar compra).
+// Se define el contenido HTML base del carrito, incluyendo el encabezado con el título, el área donde irán los productos,
+// y la sección inferior con el total y un botón para finalizar la compra.
 carritoContainer.innerHTML = `
     <div class="carrito-header">
         <h2>Bolsa (<span id="cantidad-productos">0</span>)</h2>
@@ -20,58 +22,67 @@ carritoContainer.innerHTML = `
     </div>
 `;
 
-//  Se oculta el carrito por defecto hasta que el usuario lo abra.
+// Por defecto, el carrito no es visible hasta que el usuario haga clic en un botón para abrirlo.
 carritoContainer.style.display = "none";
 
-//  Se selecciona el botón que abre el carrito (la "bolsa de compras").
+// Se identifica el botón que abre el carrito (en este caso, un elemento con id "shopping-bag-bottom").
 const carritoBoton = document.getElementById("shopping-bag-bottom");
 if (carritoBoton) {
+    // Cuando el usuario haga clic en el botón, se mostrará el carrito.
     carritoBoton.addEventListener("click", () => {
-        carritoContainer.style.display = "block"; // Muestra el carrito cuando se hace clic.
+        carritoContainer.style.display = "block";
     });
 }
 
-//  Se selecciona el botón de cerrar carrito y se le agrega un evento para ocultarlo.
+// Se selecciona el botón que cierra el carrito.
 const cerrarCarrito = document.getElementById("cerrar-carrito");
 if (cerrarCarrito) {
+    // Al hacer clic en este botón, el carrito se ocultará nuevamente.
     cerrarCarrito.addEventListener("click", () => {
-        carritoContainer.style.display = "none"; // Oculta el carrito.
+        carritoContainer.style.display = "none";
     });
 }
 
-//  Se capturan todos los botones de "Agregar al carrito" en la página.
+// Busca todos los botones de "Agregar al carrito" en la página.
+// Cuando se haga clic en cualquiera de ellos, se añadirá el producto correspondiente al carrito.
 document.querySelectorAll(".add-to-cart").forEach(boton => {
     boton.addEventListener("click", (event) => {
-        //  Encuentra el producto más cercano al botón que se hizo clic.
+        // Encuentra el elemento del producto más cercano al botón que se clicó.
         const productoElement = event.target.closest(".hotsales");
         if (productoElement) {
-            //  Llama a la función para agregar el producto al carrito.
+            // Se extraen los datos necesarios del producto: título, referencia, talla, precio, y la URL de la imagen.
             agregarAlCarrito(
-                productoElement.querySelector(".product-title").textContent,  // Nombre del producto.
-                productoElement.getAttribute("data-ref"),                    // Referencia del producto.
-                productoElement.querySelector(".size-letter.selected")?.textContent || "Talla no definida",  // Talla del producto.
-                "Color por definir",                                        // Color (se puede cambiar si hay opción de color).
-                parseInt(productoElement.querySelector(".price-discount").textContent.replace(/\D/g, "")),  // Precio del producto.
-                productoElement.querySelector(".product img").src           // Imagen del producto.
+                productoElement.querySelector(".product-title").textContent,
+                productoElement.getAttribute("data-ref"),
+                productoElement.querySelector(".size-letter.selected")?.textContent || "Talla no definida",
+                "Color por definir",
+                parseInt(productoElement.querySelector(".price-discount").textContent.replace(/\D/g, "")),
+                productoElement.querySelector(".product img").src
             );
         }
     });
 });
 
-//  Función para actualizar el carrito (muestra los productos en la pantalla y actualiza el total).
+// Esta función actualiza la lista de productos en el carrito.
+// También calcula el total, actualiza la cantidad de productos mostrada y guarda el estado del carrito en localStorage.
 function actualizarCarrito() {
-    const carritoItems = document.getElementById("carrito-items"); // Contenedor de productos en el carrito.
-    const cantidadProductos = document.getElementById("cantidad-productos"); // Número de productos en la bolsa.
-    const total = document.getElementById("total"); // Total a pagar.
+    // Elemento donde se listan los productos añadidos.
+    const carritoItems = document.getElementById("carrito-items");
+    // Elemento que muestra la cantidad total de productos en el carrito.
+    const cantidadProductos = document.getElementById("cantidad-productos");
+    // Elemento que muestra el precio total del carrito.
+    const total = document.getElementById("total");
 
-    carritoItems.innerHTML = ""; // Se vacía la lista de productos antes de actualizarla.
+    // Limpia el contenido actual del contenedor de productos antes de volver a llenar la lista.
+    carritoItems.innerHTML = "";
     let totalPrecio = 0;
 
-    //  Se recorren todos los productos en el carrito y se muestran en la pantalla.
+    // Se recorre el array del carrito para crear elementos HTML por cada producto añadido.
     carrito.forEach((item, index) => {
-        totalPrecio += item.precio * item.cantidad; // Se suma el precio total de todos los productos.
+        // Suma el precio total de todos los productos multiplicando cantidad por precio.
+        totalPrecio += item.precio * item.cantidad;
 
-        //  Se crea el elemento HTML para mostrar cada producto en el carrito.
+        // Crea un nuevo div para cada producto en el carrito, mostrando su nombre, precio, imagen, y controles de cantidad.
         const carritoItem = document.createElement("div");
         carritoItem.classList.add("carrito-item");
         carritoItem.innerHTML = `
@@ -88,66 +99,73 @@ function actualizarCarrito() {
             </div>
             <button class="eliminar" data-index="${index}">🗑</button>
         `;
-        carritoItems.appendChild(carritoItem); // Se agrega el producto al carrito.
+        carritoItems.appendChild(carritoItem);
     });
 
-    cantidadProductos.innerText = carrito.length; // Se actualiza la cantidad de productos.
-    total.innerText = `$${totalPrecio.toLocaleString()}`; // Se actualiza el total a pagar.
+    // Actualiza el contador de productos y el total mostrado.
+    cantidadProductos.innerText = carrito.length;
+    total.innerText = `$${totalPrecio.toLocaleString()}`;
 
-    //  Se guarda el carrito en el almacenamiento local para que no se pierda al recargar la página.
+    // Guarda el carrito en localStorage para mantener el estado entre recargas.
     localStorage.setItem("carrito", JSON.stringify(carrito));
-
-    agregarEventosCarrito(); // Se agregan los eventos a los botones de aumentar, disminuir y eliminar.
 }
 
-// Función para manejar eventos en los botones de sumar, restar y eliminar productos.
-function agregarEventosCarrito() {
-    document.getElementById("carrito-items").addEventListener("click", (event) => {
+// Cuando se cargue la página, se inicializa el carrito y se asigna un único listener para manejar los clics
+// en los botones de incrementar, decrementar y eliminar productos.
+document.addEventListener("DOMContentLoaded", () => {
+    // Actualiza la interfaz del carrito con los datos guardados.
+    actualizarCarrito();
+
+    // Asigna un único listener al contenedor de productos del carrito (delegación de eventos).
+    const carritoItems = document.getElementById("carrito-items");
+    carritoItems.addEventListener("click", (event) => {
         const index = event.target.getAttribute("data-index");
 
+        // Dependiendo del botón que se haya clicado (sumar, restar, eliminar), se ajusta la cantidad o se elimina el producto.
         if (event.target.classList.contains("sumar")) {
             carrito[index].cantidad++;
         } else if (event.target.classList.contains("restar")) {
             if (carrito[index].cantidad > 1) {
                 carrito[index].cantidad--;
             } else {
-                carrito.splice(index, 1); // Si queda en 0, se elimina el producto del carrito.
+                carrito.splice(index, 1);
             }
         } else if (event.target.classList.contains("eliminar")) {
-            carrito.splice(index, 1); // Se elimina el producto completamente.
+            carrito.splice(index, 1);
         }
 
-        actualizarCarrito(); // Se vuelve a actualizar el carrito.
+        // Actualiza la interfaz del carrito y guarda los cambios.
+        actualizarCarrito();
     });
-}
+});
 
-//  Función para el botón "Finalizar compra".
+// Listener global para el botón "Finalizar compra".
 document.body.addEventListener("click", (event) => {
+    // Si se clicó el botón de finalizar compra:
     if (event.target.id === "finalizar-compra") {
+        // Si el carrito está vacío, muestra una alerta y no hace nada más.
         if (carrito.length === 0) {
-            alert("Tu carrito está vacío."); // Si el carrito está vacío, se muestra una alerta.
+            alert("Tu carrito está vacío.");
             return;
         }
         
+        // Si hay productos, muestra un mensaje y vacía el carrito.
         alert("Por ahora no podemos procesar tu compra. Pronto habilitaremos esta función.");
-        carrito = []; // Se vacía el carrito.
-        localStorage.removeItem("carrito"); // Se elimina el carrito del almacenamiento local.
-        actualizarCarrito(); // Se actualiza la pantalla.
+        carrito = [];
+        localStorage.removeItem("carrito");
+        actualizarCarrito();
     }
 });
 
-//  Función para agregar productos al carrito.
+// Función que añade un producto al carrito.
+// Si el producto ya está en el carrito, aumenta la cantidad. Si no, lo añade como un nuevo producto.
 function agregarAlCarrito(nombre, referencia, talla, color, precio, imagen) {
     let productoExistente = carrito.find(item => item.nombre === nombre && item.talla === talla);
     if (productoExistente) {
-        productoExistente.cantidad++; // Si ya existe, solo se aumenta la cantidad.
+        productoExistente.cantidad++;
     } else {
-        carrito.push({ nombre, referencia, talla, color, precio, imagen, cantidad: 1 }); // Se agrega el nuevo producto.
+        carrito.push({ nombre, referencia, talla, color, precio, imagen, cantidad: 1 });
     }
-    actualizarCarrito(); // Se actualiza la pantalla.
-}
-
-//  Cuando la página se carga, se actualiza el carrito con los datos guardados.
-document.addEventListener("DOMContentLoaded", () => {
+    // Actualiza la interfaz del carrito después de añadir un producto.
     actualizarCarrito();
-});
+}

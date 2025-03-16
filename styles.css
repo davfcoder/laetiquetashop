@@ -698,19 +698,30 @@ footer {
 }
 
 .nosotros-section {
+    font-family: "Raleway", sans-serif;
     background-image: url('./assets/fondo.jpg');
     background-size: cover;
     background-position: center;
     width: 100%; /* o un ancho específico si lo necesitas */
-    height: 500px; /* ajusta la altura a lo que prefieras */
+    height: 550px; /* ajusta la altura a lo que prefieras */
     display: flex;
+    flex-direction: column; /* apila el h1 y el párrafo verticalmente */
     align-items: center;
     justify-content: center;
-    color: white; /* texto blanco para contrastar con la imagen */
-    text-align: center; /* centra el texto si tiene varias líneas */
-    padding: 20px; /* opcional, para darle algo de espacio interior */
-    font-size: 2.5rem; /* tamaño grande para el texto */
-    font-weight: bold; /* aplica negrilla */
+    color: white;
+    text-align: center;
+    padding: 20px;
   }
   
+  .nosotros-section h1 {
+    font-size: 3rem; /* ajusta el tamaño del título */
+    font-weight: bold; /* negrilla */
+    margin: 0; /* elimina márgenes adicionales */
+  }
+  
+  .nosotros-section p {
+    font-size: 1.5rem; /* tamaño del texto del párrafo */
+    font-weight: 400; /* peso normal o ajusta según prefieras */
+    margin-top: 10px; /* espacio entre el h1 y el párrafo */
+  }
   

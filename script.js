@@ -38,6 +38,10 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     let carouselElement = document.getElementById("carousel");
     let carousel = new bootstrap.Carousel(carouselElement, {

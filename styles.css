@@ -446,6 +446,31 @@ nav {
     text-decoration: underline; /* Subraya el enlace cuando el usuario pasa el mouse */
 }
 
+/* Botón flotante de WhatsApp */
+.boton-whatsapp {
+    background-color: var(--primario-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.138);
+    border-radius: 30px;
+    padding: 2px 5px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex; /* Alinear elementos en fila */
+    align-items: center; /* Centrar verticalmente */
+    z-index: 1000;
+}
+
+.boton-whatsapp img:hover {
+    transform: scale(1.1);
+}
+
+.boton-whatsapp h4 {
+    color : var(--tono-azul);
+    font-size: 14px;
+    font-weight: bold;
+    margin : 0;
+}
+
 
 /* Estilos generales del footer */
 footer {

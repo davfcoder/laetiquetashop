@@ -483,3 +483,38 @@ footer {
     font-size: 12px; /* Tamaño de fuente */
     color: var(--primario-color); /* Color del texto */
 }
+
+
+/* ----- CONTENEDOR DEL CARRUSEL ----- */
+.gallery {
+    width: 80vw; /* Ancho del contenedor */
+    height: 400px; /* Altura del carrusel */
+    overflow: hidden;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    margin: 0 auto; /* Asegura que el contenedor esté centrado en la página */
+}
+
+/* ----- CONTENEDOR INTERNO QUE SE MUEVE ----- */
+.image-container {
+    display: flex;
+    width: 200%; /* Asegúrate de que el tamaño total sea el adecuado */
+    gap: 20px; /* Espaciado entre las imágenes */
+    animation: slide 50s linear infinite; /*duracion de la imagen*/
+}
+
+/* ----- ESTILO DE LAS IMÁGENES ----- */
+.image-container img {
+    width: 250px; /* Tamaño más grande */
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* ----- ANIMACIÓN DEL CARRUSEL ----- */
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}

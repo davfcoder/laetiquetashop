@@ -13,9 +13,8 @@
   <link rel="stylesheet" href="styles.css"> <!-- Enlaza el archivo CSS externo -->
   <script src="https://www.google.com/recaptcha/api.js" async defer></script> <!-- Script para Google reCAPTCHA -->
   <link rel="icon" href="favicon/favicon.png">
+</head>
 
-
-    </head>
 <body>
 
 <!-- Aviso de Cookies -->
@@ -27,41 +26,40 @@
 </div>
 
 <!-- Seccion del navbar-->
-  <header>
-    <div class="header-message">
-      <div class="message-text">ENVÍO GRATIS a toda Colombia por compras superiores a $150.000 | Tiempo de envío: 3 a 7 días hábiles</div>
+<header>
+  <div class="header-message">
+    <div class="message-text">ENVÍO GRATIS a toda Colombia por compras superiores a $150.000 | Tiempo de envío: 3 a 7 días hábiles</div>
+  </div>
+  <div class="header-top">
+    <div class="header-top-menu" id="left-empty"></div> 
+    <!-- Espacio vacio para alineado a la izquierda -->
+    <div id="logo-principal" class="header-top-menu">
+      <!-- Sección para el logo alineado al centro -->
+      <img src="./assets/logo-horizontal.png" alt="Logo oficial de La Etiqueta Shop">
     </div>
-    <div class="header-top">
-      <div class="header-top-menu" id="left-empty"></div> 
-      <!-- Espacio vacio para alineado a la izquierda -->
-      <div id="logo-principal" class="header-top-menu">
-        <!-- Sección para el logo alineado al centro -->
-        <img src="./assets/logo-horizontal.png" alt="Logo oficial de La Etiqueta Shop">
-      </div>
-      <div id="menu-right" class="header-top-menu">
-        <div class="justify-bottoms">
-          <div id="search-bottom" class="left-bottoms">
-            <a href="#">
-              <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-search"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
-              <span class="left-title">Buscar</span>
-            </a>
-          </div>
-          <div id="login-bottom" class="left-bottoms">
-            <a href="#">
-              <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-user"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg>
-              <span class="left-title">Iniciar Sesión</span>
-            </a>
-          </div>
-          <div id="shopping-bag-bottom" class="left-bottoms">
-            <a href="#">
-              <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-bag"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6.331 8h11.339a2 2 0 0 1 1.977 2.304l-1.255 8.152a3 3 0 0 1 -2.966 2.544h-6.852a3 3 0 0 1 -2.965 -2.544l-1.255 -8.152a2 2 0 0 1 1.977 -2.304z" /><path d="M9 11v-5a3 3 0 0 1 6 0v5" /></svg>
-              <span class="left-title">Bolsa</span>
-            </a>
-          </div>
+    <div id="menu-right" class="header-top-menu">
+      <div class="justify-bottoms">
+        <div id="search-bottom" class="right-bottoms">
+          <a href="#">
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-search"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
+            <span class="left-title">Buscar</span>
+          </a>
+        </div>
+        <div id="login-bottom" class="right-bottoms">
+          <a href="#">
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-user"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg>
+            <span class="left-title">Iniciar Sesión</span>
+          </a>
+        </div>
+        <div id="shopping-bag-bottom" class="right-bottoms">
+          <a href="#">
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-bag"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6.331 8h11.339a2 2 0 0 1 1.977 2.304l-1.255 8.152a3 3 0 0 1 -2.966 2.544h-6.852a3 3 0 0 1 -2.965 -2.544l-1.255 -8.152a2 2 0 0 1 1.977 -2.304z" /><path d="M9 11v-5a3 3 0 0 1 6 0v5" /></svg>
+            <span class="right-title">Bolsa</span>
+          </a>
         </div>
       </div>
     </div>
-
+  </div>
     <nav id="navbar">
       <div id="logo-secundario">
         <img src="./favicon/favicon.png" alt="Logo pequeño de La Etiqueta Shop">
@@ -107,7 +105,7 @@
             <li><a href="">Ver todo</a></li>
           </ul>
         </li>
-
+  
         <li class="dropdown">
           <a href="">
             <span>Accesorios</span>
@@ -129,97 +127,367 @@
   </header>
 
 <!-- Carrusel de Videos -->
-<div id="carousel" class="carousel slide" data-bs-ride="carousel">
-  <!-- Se crea un contenedor de carrusel con Bootstrap.
-    - "id=carousel": Identificador único para este carrusel.
-    - "class=carousel slide": Clases de Bootstrap para habilitar el carrusel.
-    - "data-bs-ride=carousel": Hace que el carrusel se desplace automáticamente. (Propiedad de Bootstrap)-->
+  <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+    <!-- Se crea un contenedor de carrusel con Bootstrap.
+      - "id=carousel": Identificador único para este carrusel.
+      - "class=carousel slide": Clases de Bootstrap para habilitar el carrusel.
+      - "data-bs-ride=carousel": Hace que el carrusel se desplace automáticamente. (Propiedad de Bootstrap)-->
 
-  <div class="carousel-inner">
-    <!-- Contenedor de los elementos del carrusel. 
-      Bootstrap usa "carousel-inner" para definir la sección que contendrá los elementos (slides). -->
+    <div class="carousel-inner">
+      <!-- Contenedor de los elementos del carrusel. 
+        Bootstrap usa "carousel-inner" para definir la sección que contendrá los elementos (slides). -->
 
-    <div class="carousel-item active">
-      <!-- Cada "carousel-item" representa un slide en el carrusel.
-        - "active": Indica que este es el primer elemento visible al cargar la página.
-        (Propiedad de Bootstrap)-->
-      <img src="" alt="gif1"> <!-- Imagen en formato GIF que se muestra en el slide.-->
+      <div class="carousel-item active">
+        <!-- Cada "carousel-item" representa un slide en el carrusel.
+          - "active": Indica que este es el primer elemento visible al cargar la página.
+          (Propiedad de Bootstrap)-->
+        <img src="" alt="gif1"> <!-- Imagen en formato GIF que se muestra en el slide.-->
+      </div>
+
+      <div class="carousel-item active">
+        <!-- Cada "carousel-item" representa un slide en el carrusel.
+          - "active": Indica que este es el primer elemento visible al cargar la página.
+          (Propiedad de Bootstrap) -->
+        <img src="" alt="gif2"> <!-- Segunda imagen en formato GIF dentro del carrusel. -->
+      </div>
     </div>
 
-    <div class="carousel-item active">
-      <!-- Cada "carousel-item" representa un slide en el carrusel.
-        - "active": Indica que este es el primer elemento visible al cargar la página.
-        (Propiedad de Bootstrap) -->
-      <img src="" alt="gif2"> <!-- Segunda imagen en formato GIF dentro del carrusel. -->
+    <!-- Controles del Carrusel -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+      <!-- Botón de navegación para ir al slide anterior.
+        - "class=carousel-control-prev": Clases de Bootstrap para darle formato al botón.
+        - "type=button": Define que es un botón interactivo.
+        - "data-bs-target=#carousel": Vincula este botón con el carrusel identificado como "carousel".
+        - "data-bs-slide=prev": Indica que el botón desplaza el carrusel hacia atrás. (Bootstrap)  -->
+      <span class="carousel-control-prev-icon"></span>
+      <!-- Icono del botón de navegación.
+        - "carousel-control-prev-icon": Clase de Bootstrap para el ícono de navegación izquierda. -->
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+      <!-- Botón de navegación para ir al siguiente slide.
+        - "class=carousel-control-next": Clases de Bootstrap para darle formato al botón.
+        - "type=button": Define que es un botón interactivo.
+        - "data-bs-target=#carousel": Vincula este botón con el carrusel identificado como "carousel".
+        - "data-bs-slide=next": Indica que el botón desplaza el carrusel hacia adelante. (Bootstrap) -->
+      <span class="carousel-control-next-icon"></span>
+      <!-- Icono del botón de navegación.
+        - "carousel-control-next-icon": Clase de Bootstrap para el ícono de navegación derecha. -->
+    </button>
+  </div>
+
+  <section class="container-sales">
+
+    <article class="sales" id="sales-mujer">
+      <div class="hotsales" id="hs-mujer1">
+        <div class="percentage-product">
+          <div class="percentage">50%</div>
+          <div class="product">
+            <img src="./sales/foto-mujer1a.jpeg" alt="Foto principal de mujer 1a">
+          </div>
+          <div class="stock">¡Últimas unidades disponibles!</div>
+        </div>
+        <div class="info-product">
+          <h2 class="product-title">Camisa manga corta de algodón para mujer</h2>
+          <span class="price-discount">$60.000</span>
+          <span class="regular-price">$120.000</span>
+          <div class="addCart-size">
+            <div class="size">
+              <div class="size-select">
+                <ul class="lista-size">
+                  <li class="size1">S</li>
+                  <li class="size2">M</li>
+                  <li class="size3">L</li>
+                </ul>
+              </div>
+            </div>
+            <button class="add-to-cart">Agregar al carrito</button>
+            <input type="hidden" name="id-product-m1" id="addCartProduct">
+          </div>
+        </div>
+      </div>
+      <div class="hotsales" id="hs-mujer2">
+        <div class="percentage&product">
+          <div class="percentage">
+
+          </div>
+          <div class="product">
+
+          </div>
+          <div class="stock">
+
+          </div>
+        </div>
+        <div class="info-product">
+          <h2 class="product-title"></h2>
+          <span class="price-discount"></span>
+          <span class="regular-price"></span>
+          <div class="addCart&size">
+            <div class="size">
+              <div class="size-select">
+                <ul class="lista-size">
+                  <li class="size1"></li>
+                </ul>
+              </div>
+            </div>
+            <button class="add-to-cart">Agregar al carrito</button>
+            <input type="hidden" name="id-product-m2" id="addCartProduct">
+          </div>
+        </div>
+      </div>
+      <div class="hotsales" id="hs-mujer3">
+        <div class="percentage&product">
+          <div class="percentage">
+
+          </div>
+          <div class="product">
+
+          </div>
+          <div class="stock">
+
+          </div>
+        </div>
+        <div class="info-product">
+          <h2 class="product-title"></h2>
+          <span class="price-discount"></span>
+          <span class="regular-price"></span>
+          <div class="addCart&size">
+            <div class="size">
+              <div class="size-select">
+                <ul class="lista-size">
+                  <li class="size1"></li>
+                </ul>
+              </div>
+            </div>
+            <button class="add-to-cart">Agregar al carrito</button>
+            <input type="hidden" name="id-product-m3" id="addCartProduct">
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="sales" id="sales-hombre">
+      <div class="hotsales" id="hs-hombre1">
+        <div class="percentage&product">
+          <div class="percentage">
+
+          </div>
+          <div class="product">
+
+          </div>
+          <div class="stock">
+
+          </div>
+        </div>
+        <div class="info-product">
+          <h2 class="product-title"></h2>
+          <span class="price-discount"></span>
+          <span class="regular-price"></span>
+          <div class="addCart&size">
+            <div class="size">
+              <div class="size-select">
+                <ul class="lista-size">
+                  <li class="size1"></li>
+                </ul>
+              </div>
+            </div>
+            <button class="add-to-cart">Agregar al carrito</button>
+            <input type="hidden" name="id-product-h1" id="addCartProduct">
+          </div>
+        </div>
+      </div>
+      <div class="hotsales" id="hs-hombre2">
+        <div class="percentage&product">
+          <div class="percentage">
+
+          </div>
+          <div class="product">
+
+          </div>
+          <div class="stock">
+
+          </div>
+        </div>
+        <div class="info-product">
+          <h2 class="product-title"></h2>
+          <span class="price-discount"></span>
+          <span class="regular-price"></span>
+          <div class="addCart&size">
+            <div class="size">
+              <div class="size-select">
+                <ul class="lista-size">
+                  <li class="size1"></li>
+                </ul>
+              </div>
+            </div>
+            <button class="add-to-cart">Agregar al carrito</button>
+            <input type="hidden" name="id-product-h2" id="addCartProduct">
+          </div>
+        </div>
+      </div>
+      <div class="hotsales" id="hs-hombre3">
+        <div class="percentage&product">
+          <div class="percentage">
+
+          </div>
+          <div class="product">
+
+          </div>
+          <div class="stock">
+
+          </div>
+        </div>
+        <div class="info-product">
+          <h2 class="product-title"></h2>
+          <span class="price-discount"></span>
+          <span class="regular-price"></span>
+          <div class="addCart&size">
+            <div class="size">
+              <div class="size-select">
+                <ul class="lista-size">
+                  <li class="size1"></li>
+                </ul>
+              </div>
+            </div>
+            <button class="add-to-cart">Agregar al carrito</button>
+            <input type="hidden" name="id-product-h3" id="addCartProduct">
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="sales" id="sales-niño">
+      <div class="hotsales" id="hs-niño1">
+        <div class="percentage&product">
+          <div class="percentage">
+
+          </div>
+          <div class="product">
+
+          </div>
+          <div class="stock">
+
+          </div>
+        </div>
+        <div class="info-product">
+          <h2 class="product-title"></h2>
+          <span class="price-discount"></span>
+          <span class="regular-price"></span>
+          <div class="addCart&size">
+            <div class="size">
+              <div class="size-select">
+                <ul class="lista-size">
+                  <li class="size1"></li>
+                </ul>
+              </div>
+            </div>
+            <button class="add-to-cart">Agregar al carrito</button>
+            <input type="hidden" name="id-product-n1" id="addCartProduct">
+          </div>
+        </div>
+      </div>
+      <div class="hotsales" id="hs-niño2">
+        <div class="percentage&product">
+          <div class="percentage">
+
+          </div>
+          <div class="product">
+
+          </div>
+          <div class="stock">
+
+          </div>
+        </div>
+        <div class="info-product">
+          <h2 class="product-title"></h2>
+          <span class="price-discount"></span>
+          <span class="regular-price"></span>
+          <div class="addCart&size">
+            <div class="size">
+              <div class="size-select">
+                <ul class="lista-size">
+                  <li class="size1"></li>
+                </ul>
+              </div>
+            </div>
+            <button class="add-to-cart">Agregar al carrito</button>
+            <input type="hidden" name="id-product-n2" id="addCartProduct">
+          </div>
+        </div>
+      </div>
+      <div class="hotsales" id="hs-niño3">
+        <div class="percentage&product">
+          <div class="percentage">
+
+          </div>
+          <div class="product">
+
+          </div>
+          <div class="stock">
+
+          </div>
+        </div>
+        <div class="info-product">
+          <h2 class="product-title"></h2>
+          <span class="price-discount"></span>
+          <span class="regular-price"></span>
+          <div class="addCart&size">
+            <div class="size">
+              <div class="size-select">
+                <ul class="lista-size">
+                  <li class="size1"></li>
+                </ul>
+              </div>
+            </div>
+            <button class="add-to-cart">Agregar al carrito</button>
+            <input type="hidden" name="id-product-n3" id="addCartProduct">
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- Seccion de carrusel tifany-->
+  <div class="gallery">
+    <div class="image-container">
+        <img src="./assets/imagen1.jpg" alt="articulo 1">
+        <img src="./assets/imagen2.jpg" alt="articulo 2">
+        <img src="./assets/imagen3.jpg" alt="articulo 3">
+        <img src="./assets/imagen4.jpg" alt="articulo 4">
+        <img src="./assets/imagen5.jpg" alt="articulo 5">
+        <img src="./assets/imagen6.jpg" alt="articulo 6">
+        <img src="./assets/imagen7.jpg" alt="articulo 7">
+        <img src="./assets/imagen8.jpg" alt="articulo 8">
+        <!-- Duplicamos para el efecto infinito -->
+        <img src="./assets/imagen1.jpg" alt="articulo 1">
+        <img src="./assets/imagen2.jpg" alt="articulo 2">
+        <img src="./assets/imagen3.jpg" alt="articulo 3">
+        <img src="./assets/imagen4.jpg" alt="articulo 4">
+        <img src="./assets/imagen5.jpg" alt="articulo 5">
+        <img src="./assets/imagen6.jpg" alt="articulo 6">
+        <img src="./assets/imagen7.jpg" alt="articulo 7">
+        <img src="./assets/imagen8.jpg" alt="articulo 8">
     </div>
   </div>
-
-  <!-- Controles del Carrusel -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
-    <!-- Botón de navegación para ir al slide anterior.
-      - "class=carousel-control-prev": Clases de Bootstrap para darle formato al botón.
-      - "type=button": Define que es un botón interactivo.
-      - "data-bs-target=#carousel": Vincula este botón con el carrusel identificado como "carousel".
-      - "data-bs-slide=prev": Indica que el botón desplaza el carrusel hacia atrás. (Bootstrap)  -->
-    <span class="carousel-control-prev-icon"></span>
-    <!-- Icono del botón de navegación.
-      - "carousel-control-prev-icon": Clase de Bootstrap para el ícono de navegación izquierda. -->
-  </button>
-
-  <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
-    <!-- Botón de navegación para ir al siguiente slide.
-      - "class=carousel-control-next": Clases de Bootstrap para darle formato al botón.
-      - "type=button": Define que es un botón interactivo.
-      - "data-bs-target=#carousel": Vincula este botón con el carrusel identificado como "carousel".
-      - "data-bs-slide=next": Indica que el botón desplaza el carrusel hacia adelante. (Bootstrap) -->
-    <span class="carousel-control-next-icon"></span>
-    <!-- Icono del botón de navegación.
-      - "carousel-control-next-icon": Clase de Bootstrap para el ícono de navegación derecha. -->
-  </button>
-</div>
-
-
-<!-- Seccion de carrusel tifany-->
-<div class="gallery">
-  <div class="image-container">
-      <img src="./assets/imagen1.jpg" alt="articulo 1">
-      <img src="./assets/imagen2.jpg" alt="articulo 2">
-      <img src="./assets/imagen3.jpg" alt="articulo 3">
-      <img src="./assets/imagen4.jpg" alt="articulo 4">
-      <img src="./assets/imagen5.jpg" alt="articulo 5">
-      <img src="./assets/imagen6.jpg" alt="articulo 6">
-      <img src="./assets/imagen7.jpg" alt="articulo 7">
-      <img src="./assets/imagen8.jpg" alt="articulo 8">
-      <!-- Duplicamos para el efecto infinito -->
-      <img src="./assets/imagen1.jpg" alt="articulo 1">
-      <img src="./assets/imagen2.jpg" alt="articulo 2">
-      <img src="./assets/imagen3.jpg" alt="articulo 3">
-      <img src="./assets/imagen4.jpg" alt="articulo 4">
-      <img src="./assets/imagen5.jpg" alt="articulo 5">
-      <img src="./assets/imagen6.jpg" alt="articulo 6">
-      <img src="./assets/imagen7.jpg" alt="articulo 7">
-      <img src="./assets/imagen8.jpg" alt="articulo 8">
-  </div>
-</div>
-
 
 <!-- Seccion de descunto-->
 <div class="descuento">
-        <!-- Título principal -->
-        <h2 class="titulo-suscripcion">Suscríbete y obtén 10% OFF</h2>
-        <p class="subtitulo-suscripcion">En tu primera compra de nuestra nueva colección.</p>
+      <!-- Título principal -->
+      <h2 class="titulo-suscripcion">Suscríbete y obtén 10% OFF</h2>
+      <p class="subtitulo-suscripcion">En tu primera compra de nuestra nueva colección.</p>
 
-         <!-- Formulario de suscripción -->
-         <form id="formulario-suscripcion" class="fila-formulario">
-          <!-- Campo de entrada de email -->
-          <div class="contenedor-email">
-              <input type="email" id="correo" class="campo-email" placeholder="Escribe tu Email" required>
-          </div>
-          <!-- Botón de envío -->
-          <div class="contenedor-boton">
-              <button type="submit" class="boton-enviar">Enviar</button>
-          </div>
-      </form>
+        <!-- Formulario de suscripción -->
+        <form id="formulario-suscripcion" class="fila-formulario">
+        <!-- Campo de entrada de email -->
+        <div class="contenedor-email">
+            <input type="email" id="correo" class="campo-email" placeholder="Escribe tu Email" required>
+        </div>
+        <!-- Botón de envío -->
+        <div class="contenedor-boton">
+            <button type="submit" class="boton-enviar">Enviar</button>
+        </div>
+    </form>
 
       <!-- Aviso legal -->
       <p class="mensaje-legal">

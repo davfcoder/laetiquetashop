@@ -2,14 +2,18 @@
 const navbar = document.getElementById("navbar");
 const logo = document.getElementById("logo-secundario");
 const navbarOffset = navbar.offsetTop; // Guarda la posición original del navbar
+const navbarHeight = navbar.offsetHeight;
+const body = document.body; // O el contenedor principal
 
 window.addEventListener("scroll", function () {
     if (window.scrollY >= navbarOffset) {
         navbar.classList.add("fixed-top", "shadow");
         logo.classList.add("visible"); // Aparece suavemente
+        body.style.paddingTop = `${navbarHeight}px`; // Agrega espacio
     } else {
         navbar.classList.remove("fixed-top", "shadow");
         logo.classList.remove("visible"); // Aparece suavemente
+        body.style.paddingTop = "0"; // Restaura el espacio
     }
 });
 

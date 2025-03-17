@@ -196,8 +196,8 @@ nav {
 }
 
 .sales {
-    margin: 2rem 6rem 7rem 6rem;
-    padding: 3rem;
+    margin: 0 6rem 3rem 6rem;
+    padding: 1rem 3rem;
     max-width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -356,9 +356,9 @@ nav {
 
 /* Carrusel */
 .carousel {
-    width: 1200px; /* Establece el ancho del carrusel en 1200px */
+    width: 1300px; /* Establece el ancho del carrusel en 1200px */
     max-width: 100%;
-    margin: auto;  /* Centra el carrusel horizontalmente */
+    margin: auto auto 8rem auto;  /* Centra el carrusel horizontalmente */
     /* Bootstrap aplica esta clase para estructurar el carrusel */
 }
 

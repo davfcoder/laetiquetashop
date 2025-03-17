@@ -88,7 +88,20 @@ document.getElementById("btn-contacto").addEventListener("click", function(event
     }, 500);
 });
 
+document.getElementById("btn-aliados").addEventListener("click", function (event) {
+    
+    let element = document.getElementById("comercios-aliados"); 
 
+    // Desplazarse primero a la sección
+    element.scrollIntoView({ behavior: "smooth", block: "center" });
 
+    // Esperar un poco a que termine el scroll antes de aplicar el zoom
+    setTimeout(() => {
+        element.classList.add("zoom");
 
-
+        // Quitar el efecto después de 1.3 segundos
+        setTimeout(() => {
+            element.classList.remove("zoom");
+        }, 650);
+    }, 600); // Ajusta este tiempo si el desplazamiento es más lento o rápido
+});

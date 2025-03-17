@@ -128,7 +128,7 @@
 /*  Botón de "Finalizar compra" */
 .carrito-footer button {
     width: 100%; /* Ocupa todo el ancho del contenedor */
-    background: #00c853; /* Verde brillante */
+    background:#1d1d43e8; /* Azul oscuro con transparencia */
     color: white; /* Texto blanco */
     padding: 10px; /* Espaciado interno */
     border: none; /* Sin bordes */
@@ -141,5 +141,5 @@
 
 /*  Efecto al pasar el mouse sobre el botón de "Finalizar compra" */
 .carrito-footer button:hover {
-    background: #009624; /* Verde más oscuro */
+    background: #727376; /* Verde más oscuro */
 }

@@ -11,7 +11,7 @@ document.body.appendChild(carritoContainer);
 // Se define el contenido HTML base del carrito, incluyendo el encabezado con el título, el área donde irán los productos,
 // y la sección inferior con el total y un botón para finalizar la compra.
 carritoContainer.innerHTML = `
-    <div class="carrito-header">
+    <div class="carrito-header"> 
         <h2>Bolsa (<span id="cantidad-productos">0</span>)</h2>
         <button id="cerrar-carrito" class="cerrar-carrito">&times;</button>
     </div>

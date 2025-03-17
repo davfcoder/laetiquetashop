@@ -16,322 +16,342 @@ body {
 }
 
 .header-message {
-    position: relative; 
-    width: 100%;
-    background-color: black;
-    padding: 8px; 
+    position: relative; /* Establece la posición relativa dentro de su contenedor */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    background-color: black; /* Fondo negro */
+    padding: 8px; /* Espaciado interno para el mensaje */
 }
 
 .message-text {
-    text-align: center;
-    font-weight: bold;
-    color: white;
-    font-size: 12px;
+    text-align: center; /* Centra el texto */
+    font-weight: bold; /* Hace el texto más grueso */
+    color: white; /* Color del texto en blanco para contraste */
+    font-size: 12px; /* Tamaño de fuente pequeño */
 }
 
-.header-top {
-    width: 100%;
-    padding: 10px 0 10px 0;
-    display: flex;
-    background-color: var(--primario-color);
-    align-items: center;
-    justify-content: center;
+.header-top { 
+    width: 100%; /* Ocupa todo el ancho */
+    padding: 10px 0 10px 0; /* Espaciado superior e inferior */
+    display: flex; /* Usa flexbox para alinear los elementos */
+    background-color: var(--primario-color); /* Usa una variable CSS para el color de fondo */
+    align-items: center; /* Centra los elementos verticalmente */
+    justify-content: center; /* Centra los elementos horizontalmente */
 }
 
 .header-top-menu {
-    width: 32%; 
-    display: flex;
-    justify-content: center;
-    font-size: 15px;
+    width: 32%; /* Define un ancho del 32% */
+    display: flex; /* Activa flexbox */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    font-size: 15px; /* Define un tamaño de fuente */
 }
 
 .header-top-menu img {
-    width: 65%;
+    width: 65%; /* Ajusta el ancho de la imagen dentro del menú */
 }
 
 .justify-bottoms {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-
+    width: 100%; /* Ocupa todo el ancho */
+    display: flex; /* Usa flexbox */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten si el espacio es limitado */
+    justify-content: flex-end; /* Alinea los elementos a la derecha */
 }
 
 .right-bottoms {
-    padding: 0.7rem;
+    padding: 0.7rem; /* Espaciado interno */
 }
 
 .logo-laetiqueta {
-    justify-items: center;
-    width: 40%;
+    justify-items: center; /* Centra los elementos dentro de un contenedor de grid (aunque aquí no se usa grid) */
+    width: 40%; /* Define un ancho del 40% */
 }
 
 .logo-laetiqueta img {
-    width: 80%;
+    width: 80%; /* Ajusta el tamaño de la imagen del logo */
 }
 
 a {
-    text-decoration: none;
-    color: black;
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: black; /* Color de texto negro */
 }
 
 ul {
-    list-style: none;
-    padding: 0%;
+    list-style: none; /* Elimina los estilos de lista (viñetas) */
+    padding: 0%; /* Elimina el espaciado interno */
 }
 
 nav {
-    width: 100%;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgb(250, 249, 248);
+    width: 100%; /* Ocupa todo el ancho disponible */
+    padding: 1rem; /* Agrega espaciado interno */
+    display: flex; /* Usa flexbox */
+    justify-content: space-between; /* Distribuye los elementos a los extremos */
+    align-items: center; /* Alinea los elementos verticalmente */
+    background-color: rgb(250, 249, 248); /* Define un color de fondo claro */
 }
 
 #logo-secundario {
-    padding: 5px;
-    position: absolute;
-    min-width: 6%;
-    max-width: 6%;
-    opacity: 0;  /* Oculto al inicio */
-    visibility: hidden;
-    transform: translateY(-5px); /* Un poco más arriba */
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    padding: 5px; /* Agrega un pequeño espacio alrededor del logo secundario */
+    position: absolute; /* Posiciona el logo de forma absoluta dentro de su contenedor */
+    min-width: 6%; /* Define un tamaño mínimo del 6% del ancho del contenedor */
+    max-width: 6%; /* Define un tamaño máximo del 6% del ancho del contenedor */
+    opacity: 0;  /* Inicialmente, el logo está oculto */
+    visibility: hidden; /* Asegura que el logo no sea visible hasta que se active */
+    transform: translateY(-5px); /* Mueve el logo 5px hacia arriba para una animación sutil */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Suaviza la transición de aparición */
 }
 
 #logo-secundario img {
-    width: 100%;
+    width: 100%; /* Asegura que la imagen del logo ocupe todo el ancho del contenedor */
 }
 
 #logo-secundario.visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+    opacity: 1; /* Hace visible el logo cuando se activa */
+    visibility: visible; /* Asegura que el logo sea visible */
+    transform: translateY(0); /* Devuelve el logo a su posición original */
 }
 
 #navbar {
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; /* Agrega una transición suave a cualquier cambio en la barra de navegación */
 }
 
-.dropdown{
-    position: static;
-    padding-bottom: 10px;
+.dropdown {
+    position: static; /* Mantiene el dropdown en su posición natural dentro del flujo del documento */
+    padding-bottom: 10px; /* Agrega espacio debajo del dropdown */
 }
 
 .no-dropdown {
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.5rem; /* Espacio más pequeño para elementos sin menú desplegable */
 }
 
 .submenu {
-    position: absolute; /* Se mantiene dentro del navbar */
-    left: 0;
-    width: 100%;
-    max-width: 100%;
-    padding: 2rem 25% 3rem 25%;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-    background-color: rgb(250, 249, 248);
-    z-index: 100;
-    display:grid;
-    row-gap: 1.5rem;
-    grid-template-columns: repeat(3, 1fr);
-    opacity: 0;
-    transform: translateY(-5px);
-    visibility: hidden;
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    position: absolute; /* Permite que el menú desplegable se coloque sobre otros elementos */
+    left: 0; /* Alinea el menú desplegable a la izquierda */
+    width: 100%; /* Hace que ocupe todo el ancho disponible */
+    max-width: 100%; /* Evita que se extienda más del 100% */
+    padding: 2rem 25% 3rem 25%; /* Añade espacio interno al menú desplegable */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Agrega una sombra sutil para resaltar el menú */
+    background-color: rgb(250, 249, 248); /* Define un color de fondo claro */
+    z-index: 100; /* Asegura que el menú desplegable se muestre por encima de otros elementos */
+    display: grid; /* Usa un sistema de cuadrícula para organizar los elementos del menú */
+    row-gap: 1.5rem; /* Agrega un espacio entre las filas del menú */
+    grid-template-columns: repeat(3, 1fr); /* Divide el menú en tres columnas iguales */
+    opacity: 0; /* Inicialmente, el menú está oculto */
+    transform: translateY(-5px); /* Mueve el menú ligeramente hacia arriba para una animación suave */
+    visibility: hidden; /* Oculta el menú hasta que se active */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Agrega una transición fluida al aparecer */
 }
 
 .submenu > li {
-    justify-content: center;
-    width: 30%;
+    justify-content: center; /* Centra los elementos del menú */
+    width: 30%; /* Define un ancho específico para los elementos */
 }
 
 .submenu li a {
-    font-weight: normal;
-    width: 10px;
+    font-weight: normal; /* Define un peso de fuente estándar */
+    width: 10px; /* Establece un ancho muy pequeño (posible error, podrías necesitar "min-width") */
 }
 
 #sale {
-    color: var(--color-sale);
-    font-weight: bold;
-    text-decoration: wavy;
+    color: var(--color-sale); /* Aplica un color personalizado utilizando una variable CSS */
+    font-weight: bold; /* Hace que el texto sea más grueso */
+    text-decoration: wavy; /* Aplica una decoración de texto con estilo ondulado */
 }
 
 .nav-links {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
-    width: 100%;
-    padding: 1em 0;
-    justify-content: center;
-    align-items: center;
-    gap: 4rem;
+    display: flex; /* Usa flexbox para organizar los elementos en una fila */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten si no caben en una sola línea */
+    margin: 0; /* Elimina el margen predeterminado */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    padding: 1em 0; /* Agrega un espacio arriba y abajo */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    gap: 4rem; /* Agrega un espacio de 4rem entre los elementos */
 }
 
 .nav-links li {
-    font-size: 15px;
-    font-weight:bolder;
+    font-size: 15px; /* Tamaño de la fuente */
+    font-weight: bolder; /* Aplica un peso de fuente más grueso */
 }
 
 .nav-links li:hover {
-    text-decoration: underline;
-    text-underline-offset: 10px; /* Espacio entre la línea y el texto */
+    text-decoration: underline; /* Subraya el texto cuando el cursor está sobre él */
+    text-underline-offset: 10px; /* Define la distancia entre el subrayado y el texto */
 }
 
 .dropdown:hover .submenu {
-    opacity: 1;
-    transform: translateY(10px);
-    visibility: visible;
+    opacity: 1; /* Hace que el menú sea completamente visible al pasar el cursor */
+    transform: translateY(10px); /* Mueve el menú 10px hacia abajo para un efecto de desplazamiento */
+    visibility: visible; /* Asegura que el menú sea visible */
  }
 
-.submenu li:hover{
-    opacity: 0.5;
-    text-decoration: none;
+.submenu li:hover {
+    opacity: 0.5; /* Reduce la opacidad del elemento al pasar el cursor sobre él */
+    text-decoration: none; /* Elimina cualquier subrayado */
 }
 
 
 /* SECCION DE SALES */
 .container-sales {
-    width: 100%;
+    width: 100%; /* Ancho completo */
 }
 
+/* Sección de productos en oferta */
 .sales {
-    margin: 0 6rem 3rem 6rem;
-    padding: 1rem 3rem;
-    max-width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    justify-items: center;
+    margin: 0 6rem 3rem 6rem; /* Margen alrededor del contenedor de ofertas */
+    padding: 1rem 3rem; /* Espaciado interno */
+    max-width: 100%; /* Ancho máximo */
+    display: grid; /* Uso de CSS Grid para organizar elementos */
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
+    gap: 2rem; /* Espaciado entre los elementos */
+    justify-items: center; /* Centrar elementos en la cuadrícula */
 }
 
+/* Imagen de ventas destacadas */
 .hotsales {
-    width: 100%;
+    width: 100%; /* La imagen ocupa todo el ancho del contenedor */
 }
 
+/* Contenedor del porcentaje de descuento */
 .percentage-product {
-    width: 100%;
+    width: 100%; /* Ocupa todo el ancho disponible */
 }
 
+/* Estilo de la etiqueta de descuento */
 .percentage {
-    position: absolute;
-    z-index: 1;
-    margin-top: 10px;
-    margin-left: 10px;
-    width:fit-content;
-    font-weight: bold;
-    border-radius: 3px;
-    padding: .3125rem .4375rem;
-    background-color: #ff2929c4;
-    color: white;
-    text-align: center;
+    position: absolute; /* Se posiciona sobre la imagen */
+    z-index: 1; /* Asegura que esté por encima de otros elementos */
+    margin-top: 10px; /* Espaciado superior */
+    margin-left: 10px; /* Espaciado izquierdo */
+    width: fit-content; /* Se ajusta al contenido */
+    font-weight: bold; /* Texto en negrita */
+    border-radius: 3px; /* Bordes redondeados */
+    padding: .3125rem .4375rem; /* Espaciado interno */
+    background-color: #ff2929c4; /* Color de fondo rojo semitransparente */
+    color: white; /* Texto en color blanco */
+    text-align: center; /* Texto centrado */
 }
 
+/* Contenedor de producto */
 .product {
-    position: relative;
-    width: 100%;
-    height: 25vw;
+    position: relative; /* Posicionamiento relativo */
+    width: 100%; /* Ancho completo */
+    height: 25vw; /* Altura en función del ancho de la ventana */
 }
 
+/* Imagen principal del producto */
 .product img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 2px;
-    transition: opacity 0.3s ease;
+    position: absolute; /* Se superpone al contenedor */
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    object-fit: cover; /* La imagen se ajusta sin distorsión */
+    border-radius: 2px; /* Bordes ligeramente redondeados */
+    transition: opacity 0.3s ease; /* Transición suave para efectos de hover */
 }
 
+/* Imagen secundaria (hover) */
 .product .img-hover {
-  opacity: 0;
+    opacity: 0; /* Inicialmente oculta */
 }
 
+/* Efecto hover: muestra la imagen secundaria */
 .product:hover .img-hover {
-  opacity: 1;
+    opacity: 1;
 }
 
+/* Efecto hover: oculta la imagen normal */
 .product:hover .img-normal {
-  opacity: 0;
+    opacity: 0;
 }
 
+/* Indicador de stock */
 .stock {
-    position: absolute;
-    width: fit-content;
-    color: black;
-    background-color: var(--fondo-stock);
-    font-size: clamp(5px, 1vw, 10px);
-    padding: 2px 4px;
-    margin-top: 4px;
-    font-weight: bolder;
+    position: absolute; /* Se superpone al producto */
+    width: fit-content; /* Ajusta su tamaño al contenido */
+    color: black; /* Texto en negro */
+    background-color: var(--fondo-stock); /* Color de fondo dinámico */
+    font-size: clamp(5px, 1vw, 10px); /* Tamaño de fuente adaptable */
+    padding: 2px 4px; /* Espaciado interno */
+    margin-top: 4px; /* Margen superior */
+    font-weight: bolder; /* Texto en negrita */
 }
 
-.product-title{
-    margin-top: 2rem;
-    font-size: clamp(9px, 1vw, 16px);
+/* Título del producto */
+.product-title {
+    margin-top: 2rem; /* Margen superior */
+    font-size: clamp(9px, 1vw, 16px); /* Tamaño adaptable */
 }
 
+/* Precio con descuento */
 .price-discount {
-    font-size: clamp(10px, 2vw, 16px);
-    color: var(--color-sale);
-    font-weight:700;
-    margin: 1rem 0.5rem 1rem 0;
+    font-size: clamp(10px, 2vw, 16px); /* Tamaño adaptable */
+    color: var(--color-sale); /* Color de descuento */
+    font-weight: 700; /* Texto en negrita */
+    margin: 1rem 0.5rem 1rem 0; /* Margen alrededor */
 }
 
+/* Precio regular tachado */
 .regular-price {
-    font-size: clamp(9px, 1vw, 13px);
-    text-decoration: line-through;
-    font-style: italic;
-    margin: 1rem 0.5rem 1rem 0;
+    font-size: clamp(9px, 1vw, 13px); /* Tamaño adaptable */
+    text-decoration: line-through; /* Texto tachado */
+    font-style: italic; /* Estilo en cursiva */
+    margin: 1rem 0.5rem 1rem 0; /* Margen alrededor */
 }
 
+/* Precio regular en catálogo */
 .regular-price-catalogo {
-    font-size: clamp(9px, 1vw, 16px);
-    font-weight: 700;
-    margin: 1rem 0.5rem 1rem 0;
+    font-size: clamp(9px, 1vw, 16px); /* Tamaño adaptable */
+    font-weight: 700; /* Texto en negrita */
+    margin: 1rem 0.5rem 1rem 0; /* Margen alrededor */
 }
 
+/* Contenedor de tallas */
 .addCart-size {
-    display: block;
+    display: block; /* Se muestra como bloque */
 }
 
 .size {
-    display:block;
+    display: block; /* Se muestra como bloque */
 }
 
+/* Lista de tallas */
 .list-size {
-    display: flex;
-    justify-content: center;
-    margin: 5px auto;
+    display: flex; /* Distribuye los elementos horizontalmente */
+    justify-content: center; /* Centra las tallas */
+    margin: 5px auto; /* Margen automático */
 }
 
+/* Botón de talla */
 .size-letter {
-    font-size: clamp(9px, 1.5vw, 16px);
-    display: inline-block;
-    padding: 0 5px;
-    margin: 5px 10px;
-    border: #333c333a solid 0.5px;
-    cursor: pointer;
+    font-size: clamp(9px, 1.5vw, 16px); /* Tamaño adaptable */
+    display: inline-block; /* Se mantiene en línea */
+    padding: 0 5px; /* Espaciado interno */
+    margin: 5px 10px; /* Margen alrededor */
+    border: #333c333a solid 0.5px; /* Borde gris */
+    cursor: pointer; /* Cursor de puntero */
 }
 
+/* Estilo para talla seleccionada */
 .size-letter.selected {
-    background-color: var(--tono-azul);
-    color: var(--primario-color);
-  }
-
-.add-to-cart {
-    font-size: clamp(9px, 1vw, 16px);
-    display: block;
-    width: 100%;
-    padding: 7px 0;
-    border: #333 solid 1.5px;
-    transition: background-color 0.3s ease;
+    background-color: var(--tono-azul); /* Color de fondo dinámico */
+    color: var(--primario-color); /* Color de texto dinámico */
 }
 
+/* Botón de agregar al carrito */
+.add-to-cart {
+    font-size: clamp(9px, 1vw, 16px); /* Tamaño adaptable */
+    display: block; /* Se muestra como bloque */
+    width: 100%; /* Ocupa todo el ancho */
+    padding: 7px 0; /* Espaciado interno */
+    border: #333 solid 1.5px; /* Borde oscuro */
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+/* Efecto hover en el botón de agregar al carrito */
 .add-to-cart:hover {
-    background-color: var(--tono-azul);
-    color: var(--primario-color);
-    border: var(--tono-azul) solid 1.5px;  
-} 
+    background-color: var(--tono-azul); /* Cambio de fondo */
+    color: var(--primario-color); /* Cambio de color de texto */
+    border: var(--tono-azul) solid 1.5px; /* Cambio de borde */
+}
+
 
 /* Aviso de Cookies */
 .cookie-banner {
@@ -501,8 +521,7 @@ nav {
     text-align: center; /* Centra el texto */
 }
 
-/* Formulario de suscripción */
-.fila-formulario {
+.fila-formulario { /* Estilos de la fila del formulario */
     display: flex; /* Usa flexbox para alinear los elementos en fila */
     justify-content: center; /* Centra los elementos horizontalmente */
     align-items: center; /* Centra los elementos verticalmente */
@@ -512,12 +531,12 @@ nav {
     margin: auto; /* Centra el formulario horizontalmente */
 }
 
-.contenedor-email {
+.contenedor-email { /* Contenedor del campo de entrada de email */
     flex: 1; /* Hace que el contenedor del email ocupe el espacio disponible */
     min-width: 250px; /* Define un ancho mínimo para evitar que el campo sea demasiado pequeño */
 }
 
-.campo-email {
+.campo-email { /* Estilos del campo de entrada de email */
     padding: 10px; /* Agrega espacio interno para mejorar la apariencia */
     width: 100%; /* Ocupa todo el ancho disponible dentro de su contenedor */
     border: 1px solid var(--secondario-color); /* Agrega un borde con el color secundario definido en variables */
@@ -525,12 +544,11 @@ nav {
     font-size: 16px; /* Ajusta el tamaño del texto */
 }
 
-/* Botón de envío */
-.contenedor-boton {
+.contenedor-boton { /* Contenedor del botón de envío */
     min-width: 120px; /* Define un ancho mínimo para el contenedor del botón */
 }
 
-.boton-enviar {
+.boton-enviar { /* Estilos del botón de envío */
     width: 100%; /* Hace que el botón ocupe todo el ancho disponible */
     padding: 10px; /* Agrega espacio interno para mejorar la apariencia */
     background-color: var(--tono-azul); /* Define el color de fondo del botón usando una variable */
@@ -540,24 +558,23 @@ nav {
     font-weight: bold; /* Hace que el texto sea más grueso */
 }
 
-.boton-enviar:hover {
+.boton-enviar:hover { /* Efecto hover en el botón de envío */
     background-color: var(--terciario-color); /* Cambia el color de fondo cuando el usuario pasa el mouse */
     color: white; /* Mantiene el texto en blanco */
 }
 
-/* Aviso legal */
-.mensaje-legal {
+.mensaje-legal { /* Estilos del mensaje legal */
     font-size: 10px; /* Reduce el tamaño del texto */
     color: var(--terciario-color); /* Usa el color terciario definido en variables */
     margin-top: 15px; /* Agrega un margen superior para separar del resto del contenido */
 }
 
-.politica-datos {
+.politica-datos { /* Estilos del enlace de la política de datos */
     text-decoration: none; /* Elimina el subrayado del enlace */
     color: var(--tono-azul); /* Usa el color azul definido en variables */
 }
 
-.politica-datos:hover {
+.politica-datos:hover { /* Efecto hover en el enlace de la política de datos */
     text-decoration: underline; /* Subraya el enlace cuando el usuario pasa el mouse */
 }
 
@@ -574,20 +591,20 @@ nav {
     transition: transform 0.3s ease-in-out, right 0.3s ease-in-out, bottom 0.3s ease-in-out; /* Agrega una transición suave a los cambios de tamaño y posición */
 }
 
-.boton-whatsapp a {
+.boton-whatsapp a { /* Estilos del enlace del botón de WhatsApp */
     display: flex; /* Usa flexbox para alinear los elementos internos */
     flex-direction: row; /* Alinea los elementos en una fila */
     align-items: center; /* Centra verticalmente los elementos dentro del enlace */
 }
 
-.boton-whatsapp h4 {
+.boton-whatsapp h4 { /* Estilos del texto del botón de WhatsApp */
     color: var(--tono-azul); /* Usa una variable CSS para definir el color del texto */
     font-size: 14px; /* Define el tamaño de la fuente en 14px */
     font-weight: bold; /* Hace que el texto sea negrita */
     margin: 0; /* Elimina cualquier margen predeterminado del h4 */
 }
 
-.boton-whatsapp.zoom {
+.boton-whatsapp.zoom { /* Efecto de zoom en el botón de WhatsApp */
     transform: scale(1.5); /* Agranda el botón al 150% de su tamaño original */
     right: 4vw; /* Mueve el botón hacia la izquierda en función del ancho de la ventana */
     bottom: 3vw; /* Mueve el botón hacia arriba en función del ancho de la ventana */
@@ -603,8 +620,7 @@ footer {
     font-family: "Raleway", sans-serif; /* Fuente utilizada */
 }
 
-/* Contenedor principal del footer */
-.contenedor-footer {
+.contenedor-footer { /* Contenedor principal del footer */
     display: flex; /* Usa flexbox para organizar los elementos */
     flex-direction: column; /* Alinea los elementos en columna */
     align-items: center; /* Centra los elementos horizontalmente */
@@ -613,13 +629,12 @@ footer {
     justify-content: center; /* Alinea los elementos en el centro */
 }
 
-/* Logo */
-.logo img {
+.logo img { /* Estilos del logo */
     width: 150px; /* Ancho fijo del logo */
     margin-bottom: 10px; /* Espaciado inferior */
 }
 
-.logo p {
+.logo p { /* Estilos del texto del logo */
     font-size: 16px; /* Tamaño de la fuente */
     font-weight: bold; /* Texto en negrita */
     margin-bottom: 0px; /* Sin margen inferior */
@@ -630,21 +645,14 @@ footer {
     margin-bottom: 10px; /* Espaciado inferior */
 }
 
-.logo h5, .redes h5 {
-    font-size: 18px; /* Tamaño de fuente */
-    font-weight: bold; /* Negrita */
-    margin-bottom: 10px; /* Espaciado inferior */
-}
-
-/* Iconos de redes sociales */
-.redes-sociales a {
+.redes-sociales a { /* Estilos de los enlaces de las redes sociales */
     color: var(--primario-color); /* Color de los iconos */
     font-size: 20px; /* Tamaño de los iconos */
     margin: 0 10px; /* Espaciado horizontal */
     transition: color 0.3s; /* Efecto de transición en el color */
 }
 
-.redes-sociales a:hover {
+.redes-sociales a:hover { /* Efecto hover en los iconos de las redes sociales*/
     color: var(--primario-color); /* Color al pasar el mouse (mantiene el mismo color) */
 }
 
@@ -659,17 +667,17 @@ footer {
     align-items: center; /* Centra verticalmente los elementos */
 }
 
-.empresa, .envios, .comercio_aliados {
+.empresa, .envios, .comercio_aliados { /* Estilos de las secciones del footer*/
     text-align: left; /* Alinea el texto a la izquierda */
     width: 19%; /* Cada sección ocupa el 19% del ancho */
     transition: transform 0.3s ease-in-out; /* Efecto de transición en la transformación */
 }
 
-.comercio_aliados.zoom {
+.comercio_aliados.zoom { /* Efecto de zoom en la sección Comercio Aliados */
     transform: scale(1.2); /* Aumenta el tamaño de la sección Comercio Aliados */
 }
 
-.empresa h4, .envios h4, .comercio_aliados h4 {
+.empresa h4, .envios h4, .comercio_aliados h4 { /* Títulos de las secciones */
     font-size: 17px; /* Tamaño de fuente */
     font-weight: bold; /* Negrita */
     margin-bottom: 10px; /* Espaciado inferior */

@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-const sizeContainers = document.querySelectorAll('.size');
+const sizeContainers = document.querySelectorAll('.size'); 
 
 sizeContainers.forEach((sizeContainer) => {
     const sizeLetters = sizeContainer.querySelectorAll('.size-letter');

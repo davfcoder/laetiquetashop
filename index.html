@@ -1,21 +1,17 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es"> <!-- Define el idioma de la página -->
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>La Etiqueta</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://kit.fontawesome.com/YOUR-FONT-AWESOME-KEY.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="styles.css"> <!-- Enlaza el archivo CSS externo -->
-  <link rel="stylesheet" href="carrito.css">
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script> <!-- Script para Google reCAPTCHA -->
-  <link rel="icon" href="favicon/favicon.png">
-</head>
-
+  <meta charset="UTF-8"> <!-- Define la codificación de caracteres como UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que la página sea responsive -->
+  <title>La Etiqueta</title> <!-- Título de la página en la pestaña del navegador -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"> <!-- Importa el CSS de Bootstrap (BOOTSTRAP) -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> <!-- Importa la fuente Raleway desde Google Fonts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> <!-- Importa los scripts de Bootstrap (BOOTSTRAP) -->
+  <script src="https://kit.fontawesome.com/YOUR-FONT-AWESOME-KEY.js" crossorigin="anonymous"></script> <!-- Importa FontAwesome para iconos -->
+  <link rel="stylesheet" href="styles.css"> <!-- Enlaza el archivo CSS externo principal -->
+  <link rel="stylesheet" href="carrito.css"> <!-- Enlaza el archivo CSS específico para el carrito -->
+  <link rel="icon" href="favicon/favicon.png"> <!-- Define el ícono de la pestaña del navegador -->
+</head> 
 <body>
 
 <!-- Aviso de Cookies -->
@@ -27,32 +23,30 @@
 </div>
 
 <!-- Seccion del navbar-->
-<header>
-  <div class="header-message">
+<header>  <!-- Encabezado de la página -->
+  <div class="header-message"> <!-- Mensaje de envío gratis -->
     <div class="message-text">ENVÍO GRATIS a toda Colombia por compras superiores a $150.000 | Tiempo de envío: 3 a 7 días hábiles</div>
   </div>
-  <div class="header-top">
-    <div class="header-top-menu" id="left-empty"></div> 
-    <!-- Espacio vacio para alineado a la izquierda -->
-    <div id="logo-principal" class="header-top-menu">
-      <!-- Sección para el logo alineado al centro -->
+  <div class="header-top"> <!-- Sección superior del encabezado -->
+    <div class="header-top-menu" id="left-empty"></div> <!-- Espacio vacio para alineado a la izquierda -->
+    <div id="logo-principal" class="header-top-menu">  <!-- Sección para el logo alineado al centro -->
       <img src="./assets/logo-horizontal.png" alt="Logo oficial de La Etiqueta Shop">
     </div>
-    <div id="menu-right" class="header-top-menu">
-      <div class="justify-bottoms">
+    <div id="menu-right" class="header-top-menu">  <!-- Sección para elementos alineados a la derecha -->
+      <div class="justify-bottoms"> <!-- Contenedor de elementos alineados a la derecha -->
         <div id="search-bottom" class="right-bottoms">
           <a href="#">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-search"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
             <span class="left-title">Buscar</span>
           </a>
         </div>
-        <div id="login-bottom" class="right-bottoms">
-          <a href="#">
+        <div id="login-bottom" class="right-bottoms"> <!-- Contenedor de elementos alineados a la derecha -->
+          <a href="#"> <!-- Enlace para iniciar sesión -->
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-user"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg>
-            <span class="left-title">Iniciar Sesión</span>
+            <span class="left-title">Iniciar Sesión</span>  <!-- Texto de enlace -->
           </a>
         </div>
-        <div id="shopping-bag-bottom" class="right-bottoms">
+        <div id="shopping-bag-bottom" class="right-bottoms"> <!-- Contenedor de elementos alineados a la derecha -->
           <a href="#">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-bag"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6.331 8h11.339a2 2 0 0 1 1.977 2.304l-1.255 8.152a3 3 0 0 1 -2.966 2.544h-6.852a3 3 0 0 1 -2.965 -2.544l-1.255 -8.152a2 2 0 0 1 1.977 -2.304z" /><path d="M9 11v-5a3 3 0 0 1 6 0v5" /></svg>
             <span class="right-title">Bolsa</span>
@@ -61,44 +55,44 @@
       </div>
     </div>
   </div>
-    <nav id="navbar">
-      <div id="logo-secundario">
+    <nav id="navbar">   <!-- Menú de navegación principal -->
+      <div id="logo-secundario"> <!-- Logo pequeño de la tienda -->
         <img src="./favicon/favicon.png" alt="Logo pequeño de La Etiqueta Shop">
       </div>
-      <ul class="nav-links">
-        <li class="dropdown">
+      <ul class="nav-links">  <!-- Lista de enlaces del menú -->
+        <li class="dropdown"> <!-- Elemento de menú con submenú -->
           <a href="#">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-rosette-discount"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 15l6 -6" /><circle cx="9.5" cy="9.5" r=".5" fill="currentColor" /><circle cx="14.5" cy="14.5" r=".5" fill="currentColor" /><path d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7a2.2 2.2 0 0 0 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1a2.2 2.2 0 0 0 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1" /></svg>
             <span>SALE</span>
             <svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg>
           </a>
-          <ul class="submenu">
-            <li><a href=""><span id="sale">Hasta 50% OFF</span></a></li>
-            <li><a href="">Ropa de mujer</a></li>
-            <li><a href="">Ropa de hombre</a></li>
-            <li><a href="">Ropa de niños</a></li>
-            <li><a href="">Ver todo</a></li>
+          <ul class="submenu"> <!-- Submenú de la categoría SALE -->
+            <li><a href=""><span id="sale">Hasta 50% OFF</span></a></li> <!-- Enlace de submenú -->
+            <li><a href="">Ropa de mujer</a></li> <!-- Enlace de submenú -->
+            <li><a href="">Ropa de hombre</a></li>  <!-- Enlace de submenú -->
+            <li><a href="">Ropa de niños</a></li> <!-- Enlace de submenú -->
+            <li><a href="">Ver todo</a></li> <!-- Enlace de submenú -->
           </ul>
         </li>
         <li class="dropdown">
           <a href="#">
-            <span>Hombre</span>
+            <span>Hombre</span>   <!-- Texto de enlace -->
             <svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg>
           </a>
-          <ul class="submenu">
-            <li><a href="">Polos</a></li>
+          <ul class="submenu"> <!-- Submenú de la categoría Hombre -->
+            <li><a href="">Polos</a></li> <!-- Enlace de submenú -->
             <li><a href="">Camisas y camisetas</a></li>
             <li><a href="">Pantalones</a></li>
-            <li><a href="">Bermudas</a></li>
+            <li><a href="">Bermudas</a></li> <!-- Enlace de submenú -->
             <li><a href="">Ver todo</a></li>
           </ul>
         </li>
-        <li class="dropdown">
+        <li class="dropdown"> <!-- Elemento de menú con submenú -->
           <a href="#">
-            <span>Mujer</span>
+            <span>Mujer</span> <!-- Texto de enlace -->
             <svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg>
           </a>
-          <ul class="submenu">
+          <ul class="submenu"> <!-- Submenú de la categoría Mujer -->
             <li><a href="">Camisas y blusas</a></li>
             <li><a href="">Vestidos</a></li>
             <li><a href="">Faldas</a></li>
@@ -107,22 +101,22 @@
           </ul>
         </li>
   
-        <li class="dropdown">
+        <li class="dropdown"> <!-- Elemento de menú con submenú -->
           <a href="">
-            <span>Accesorios</span>
+            <span>Accesorios</span>   <!-- Texto de enlace -->
             <svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg>
           </a>
           <ul class="submenu">
-            <li><a href="">Gorras</a></li>
+            <li><a href="">Gorras</a></li> <!-- Enlace de submenú -->
             <li><a href="">Bolsos</a></li>
             <li><a href="">Carteras</a></li>
             <li><a href="">Cinturones</a></li>
             <li><a href="">Gafas</a></li>
           </ul>
         </li>
-        <li class="no-dropdown"><a href="#">Aliados</a></li>
-        <li class="no-dropdown"><a href="#">Nosotros</a></li>
-        <li class="no-dropdown" id="btn-contacto"><a href="">Contáctanos</a></li>
+        <li class="no-dropdown"><a href="#">Aliados</a></li>  <!-- Enlace de menú -->
+        <li class="no-dropdown"><a href="#">Nosotros</a></li> <!-- Enlace de menú -->
+        <li class="no-dropdown" id="btn-contacto"><a href="">Contáctanos</a></li> <!-- Enlace de menú -->
       </ul>
     </nav>
   </header>
@@ -180,15 +174,19 @@
         - "carousel-control-next-icon": Clase de Bootstrap para el ícono de navegación derecha. -->
     </button>
   </div>
+
   <!-- Sección de ofertas de todas las categorías (mujer, hombre, niño) -->
   <section class="container-sales">
     <!-- Sección de ofertas de mujer -->
+     <!-- Blockquote es una etiqueta en HTML utilizada para representar una cita en bloque, es decir, 
+  un fragmento de texto citado de otra fuente. Visualmente, los navegadores suelen aplicar sangría 
+  y un estilo distintivo a este elemento para diferenciarlo del resto del contenido. -->
     <blockquote class="blockquote text-center">
       <h3>PRENDAS EN OFERTA
-        <small class="text-muted"><h6>Para damas</h6></small>
+        <small class="text-muted"><h6>Para damas</h6></small> <!-- Subtítulo con el hashtag promocional -->
       </h3>
     </blockquote>
-    <article class="sales" id="sales-mujer">
+    <article class="sales" id="sales-mujer"> <!-- Contenedor de las ofertas para mujer -->
       <div class="hotsales" id="hs-mujer1"> <!-- Contenedor de las ofertas -->
         <div class="percentage-product"> <!-- Contenedor del porcentaje y el producto -->
           <div class="percentage">50%</div> <!-- Etiqueta de porcentaje de descuento -->
@@ -205,8 +203,8 @@
             <div class="size"> <!-- Contenedor de tallas -->
               <ul class="list-size"> <!-- Lista de tallas disponibles -->
                 <li class="size-letter selected">S</li> <!-- Talla "S" seleccionada predefinida -->
-                <li class="size-letter">M</li>
-                <li class="size-letter">L</li>
+                <li class="size-letter">M</li> <!-- Talla "M" -->
+                <li class="size-letter">L</li> <!-- Talla "L" -->
               </ul>
             </div>
             <button class="add-to-cart">Agregar al carrito</button> <!-- Botón de agregar al carrito -->
@@ -215,53 +213,53 @@
         </div>
       </div>
       <!-- La estructura es la misma en el resto de productos en las secciones de ofertas para mujer, hombre y niño -->
-      <div class="hotsales" id="hs-mujer2">
-        <div class="percentage-product">
-          <div class="percentage">40%</div>
-          <div class="product">
+      <div class="hotsales" id="hs-mujer2"> <!-- Contenedor de las ofertas -->
+        <div class="percentage-product"> <!-- Contenedor del porcentaje y el producto -->
+          <div class="percentage">40%</div> <!-- Etiqueta de porcentaje de descuento -->
+          <div class="product"> <!-- Contenedor de producto -->
             <img src="./sales/foto-mujer2a.jpg" alt="Foto principal de mujer 2a">
           </div>
-          <div class="stock">¡Últimas unidades disponibles!</div>
+          <div class="stock">¡Últimas unidades disponibles!</div> <!-- Etiqueta de stock -->
         </div>
-        <div class="info-product">
+        <div class="info-product"> <!-- Contenedor de información del producto -->
           <h2 class="product-title">Camiseta blanca con estampado para mujer</h2>
-          <span class="price-discount">$54.000</span>
-          <span class="regular-price">$90.000</span>
-          <div class="addCart-size">
-            <div class="size">
-              <ul class="list-size">
-                <li class="size-letter selected">XS</li>
-                <li class="size-letter">S</li>
-                <li class="size-letter">M</li>
+          <span class="price-discount">$54.000</span> <!-- Precio con descuento -->
+          <span class="regular-price">$90.000</span> <!-- Precio regular -->
+          <div class="addCart-size"> <!-- Contenedor de botón de agregar al carrito y tallas -->
+            <div class="size"> <!-- Contenedor de tallas -->
+              <ul class="list-size"> <!-- Lista de tallas disponibles -->
+                <li class="size-letter selected">XS</li> <!-- Talla "XS" seleccionada predefinida -->
+                <li class="size-letter">S</li> <!-- Talla "S" -->
+                <li class="size-letter">M</li> <!-- Talla "M" -->
               </ul>
             </div>
-            <button class="add-to-cart">Agregar al carrito</button>
-            <input type="hidden" name="id-product-m1" id="addCartProduct">
+            <button class="add-to-cart">Agregar al carrito</button> <!-- Botón de agregar al carrito -->
+            <input type="hidden" name="id-product-m1" id="addCartProduct"> <!-- Campo oculto para almacenar el ID del producto -->
           </div>
         </div>
       </div>
-      <div class="hotsales" id="hs-mujer3">
-        <div class="percentage-product">
-          <div class="percentage">30%</div>
-          <div class="product">
+      <div class="hotsales" id="hs-mujer3"> <!-- Contenedor de las ofertas -->
+        <div class="percentage-product">  <!-- Contenedor del porcentaje y el producto -->
+          <div class="percentage">30%</div> <!-- Etiqueta de porcentaje de descuento -->
+          <div class="product"> <!-- Contenedor de producto -->
             <img src="./sales/foto-mujer3b.jpeg" alt="Foto principal de mujer 1a">
           </div>
-          <div class="no-stock"></div>
+          <div class="no-stock"></div> <!-- Etiqueta de stock -->
         </div>
-        <div class="info-product">
-          <h2 class="product-title">Camiseta negra con estampado para mujer</h2>
-          <span class="price-discount">$63.000</span>
-          <span class="regular-price">$90.000</span>
-          <div class="addCart-size">
-            <div class="size">
-              <ul class="list-size">
-                <li class="size-letter selected">S</li>
-                <li class="size-letter">M</li>
-                <li class="size-letter">L</li>
+        <div class="info-product"> <!-- Contenedor de información del producto -->
+          <h2 class="product-title">Camiseta negra con estampado para mujer</h2>  <!-- Título del producto -->
+          <span class="price-discount">$63.000</span>   <!-- Precio con descuento -->
+          <span class="regular-price">$90.000</span> <!-- Precio regular -->
+          <div class="addCart-size"> <!-- Contenedor de botón de agregar al carrito y tallas -->
+            <div class="size"> <!-- Contenedor de tallas -->
+              <ul class="list-size"> <!-- Lista de tallas disponibles -->
+                <li class="size-letter selected">S</li> <!-- Talla "S" seleccionada predefinida -->
+                <li class="size-letter">M</li> <!-- Talla "M" -->
+                <li class="size-letter">L</li> <!-- Talla "L" -->
               </ul>
             </div>
-            <button class="add-to-cart">Agregar al carrito</button>
-            <input type="hidden" name="id-product-m1" id="addCartProduct">
+            <button class="add-to-cart">Agregar al carrito</button> <!-- Botón de agregar al carrito -->
+            <input type="hidden" name="id-product-m1" id="addCartProduct"> <!-- Campo oculto para almacenar el ID del producto -->
           </div>
         </div>
       </div>
@@ -269,10 +267,10 @@
     <!-- Sección de ofertas de hombre -->
     <blockquote class="blockquote text-center">
       <h3>PRENDAS EN OFERTA
-        <small class="text-muted"><h6>Para caballeros</h6></small>
+        <small class="text-muted"><h6>Para caballeros</h6></small> <!-- Subtítulo con el hashtag promocional -->
       </h3>
-    </blockquote>
-    <article class="sales" id="sales-hombre">
+    </blockquote> <!-- Cita en bloque con el título de la sección -->
+    <article class="sales" id="sales-hombre"> <!-- Contenedor de las ofertas para hombre -->
       <div class="hotsales" id="hs-hombre1">
         <div class="percentage-product">
           <div class="percentage">45%</div>
@@ -351,12 +349,12 @@
     </article>
 
     <!-- Sección de ofertas de niño -->
-    <blockquote class="blockquote text-center">
+    <blockquote class="blockquote text-center"> <!-- Cita en bloque con el título de la sección -->
       <h3>PRENDAS EN OFERTA
         <small class="text-muted"><h6>Para niños y niñas</h6></small>
       </h3>
     </blockquote>
-    <article class="sales" id="sales-niño">
+    <article class="sales" id="sales-niño"> <!-- Contenedor de las ofertas para niños -->
       <div class="hotsales" id="hs-niño1">
         <div class="percentage-product">
           <div class="percentage">45%</div>
@@ -434,15 +432,13 @@
       </div>
     </article>
 
-    
 
-
-    <blockquote class="blockquote text-center">
+    <blockquote class="blockquote text-center"> <!-- Cita en bloque con alineación centrada -->
       <h3>ACCESORIOS
         <small class="text-muted"><h6>¡Complementa tu look!</h6></small>
       </h3>
     </blockquote>
-    <article class="sales" id="sales-accesorios">
+    <article class="sales" id="sales-accesorios"> <!-- Contenedor de las ofertas de accesorios -->  
       <div class="hotsales" id="accesorio1">
         <div class="percentage-product">
           <div class="percentage">45%</div>
@@ -493,37 +489,41 @@
   </section>
 
 
+  <!-- Cita en bloque con alineación centrada -->
+<blockquote class="blockquote text-center"> <!-- Usa la clase 'blockquote' de Bootstrap para estilizar la cita y 'text-center' para centrar el contenido -->
+  <h1>COMPRA LA NUEVA COLECCIÓN <!-- Encabezado principal -->
+    <small class="text-muted"> <!-- Clase de Bootstrap 'text-muted' para dar un tono más suave al texto -->
+      <h6>#Calidad y Exclusividad</h6> <!-- Subtítulo con el hashtag promocional -->
+    </small>
+  </h1>
+</blockquote>
 
-  
-
-
-  <blockquote class="blockquote text-center">
-    <h1>COMPRA LA NUEVA COLECCION
-      <small class="text-muted"><h6>#Calidad y Exclusividad</h6></small>
-    </h1>
-  </blockquote>
-  <div class="gallery">
-    <div class="image-container">
-        <img src="./assets/imagen1.jpg" alt="articulo 1">
-        <img src="./assets/imagen2.jpg" alt="articulo 2">
-        <img src="./assets/imagen3.jpg" alt="articulo 3">
-        <img src="./assets/imagen4.jpg" alt="articulo 4">
-        <img src="./assets/imagen5.jpg" alt="articulo 5">
-        <img src="./assets/imagen6.jpg" alt="articulo 6">
-        <img src="./assets/imagen7.jpg" alt="articulo 7">
-        <img src="./assets/imagen8.jpg" alt="articulo 8">
-        <!-- Duplicamos para el efecto infinito -->
-        <img src="./assets/imagen1.jpg" alt="articulo 1">
-        <img src="./assets/imagen2.jpg" alt="articulo 2">
-        <img src="./assets/imagen3.jpg" alt="articulo 3">
-        <img src="./assets/imagen4.jpg" alt="articulo 4">
-        <img src="./assets/imagen5.jpg" alt="articulo 5">
-        <img src="./assets/imagen6.jpg" alt="articulo 6">
-        <img src="./assets/imagen7.jpg" alt="articulo 7">
-        <img src="./assets/imagen8.jpg" alt="articulo 8">
-    </div>
+<!-- Galería de imágenes -->
+<div class="gallery"> <!-- Contenedor principal de la galería -->
+  <div class="image-container"> <!-- Contenedor interno para las imágenes -->
+      <!-- Imágenes de la colección -->
+      <img src="./assets/imagen1.jpg" alt="articulo 1"> 
+      <img src="./assets/imagen2.jpg" alt="articulo 2">
+      <img src="./assets/imagen3.jpg" alt="articulo 3">
+      <img src="./assets/imagen4.jpg" alt="articulo 4">
+      <img src="./assets/imagen5.jpg" alt="articulo 5">
+      <img src="./assets/imagen6.jpg" alt="articulo 6">
+      <img src="./assets/imagen7.jpg" alt="articulo 7">
+      <img src="./assets/imagen8.jpg" alt="articulo 8">
+      <!-- Duplicamos las imágenes para crear un efecto de desplazamiento infinito -->
+      <img src="./assets/imagen1.jpg" alt="articulo 1">
+      <img src="./assets/imagen2.jpg" alt="articulo 2">
+      <img src="./assets/imagen3.jpg" alt="articulo 3">
+      <img src="./assets/imagen4.jpg" alt="articulo 4">
+      <img src="./assets/imagen5.jpg" alt="articulo 5">
+      <img src="./assets/imagen6.jpg" alt="articulo 6">
+      <img src="./assets/imagen7.jpg" alt="articulo 7">
+      <img src="./assets/imagen8.jpg" alt="articulo 8">
   </div>
+</div>
 
+
+  <!-- Seccion de nosotros-->
   <div class="nosotros-section">
     <h1>NOSOTROS</h1>
     <p>La Etiqueta Yopal , empresa fundada en 2020 por dos jóvenes emprendedores con una pasión compartida por la moda y el espíritu empresarial, La Etiqueta Yopal nació con el objetivo de ofrecer prendas de alta calidad que reflejen las últimas tendencias y el estilo único de nuestra comunidad.</p>
@@ -556,8 +556,6 @@
   </div>
 
 </body>
-
-
 
 <!-- Botón flotante de WhatsApp -->
 <div class="boton-whatsapp" id="zoomTarget-whatsapp">
@@ -655,7 +653,7 @@
 
 
 <script src="script.js"></script> <!-- Enlaza el archivo JavaScript externo -->
-<script src="carrito.js"></script>
+<script src="carrito.js"></script> <!-- Enlaza el archivo JavaScript externo -->
 
 
 </html>

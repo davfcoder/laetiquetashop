@@ -1,11 +1,11 @@
 /* Definición de variables CSS globales */
-:root {
-    --primario-color: #d2d3d5;
-    --secondario-color: #a9abae;
-    --terciario-color: #727376;
-    --tono-azul: #1d1d43e8;
-    --fondo-stock: #FF9A52;
-    --color-sale: #e50010;
+:root { 
+    --primario-color: #d2d3d5; /* Color primario */
+    --secondario-color: #a9abae; /* Color secundario */
+    --terciario-color: #727376; /* Color terciario */
+    --tono-azul: #1d1d43e8; /* Color azul semitransparente */
+    --fondo-stock: #FF9A52; /* Color de fondo para el stock */
+    --color-sale: #e50010; /* Color de descuento */
 }
 
 /* Estilos generales del cuerpo de la página */
@@ -16,10 +16,10 @@ body {
 }
 
 .header-message {
-    position: relative;
+    position: relative; 
     width: 100%;
     background-color: black;
-    padding: 8px;
+    padding: 8px; 
 }
 
 .message-text {
@@ -330,8 +330,8 @@ nav {
 .add-to-cart:hover {
     background-color: var(--tono-azul);
     color: var(--primario-color);
-    border: var(--tono-azul) solid 1.5px;
-}
+    border: var(--tono-azul) solid 1.5px;  
+} 
 
 /* Aviso de Cookies */
 .cookie-banner {
@@ -349,7 +349,7 @@ nav {
     font-size: 14px; /* Tamaño de fuente */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para destacar el banner */
     max-width: 90%; /* Máximo ancho del banner para adaptarse a diferentes pantallas */
-    z-index: 10;
+    z-index: 10; /* Asegura que esté por encima de otros elementos */
 }
 
 
@@ -418,6 +418,69 @@ nav {
     margin: auto; /* Centra el contenedor horizontalmente */
 }
 
+
+/* ----- CONTENEDOR DEL CARRUSEL ----- */
+.gallery {
+    width: 80vw; /* Ancho del contenedor */
+    height: 400px; /* Altura del carrusel */
+    overflow: hidden; /* Oculta las imágenes que se salen del contenedor */
+    border-radius: 15px; /* Bordes redondeados */
+    display: flex; /* Flexbox para alinear las imágenes */
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    margin: 0 auto; /* Asegura que el contenedor esté centrado en la página */
+}
+
+/* ----- CONTENEDOR INTERNO QUE SE MUEVE ----- */
+.image-container {
+    display: flex; /* Asegúrate de que las imágenes estén en línea */
+    width: 200%; /* Asegúrate de que el tamaño total sea el adecuado */
+    gap: 20px; /* Espaciado entre las imágenes */
+    animation: slide 50s linear infinite; /*duracion de la imagen*/
+}
+
+/* ----- ESTILO DE LAS IMÁGENES ----- */
+.image-container img {
+    width: 250px; /* Tamaño más grande */
+    height: 350px; /* Altura más grande */
+    object-fit: cover; /* Ajusta la imagen para cubrir el espacio */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* ----- ANIMACIÓN DEL CARRUSEL ----- */
+@keyframes slide {
+    0% { transform: translateX(0); } /* Comienza en la posición inicial */
+    100% { transform: translateX(-50%); } /* Se desplaza hacia la izquierda */
+}
+
+.nosotros-section {
+    font-family: "Raleway", sans-serif; /* fuente de los textos */
+    background-image: url('./assets/fondo.jpg'); /* ruta de la imagen de fondo */
+    background-size: cover; /* ajusta la imagen al tamaño del contenedor */
+    background-position: center; /* centra la imagen de fondo */
+    width: 100%; /* o un ancho específico si lo necesitas */
+    height: 550px; /* ajusta la altura a lo que prefieras */
+    display: flex; /* usa flexbox para alinear los elementos */
+    flex-direction: column; /* apila el h1 y el párrafo verticalmente */
+    align-items: center; /* centra los elementos horizontalmente */
+    justify-content: center; /* centra los elementos vertical y horizontalmente */
+    color: white;   /* color del texto */
+    text-align: center; /* alinea el texto al centro */
+    padding: 20px;  /* espacio interno */
+  }
+  
+  .nosotros-section h1 {
+    font-size: 3rem; /* ajusta el tamaño del título */
+    font-weight: bold; /* negrilla */
+    margin: 0; /* elimina márgenes adicionales */
+  }
+  
+  .nosotros-section p {
+    font-size: 1.5rem; /* tamaño del texto del párrafo */
+    font-weight: 400; /* peso normal o ajusta según prefieras */
+    margin-top: 10px; /* espacio entre el h1 y el párrafo */
+  }
+  
 
 /* Formulario de suscripción */
 
@@ -500,35 +563,36 @@ nav {
 
 /* Botón flotante de WhatsApp */
 .boton-whatsapp {
-    background-color: var(--primario-color);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.138);
-    border-radius: 30px;
-    padding: 2px 5px;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-    transition: transform 0.3s ease-in-out, right 0.3s ease-in-out, bottom 0.3s ease-in-out;
+    background-color: var(--primario-color); /* Establece el color de fondo usando una variable CSS */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.138); /* Agrega una sombra alrededor del botón */
+    border-radius: 30px; /* Redondea las esquinas del botón */
+    padding: 2px 5px; /* Agrega espacio interno al botón */
+    position: fixed; /* Mantiene el botón en una posición fija en la pantalla */
+    bottom: 20px; /* Lo posiciona a 20px desde la parte inferior */
+    right: 20px; /* Lo posiciona a 20px desde la parte derecha */
+    z-index: 1000; /* Asegura que el botón esté por encima de otros elementos */
+    transition: transform 0.3s ease-in-out, right 0.3s ease-in-out, bottom 0.3s ease-in-out; /* Agrega una transición suave a los cambios de tamaño y posición */
 }
 
 .boton-whatsapp a {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    display: flex; /* Usa flexbox para alinear los elementos internos */
+    flex-direction: row; /* Alinea los elementos en una fila */
+    align-items: center; /* Centra verticalmente los elementos dentro del enlace */
 }
 
 .boton-whatsapp h4 {
-    color: var(--tono-azul);
-    font-size: 14px;
-    font-weight: bold;
-    margin: 0;
+    color: var(--tono-azul); /* Usa una variable CSS para definir el color del texto */
+    font-size: 14px; /* Define el tamaño de la fuente en 14px */
+    font-weight: bold; /* Hace que el texto sea negrita */
+    margin: 0; /* Elimina cualquier margen predeterminado del h4 */
 }
 
 .boton-whatsapp.zoom {
-    transform: scale(1.5);
-    right: 4vw;
-    bottom: 3vw;
+    transform: scale(1.5); /* Agranda el botón al 150% de su tamaño original */
+    right: 4vw; /* Mueve el botón hacia la izquierda en función del ancho de la ventana */
+    bottom: 3vw; /* Mueve el botón hacia arriba en función del ancho de la ventana */
 }
+
 
 /* Estilos generales del footer */
 footer {
@@ -662,66 +726,3 @@ footer {
     color: var(--primario-color); /* Color del texto */
 }
 
-
-/* ----- CONTENEDOR DEL CARRUSEL ----- */
-.gallery {
-    width: 80vw; /* Ancho del contenedor */
-    height: 400px; /* Altura del carrusel */
-    overflow: hidden;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center; /* Centrado horizontal */
-    align-items: center; /* Centrado vertical */
-    margin: 0 auto; /* Asegura que el contenedor esté centrado en la página */
-}
-
-/* ----- CONTENEDOR INTERNO QUE SE MUEVE ----- */
-.image-container {
-    display: flex;
-    width: 200%; /* Asegúrate de que el tamaño total sea el adecuado */
-    gap: 20px; /* Espaciado entre las imágenes */
-    animation: slide 50s linear infinite; /*duracion de la imagen*/
-}
-
-/* ----- ESTILO DE LAS IMÁGENES ----- */
-.image-container img {
-    width: 250px; /* Tamaño más grande */
-    height: 350px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-/* ----- ANIMACIÓN DEL CARRUSEL ----- */
-@keyframes slide {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
-.nosotros-section {
-    font-family: "Raleway", sans-serif;
-    background-image: url('./assets/fondo.jpg');
-    background-size: cover;
-    background-position: center;
-    width: 100%; /* o un ancho específico si lo necesitas */
-    height: 550px; /* ajusta la altura a lo que prefieras */
-    display: flex;
-    flex-direction: column; /* apila el h1 y el párrafo verticalmente */
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .nosotros-section h1 {
-    font-size: 3rem; /* ajusta el tamaño del título */
-    font-weight: bold; /* negrilla */
-    margin: 0; /* elimina márgenes adicionales */
-  }
-  
-  .nosotros-section p {
-    font-size: 1.5rem; /* tamaño del texto del párrafo */
-    font-weight: 400; /* peso normal o ajusta según prefieras */
-    margin-top: 10px; /* espacio entre el h1 y el párrafo */
-  }
-  

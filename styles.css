@@ -248,7 +248,7 @@ nav {
 }
 
 /* Imagen secundaria (hover) */
-.product .img-hover {
+.img-hover {
     opacity: 0; /* Inicialmente oculta */
 }
 
@@ -478,11 +478,11 @@ nav {
     background-size: cover; /* ajusta la imagen al tamaño del contenedor */
     background-position: center; /* centra la imagen de fondo */
     width: 100%; /* o un ancho específico si lo necesitas */
-    height: 60vw; /* ajusta la altura a lo que prefieras */
+    height: 65vw; /* ajusta la altura a lo que prefieras */
     display: flex; /* usa flexbox para alinear los elementos */
     flex-direction: column; /* apila el h1 y el párrafo verticalmente */
     align-items: center; /* centra los elementos horizontalmente */
-    justify-content: center; /* centra los elementos vertical y horizontalmente */
+    justify-content: center; /* centra los elementos horizontalmente */
     color: white;   /* color del texto */
     text-align: center; /* alinea el texto al centro */
     padding: 20px;  /* espacio interno */
@@ -490,15 +490,15 @@ nav {
   }
   
   .nosotros-section h1 {
-    font-size: 3rem; /* ajusta el tamaño del título */
+    font-size: clamp(0.4rem, 3vw, 3rem); /* tamaño adaptable */
     font-weight: bold; /* negrilla */
     margin: 0; /* elimina márgenes adicionales */
   }
   
   .nosotros-section p {
-    font-size: 1.5rem; /* tamaño del texto del párrafo */
+    font-size: clamp(0.2rem, 2vw, 1.5rem);
     font-weight: 400; /* peso normal o ajusta según prefieras */
-    margin-top: 10px; /* espacio entre el h1 y el párrafo */
+    margin-top: 50px; /* espacio entre el h1 y el párrafo */
   }
   
 

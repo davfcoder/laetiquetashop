@@ -52,12 +52,12 @@ document.querySelectorAll(".add-to-cart").forEach(boton => {
         if (productoElement) {
             // Se extraen los datos necesarios del producto: título, referencia, talla, precio, y la URL de la imagen.
             agregarAlCarrito(
-                productoElement.querySelector(".product-title").textContent,
-                productoElement.getAttribute("data-ref"),
-                productoElement.querySelector(".size-letter.selected")?.textContent || "Talla no definida",
-                "Color por definir",
+                productoElement.querySelector(".product-title").textContent, // Se obtiene el texto del título del producto.
+                productoElement.getAttribute("data-ref"), // Se usa un atributo personalizado para la referencia.
+                productoElement.querySelector(".size-letter.selected")?.textContent || "Talla no definida", // Se obtiene la talla seleccionada.
+                "Color por definir", 
                 parseInt(productoElement.querySelector(".price-discount").textContent.replace(/\D/g, "")),
-                productoElement.querySelector(".product img").src
+                productoElement.querySelector(".product img").src 
             );
         }
     });

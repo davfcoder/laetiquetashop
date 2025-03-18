@@ -141,5 +141,5 @@
 
 /*  Efecto al pasar el mouse sobre el botón de "Finalizar compra" */
 .carrito-footer button:hover {
-    background: #727376; /* Verde más oscuro */
+    background: #727376; 
 }

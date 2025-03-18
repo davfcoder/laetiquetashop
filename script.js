@@ -2,6 +2,7 @@
 // Navbar fijo
 const navbar = document.getElementById("navbar"); // Selecciona el navbar
 const logo = document.getElementById("logo-secundario"); // Selecciona el logo secundario
+const bolsa = document.getElementById("bolsa-icon"); // Selecciona el logo secundario
 const navbarOffset = navbar.offsetTop; // Guarda la posición original del navbar
 const navbarHeight = navbar.offsetHeight;
 const body = document.body; // O el contenedor principal
@@ -10,10 +11,12 @@ window.addEventListener("scroll", function () { // Agrega un evento de desplazam
     if (window.scrollY >= navbarOffset) { // Si el desplazamiento es mayor o igual a la posición original del navbar
         navbar.classList.add("fixed-top", "shadow"); // Agrega las clases para fijar el navbar y sombra
         logo.classList.add("visible"); // Aparece suavemente
+        bolsa.classList.add("visible"); // Aparece suavemente
         body.style.paddingTop = `${navbarHeight}px`; // Agrega espacio
     } else {
         navbar.classList.remove("fixed-top", "shadow"); // Quita las clases para fijar el navbar y sombra
         logo.classList.remove("visible"); // Aparece suavemente
+        bolsa.classList.remove("visible"); // Aparece suavemente
         body.style.paddingTop = "0"; // Restaura el espacio
     }
 });

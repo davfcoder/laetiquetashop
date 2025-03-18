@@ -109,6 +109,15 @@ nav {
     transform: translateY(0); /* Devuelve el logo a su posición original */
 }
 
+#bolsa-icon.visible {
+    position: fixed; /* Mantiene el icono de la bolsa de compras fijo en la pantalla */
+    transform: scale(1.2);
+    top: 2.2rem; /* Elimina la posición superior */
+    right: auto; /* Elimina la posición derecha */
+    z-index: 1100; /* Asegura que el icono esté por encima de otros elementos */
+}
+
+
 #navbar {
     transition: all 0.3s ease-in-out; /* Agrega una transición suave a cualquier cambio en la barra de navegación */
 }
@@ -350,6 +359,10 @@ nav {
     background-color: var(--tono-azul); /* Cambio de fondo */
     color: var(--primario-color); /* Cambio de color de texto */
     border: var(--tono-azul) solid 1.5px; /* Cambio de borde */
+}
+#section-accesorios .price-discount {
+    color: black;
+    font-weight: 700;
 }
 
 

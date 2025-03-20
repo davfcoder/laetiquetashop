@@ -490,6 +490,7 @@ nav {
     background-image: url('./assets/fondo.jpg'); /* ruta de la imagen de fondo */
     background-size: cover; /* ajusta la imagen al tamaño del contenedor */
     background-position: center; /* centra la imagen de fondo */
+    background-attachment: fixed;
     width: 100%; /* o un ancho específico si lo necesitas */
     height: 65vw; /* ajusta la altura a lo que prefieras */
     display: flex; /* usa flexbox para alinear los elementos */
@@ -521,47 +522,57 @@ nav {
 .titulo-suscripcion {
     font-family: 'Playfair Display', serif; /* Usa la fuente 'Playfair Display' con estilo serif */
     color: var(--terciario-color); /* Aplica el color terciario definido en variables */
-    font-weight: 700; /* Hace que el texto sea negrita */
-    font-size: 37px; /* Ajusta el tamaño del texto */
+    font-weight: 600; /* Hace que el texto sea negrita */
+    font-size: 30px; /* Ajusta el tamaño del texto */
     text-align: center; /* Centra el texto */
+    margin-bottom: 2rem; /* Agrega un margen inferior para separar del resto del contenido */
 }
 
-/* Estilos para el subtítulo de la suscripción */
-.subtitulo-suscripcion {
-    font-family: 'Poppins', sans-serif; /* Usa la fuente 'Poppins' con estilo sans-serif */
-    font-weight: 600; /* Hace que el texto tenga un peso medio (semi-negrita) */
-    font-size: 16px; /* Ajusta el tamaño del texto */
-    text-align: center; /* Centra el texto */
+/* Contenedor del formulario */
+.form-completo {
+    max-height: 700px;
+    margin: 6rem 12rem;
+    padding: 0 6rem 0 0;
+    border-radius: 1rem;
+    background-color: var(--primario-color);
+    display: flex;
+    align-items: center;
 }
 
-.fila-formulario { /* Estilos de la fila del formulario */
-    display: flex; /* Usa flexbox para alinear los elementos en fila */
-    justify-content: center; /* Centra los elementos horizontalmente */
-    align-items: center; /* Centra los elementos verticalmente */
-    flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas si es necesario */
-    max-width: 900px; /* Define el ancho máximo del formulario */
-    gap: 10px; /* Agrega un espacio entre los elementos */
-    margin: auto; /* Centra el formulario horizontalmente */
+#formulario{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#imagen-form{
+    width: 100%;
 }
 
-.contenedor-email { /* Contenedor del campo de entrada de email */
-    flex: 1; /* Hace que el contenedor del email ocupe el espacio disponible */
-    min-width: 250px; /* Define un ancho mínimo para evitar que el campo sea demasiado pequeño */
+#imagen-form img{
+    width: 90%;
+    height: 700px;
+    object-fit: cover;
+    border-radius: 1rem;
+    mask-image: linear-gradient(to right, rgba(210, 211, 213, .8)40%, rgba(210, 211, 213, 0)90%);
+}
+#formulario-suscripcion {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    display: flex; /* Usa flexbox para alinear los elementos */
+    flex-direction: column; /* Alinea los elementos en columna */
+    justify-content: center; /* Centra los elementos verticalmente */
 }
 
-.campo-email { /* Estilos del campo de entrada de email */
-    padding: 10px; /* Agrega espacio interno para mejorar la apariencia */
-    width: 100%; /* Ocupa todo el ancho disponible dentro de su contenedor */
-    border: 1px solid var(--secondario-color); /* Agrega un borde con el color secundario definido en variables */
-    border-radius: 5px; /* Redondea las esquinas del campo de entrada */
-    font-size: 16px; /* Ajusta el tamaño del texto */
+input, textarea {
+  width: 100%; /* Ancho completo */
+  margin-bottom: 1rem;
+  padding: 10px; /* Espaciado interno */
+  border: 1px solid var(--tono-azul); /* Borde */
+  border-radius: 10px; /* Bordes redondeados */
 }
 
-.contenedor-boton { /* Contenedor del botón de envío */
-    min-width: 120px; /* Define un ancho mínimo para el contenedor del botón */
-}
 
 .boton-enviar { /* Estilos del botón de envío */
+    border-radius: 0.5rem;
     width: 100%; /* Hace que el botón ocupe todo el ancho disponible */
     padding: 10px; /* Agrega espacio interno para mejorar la apariencia */
     background-color: var(--tono-azul); /* Define el color de fondo del botón usando una variable */

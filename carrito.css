@@ -1,145 +1,322 @@
-/*  Estilos generales del carrito */
+/* Estilos generales del carrito */
 .carrito-container {
     position: fixed; /* Fija el carrito en la pantalla para que siempre esté visible */
     top: 0; /* Se ubica en la parte superior */
     right: 0; /* Se alinea al lado derecho de la pantalla */
-    width: 350px; /* Define el ancho del carrito */
+    width: 380px; /* Ancho del carrito, ligeramente mayor para más comodidad */
     background: #fff; /* Fondo blanco */
-    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1); /* Sombra en el borde izquierdo para dar profundidad */
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1); /* Sombra más sutil y profunda */
     height: 100vh; /* Altura total de la pantalla */
     max-height: 100vh; /* Evita que el carrito crezca más que la pantalla */
-    overflow-y: auto; /* Permite el desplazamiento vertical si hay muchos productos */
-    padding: 20px; /* Espaciado interno para evitar que el contenido esté pegado a los bordes */
+    overflow-y: auto; /* Permite desplazarse verticalmente si hay muchos productos */
+    padding: 30px 20px; /* Espaciado interno más generoso */
     display: flex; /* Usa flexbox para organizar los elementos */
     flex-direction: column; /* Alinea los elementos en columna */
     z-index: 9999; /* Asegura que el carrito siempre esté por encima de otros elementos */
-    border-radius: 15px 0 0 15px; /* Borde redondeado en la esquina izquierda */
+    border-radius: 10px 0 0 10px; /* Bordes redondeados en la esquina izquierda */
+    font-family: 'Arial', sans-serif; /* Tipografía moderna y limpia */
 }
 
-/*  Encabezado del carrito */
+/* Encabezado del carrito */
 .carrito-header {
     display: flex; /* Usa flexbox para organizar los elementos en una fila */
     justify-content: space-between; /* Espacia el título y el botón de cierre */
     align-items: center; /* Alinea verticalmente los elementos */
-    font-size: 12px; /* Reduce el tamaño del título */
+    font-size: 14px; /* Tamaño de texto ajustado */
     font-weight: bold; /* Hace que el texto sea más grueso */
-    padding-bottom: 10px; /* Espacio debajo del encabezado */
-    border-bottom: 1px solid #ddd; /* Línea separadora */
+    padding-bottom: 15px; /* Espacio debajo del encabezado */
+    border-bottom: 1px solid #e0e0e0; /* Línea separadora suave */
 }
 
-/*  Botón para cerrar el carrito (la "X") */
+/* Botón para cerrar el carrito (la "X") */
 .cerrar-carrito {
     background: none; /* Elimina el fondo predeterminado del botón */
     border: none; /* Elimina el borde */
-    font-size: 28px; /* Hace que la "X" sea más grande */
+    font-size: 30px; /* Hace que la "X" sea más grande */
     cursor: pointer; /* Cambia el cursor al pasar el mouse */
-    color: black; /* Color negro para mayor visibilidad */
+    color: #333; /* Color más suave */
+    transition: color 0.3s ease; /* Suaviza el cambio de color */
 }
 
-/*  Contenedor de los productos dentro del carrito */
+/* Efecto al pasar el mouse sobre el botón de cerrar */
+.cerrar-carrito:hover {
+    color: #ff4747; /* Rojo sutil cuando se pasa el mouse */
+}
+
+/* Contenedor de los productos dentro del carrito */
 .carrito-items {
     flex-grow: 1; /* Permite que el contenido crezca y llene el espacio disponible */
     overflow-y: auto; /* Permite desplazarse verticalmente si hay muchos productos */
     padding: 10px 0; /* Espaciado interno */
 }
 
-/*  Cada producto en el carrito */
+/* Cada producto en el carrito */
 .carrito-item {
     display: flex; /* Usa flexbox para organizar los elementos */
     align-items: center; /* Alinea verticalmente los elementos */
     justify-content: space-between; /* Espacia los elementos horizontalmente */
-    padding: 10px 0; /* Espacio entre productos */
-    border-bottom: 1px solid #eee; /* Línea separadora entre productos */
-    gap: 10px; /* Espacio entre los elementos del producto */
+    padding: 15px 0; /* Espacio entre productos */
+    border-bottom: 1px solid #f1f1f1; /* Línea separadora suave */
+    gap: 15px; /* Espacio entre los elementos del producto */
+    transition: background 0.3s ease; /* Efecto de transición para el fondo */
 }
 
-/*  Imagen del producto en el carrito */
+/* Efecto al pasar el mouse sobre el item del carrito */
+.carrito-item:hover {
+    background-color: #f9f9f9; /* Fondo más claro cuando se pasa el mouse */
+}
+
+/* Imagen del producto en el carrito */
 .carrito-img {
-    width: 50px; /* Tamaño de la imagen */
-    height: 50px; /* Mantiene una proporción cuadrada */
+    width: 60px; /* Tamaño de la imagen ajustado */
+    height: 60px; /* Mantiene una proporción cuadrada */
     object-fit: cover; /* Ajusta la imagen sin deformarla */
     border-radius: 8px; /* Esquinas redondeadas */
 }
 
-/*  Nombre del producto */
+/* Nombre del producto */
 .nombre-producto {
-    font-weight: bold; /* Hace que el texto sea más grueso */
-    font-size: 14px; /* Define el tamaño del texto */
+    font-weight: 600; /* Hace que el texto sea más grueso */
+    font-size: 16px; /* Define el tamaño del texto */
     margin: 0; /* Elimina los márgenes predeterminados */
     color: #333; /* Color gris oscuro */
 }
 
-/*  Información adicional del producto (Referencia, talla, color) */
+/* Información adicional del producto (Referencia, talla, color) */
 .detalle-producto {
-    font-size: 12px; /* Texto más pequeño */
+    font-size: 13px; /* Texto más pequeño */
     color: #777; /* Color gris claro */
-    margin: 3px 0; /* Espaciado vertical */
+    margin: 5px 0; /* Espaciado vertical */
 }
 
-/*  Precio del producto */
+/* Precio del producto */
 .precio-producto {
-    font-weight: bold; /* Hace que el texto sea más grueso */
-    font-size: 14px; /* Tamaño del texto */
-    color: #000; /* Color negro */
+    font-weight: 600; /* Hace que el texto sea más grueso */
+    font-size: 15px; /* Tamaño del texto */
+    color: #1d1d43; /* Color del precio en azul */
 }
 
-/*  Controles para aumentar o disminuir la cantidad */
+/* Controles para aumentar o disminuir la cantidad */
 .cantidad-control {
     display: flex; /* Usa flexbox para organizar los botones en una fila */
     align-items: center; /* Alinea verticalmente */
-    gap: 5px; /* Espacio entre los botones y el número */
+    gap: 10px; /* Espacio entre los botones y el número */
 }
 
-/*  Botones de aumentar y disminuir cantidad */
+/* Botones de aumentar y disminuir cantidad */
 .cantidad-control button {
     background: none; /* Elimina el fondo predeterminado */
     border: 1px solid #ddd; /* Borde gris claro */
-    padding: 4px 8px; /* Tamaño del botón */
+    padding: 6px 12px; /* Tamaño del botón */
     cursor: pointer; /* Cambia el cursor al pasar el mouse */
-    font-size: 14px; /* Tamaño del texto en los botones */
-    border-radius: 4px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño del texto en los botones */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background 0.3s ease, color 0.3s ease; /* Efecto suave */
 }
 
-/*  Botón para eliminar un producto (icono de basurero) */
+/* Efecto al pasar el mouse sobre los botones de cantidad */
+.cantidad-control button:hover {
+    background-color: #1d1d43; /* Fondo azul al pasar el mouse */
+    color: #fff; /* Texto blanco */
+}
+
+/* Botón para eliminar un producto (icono de basurero) */
 .eliminar {
     background: none; /* Elimina el fondo del botón */
     border: none; /* Elimina el borde */
-    font-size: 16px; /* Tamaño del icono */
+    font-size: 18px; /* Tamaño del icono */
     cursor: pointer; /* Cambia el cursor al pasar el mouse */
-    color: red; /* Color rojo para indicar peligro */
+    color: #ff4747; /* Color rojo para indicar peligro */
+    transition: color 0.3s ease; /* Efecto suave para el color */
 }
 
-/*  Pie de página del carrito (total y botón de compra) */
+/* Efecto al pasar el mouse sobre el botón de eliminar */
+.eliminar:hover {
+    color: #e02f2f; /* Color rojo más oscuro */
+}
+
+/* Pie de página del carrito (total y botón de compra) */
 .carrito-footer {
-    padding-top: 10px; /* Espacio antes del pie de página */
+    padding-top: 15px; /* Espacio antes del pie de página */
     border-top: 1px solid #ddd; /* Línea separadora */
     text-align: center; /* Centra el contenido */
     margin-top: auto; /* Empuja el pie de página hacia abajo */
 }
 
-/*  Texto de "Total estimado" */
+/* Texto de "Total estimado" */
 .total-estimado {
-    font-size: 16px; /* Tamaño del texto */
+    font-size: 18px; /* Tamaño del texto */
     font-weight: bold; /* Hace que el texto sea más grueso */
     margin: 10px 0; /* Espacio alrededor del total */
     color: #333; /* Color gris oscuro */
+    margin-bottom: 20px; /* Asegura que el total se vea bien separado */
 }
 
-/*  Botón de "Finalizar compra" */
+/* Botón de "Finalizar compra" */
 .carrito-footer button {
     width: 100%; /* Ocupa todo el ancho del contenedor */
-    background:#1d1d43e8; /* Azul oscuro con transparencia */
+    background: #1d1d43; /* Azul oscuro con transparencia */
     color: white; /* Texto blanco */
-    padding: 10px; /* Espaciado interno */
+    padding: 15px; /* Espaciado interno */
     border: none; /* Sin bordes */
     cursor: pointer; /* Cambia el cursor al pasar el mouse */
     font-size: 16px; /* Tamaño del texto */
     font-weight: bold; /* Hace que el texto sea más grueso */
     border-radius: 6px; /* Bordes redondeados */
-    transition: background 0.3s; /* Efecto suave al pasar el mouse */
+    transition: background 0.3s ease; /* Efecto suave al pasar el mouse */
 }
 
-/*  Efecto al pasar el mouse sobre el botón de "Finalizar compra" */
+/* Efecto al pasar el mouse sobre el botón de "Finalizar compra" */
 .carrito-footer button:hover {
-    background: #727376; 
+    background: #727376; /* Color más suave */
+}
+
+/* Estilos para el contenedor del método de pago */
+.metodo-pago-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 450px;
+    background: #fff;
+    box-shadow: -4px 0 30px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+    height: 100vh;
+    max-height: 100vh;
+    overflow-y: auto;
+    padding: 30px;
+    display: none;
+    flex-direction: column;
+    z-index: 9999;
+    border-radius: 10px 0 0 10px;
+    font-family: 'Arial', sans-serif;
+    transition: all 0.3s ease; /* Suaviza la transición */
+}
+
+/* Encabezado del apartado de pago */
+.metodo-pago-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e0e0e0;
+    color: #333;
+}
+
+/* Cierre del apartado de pago (la "X") */
+.cerrar-pago {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #1d1d43;
+    transition: color 0.3s ease;
+}
+
+/* Efecto al pasar el mouse sobre la "X" de cierre */
+.cerrar-pago:hover {
+    color: #ff4747;
+}
+
+/* Contenedor de los productos y el resumen de la compra */
+.metodo-pago-body {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #555;
+}
+
+/* Títulos de secciones dentro del apartado de pago */
+.metodo-pago-body h3, .metodo-pago-body h4 {
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #1d1d43;
+}
+
+/* Estilo para los elementos dentro del resumen de compra */
+.metodo-pago-body p {
+    margin-bottom: 8px;
+}
+
+/* Estilo para los botones de selección del método de pago */
+.metodo-pago-option {
+    background-color: #f8f8f8;
+    border: none;
+    padding: 15px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 10px;
+}
+
+/* Efecto al pasar el mouse sobre los botones de pago */
+.metodo-pago-option:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-3px); /* Levanta el botón un poco */
+}
+
+/* Formulario para ingresar la dirección de envío */
+#direccion-form input {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+/* Efecto al enfocar los inputs */
+#direccion-form input:focus {
+    border-color: #1d1d43;
+    outline: none;
+}
+
+/* Estilo para el pie de página del pago */
+.metodo-pago-footer {
+    padding-top: 30px;
+    border-top: 2px solid #e0e0e0;
+    text-align: center;
+}
+
+/* Botón de "Pagar" */
+.metodo-pago-footer button {
+    width: 100%;
+    background: #1d1d43;
+    color: white;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Efecto al pasar el mouse sobre el botón de "Pagar" */
+.metodo-pago-footer button:hover {
+    background: #727376;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el formulario de tarjeta de crédito y PayPal */
+#metodo-pago-form input {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+#metodo-pago-form input:focus {
+    border-color: #1d1d43;
+    outline: none;
 }

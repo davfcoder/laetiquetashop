@@ -1,15 +1,15 @@
-// Se inicializa un array para almacenar los productos en el carrito.
-// Si existe un carrito previo guardado en el localStorage, se recupera. Si no, se inicia con un array vacío.
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 // Se crea el contenedor principal del carrito y se añade al DOM.
-// Este contenedor es donde se mostrarán los productos seleccionados, así como el encabezado y el pie del carrito.
 const carritoContainer = document.createElement("div");
 carritoContainer.classList.add("carrito-container");
 document.body.appendChild(carritoContainer);
 
-// Se define el contenido HTML base del carrito, incluyendo el encabezado con el título, el área donde irán los productos,
-// y la sección inferior con el total y un botón para finalizar la compra.
+// Contenedor del método de pago (se mostrará cuando se finalice la compra)
+const metodoPagoContainer = document.createElement("div");
+metodoPagoContainer.classList.add("metodo-pago-container");
+document.body.appendChild(metodoPagoContainer);
+
 carritoContainer.innerHTML = `
     <div class="carrito-header"> 
         <h2>Bolsa (<span id="cantidad-productos">0</span>)</h2>
@@ -22,67 +22,50 @@ carritoContainer.innerHTML = `
     </div>
 `;
 
-// Por defecto, el carrito no es visible hasta que el usuario haga clic en un botón para abrirlo.
 carritoContainer.style.display = "none";
 
-// Se identifica el botón que abre el carrito (en este caso, un elemento con id "shopping-bag-bottom").
 const carritoBoton = document.getElementById("shopping-bag-bottom");
 if (carritoBoton) {
-    // Cuando el usuario haga clic en el botón, se mostrará el carrito.
     carritoBoton.addEventListener("click", () => {
         carritoContainer.style.display = "block";
     });
 }
 
-// Se selecciona el botón que cierra el carrito.
 const cerrarCarrito = document.getElementById("cerrar-carrito");
 if (cerrarCarrito) {
-    // Al hacer clic en este botón, el carrito se ocultará nuevamente.
     cerrarCarrito.addEventListener("click", () => {
         carritoContainer.style.display = "none";
     });
 }
 
-// Busca todos los botones de "Agregar al carrito" en la página.
-// Cuando se haga clic en cualquiera de ellos, se añadirá el producto correspondiente al carrito.
 document.querySelectorAll(".add-to-cart").forEach(boton => {
     boton.addEventListener("click", (event) => {
-        // Encuentra el elemento del producto más cercano al botón que se clicó.
         const productoElement = event.target.closest(".hotsales");
         if (productoElement) {
-            // Se extraen los datos necesarios del producto: título, referencia, talla, precio, y la URL de la imagen.
             agregarAlCarrito(
-                productoElement.querySelector(".product-title").textContent, // Se obtiene el texto del título del producto.
-                productoElement.getAttribute("data-ref"), // Se usa un atributo personalizado para la referencia.
-                productoElement.querySelector(".size-letter.selected")?.textContent || "Talla no definida", // Se obtiene la talla seleccionada.
+                productoElement.querySelector(".product-title").textContent,
+                productoElement.getAttribute("data-ref"),
+                productoElement.querySelector(".size-letter.selected")?.textContent || "Talla no definida",
                 "Color por definir", 
                 parseInt(productoElement.querySelector(".price-discount").textContent.replace(/\D/g, "")),
-                productoElement.querySelector(".product img").src 
+                productoElement.querySelector(".product img").src
             );
         }
     });
 });
 
-// Esta función actualiza la lista de productos en el carrito.
-// También calcula el total, actualiza la cantidad de productos mostrada y guarda el estado del carrito en localStorage.
+// Función para actualizar el carrito
 function actualizarCarrito() {
-    // Elemento donde se listan los productos añadidos.
     const carritoItems = document.getElementById("carrito-items");
-    // Elemento que muestra la cantidad total de productos en el carrito.
     const cantidadProductos = document.getElementById("cantidad-productos");
-    // Elemento que muestra el precio total del carrito.
     const total = document.getElementById("total");
 
-    // Limpia el contenido actual del contenedor de productos antes de volver a llenar la lista.
     carritoItems.innerHTML = "";
     let totalPrecio = 0;
 
-    // Se recorre el array del carrito para crear elementos HTML por cada producto añadido.
     carrito.forEach((item, index) => {
-        // Suma el precio total de todos los productos multiplicando cantidad por precio.
         totalPrecio += item.precio * item.cantidad;
 
-        // Crea un nuevo div para cada producto en el carrito, mostrando su nombre, precio, imagen, y controles de cantidad.
         const carritoItem = document.createElement("div");
         carritoItem.classList.add("carrito-item");
         carritoItem.innerHTML = `
@@ -102,26 +85,20 @@ function actualizarCarrito() {
         carritoItems.appendChild(carritoItem);
     });
 
-    // Actualiza el contador de productos y el total mostrado.
     cantidadProductos.innerText = carrito.length;
     total.innerText = `$${totalPrecio.toLocaleString()}`;
 
-    // Guarda el carrito en localStorage para mantener el estado entre recargas.
     localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
-// Cuando se cargue la página, se inicializa el carrito y se asigna un único listener para manejar los clics
-// en los botones de incrementar, decrementar y eliminar productos.
+// Manejo de clics en los botones de incrementar, decrementar y eliminar productos.
 document.addEventListener("DOMContentLoaded", () => {
-    // Actualiza la interfaz del carrito con los datos guardados.
     actualizarCarrito();
 
-    // Asigna un único listener al contenedor de productos del carrito (delegación de eventos).
     const carritoItems = document.getElementById("carrito-items");
     carritoItems.addEventListener("click", (event) => {
         const index = event.target.getAttribute("data-index");
 
-        // Dependiendo del botón que se haya clicado (sumar, restar, eliminar), se ajusta la cantidad o se elimina el producto.
         if (event.target.classList.contains("sumar")) {
             carrito[index].cantidad++;
         } else if (event.target.classList.contains("restar")) {
@@ -134,31 +111,104 @@ document.addEventListener("DOMContentLoaded", () => {
             carrito.splice(index, 1);
         }
 
-        // Actualiza la interfaz del carrito y guarda los cambios.
         actualizarCarrito();
     });
 });
 
-// Listener global para el botón "Finalizar compra".
+// Evento para finalizar la compra y mostrar la pantalla de pago
 document.body.addEventListener("click", (event) => {
-    // Si se clicó el botón de finalizar compra:
     if (event.target.id === "finalizar-compra") {
-        // Si el carrito está vacío, muestra una alerta y no hace nada más.
         if (carrito.length === 0) {
             alert("Tu carrito está vacío.");
             return;
         }
         
-        // Si hay productos, muestra un mensaje y vacía el carrito.
-        alert("Por ahora no podemos procesar tu compra. Pronto habilitaremos esta función.");
-        carrito = [];
-        localStorage.removeItem("carrito");
-        actualizarCarrito();
+        // Ocultar el carrito y mostrar la pantalla de pago
+        carritoContainer.style.display = "none";
+        mostrarMetodoPago();
     }
 });
 
-// Función que añade un producto al carrito.
-// Si el producto ya está en el carrito, aumenta la cantidad. Si no, lo añade como un nuevo producto.
+// Mostrar la pantalla de pago
+function mostrarMetodoPago() {
+    metodoPagoContainer.style.display = "block"; // Muestra la sección de pago
+    let totalCompra = carrito.reduce((total, item) => total + (item.precio * item.cantidad), 0);
+    let costoEnvio = 20; // Simulamos un costo de envío fijo
+    let totalConEnvio = totalCompra + costoEnvio;
+
+    metodoPagoContainer.innerHTML = `
+        <div class="metodo-pago-header">
+            <h2>Resumen de la compra</h2>
+            <button id="cerrar-pago" class="cerrar-pago">&times;</button>
+        </div>
+        <div class="metodo-pago-body">
+            <h3>Dirección de Envío:</h3>
+            <form id="direccion-form">
+                <input type="text" id="nombre" placeholder="Nombre completo">
+                <input type="text" id="direccion" placeholder="Dirección">
+                <input type="text" id="ciudad" placeholder="Ciudad">
+                <input type="text" id="codigo-postal" placeholder="Código Postal">
+                <input type="text" id="telefono" placeholder="Teléfono">
+            </form>
+
+            <h3>Selecciona tu Método de Pago</h3>
+            <select id="metodo-pago-select">
+                <option value="tarjeta">Tarjeta de Crédito</option>
+                <option value="paypal">PayPal</option>
+            </select>
+
+            <div id="metodo-pago-form"></div>
+
+            <h3>Detalles de la Compra:</h3>
+            <p>Total productos: $${totalCompra.toLocaleString()}</p>
+            <p>Costo de envío: $${costoEnvio.toLocaleString()}</p>
+            <p>Total con envío: $${totalConEnvio.toLocaleString()}</p>
+        </div>
+        <div class="metodo-pago-footer">
+            <button id="confirmar-pago">Pagar</button>
+        </div>
+    `;
+
+    document.getElementById("cerrar-pago").addEventListener("click", () => {
+        metodoPagoContainer.style.display = "none";
+    });
+
+    // Actualizar el formulario de acuerdo al método de pago seleccionado
+    document.getElementById("metodo-pago-select").addEventListener("change", actualizarMetodoPago);
+    actualizarMetodoPago();
+
+    document.getElementById("confirmar-pago").addEventListener("click", () => {
+        // Limpiar el carrito y actualizar la interfaz
+        carrito = [];
+        localStorage.removeItem("carrito");
+        actualizarCarrito(); // Para asegurarse de que la interfaz se actualice
+
+        alert("Pago procesado exitosamente. ¡Gracias por tu compra!");
+        metodoPagoContainer.style.display = "none"; // Ocultar la pantalla de pago
+    });
+}
+
+// Función para actualizar los campos del formulario de pago según el método seleccionado
+function actualizarMetodoPago() {
+    const metodoPago = document.getElementById("metodo-pago-select").value;
+    const metodoPagoForm = document.getElementById("metodo-pago-form");
+
+    if (metodoPago === "tarjeta") {
+        metodoPagoForm.innerHTML = `
+            <h4>Datos de la tarjeta</h4>
+            <input type="text" id="tarjeta-numero" placeholder="Número de tarjeta">
+            <input type="text" id="tarjeta-expiracion" placeholder="MM/AA">
+            <input type="text" id="tarjeta-cvv" placeholder="CVV">
+        `;
+    } else if (metodoPago === "paypal") {
+        metodoPagoForm.innerHTML = `
+            <h4>Cuenta de PayPal</h4>
+            <input type="email" id="paypal-cuenta" placeholder="Correo electrónico de PayPal">
+        `;
+    }
+}
+
+// Función para agregar productos al carrito
 function agregarAlCarrito(nombre, referencia, talla, color, precio, imagen) {
     let productoExistente = carrito.find(item => item.nombre === nombre && item.talla === talla);
     if (productoExistente) {
@@ -166,6 +216,5 @@ function agregarAlCarrito(nombre, referencia, talla, color, precio, imagen) {
     } else {
         carrito.push({ nombre, referencia, talla, color, precio, imagen, cantidad: 1 });
     }
-    // Actualiza la interfaz del carrito después de añadir un producto.
     actualizarCarrito();
 }

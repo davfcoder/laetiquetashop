@@ -647,6 +647,71 @@ input, textarea {
     text-decoration: underline; /* Subraya el enlace cuando el usuario pasa el mouse */
 }
 
+/* Botón flotante del chatbot */
+#chatbot-toggle {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 10000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Ventana del chatbot */
+  #chatbot-window {
+    position: fixed;
+    bottom: 70px;
+    left: 20px;
+    display: none;
+    flex-direction: column;
+    width: 300px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    z-index: 9999;
+    font-family: sans-serif;
+    transition: all 0.3s ease;
+  }
+  
+  /* Mensajes del chatbot */
+  #chatbot-messages {
+    max-height: 250px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+  }
+  
+  /* Botones de opciones */
+  #chatbot-options button {
+    width: 100%;
+    margin-bottom: 8px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #007bff;
+    background-color: #f0f8ff;
+    color: #007bff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  #chatbot-options button:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+
 /* Botón flotante de WhatsApp */
 .boton-whatsapp {
     background-color: var(--primario-color); /* Establece el color de fondo usando una variable CSS */

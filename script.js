@@ -80,6 +80,244 @@ sizeContainers.forEach((sizeContainer) => {  // Recorre cada contenedor de talla
 });
 
 
+
+// Chatbot
+const chatbotToggle = document.getElementById("chatbot-toggle");
+const chatbotWindow = document.getElementById("chatbot-window");
+const chatbotMessages = document.getElementById("chatbot-messages");
+const chatbotOptions = document.getElementById("chatbot-options");
+
+chatbotToggle.addEventListener("click", () => {
+  const isVisible = chatbotWindow.classList.contains("visible");
+
+  if (isVisible) {
+    chatbotWindow.classList.remove("visible");
+    chatbotWindow.style.display = "none";
+  } else {
+    chatbotWindow.classList.add("visible");
+    chatbotWindow.style.display = "flex";
+    chatbotMessages.innerHTML = "";
+    agregarMensaje("👋 Bienvenido a La Etiqueta Yopal, ¿en qué te podemos apoyar hoy?");
+    mostrarMenuPrincipal();
+  }
+});
+
+function agregarMensaje(texto) {
+    const msg = document.createElement("div");
+    msg.innerHTML = texto; // permite HTML dentro de los mensajes
+    msg.style.padding = "8px";
+    msg.style.borderRadius = "10px";
+    msg.style.marginBottom = "6px";
+    msg.style.backgroundColor = "#f1f1f1";
+    chatbotMessages.appendChild(msg);
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+  }
+  
+
+function mostrarMenuPrincipal() {
+    // Limpiamos mensajes previos
+    chatbotMessages.innerHTML = "";
+  
+    // Mostramos el mensaje de bienvenida nuevamente
+    agregarMensaje("👋 Bienvenido a La Etiqueta Yopal, ¿en qué te podemos apoyar hoy?");
+  
+    // Mostramos opciones principales
+    chatbotOptions.innerHTML = `
+      <button onclick="mostrarCompras()">🛍 Compras</button>
+      <button onclick="mostrarDevoluciones()">📦 Devoluciones</button>
+      <button onclick="mostrarMayor()">📦 Pedido al por mayor</button>
+      <button onclick="mostrarSuscripciones()">📬 Suscripciones</button>
+    `;
+  }
+
+
+function mostrarBotonVolver() {
+  chatbotOptions.innerHTML += `
+    <button onclick="mostrarMenuPrincipal()">🔙 Volver al menú principal</button>
+  `;
+}
+
+// COMPRAS
+function mostrarCompras() {
+  agregarMensaje("¿Qué tipo de ropa te interesa?");
+  chatbotOptions.innerHTML = `
+    <button onclick="agregarMensaje('👗 Revisa descuentos para mujer aquí: https://laetiqueta.com/mujer')">👗 Mujer</button>
+    <button onclick="agregarMensaje('👕 Revisa descuentos para hombre aquí: https://laetiqueta.com/hombre')">👕 Hombre</button>
+    <button onclick="agregarMensaje('🧒 Revisa ropa infantil aquí: https://laetiqueta.com/niños')">🧒 Niño</button>
+    <button onclick="agregarMensaje('👜 Mira accesorios aquí: https://laetiqueta.com/accesorios')">👜 Accesorios</button>
+  `;
+  mostrarBotonVolver();
+}
+
+// DEVOLUCIONES
+function mostrarDevoluciones() {
+    chatbotOptions.innerHTML = ""; // limpia el menú antes de mostrar contenido nuevo
+  
+    agregarMensaje("📦 Aquí tienes el paso a paso para devoluciones:");
+  
+    agregarMensaje(`1. Comunícate con nosotros por 
+  👉 <a href="https://wa.me/message/F5MZRJDCEXLIK1" target="_blank">WhatsApp</a> 
+  o escribe a 📧 <a href="mailto:laetiquetayopal@gmail.com">laetiquetayopal@gmail.com</a>.<br>
+  2. Indica el motivo y número de pedido.<br>
+  3. Empaca el producto en su estado original.<br>
+  4. Te enviaremos una guía para el envío.<br>
+  5. Recibirás el cambio o reembolso.`);
+  
+    mostrarBotonVolver();
+  }
+
+// PEDIDO AL POR MAYOR
+function mostrarMayor() {
+    chatbotMessages.innerHTML = "";
+    agregarMensaje("📦 ¿Qué tipo de productos te interesan al por mayor?");
+    chatbotOptions.innerHTML = `
+      <button onclick="mostrarMayorMujer()">👗 Mujer</button>
+      <button onclick="mostrarMayorHombre()">👕 Hombre</button>
+      <button onclick="mostrarMayorNino()">🧒 Niño</button>
+      <button onclick="mostrarMayorAccesorios()">👜 Accesorios</button>
+      <button onclick="mostrarMayorOtros()">📦 Otros</button>
+    `;
+    mostrarBotonVolver();
+  }
+  
+  // Mujer
+  function mostrarMayorMujer() {
+    chatbotMessages.innerHTML = "";
+    agregarMensaje("🔔 Recuerda que para un pedido al por mayor mínimo podrás pedir 10 piezas de la misma referencia, pero pueden ser diferentes tallas.");
+    agregarMensaje("👗 ¿Qué tipo de prendas te interesan al por mayor?");
+    chatbotOptions.innerHTML = `
+      <button onclick="mostrarPasoFinal('👚 Camisas y blusas')">👚 Camisas y blusas</button>
+      <button onclick="mostrarPasoFinal('👗 Vestidos')">👗 Vestidos</button>
+      <button onclick="mostrarPasoFinal('👗 Faldas')">👗 Faldas</button>
+      <button onclick="mostrarPasoFinal('👖 Pantalones mujer')">👖 Pantalones</button>
+    `;
+    mostrarBotonVolverAnterior();
+  }
+  
+  // Hombre
+  function mostrarMayorHombre() {
+    chatbotMessages.innerHTML = "";
+    agregarMensaje("🔔 Recuerda que para un pedido al por mayor mínimo podrás pedir 10 piezas de la misma referencia, pero pueden ser diferentes tallas.");
+    agregarMensaje("👕 ¿Qué tipo de prendas deseas para hombres al por mayor?");
+    chatbotOptions.innerHTML = `
+      <button onclick="mostrarPasoFinal('👕 Polos')">👕 Polos</button>
+      <button onclick="mostrarPasoFinal('🩳 Bermudas')">🩳 Bermudas</button>
+      <button onclick="mostrarPasoFinal('👔 Camisas y camisetas')">👔 Camisas y camisetas</button>
+      <button onclick="mostrarPasoFinal('👖 Pantalones hombre')">👖 Pantalones</button>
+    `;
+    mostrarBotonVolverAnterior();
+  }
+  
+  // Niño
+  function mostrarMayorNino() {
+    chatbotMessages.innerHTML = "";
+    agregarMensaje("🔔 Recuerda que para un pedido al por mayor mínimo podrás pedir 10 piezas de la misma referencia, pero pueden ser diferentes tallas.");
+    agregarMensaje("🧒 ¿Qué tipo de prendas infantiles necesitas?");
+    chatbotOptions.innerHTML = `
+      <button onclick="mostrarPasoFinal('👕 Camisetas y pantalones niño')">👕 Camisetas y pantalones</button>
+      <button onclick="mostrarPasoFinal('👗 Ropa para niñas')">👗 Ropa para niñas</button>
+      <button onclick="mostrarPasoFinal('🍼 Ropa de bebé')">🍼 Bebés</button>
+      <button onclick="mostrarPasoFinal('🎽 Conjuntos infantiles')">🎽 Conjuntos</button>
+    `;
+    mostrarBotonVolverAnterior();
+  }
+  
+  // Accesorios
+  function mostrarMayorAccesorios() {
+    chatbotMessages.innerHTML = "";
+    agregarMensaje("🔔 Recuerda que para un pedido al por mayor mínimo podrás pedir 10 piezas de la misma referencia, pero pueden ser diferentes tallas.");
+    agregarMensaje("👜 ¿Qué tipo de accesorios te interesan?");
+    chatbotOptions.innerHTML = `
+      <button onclick="mostrarPasoFinal('🧢 Gorras')">🧢 Gorras</button>
+      <button onclick="mostrarPasoFinal('👖 Cinturones')">👖 Cinturones</button>
+      <button onclick="mostrarPasoFinal('👜 Bolsos')">👜 Bolsos</button>
+      <button onclick="mostrarPasoFinal('🕶 Gafas')">🕶 Gafas</button>
+      <button onclick="mostrarPasoFinal('👛 Carteras')">👛 Carteras</button>
+    `;
+    mostrarBotonVolverAnterior();
+  }
+  
+  // Otros
+  function mostrarMayorOtros() {
+    chatbotMessages.innerHTML = "";
+    agregarMensaje("📦 Para otros productos o solicitudes especiales:");
+    agregarMensaje("1. Contáctanos directamente para asesoría personalizada.");
+    agregarMensaje("2. Indícanos el tipo de producto o idea que tienes en mente.");
+    agregarMensaje("3. Revisa disponibilidad, cantidades mínimas y precios especiales.");
+    chatbotOptions.innerHTML = `
+      <button onclick="window.open('https://wa.me/message/F5MZRJDCEXLIK1', '_blank')">💬 Contactar por WhatsApp</button>
+    `;
+    mostrarBotonVolverAnterior();
+  }
+  
+  // Paso final después de elegir un producto
+  function mostrarPasoFinal(producto) {
+    chatbotMessages.innerHTML = "";
+    chatbotOptions.innerHTML = "";
+    agregarMensaje(`✅ Perfecto, ya sabemos que estás interesado en ${producto}.`);
+    chatbotOptions.innerHTML = `
+      <p>📲 Déjanos tu número de teléfono para ponernos en contacto contigo:</p>
+      <input type="tel" id="telefono" placeholder="Ej: 3001234567" pattern="[0-9]{10}" maxlength="10" style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 8px; border: 1px solid #ccc;" />
+      <button onclick="validarTelefono()">📤 Enviar</button>
+      <button onclick="window.open('https://wa.me/message/F5MZRJDCEXLIK1', '_blank')">💬 Ir a WhatsApp</button>
+    `;
+  }
+  
+  function validarTelefono() {
+    const input = document.getElementById("telefono");
+    const telefono = input.value;
+    const regex = /^[0-9]{10}$/;
+  
+    if (regex.test(telefono)) {
+      chatbotMessages.innerHTML = "";
+      chatbotOptions.innerHTML = "";
+      agregarMensaje("✅ ¡Gracias! Te contactaremos pronto al número: " + telefono);
+      chatbotOptions.innerHTML = `<button onclick="mostrarMenuPrincipal()">🔙 Volver al menú principal</button>`;
+    } else {
+      alert("Por favor, ingresa un número válido de 10 dígitos.");
+    }
+  }
+  
+  // Botón volver al menú anterior
+  function mostrarBotonVolverAnterior() {
+    chatbotOptions.innerHTML += `
+      <button onclick="mostrarMayor()">🔙 Volver al menú anterior</button>
+    `;
+  }
+  
+  
+  
+
+// SUSCRIPCIONES
+function mostrarSuscripciones() {
+  agregarMensaje("📬 Elige una opción:");
+  chatbotOptions.innerHTML = `
+    <button onclick="agregarMensaje('Para recibir novedades:\nRegístrate con tu correo en la parte inferior del sitio.')">📰 Noticias</button>
+    <button onclick="agregarMensaje('Si quieres obtener descuentos exclusivos:\nActiva notificaciones y promociones por WhatsApp.')">🎁 Descuentos</button>
+    <button onclick="mostrarMenuPrincipal()">🔙 Volver al menú principal</button>
+  `;
+}
+
+// RESPUESTA POR DEFECTO
+function respuestaAutomatica(userInput) {
+  agregarMensaje("🤖 No estoy seguro cómo ayudarte con eso. Te redireccionaré a WhatsApp...");
+  setTimeout(() => {
+    window.open("https://wa.me/message/F5MZRJDCEXLIK1", "_blank");
+  }, 2000);
+}
+
+
+
+
+
+
+ 
+
+
+
+
+
+
 // Interacción contacto con whatsapp
 document.getElementById("btn-contacto").addEventListener("click", function(event) {
     event.preventDefault(); // Evita que el enlace se abra

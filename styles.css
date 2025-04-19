@@ -655,7 +655,7 @@ input, textarea {
     position: fixed;
     bottom: 20px;
     left: 20px;
-    background-color: #007bff;
+    background-color: var(--tono-azul);
     color: white;
     border: none;
     border-radius: 50%;

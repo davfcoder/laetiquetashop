@@ -139,15 +139,53 @@ function mostrarBotonVolver() {
 
 // COMPRAS
 function mostrarCompras() {
-  agregarMensaje("¿Qué tipo de ropa te interesa?");
+  chatbotMessages.innerHTML = "";
+  agregarMensaje("🛍️ ¿Qué tipo de ropa estás buscando?");
   chatbotOptions.innerHTML = `
-    <button onclick="agregarMensaje('👗 Revisa descuentos para mujer aquí: https://laetiqueta.com/mujer')">👗 Mujer</button>
-    <button onclick="agregarMensaje('👕 Revisa descuentos para hombre aquí: https://laetiqueta.com/hombre')">👕 Hombre</button>
-    <button onclick="agregarMensaje('🧒 Revisa ropa infantil aquí: https://laetiqueta.com/niños')">🧒 Niño</button>
-    <button onclick="agregarMensaje('👜 Mira accesorios aquí: https://laetiqueta.com/accesorios')">👜 Accesorios</button>
+    <button onclick="mostrarComprasMujer()">👗 Mujer</button>
+    <button onclick="mostrarComprasHombre()">👕 Hombre</button>
+    <button onclick="mostrarComprasNino()">🧒 Niño</button>
+    <button onclick="mostrarComprasAccesorios()">👜 Accesorios</button>
   `;
   mostrarBotonVolver();
 }
+
+function mostrarComprasMujer() {
+  chatbotMessages.innerHTML = "";
+  agregarMensaje("👗 Ropa para mujer:");
+  chatbotOptions.innerHTML = `
+    <button onclick="abrirEnlace('https://laetiqueta.com/mujer')">🛒 Ver catálogo mujer</button>
+    <button onclick="mostrarCompras()">🔙 Volver al menú anterior</button>
+  `;
+}
+
+function mostrarComprasHombre() {
+  chatbotMessages.innerHTML = "";
+  agregarMensaje("👕 Ropa para hombre:");
+  chatbotOptions.innerHTML = `
+    <button onclick="abrirEnlace('https://laetiqueta.com/hombre')">🛒 Ver catálogo hombre</button>
+    <button onclick="mostrarCompras()">🔙 Volver al menú anterior</button>
+  `;
+}
+
+function mostrarComprasNino() {
+  chatbotMessages.innerHTML = "";
+  agregarMensaje("🧒 Ropa para niños:");
+  chatbotOptions.innerHTML = `
+    <button onclick="abrirEnlace('https://laetiqueta.com/niños')">🛒 Ver catálogo infantil</button>
+    <button onclick="mostrarCompras()">🔙 Volver al menú anterior</button>
+  `;
+}
+
+function mostrarComprasAccesorios() {
+  chatbotMessages.innerHTML = "";
+  agregarMensaje("👜 Accesorios disponibles:");
+  chatbotOptions.innerHTML = `
+    <button onclick="abrirEnlace('https://laetiqueta.com/accesorios')">🛒 Ver catálogo de accesorios</button>
+    <button onclick="mostrarCompras()">🔙 Volver al menú anterior</button>
+  `;
+}
+
 
 // DEVOLUCIONES
 function mostrarDevoluciones() {
@@ -290,13 +328,55 @@ function mostrarMayor() {
 
 // SUSCRIPCIONES
 function mostrarSuscripciones() {
+  chatbotMessages.innerHTML = "";
   agregarMensaje("📬 Elige una opción:");
   chatbotOptions.innerHTML = `
-    <button onclick="agregarMensaje('Para recibir novedades:\nRegístrate con tu correo en la parte inferior del sitio.')">📰 Noticias</button>
-    <button onclick="agregarMensaje('Si quieres obtener descuentos exclusivos:\nActiva notificaciones y promociones por WhatsApp.')">🎁 Descuentos</button>
-    <button onclick="mostrarMenuPrincipal()">🔙 Volver al menú principal</button>
+    <button onclick="mostrarBeneficiosSuscripcion()">🎁 Beneficios de suscribirte</button>
+    <button onclick="mostrarFormularioSuscripcion()">📝 Suscríbete</button>
+  `;
+  mostrarBotonVolver();
+}
+
+function mostrarBeneficiosSuscripcion() {
+  chatbotMessages.innerHTML = "";
+  agregarMensaje("🎉 Al suscribirte podrás disfrutar de:<br>✅ Acceso anticipado a nuevos lanzamientos.<br>✅ Descuentos exclusivos solo para suscriptores.<br>✅ Recomendaciones personalizadas.<br>✅ Novedades directamente en tu correo.");
+  chatbotOptions.innerHTML = `<button onclick="mostrarSuscripciones()">🔙 Volver al menú anterior</button>`;
+}
+
+function mostrarFormularioSuscripcion() {
+  chatbotMessages.innerHTML = "";
+  agregarMensaje("📝 Por favor completa el siguiente formulario para suscribirte:");
+  chatbotOptions.innerHTML = `
+    <input type="text" id="nombreSuscripcion" placeholder="Tu nombre" style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 8px; border: 1px solid #ccc;" />
+    <input type="email" id="correoSuscripcion" placeholder="Tu correo electrónico" style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 8px; border: 1px solid #ccc;" />
+    <label for="intereses">¿Qué información te interesa más?</label>
+    <select id="intereses" style="width: 100%; padding: 8px; margin-top: 6px; margin-bottom: 10px; border-radius: 8px; border: 1px solid #ccc;">
+      <option value="mujer">👗 Productos de mujer</option>
+      <option value="hombre">👕 Productos de hombre</option>
+      <option value="niño">🧒 Ropa infantil</option>
+      <option value="accesorios">👜 Accesorios</option>
+      <option value="todos">📦 Todos los anteriores</option>
+    </select>
+    <button onclick="enviarFormularioSuscripcion()">📤 Suscribirse</button>
+    <button onclick="mostrarSuscripciones()">🔙 Volver al menú anterior</button>
   `;
 }
+
+function enviarFormularioSuscripcion() {
+  const correo = document.getElementById("correoSuscripcion").value;
+  const intereses = document.getElementById("intereses").value;
+  const nombre = document.getElementById("nombreSuscripcion").value;
+
+  if (correo && correo.includes("@") && nombre.trim() !== "") {
+    chatbotMessages.innerHTML = "";
+    chatbotOptions.innerHTML = "";
+    agregarMensaje(`✅ ¡Gracias ${nombre}! Te enviaremos información sobre: ${intereses}.`);
+    chatbotOptions.innerHTML = `<button onclick="mostrarMenuPrincipal()">🔙 Volver al menú principal</button>`;
+  } else {
+    alert("Por favor, completa tu nombre y un correo electrónico válido.");
+  }
+}
+
 
 // RESPUESTA POR DEFECTO
 function respuestaAutomatica(userInput) {

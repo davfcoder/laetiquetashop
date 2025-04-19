@@ -60,6 +60,28 @@ body {
     padding: 0.7rem; /* Espaciado interno */
 }
 
+/* Estilo general para el botón de Wishlist */
+#wishlist-link {
+    display: flex; /* Alinea el ícono y el texto horizontalmente */
+    align-items: center; /* Centra el ícono y el texto verticalmente */
+    text-decoration: none; /* Elimina el subrayado */
+    color: #333; /* Color del texto */
+}
+
+/* Alineación del ícono y el texto */
+#wishlist-link img {
+    margin-right: 8px; /* Espacio entre el ícono y el texto */
+    width: 16px; /* Tamaño reducido del ícono */
+    height: 16px; /* Tamaño reducido del ícono */
+}
+
+/* Estilo para el texto del botón (sin negrita) */
+#wishlist-link .right-title {
+    font-size: 14px; /* Tamaño del texto */
+    font-weight: normal; /* Elimina la negrita */
+}
+
+
 .logo-laetiqueta {
     justify-items: center; /* Centra los elementos dentro de un contenedor de grid (aunque aquí no se usa grid) */
     width: 40%; /* Define un ancho del 40% */
@@ -197,6 +219,29 @@ nav {
     text-decoration: none; /* Elimina cualquier subrayado */
 }
 
+/* Estilos para el botón de Wishlist */
+.wishlist-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.wishlist-icon {
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s ease;
+}
+
+/* Estilo para los botones de Wishlist cuando el producto está en la wishlist */
+.wishlist-button .wishlist-icon {
+    transition: all 0.3s ease;
+}
+
+/* Puedes agregar más estilos si quieres que se vea más bonito */
+.wishlist-button:hover .wishlist-icon {
+    transform: scale(1.2);
+}
 
 /* SECCION DE SALES */
 .container-sales {

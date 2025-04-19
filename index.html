@@ -10,6 +10,7 @@
   <script src="https://kit.fontawesome.com/YOUR-FONT-AWESOME-KEY.js" crossorigin="anonymous"></script> <!-- Importa FontAwesome para iconos -->
   <link rel="stylesheet" href="styles.css"> <!-- Enlaza el archivo CSS externo principal -->
   <link rel="stylesheet" href="carrito.css"> <!-- Enlaza el archivo CSS específico para el carrito -->
+<link rel="stylesheet" href="wishlist.css"><!-- Enlazar el archivo CSS del Wishlist -->
   <link rel="icon" href="favicon/favicon.png"> <!-- Define el ícono de la pestaña del navegador -->
 </head>
 <body>
@@ -51,6 +52,13 @@
             <svg id="bolsa-icon"  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-bag"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6.331 8h11.339a2 2 0 0 1 1.977 2.304l-1.255 8.152a3 3 0 0 1 -2.966 2.544h-6.852a3 3 0 0 1 -2.965 -2.544l-1.255 -8.152a2 2 0 0 1 1.977 -2.304z" /><path d="M9 11v-5a3 3 0 0 1 6 0v5" /></svg>
             <span class="right-title">Carrito</span>
           </a>
+        </div>
+
+        <div id="wishlist-bottom" class="right-bottoms"> <!-- Contenedor de elementos alineados a la derecha -->
+          <a href="#" id="wishlist-link">
+            <img src="../assets/corazon.ico" alt="Wishlist Icon" width="20" height="20" />
+            <span class="right-title">Wishlist</span>
+        </a>
         </div>
       </div>
     </div>
@@ -200,6 +208,11 @@
           <h2 class="product-title">Camisa negra manga corta de algodón para mujer</h2> <!-- Título del producto -->
           <span class="price-discount">$60.000</span> <!-- Precio con descuento -->
           <span class="regular-price">$120.000</span> <!-- Precio regular -->
+
+          <button class="wishlist-button" data-product-id="hs-mujer1">
+            <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
+          </button>
+
           <div class="addCart-size"> <!-- Contenedor de botón de agregar al carrito y tallas -->
             <div class="size"> <!-- Contenedor de tallas -->
               <ul class="list-size"> <!-- Lista de tallas disponibles -->
@@ -210,6 +223,8 @@
             </div>
             <button class="add-to-cart">Agregar al carrito</button> <!-- Botón de agregar al carrito -->
             <input type="hidden" name="id-product-m1" id="addCartProduct"> <!-- Campo oculto para almacenar el ID del producto -->
+
+            
           </div>
         </div>
       </div>
@@ -227,6 +242,11 @@
           <h2 class="product-title">Camiseta blanca con estampado para mujer</h2>
           <span class="price-discount">$54.000</span> <!-- Precio con descuento -->
           <span class="regular-price">$90.000</span> <!-- Precio regular -->
+
+          <button class="wishlist-button" data-product-id="hs-mujer2">
+            <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
+          </button>
+
           <div class="addCart-size"> <!-- Contenedor de botón de agregar al carrito y tallas -->
             <div class="size"> <!-- Contenedor de tallas -->
               <ul class="list-size"> <!-- Lista de tallas disponibles -->
@@ -253,6 +273,11 @@
           <h2 class="product-title">Camiseta negra con estampado para mujer</h2>  <!-- Título del producto -->
           <span class="price-discount">$63.000</span>   <!-- Precio con descuento -->
           <span class="regular-price">$90.000</span> <!-- Precio regular -->
+
+          <button class="wishlist-button" data-product-id="hs-mujer3">
+            <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
+          </button>
+
           <div class="addCart-size"> <!-- Contenedor de botón de agregar al carrito y tallas -->
             <div class="size"> <!-- Contenedor de tallas -->
               <ul class="list-size"> <!-- Lista de tallas disponibles -->
@@ -287,6 +312,11 @@
           <h2 class="product-title">Camiseta negra con estampado para hombre</h2>
           <span class="price-discount">$52.250</span>
           <span class="regular-price">$95.000</span>
+
+          <button class="wishlist-button" data-product-id="hs-hombre1">
+            <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
+          </button>
+
           <div class="addCart-size">
             <div class="size">
               <ul class="list-size">
@@ -313,6 +343,11 @@
           <h2 class="product-title">Camiseta blanca con estampado para hombre</h2>
           <span class="price-discount">$47.500</span>
           <span class="regular-price">$95.000</span>
+
+          <button class="wishlist-button" data-product-id="hs-hombre2">
+            <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
+          </button>
+
           <div class="addCart-size">
             <div class="size">
               <ul class="list-size">
@@ -339,6 +374,11 @@
           <h2 class="product-title">Camiseta negra con estampado para hombre</h2>
           <span class="price-discount">$63.000</span>
           <span class="regular-price">$90.000</span>
+
+          <button class="wishlist-button" data-product-id="hs-hombre3">
+            <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
+          </button>
+
           <div class="addCart-size">
             <div class="size">
               <ul class="list-size">
@@ -374,6 +414,11 @@
           <h2 class="product-title">Camiseta con estampado unisex para niños</h2>
           <span class="price-discount">$54.945</span>
           <span class="regular-price">$99.900</span>
+
+          <button class="wishlist-button" data-product-id="hs-niño1">
+            <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
+          </button>
+
           <div class="addCart-size">
             <div class="size">
               <ul class="list-size">
@@ -400,6 +445,11 @@
           <h2 class="product-title">Polo azul oscuro unisex para niños</h2>
           <span class="price-discount">$77.000</span>
           <span class="regular-price">$110.000</span>
+
+          <button class="wishlist-button" data-product-id="hs-niño2">
+            <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
+          </button>
+
           <div class="addCart-size">
             <div class="size">
               <ul class="list-size">
@@ -426,6 +476,11 @@
           <h2 class="product-title">Camiseta negra con estampado para mujer</h2>
           <span class="price-discount">$63.000</span>
           <span class="regular-price">$90.000</span>
+
+          <button class="wishlist-button" data-product-id="hs-niño3">
+            <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
+          </button>
+
           <div class="addCart-size">
             <div class="size">
               <ul class="list-size">
@@ -447,8 +502,8 @@
         <small class="text-muted"><h6>¡Complementa tu look!</h6></small>
       </h3>
     </blockquote>
-    <article class="sales" id="section-accesorios"> <!-- Contenedor de las ofertas de accesorios -->  
-      <div class="hotsales" id="accesorio1">
+    <article class="sales" id="sale-accesorios"> <!-- Contenedor de las ofertas de accesorios -->  
+      <div class="hotsales" id="hs-accesorio1">
         <div class="percentage-product">
           <div class="no-percentage"></div>
           <div class="product">
@@ -459,13 +514,18 @@
         <div class="info-product">
           <h2 class="product-title">Gafas rosadas o negras - Ray Ban</h2>
           <span class="price-discount">$119.900</span>
+
+          <button class="wishlist-button" data-product-id="hs-accesorio1">
+            <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
+          </button>
+
           <div class="addCart-size">
             <button class="add-to-cart">Agregar al carrito</button>
             <input type="hidden" name="id-product-m1" id="addCartProduct">
           </div>
         </div>
       </div>
-      <div class="hotsales" id="accesorio2">
+      <div class="hotsales" id="hs-accesorio2">
         <div class="percentage-product">
           <div class="product">
             <img src="./sales/foto-accesorio2a.webp" alt="Foto principal de accesorio 2a" class="img-normal">
@@ -475,13 +535,18 @@
         <div class="info-product">
           <h2 class="product-title">Gorra Básica Color Negro - Polo</h2>
           <span class="price-discount">$59.900</span>
+
+          <button class="wishlist-button" data-product-id="hs-accesorio2">
+            <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
+          </button>
+
           <div class="addCart-size">
             <button class="add-to-cart">Agregar al carrito</button>
             <input type="hidden" name="id-product-m1" id="addCartProduct">
           </div>
         </div>
       </div>
-      <div class="hotsales" id="accesorio3">
+      <div class="hotsales" id="hs-accesorio3">
         <div class="percentage-product">
           <div class="product">
             <img src="./sales/foto-accesorio3a.webp" alt="Foto principal de accesorio 3a" class="img-normal">
@@ -491,6 +556,11 @@
         <div class="info-product">
           <h2 class="product-title">Cinturón trenzado verde elástico - HSB</h2>
           <span class="price-discount">$79.900</span>
+
+          <button class="wishlist-button" data-product-id="hs-accesorio3">
+            <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
+          </button>
+
           <div class="addCart-size">
             <button class="add-to-cart">Agregar al carrito</button>
             <input type="hidden" name="id-product-m1" id="addCartProduct">
@@ -670,6 +740,7 @@
 
 <script src="script.js"></script> <!-- Enlaza el archivo JavaScript externo -->
 <script src="carrito.js"></script> <!-- Enlaza el archivo JavaScript externo -->
+<script src="wishlist.js"></script><!-- Enlazar el archivo JS del Wishlist -->
 
 
 </html>

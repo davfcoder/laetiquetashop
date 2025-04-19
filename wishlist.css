@@ -1,0 +1,110 @@
+/* wishlist.css */
+
+/* Estilo general para el contenedor de la Wishlist */
+.wishlist-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    z-index: 1000;
+    display: none; /* Inicialmente oculto */
+}
+
+/* Estilo para el encabezado de la Wishlist */
+.wishlist-header h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Estilo para los productos en la Wishlist */
+.wishlist-items {
+    margin-top: 20px;
+    overflow-y: auto;
+    max-height: 80%;
+}
+
+/* Estilo para cada item en la Wishlist */
+.wishlist-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Estilo de la imagen del producto en la Wishlist */
+.wishlist-product-img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+/* Estilo para el nombre y precio del producto */
+.wishlist-item p {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Estilo para el botón de eliminar */
+.eliminar-wishlist {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+/* Efecto al pasar el cursor sobre el botón de eliminar */
+.eliminar-wishlist:hover {
+    background-color: #ff4500;
+}
+
+/* Estilo para el botón de cerrar en la Wishlist */
+.cerrar-wishlist {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/* Estilo para el botón de Wishlist en cada producto */
+.wishlist-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* Estilo para el ícono del corazón */
+.wishlist-icon {
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s ease;
+}
+
+/* Estilo para los botones de Wishlist cuando el producto está en la wishlist */
+.wishlist-button .wishlist-icon {
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover en el botón de Wishlist */
+.wishlist-button:hover .wishlist-icon {
+    transform: scale(1.2);
+}
+
+/* Estilo para cuando la Wishlist está visible */
+.wishlist-container.show {
+    display: block; /* Muestra el contenedor de la Wishlist */
+}

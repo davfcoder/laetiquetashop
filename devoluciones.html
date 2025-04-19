@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es"> <!-- Define el idioma de la página -->
+<head>
+  <meta charset="UTF-8"> <!-- Define la codificación de caracteres como UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que la página sea responsive -->
+  <title>La Etiqueta</title> <!-- Título de la página en la pestaña del navegador -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"> <!-- Importa el CSS de Bootstrap (BOOTSTRAP) -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> <!-- Importa la fuente Raleway desde Google Fonts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> <!-- Importa los scripts de Bootstrap (BOOTSTRAP) -->
+  <script src="https://kit.fontawesome.com/YOUR-FONT-AWESOME-KEY.js" crossorigin="anonymous"></script> <!-- Importa FontAwesome para iconos -->
+  <link rel="stylesheet" href="styles.css"> <!-- Enlaza el archivo CSS externo principal -->
+  <link rel="stylesheet" href="carrito.css"> <!-- Enlaza el archivo CSS específico para el carrito -->
+  <link rel="icon" href="favicon/favicon.png"> <!-- Define el ícono de la pestaña del navegador -->
+</head>
+<body>
+
+    
+<!-- Seccion del navbar-->
+<header>  <!-- Encabezado de la página -->
+    <div class="header-message"> <!-- Mensaje de envío gratis -->
+      <div class="message-text">ENVÍO GRATIS a toda Colombia por compras superiores a $150.000 | Tiempo de envío: 3 a 7 días hábiles</div>
+    </div>
+    <div class="header-top"> <!-- Sección superior del encabezado -->
+      <div class="header-top-menu" id="left-empty"></div> <!-- Espacio vacio para alineado a la izquierda -->
+      <div id="logo-principal" class="header-top-menu">  <!-- Sección para el logo alineado al centro -->
+        <a href="/index.html">
+          <img src="./assets/logo-horizontal.png" alt="Logo oficial de La Etiqueta Shop">
+        </a>
+      </div>
+      <div id="menu-right" class="header-top-menu">  <!-- Sección para elementos alineados a la derecha -->
+        <div class="justify-bottoms"> <!-- Contenedor de elementos alineados a la derecha -->
+          <div id="search-bottom" class="right-bottoms">
+            <a>
+              <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-search"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
+              <span class="left-title">Buscar</span>
+            </a>
+          </div>
+          <div id="login-bottom" class="right-bottoms"> <!-- Contenedor de elementos alineados a la derecha -->
+            <a> <!-- Enlace para iniciar sesión -->
+              <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-user"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg>
+              <span class="left-title">Iniciar Sesión</span>  <!-- Texto de enlace -->
+            </a>
+          </div>
+          <div id="shopping-bag-bottom" class="right-bottoms"> <!-- Contenedor de elementos alineados a la derecha -->
+            <a href="#">
+              <svg id="bolsa-icon"  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-bag"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6.331 8h11.339a2 2 0 0 1 1.977 2.304l-1.255 8.152a3 3 0 0 1 -2.966 2.544h-6.852a3 3 0 0 1 -2.965 -2.544l-1.255 -8.152a2 2 0 0 1 1.977 -2.304z" /><path d="M9 11v-5a3 3 0 0 1 6 0v5" /></svg>
+              <span class="right-title">Carrito</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+      <nav id="navbar">   <!-- Menú de navegación principal -->
+        <div id="logo-secundario"> <!-- Logo pequeño de la tienda -->
+          <img src="./favicon/favicon.png" alt="Logo pequeño de La Etiqueta Shop">
+        </div>
+        <ul class="nav-links">  <!-- Lista de enlaces del menú -->
+          <li class="dropdown"> <!-- Elemento de menú con submenú -->
+            <a href="#sales-mujer">
+              <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-rosette-discount"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 15l6 -6" /><circle cx="9.5" cy="9.5" r=".5" fill="currentColor" /><circle cx="14.5" cy="14.5" r=".5" fill="currentColor" /><path d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7a2.2 2.2 0 0 0 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1a2.2 2.2 0 0 0 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1" /></svg>
+              <span>SALE</span>
+              <svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg>
+            </a>
+            <ul class="submenu"> <!-- Submenú de la categoría SALE -->
+              <li><a><span id="sale">Hasta 50% OFF</span></a></li> <!-- Enlace de submenú -->
+              <li><a href="#sales-mujer">Ropa de mujer</a></li> <!-- Enlace de submenú -->
+              <li><a href="#sales-hombre">Ropa de hombre</a></li>  <!-- Enlace de submenú -->
+              <li><a href="#sales-niño">Ropa de niños</a></li> <!-- Enlace de submenú -->
+              <li><a>Ver todo</a></li> <!-- Enlace de submenú -->
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#sales-hombre">
+              <span>Hombre</span>   <!-- Texto de enlace -->
+              <svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg>
+            </a>
+            <ul class="submenu"> <!-- Submenú de la categoría Hombre -->
+              <li><a>Polos</a></li> <!-- Enlace de submenú -->
+              <li><a>Camisas y camisetas</a></li>
+              <li><a>Pantalones</a></li>
+              <li><a>Bermudas</a></li> <!-- Enlace de submenú -->
+              <li><a>Ver todo</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"> <!-- Elemento de menú con submenú -->
+            <a href="#sales-mujer">
+              <span>Mujer</span> <!-- Texto de enlace -->
+              <svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg>
+            </a>
+            <ul class="submenu"> <!-- Submenú de la categoría Mujer -->
+              <li><a>Camisas y blusas</a></li>
+              <li><a>Vestidos</a></li>
+              <li><a>Faldas</a></li>
+              <li><a>Pantalones</a></li>
+              <li><a>Ver todo</a></li>
+            </ul>
+          </li>
+    
+          <li class="dropdown"> <!-- Elemento de menú con submenú -->
+            <a href="#section-accesorios">
+              <span>Accesorios</span>   <!-- Texto de enlace -->
+              <svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg>
+            </a>
+            <ul class="submenu">
+              <li><a>Gorras</a></li> <!-- Enlace de submenú -->
+              <li><a>Bolsos</a></li>
+              <li><a>Carteras</a></li>
+              <li><a>Cinturones</a></li>
+              <li><a>Gafas</a></li>
+            </ul>
+          </li>
+          <li class="no-dropdown" id="btn-aliados"><a href="#comercios-aliados">Aliados</a></li>  <!-- Enlace de menú -->
+          <li class="no-dropdown"><a href="#nosotros-id">Nosotros</a></li> <!-- Enlace de menú -->
+          <li class="no-dropdown" id="btn-contacto"><a href="">Contáctanos</a></li> <!-- Enlace de menú -->
+        </ul>
+      </nav>
+    </header>
+    <section id="texto-devoluciones"> <!-- Sección de devoluciones online -->
+        <div id="titulo-devoluciones-online">
+            <h2>DEVOLUCIONES DE COMPRAS ONLINE</h2>
+        </div>
+        <div id="contenido-devoluciones-online">
+            <h4><span>Para iniciar el proceso de devolución, contáctanos a través de nuestro correo 
+                electrónico o WhatsApp, o haz clic <a href="/forms-devoluciones.html">aquí</a></span></h3>
+            
+            <p><span>¡Guarda y reutiliza tu bolsa! En caso de que necesites realizar una devolución,
+                podrás usarla para empaquetar tus productos. Reduzcamos el impacto de nuestras acciones.</span></p>
+            <p>En La Etiqueta Yopal Online, queremos que estés completamente satisfecho con tu compra. 
+                Si por alguna razón no estás feliz con tu pedido, ofrecemos un proceso de devolución sencillo,
+                por lo que puedes iniciar la devolución dentro de los 30 días posteriores a la entrega.</p>
+            <p>Todos los productos tendrán que ser devueltos en las mismas condiciones en que fueron adquiridos, y estar:<br>
+                • Sin uso.<br>
+                • Con sus etiquetas y empaque original.<br>
+                • Dentro de un envoltorio opaco, bien cerrado, de manera tal que no se vea su interior.<br>
+                No es posible hacer devoluciones de medias, ropa interior, trajes de baño, ni bodies, por motivos 
+                de seguridad e higiene. Y recuerda que los productos en oferta o con descuento no son elegibles para devolución.</p>
+            <p></p>	
+        </div>
+    </section>
+    <section id="preguntas-devoluciones"> <!-- Sección de preguntas frecuentes sobre devoluciones -->
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        ¿PUEDO HACER UNA DEVOLUCIÓN DE UNA COMPRA LA ETIQUETA ONLINE EN TIENDA?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Por el momento los productos comprados en La Etiqueta Online <strong>no</strong> pueden ser devueltos en las tiendas físicas de La Etiqueta Yopal.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        ¿CÓMO PUEDO HACER UNA DEVOLUCIÓN DE COMPRA LA ETIQUETA ONLINE?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        La Etiqueta Yopal hará un reembolso siempre que el producto no esté dañado, manchado, lavado, alterado o desgastado, 
+                        y que todas las etiquetas estén adheridas. No es posible hacer devoluciones en ropa interior ni trajes de baño, por motivos de higiene. <br>
+                        Si prefieres productos de otro color o talla, simplemente devuelve los productos que no te gustan y especifica el nuevo color y talla que quieres que se te envíe. <br>
+                        <span>Toda devolución deberá ser realizada a través de nuestro portal de devoluciones, contáctanos a través de nuestro correo 
+                        electrónico o WhatsApp, o haz clic <a href="/forms-devoluciones.html">aquí</a></span> <br>
+                        <strong>Para hacer una devolución:</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Accordion Item #3
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        
+</body>
+
+<!-- Botón flotante de WhatsApp -->
+<div class="boton-whatsapp" id="zoomTarget-whatsapp">
+    <!-- Enlace a WhatsApp con un mensaje predefinido -->
+    <a href="https://wa.me/message/F5MZRJDCEXLIK1" target="_blank">
+    <h4>¡Escríbenos!</h4>
+    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 48 48">
+      <circle cx="28" cy="28" r="17" fill="#a5d6a7"></circle><path fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M39.982,14.675	C36.773,9.186,30.817,5.499,24,5.499c-10.217,0-18.5,8.283-18.5,18.5c0,0.7,0.039,1.39,0.115,2.07"></path><path fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M7.84,32.993l-2.301,8.238	c-0.21,0.75,0.481,1.442,1.232,1.232l8.242-2.3c2.662,1.483,5.724,2.336,8.987,2.336c10.217,0,18.5-8.283,18.5-18.5	c0-0.427-0.014-0.85-0.043-1.269"></path><path fill="#18193f" d="M33.357,30.651c-0.398,1.116-2.348,2.191-3.224,2.269c-0.876,0.08-1.697,0.396-5.731-1.194	c-4.855-1.914-7.92-6.891-8.158-7.208c-0.239-0.32-1.95-2.589-1.95-4.939s1.234-3.506,1.672-3.982	C16.405,15.119,16.922,15,17.241,15c0.318,0,0.637,0,0.915,0.011c0.341,0.013,0.718,0.031,1.075,0.825	c0.425,0.945,1.353,3.307,1.472,3.546s0.199,0.519,0.04,0.836c-0.159,0.318-0.239,0.517-0.476,0.796	c-0.239,0.279-0.501,0.622-0.716,0.836c-0.239,0.237-0.488,0.498-0.21,0.974c0.279,0.478,1.236,2.042,2.656,3.307	c1.826,1.627,3.362,2.13,3.841,2.371c0.478,0.239,0.756,0.199,1.035-0.121c0.279-0.318,1.194-1.393,1.512-1.871	s0.637-0.398,1.075-0.239c0.438,0.159,2.786,1.315,3.263,1.554c0.478,0.239,0.796,0.358,0.915,0.557	C33.755,28.579,33.755,29.535,33.357,30.651z"></path>
+      </svg>
+    </a> 
+  </div>
+  
+  
+  <!-- Seccion de footer-->
+  <footer>
+    <div class="contenedor-footer">
+  
+      <!-- Logo y descripción -->
+      <div class="logo">
+        <img src="./assets/logo2020.png" alt="logo2020" />
+        <p>Calidad y Exclusividad</p>
+      </div>
+  
+      <!-- Redes sociales -->
+      <div class="redes">
+        <div class="redes-sociales">
+          <a href="https://wa.me/message/F5MZRJDCEXLIK1">
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" /><path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" /></svg>
+          </a>
+          <a href="https://www.facebook.com/people/La-Etiqueta-Yopal/61555951907749/">
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-facebook"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
+          </a>
+          <a href="https://www.instagram.com/laetiqueta_yopal">
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M16.5 7.5v.01" /></svg>
+          </a>
+          <a href="https://www.tiktok.com/@laetiquetayopal?_t=ZS-8tWk9GFZxvl&_r=1">
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-tiktok"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M21 7.917v4.034a9.948 9.948 0 0 1 -5 -1.951v4.5a6.5 6.5 0 1 1 -8 -6.326v4.326a2.5 2.5 0 1 0 4 2v-11.5h4.083a6.005 6.005 0 0 0 4.917 4.917z" /></svg>
+          </a>
+        </div>
+      </div>
+  
+  
+      <!-- Secciones del footer -->
+      <div class="secciones-footer">
+        <!-- Información sobre la empresa -->
+        <div class="empresa"> 
+          <h4>SOBRE LA MARCA</h4>
+          <a href="#nosotros-id">CULTURA</a>
+          <a href="mailto:laeetiquetacol@gmail.com">TRABAJA CON NOSOTROS</a>
+          <a href="#nosotros-id">LA VIDA EN LA ETIQUETA</a>
+        </div>
+  
+        <!-- Sección de envíos -->
+        <div class="envios">
+          <h4>AYUDA</h4>
+          <a href="mailto:laeetiquetacol@gmail.com">ENVÍOS</a>
+          <a href="/devoluciones.html">DEVOLUCIONES</a>
+          <a href="mailto:laeetiquetacol@gmail.com">PREGUNTAS FRECUENTES</a>
+        </div>
+  
+        <!-- Comercios Aliados-->
+        <div class="comercio_aliados" id="comercios-aliados">
+          <h4>COMERCIOS ALIADOS</h4>
+          <a href="https://www.instagram.com/nusaconcept_store/">Nusa Concept Store</a>
+          <a href="https://www.instagram.com/monopolyformen/">Monopoly For Men</a>
+          <a href="https://www.instagram.com/laetiqueta_yopal/">La Etiqueta Yopal</a>
+        </div>
+  
+      </div>
+  
+      <!-- Mapa -->
+      <div class="mapa">
+        <!-- iframe permite incrustar el mapa de Google Maps -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.466738585618!2d-72.40172542635742!3d5.345497435733362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6b0c4ae580cd61%3A0x5b13c56b30364e29!2sLA%20ETIQUETA!5e0!3m2!1ses!2sco!4v1742055113617!5m2!1ses!2sco" 
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+  
+  
+      <!-- Enlaces legales -->
+      <div class="legales">
+        <a>TÉRMINOS Y CONDICIONES</a>
+        <a>POLÍTICA DE PRIVACIDAD</a>
+        <a>SUPERINTENDENCIA</a>
+      </div>
+    </div>         
+  
+    <!-- Derechos de autor -->
+    <div class="derechos">
+      <p>&copy; 2025 La Etiqueta Yopal. David Ramirez, Vanessa Reyes & Tifany Carvajal. Todos los derechos reservados.</p>
+    </div> 
+  </footer>
+  
+  
+  <script src="script.js"></script> <!-- Enlaza el archivo JavaScript externo -->
+  <script src="carrito.js"></script> <!-- Enlaza el archivo JavaScript externo -->
+  
+  
+  </html>

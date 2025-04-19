@@ -44,8 +44,11 @@ body {
     justify-content: center; /* Centra los elementos horizontalmente */
     font-size: 15px; /* Define un tamaño de fuente */
 }
-
-.header-top-menu img {
+.header-top-menu a {
+    display: flex; /* Activa flexbox */
+    justify-content: center; /* Centra los elementos horizontalmente */
+}
+.header-top-menu a img {
     width: 65%; /* Ajusta el ancho de la imagen dentro del menú */
 }
 
@@ -827,7 +830,7 @@ footer {
 }
 
 .empresa a:hover, .envios a:hover, .comercio_aliados a:hover {
-    color: var(--primario-color); /* Mantiene el mismo color al pasar el mouse */
+    color: var(--fondo-stock); /* Mantiene el mismo color al pasar el mouse */
 }
 
 /* Contenedor del mapa */

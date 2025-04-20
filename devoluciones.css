@@ -1,0 +1,5 @@
+.accordion-button:not(.collapsed) {
+    background-color:white; /* verde suave */
+    color:#1d2743e8; /* Color azul semitransparente */; /* texto más oscuro */
+    font-weight: bold;
+  }

@@ -19,19 +19,19 @@ body {
     position: relative; /* Establece la posición relativa dentro de su contenedor */
     width: 100%; /* Ocupa todo el ancho disponible */
     background-color: black; /* Fondo negro */
-    padding: 8px; /* Espaciado interno para el mensaje */
+    padding: 0.8vw; /* Espaciado interno para el mensaje */
 }
 
 .message-text {
     text-align: center; /* Centra el texto */
     font-weight: bold; /* Hace el texto más grueso */
     color: white; /* Color del texto en blanco para contraste */
-    font-size: 12px; /* Tamaño de fuente pequeño */
+    font-size: 0.9vw; /* Tamaño de fuente pequeño */
 }
 
 .header-top { 
     width: 100%; /* Ocupa todo el ancho */
-    padding: 10px 0 10px 0; /* Espaciado superior e inferior */
+    padding: 1vw 0 1vw 0; /* Espaciado superior e inferior */
     display: flex; /* Usa flexbox para alinear los elementos */
     background-color: var(--primario-color); /* Usa una variable CSS para el color de fondo */
     align-items: center; /* Centra los elementos verticalmente */
@@ -42,7 +42,7 @@ body {
     width: 32%; /* Define un ancho del 32% */
     display: flex; /* Activa flexbox */
     justify-content: center; /* Centra los elementos horizontalmente */
-    font-size: 15px; /* Define un tamaño de fuente */
+    font-size: 1.1vw; /* Define un tamaño de fuente */
 }
 .header-top-menu a {
     display: flex; /* Activa flexbox */
@@ -73,17 +73,16 @@ body {
 
 /* Alineación del ícono y el texto */
 #wishlist-link img {
-    margin-right: 8px; /* Espacio entre el ícono y el texto */
-    width: 16px; /* Tamaño reducido del ícono */
-    height: 16px; /* Tamaño reducido del ícono */
+    margin-right: 0.4vw; /* Espacio entre el ícono y el texto */
+    width: 1.2vw; /* Tamaño reducido del ícono */
+    height: 1.2vw; /* Tamaño reducido del ícono */
 }
 
 /* Estilo para el texto del botón (sin negrita) */
-#wishlist-link .right-title {
-    font-size: 14px; /* Tamaño del texto */
+.right-title {
+    font-size: 1.1vw; /* Tamaño del texto */
     font-weight: normal; /* Elimina la negrita */
 }
-
 
 .logo-laetiqueta {
     justify-items: center; /* Centra los elementos dentro de un contenedor de grid (aunque aquí no se usa grid) */
@@ -114,7 +113,7 @@ nav {
 }
 
 #logo-secundario {
-    padding: 5px; /* Agrega un pequeño espacio alrededor del logo secundario */
+    padding: 0.5vw; /* Agrega un pequeño espacio alrededor del logo secundario */
     position: absolute; /* Posiciona el logo de forma absoluta dentro de su contenedor */
     min-width: 6%; /* Define un tamaño mínimo del 6% del ancho del contenedor */
     max-width: 6%; /* Define un tamaño máximo del 6% del ancho del contenedor */
@@ -149,7 +148,7 @@ nav {
 
 .dropdown {
     position: static; /* Mantiene el dropdown en su posición natural dentro del flujo del documento */
-    padding-bottom: 10px; /* Agrega espacio debajo del dropdown */
+    padding-bottom: 1vw; /* Agrega espacio debajo del dropdown */
 }
 
 .no-dropdown {
@@ -162,14 +161,14 @@ nav {
     width: 100%; /* Hace que ocupe todo el ancho disponible */
     max-width: 100%; /* Evita que se extienda más del 100% */
     padding: 2rem 25% 3rem 25%; /* Añade espacio interno al menú desplegable */
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Agrega una sombra sutil para resaltar el menú */
+    box-shadow: 0px 0.4vw 1.2vw rgba(0, 0, 0, 0.2); /* Agrega una sombra sutil para resaltar el menú */
     background-color: rgb(250, 249, 248); /* Define un color de fondo claro */
     z-index: 100; /* Asegura que el menú desplegable se muestre por encima de otros elementos */
     display: grid; /* Usa un sistema de cuadrícula para organizar los elementos del menú */
     row-gap: 1.5rem; /* Agrega un espacio entre las filas del menú */
     grid-template-columns: repeat(3, 1fr); /* Divide el menú en tres columnas iguales */
     opacity: 0; /* Inicialmente, el menú está oculto */
-    transform: translateY(-5px); /* Mueve el menú ligeramente hacia arriba para una animación suave */
+    transform: translateY(-0.5vw); /* Mueve el menú ligeramente hacia arriba para una animación suave */
     visibility: hidden; /* Oculta el menú hasta que se active */
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Agrega una transición fluida al aparecer */
 }
@@ -181,7 +180,7 @@ nav {
 
 .submenu li a {
     font-weight: normal; /* Define un peso de fuente estándar */
-    width: 10px; /* Establece un ancho muy pequeño (posible error, podrías necesitar "min-width") */
+    width: 1vw; /* Establece un ancho muy pequeño*/
 }
 
 #sale {
@@ -202,18 +201,18 @@ nav {
 }
 
 .nav-links li {
-    font-size: 15px; /* Tamaño de la fuente */
+    font-size: 1.1vw; /* Tamaño de la fuente */
     font-weight: bolder; /* Aplica un peso de fuente más grueso */
 }
 
 .nav-links li:hover {
     text-decoration: underline; /* Subraya el texto cuando el cursor está sobre él */
-    text-underline-offset: 10px; /* Define la distancia entre el subrayado y el texto */
+    text-underline-offset: 1vw; /* Define la distancia entre el subrayado y el texto */
 }
 
 .dropdown:hover .submenu {
     opacity: 1; /* Hace que el menú sea completamente visible al pasar el cursor */
-    transform: translateY(10px); /* Mueve el menú 10px hacia abajo para un efecto de desplazamiento */
+    transform: translateY(1vw); /* Mueve el menú hacia abajo para un efecto de desplazamiento */
     visibility: visible; /* Asegura que el menú sea visible */
  }
 
@@ -227,12 +226,12 @@ nav {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 5px;
+    padding: 0.5vw; /* Espaciado interno */
 }
 
 .wishlist-icon {
-    width: 20px;
-    height: 20px;
+    width: 0.2vw;
+    height: 0.2vw;
     transition: all 0.3s ease;
 }
 
@@ -276,11 +275,11 @@ nav {
 .percentage {
     position: absolute; /* Se posiciona sobre la imagen */
     z-index: 1; /* Asegura que esté por encima de otros elementos */
-    margin-top: 10px; /* Espaciado superior */
-    margin-left: 10px; /* Espaciado izquierdo */
+    margin-top: 0.7vw; /* Espaciado superior */
+    margin-left: 0.7vw; /* Espaciado izquierdo */
     width: fit-content; /* Se ajusta al contenido */
     font-weight: bold; /* Texto en negrita */
-    border-radius: 3px; /* Bordes redondeados */
+    border-radius: 0.4vw; /* Bordes redondeados */
     padding: .3125rem .4375rem; /* Espaciado interno */
     background-color: #ff2929c4; /* Color de fondo rojo semitransparente */
     color: white; /* Texto en color blanco */
@@ -300,7 +299,7 @@ nav {
     width: 100%; /* Ancho completo */
     height: 100%; /* Altura completa */
     object-fit: cover; /* La imagen se ajusta sin distorsión */
-    border-radius: 2px; /* Bordes ligeramente redondeados */
+    border-radius:0.2vw; /* Bordes ligeramente redondeados */
     transition: opacity 0.3s ease; /* Transición suave para efectos de hover */
 }
 
@@ -417,18 +416,18 @@ nav {
 /* Aviso de Cookies */
 .cookie-banner {
     position: fixed; /* Mantiene el aviso fijo en la pantalla */
-    bottom: 20px; /* Lo posiciona 20px desde la parte inferior */
+    bottom: 2vw; /* Lo posiciona 20px desde la parte inferior */
     left: 50%; /* Lo posiciona en el centro horizontal de la pantalla */
     transform: translateX(-50%); /* Ajusta la posición exacta al centro */
     background: #222; /* Fondo oscuro */
     color: white; /* Texto en color blanco */
-    padding: 15px 20px; /* Espaciado interno */
-    border-radius: 8px; /* Bordes redondeados */
+    padding: 1.1vw 2vw; /* Espaciado interno */
+    border-radius: 0.8vw; /* Bordes redondeados */
     display: flex; /* Usa flexbox para alinear los elementos */
     align-items: center; /* Alinea los elementos verticalmente */
-    gap: 15px; /* Espaciado entre elementos internos */
-    font-size: 14px; /* Tamaño de fuente */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para destacar el banner */
+    gap: 1.1vw; /* Espaciado entre elementos internos */
+    font-size: 1vw; /* Tamaño de fuente */
+    box-shadow: 0px 0.4vw 1vw rgba(0, 0, 0, 0.3); /* Sombra para destacar el banner */
     max-width: 90%; /* Máximo ancho del banner para adaptarse a diferentes pantallas */
     z-index: 10; /* Asegura que esté por encima de otros elementos */
 }
@@ -437,7 +436,7 @@ nav {
 
 /* Carrusel */
 .carousel {
-    width: 1300px; /* Establece el ancho del carrusel en 1200px */
+    width: 97vw; /* Establece el ancho del carrusel en 1200px */
     max-width: 100%;
     margin: auto auto 8rem auto;  /* Centra el carrusel horizontalmente */
     /* Bootstrap aplica esta clase para estructurar el carrusel */
@@ -477,9 +476,9 @@ nav {
     background: #afb2ff5c; /* Color de fondo semitransparente */
     color: #222; /* Color de texto oscuro */
     border: none; /* Sin bordes */
-    padding: 8px 12px; /* Espaciado interno */
+    padding: 0.7vw 1vw; /* Espaciado interno */
     cursor: pointer; /* Cambia el cursor a un puntero al pasar por encima */
-    border-radius: 4px; /* Bordes redondeados */
+    border-radius: 0.4vw; /* Bordes redondeados */
     font-weight: bold; /* Texto en negrita */
 }
 
@@ -503,9 +502,9 @@ nav {
 /* ----- CONTENEDOR DEL CARRUSEL ----- */
 .gallery {
     width: 80vw; /* Ancho del contenedor */
-    height: 400px; /* Altura del carrusel */
+    height: 30vw; /* Altura del carrusel */
     overflow: hidden; /* Oculta las imágenes que se salen del contenedor */
-    border-radius: 15px; /* Bordes redondeados */
+    border-radius: 1.5vw; /* Bordes redondeados */
     display: flex; /* Flexbox para alinear las imágenes */
     justify-content: center; /* Centrado horizontal */
     align-items: center; /* Centrado vertical */
@@ -516,14 +515,14 @@ nav {
 .image-container {
     display: flex; /* Asegúrate de que las imágenes estén en línea */
     width: 200%; /* Asegúrate de que el tamaño total sea el adecuado */
-    gap: 20px; /* Espaciado entre las imágenes */
+    gap: 1.7vw; /* Espaciado entre las imágenes */
     animation: slide 50s linear infinite; /*duracion de la imagen*/
 }
 
 /* ----- ESTILO DE LAS IMÁGENES ----- */
 .image-container img {
-    width: 250px; /* Tamaño más grande */
-    height: 350px; /* Altura más grande */
+    width: 18vw; /* Tamaño más grande */
+    height: 28vw; /* Altura más grande */
     object-fit: cover; /* Ajusta la imagen para cubrir el espacio */
     border-radius: 10px; /* Bordes redondeados */
 }
@@ -547,7 +546,7 @@ nav {
     justify-content: center; /* centra los elementos horizontalmente */
     color: white;   /* color del texto */
     text-align: center; /* alinea el texto al centro */
-    padding: 20px;  /* espacio interno */
+    padding: 2vw;  /* espacio interno */
     margin: 4rem auto;
   }
   
@@ -560,7 +559,7 @@ nav {
   .nosotros-section p {
     font-size: clamp(0.2rem, 2vw, 1.5rem);
     font-weight: 400; /* peso normal o ajusta según prefieras */
-    margin-top: 50px; /* espacio entre el h1 y el párrafo */
+    margin-top: 5vw; /* espacio entre el h1 y el párrafo */
   }
   
 
@@ -571,7 +570,7 @@ nav {
     font-family: 'Playfair Display', serif; /* Usa la fuente 'Playfair Display' con estilo serif */
     color: var(--terciario-color); /* Aplica el color terciario definido en variables */
     font-weight: 600; /* Hace que el texto sea negrita */
-    font-size: 30px; /* Ajusta el tamaño del texto */
+    font-size: 2.2vw; /* Ajusta el tamaño del texto */
     text-align: center; /* Centra el texto */
     margin-bottom: 2rem; /* Agrega un margen inferior para separar del resto del contenido */
 }
@@ -598,7 +597,7 @@ nav {
 
 #imagen-form img{
     width: 90%;
-    height: 800px;
+    height: 60vw;
     object-fit: cover;
     border-radius: 1rem;
     mask-image: linear-gradient(to right, rgba(210, 211, 213, .8)40%, rgba(210, 211, 213, 0)90%);
@@ -613,21 +612,21 @@ nav {
 input, textarea {
   width: 100%; /* Ancho completo */
   margin-bottom: 1rem; /* Espaciado inferior */
-  padding: 10px; /* Espaciado interno */
+  padding: 1vw; /* Espaciado interno */
   border: 1px solid var(--tono-azul); /* Borde */
-  border-radius: 10px; /* Bordes redondeados */
+  border-radius: 1vw; /* Bordes redondeados */
 }
 
-select {
+select { /* Estilo para los selectores */
     width: 100%;
     margin-bottom: 1rem;
-    padding: 10px;
+    padding: 1vw;
     border: 1px solid var(--tono-azul);
-    border-radius: 10px;
+    border-radius: 1vw;
     background-color: white;
     font-family: inherit;
-    font-size: 1rem;
-    color: #333;
+    font-size: 1rem;    /* Tamaño de fuente */
+    color: #333; /* Color del texto */
     cursor: pointer;
   }
   
@@ -641,7 +640,7 @@ select {
 .boton-enviar { /* Estilos del botón de envío */
     border-radius: 0.5rem;
     width: 100%; /* Hace que el botón ocupe todo el ancho disponible */
-    padding: 9px; /* Agrega espacio interno para mejorar la apariencia */
+    padding: 0.9vw; /* Agrega espacio interno para mejorar la apariencia */
     background-color: var(--tono-azul); /* Define el color de fondo del botón usando una variable */
     border: none; /* Elimina el borde predeterminado */
     color: white; /* Define el color del texto en blanco */
@@ -655,9 +654,9 @@ select {
 }
 
 .mensaje-legal { /* Estilos del mensaje legal */
-    font-size: 10px; /* Reduce el tamaño del texto */
+    font-size: 0.8vw; /* Reduce el tamaño del texto */
     color: var(--terciario-color); /* Usa el color terciario definido en variables */
-    margin-top: 15px; /* Agrega un margen superior para separar del resto del contenido */
+    margin-top: 1vw; /* Agrega un margen superior para separar del resto del contenido */
 }
 
 .politica-datos { /* Estilos del enlace de la política de datos */
@@ -671,78 +670,71 @@ select {
 
 /* Botón flotante del chatbot */
 #chatbot-toggle {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background-color: var(--tono-azul);
-    color: white;
+    position: fixed; /* Mantiene el botón en una posición fija en la pantalla */
+    bottom: 2vw;   /* Lo posiciona desde la parte inferior */
+    left: 2vw;  /* Lo posiciona desde la izquierda */
+    background-color: var(--tono-azul); /* Color de fondo del botón */
+    color: white; /* Color del texto */
     border: none;
-    border-radius: 50%;
-    padding: 15px;
+    border-radius: 50%; /* Bordes redondeados */
+    padding: 1vw; /* Espaciado interno */
     cursor: pointer;
     z-index: 10000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para el botón */
   }
   
   /* Ventana del chatbot */
   #chatbot-window {
     position: fixed;
-    bottom: 70px;
-    left: 20px;
-    display: none;
-    flex-direction: column;
-    width: 300px;
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    padding: 10px;
-    z-index: 9999;
-    font-family: sans-serif;
-    transition: all 0.3s ease;
+    bottom: 70px;  /* Ajusta la posición del chatbot */
+    left: 20px; /* Ajusta la posición del chatbot */
+    display: none; /* Oculto por defecto */
+    flex-direction: column; /* Alinea los elementos en columna */
+    width: 22vw; /* Ancho de la ventana del chatbot */
+    background: white; /* Color de fondo blanco */
+    border-radius: 20px; /* Bordes redondeados */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra para la ventana */
+    padding: 1vw; /* Espaciado interno */
+    z-index: 9999; /* Asegura que esté por encima de otros elementos */
+    font-family: sans-serif; /* Fuente sans-serif */
+    transition: all 0.3s ease; /* Transición suave para la apertura/cierre */
   }
   
   /* Mensajes del chatbot */
   #chatbot-messages {
-    max-height: 250px;
-    overflow-y: auto;
-    margin-bottom: 10px;
+    max-height: 20vw;  /* Altura máxima de la ventana de mensajes */
+    overflow-y: auto; /* Desplazamiento vertical si el contenido excede la altura */
+    margin-bottom: 1vw; /* Espaciado inferior */
   }
   
   /* Botones de opciones */
   #chatbot-options button {
     width: 100%;
-    margin-bottom: 8px;
-    padding: 10px;
-    border-radius: 10px;
+    margin-bottom: 0.5vw; /* Espaciado inferior entre botones */
+    padding: 1vw; /* Espaciado interno */
+    border-radius: 1vw; /* Bordes redondeados */
     border: 1px solid #007bff;
     background-color: #f0f8ff;
-    color: #007bff;
-    cursor: pointer;
-    transition: background 0.3s ease;
+    color: #007bff; /* Color del texto */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar por encima */
+    transition: background 0.3s ease; /* Transición suave para el fondo */
   }
   
   #chatbot-options button:hover {
-    background-color: #007bff;
-    color: white;
+    background-color: #007bff; /* Cambia el color de fondo al pasar el mouse */
+    color: white; /* Cambia el color del texto al pasar el mouse */
   }
-  
 
-
-
-  
-  
-  
-  
 
 /* Botón flotante de WhatsApp */
 .boton-whatsapp {
     background-color: var(--primario-color); /* Establece el color de fondo usando una variable CSS */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.138); /* Agrega una sombra alrededor del botón */
-    border-radius: 30px; /* Redondea las esquinas del botón */
-    padding: 2px 5px; /* Agrega espacio interno al botón */
+    border-radius: 3vw; /* Redondea las esquinas del botón */
+    padding: 0.2vw 0.5vw; /* Agrega espacio interno al botón */
     position: fixed; /* Mantiene el botón en una posición fija en la pantalla */
-    bottom: 20px; /* Lo posiciona a 20px desde la parte inferior */
-    right: 20px; /* Lo posiciona a 20px desde la parte derecha */
+    bottom: 2vw; /* Lo posiciona a 20px desde la parte inferior */
+    right: 2vw; /* Lo posiciona a 20px desde la parte derecha */
     z-index: 1000; /* Asegura que el botón esté por encima de otros elementos */
     transition: transform 0.3s ease-in-out, right 0.3s ease-in-out, bottom 0.3s ease-in-out; /* Agrega una transición suave a los cambios de tamaño y posición */
 }
@@ -755,7 +747,7 @@ select {
 
 .boton-whatsapp h4 { /* Estilos del texto del botón de WhatsApp */
     color: var(--tono-azul); /* Usa una variable CSS para definir el color del texto */
-    font-size: 14px; /* Define el tamaño de la fuente en 14px */
+    font-size: 1.1vw; /* Define el tamaño de la fuente en 14px */
     font-weight: bold; /* Hace que el texto sea negrita */
     margin: 0; /* Elimina cualquier margen predeterminado del h4 */
 }

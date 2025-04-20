@@ -1,0 +1,120 @@
+body {
+    background-image: url('./assets/fondo.jpg'); /* ruta de la imagen de fondo */
+    background-position-x: 50%, 50%; /* Centra la imagen de fondo horizontalmente */
+    background-position-y: 50%, 50%; /* Centra la imagen de fondo verticalmente */
+    background-size: cover; /* Cubre todo el fondo */
+    height: 100vh; /* Alto del cuerpo */
+    padding: 2vw; /* Elimina el margen y el relleno predeterminado del cuerpo */
+    font-family: "Raleway", sans-serif; /* Establece la fuente "Raleway" como predeterminada */
+}
+
+a {
+    text-decoration: none; /* Quita el subrayado */
+}
+
+.container-todo {
+    display: flex; /* Utiliza flexbox para alinear los elementos */
+    flex-direction: column; /* Coloca los elementos en una columna */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    gap: 30px; /* Espacio entre columnas */
+}
+
+.regresar {
+    width: fit-content; /* Ajusta el ancho al contenido */
+}
+
+.regresar-tienda {
+    display: flex; /* Utiliza flexbox para alinear los elementos */
+    column-gap: 8px; /* Espacio entre filas */
+    row-gap: 8px; /* Espacio entre columnas */
+}
+
+.regresar-tienda h1 {
+    font-size: 16px; /* Tamaño de fuente más grande para el encabezado */
+    color: white; /* Color del texto blanco */
+    margin: 0; /* Elimina el margen predeterminado del encabezado */
+    word-break: break-all;
+}
+
+.container-info {
+    margin: 50px 0px; /* Espacio superior e inferior para el contenedor */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    display: flex; /* Utiliza flexbox para alinear los elementos */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+}
+
+.container-devoluciones {
+    width: 100%; /* Ancho del contenedor */
+    max-width: 400px; /* Ancho máximo del contenedor */
+    padding: 1vw 1.5vw; /* Espaciado interno para el contenedor */
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: white; /* Color de fondo blanco */
+}
+
+.container-logo {
+    width: 100%; /* Ancho del contenedor del logo */
+    display: flex; /* Utiliza flexbox para alinear los elementos */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    margin-bottom: 20px; /* Espacio inferior para el logo */
+}
+.container-logo img {
+    width: 70px; /* Ancho del logo */
+}
+
+.container-form {
+    display: flex; /* Utiliza flexbox para alinear los elementos */
+    flex-direction: column; /* Coloca los elementos en una columna */
+    justify-content: center; /* Centra los elementos verticalmente */
+    width: 100%; /* Ancho del contenedor del formulario */
+}
+
+.container-form h1 {
+    font-size: 15px; /* Tamaño de fuente más grande para el encabezado */
+    color: #757575; /* Color del texto gris */
+}
+
+.mb-3 {
+    width: 100%; /* Ancho del contenedor */
+}
+
+.form-label {
+    font-size: 15px; /* Tamaño de fuente más grande para la etiqueta */
+    margin-bottom: 5px;
+}
+
+.form-control {
+    font-size: 15px; /* Tamaño de fuente más grande para el campo de entrada */
+    border-radius: 5px; /* Bordes redondeados */
+    border: 1px solid #757575; /* Borde gris */
+    padding: 5px 10px; /* Espaciado interno */
+}
+
+.btn-primary {
+    width: 100%; /* Ancho del botón */
+    background-color: #1d1d43e8; /* Color del botón azul */
+    color: white; /* Color del texto blanco */
+    border-radius: 5px; /* Bordes redondeados */
+    border: none; /* Sin borde */
+    padding: 5px;
+}
+
+.container-ayuda {
+    text-align: center;
+    font-size: 12px; /* Tamaño de fuente más pequeño para el texto de ayuda */
+    color: #242424; /* Color del texto gris */
+    margin-top: 20px; /* Espacio superior para el contenedor de ayuda */
+}
+
+.container-ayuda a {
+    color: #242424; /* Color del texto gris */
+    text-decoration:underline; /* Quita el subrayado */
+}
+
+@media (max-width: 450px) {
+    .container-devoluciones {
+        max-width: 95%; /* O el ancho que prefieras en móviles */
+        padding: 1vw 2vw; /* Ajusta el padding si quieres */
+    }
+  }

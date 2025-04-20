@@ -79,13 +79,20 @@ sizeContainers.forEach((sizeContainer) => {  // Recorre cada contenedor de talla
     });
 });
 
-
-
 // Chatbot
+const btnPorMayor = document.getElementById("btn-por-mayor"); // Selecciona el botón de pedido al por mayor
 const chatbotToggle = document.getElementById("chatbot-toggle");
 const chatbotWindow = document.getElementById("chatbot-window");
 const chatbotMessages = document.getElementById("chatbot-messages");
 const chatbotOptions = document.getElementById("chatbot-options");
+
+btnPorMayor.addEventListener("click", function(noRecargar) { // Agrega un evento de clic al botón de pedido al por mayor
+  noRecargar.preventDefault(); // Previene que el enlace recargue la página
+  chatbotWindow.classList.add("visible"); // Muestra la ventana del chatbot
+  chatbotWindow.style.display = "flex"; // Cambia el estilo de la ventana del chatbot
+  chatbotMessages.innerHTML = ""; // Limpia los mensajes previos
+  mostrarMayor(); // Muestra el menú de pedido al por mayor
+});
 
 chatbotToggle.addEventListener("click", () => {
   const isVisible = chatbotWindow.classList.contains("visible");
@@ -97,7 +104,7 @@ chatbotToggle.addEventListener("click", () => {
     chatbotWindow.classList.add("visible");
     chatbotWindow.style.display = "flex";
     chatbotMessages.innerHTML = "";
-    agregarMensaje("👋 Bienvenido a La Etiqueta Yopal, ¿en qué te podemos apoyar hoy?");
+    agregarMensaje("👋 Bienvenido a La Etiqueta Yopal, ¿en qué te podemos ayudar hoy?");
     mostrarMenuPrincipal();
   }
 });
@@ -213,7 +220,7 @@ function mostrarMayor() {
       <button onclick="mostrarMayorHombre()">👕 Hombre</button>
       <button onclick="mostrarMayorNino()">🧒 Niño</button>
       <button onclick="mostrarMayorAccesorios()">👜 Accesorios</button>
-      <button onclick="mostrarMayorOtros()">📦 Otros</button>
+      <button onclick="mostrarMayorOtros()">📦 Varios Productos</button>
     `;
     mostrarBotonVolver();
   }
@@ -378,26 +385,6 @@ function enviarFormularioSuscripcion() {
 }
 
 
-// RESPUESTA POR DEFECTO
-function respuestaAutomatica(userInput) {
-  agregarMensaje("🤖 No estoy seguro cómo ayudarte con eso. Te redireccionaré a WhatsApp...");
-  setTimeout(() => {
-    window.open("https://wa.me/message/F5MZRJDCEXLIK1", "_blank");
-  }, 2000);
-}
-
-
-
-
-
-
- 
-
-
-
-
-
-
 // Interacción contacto con whatsapp
 document.getElementById("btn-contacto").addEventListener("click", function(event) {
     event.preventDefault(); // Evita que el enlace se abra
@@ -428,3 +415,6 @@ document.getElementById("btn-aliados").addEventListener("click", function (event
         }, 650);
     }, 600); // Ajusta este tiempo si el desplazamiento es más lento o rápido
 });
+
+
+

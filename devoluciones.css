@@ -2,4 +2,16 @@
     background-color:white; /* verde suave */
     color:#1d2743e8; /* Color azul semitransparente */; /* texto más oscuro */
     font-weight: bold;
-  }
+}
+
+#accordionFlushExample, #titulo-devoluciones-online,#contenido-devoluciones-online{
+    width: 90%;
+    margin: 25px auto;
+}
+
+#preguntas-devoluciones span, #texto-devoluciones span{
+    font-style: italic;
+}
+#preguntas-devoluciones a{
+    text-decoration:underline;
+}

@@ -79,12 +79,98 @@ sizeContainers.forEach((sizeContainer) => {  // Recorre cada contenedor de talla
     });
 });
 
+// FORMULARIO DE SUSCRIPCIÓN
+const formulario = document.getElementById('formulario-suscripcion');
+const modal = document.getElementById('modal-confirmacion');
+const fondo = document.getElementById('fondo-modal');
+const cerrar = document.getElementById('cerrar-modal');
+
+const categoria = document.getElementById('categoria');
+const subcategoriaContenedor = document.getElementById('subcategoria-contenedor');
+const subcategoria = document.getElementById('subcategoria');
+
+// Opciones de subcategorías por categoría
+const opciones = {
+  mujer: ['Camisas y blusas', 'Vestidos', 'Faldas', 'Pantalones'],
+  hombre: ['Polos', 'Bermudas', 'Camisas y camisetas', 'Pantalones'],
+  niño: ['Camisas y pantalones', 'Ropa para niña', 'Bebés', 'Conjuntos'],
+  accesorios: ['Gorras', 'Cinturones', 'Bolsos', 'Gafas', 'Carteras']
+};
+
+// Mostrar subcategorías al elegir categoría
+categoria.addEventListener('change', () => {
+  const seleccion = categoria.value;
+  subcategoria.innerHTML = ''; // Limpiar anteriores
+
+  if (opciones[seleccion]) {
+    subcategoriaContenedor.style.display = 'block';
+    opciones[seleccion].forEach(op => {
+      const option = document.createElement('option');
+      option.value = op.toLowerCase();
+      option.textContent = op;
+      subcategoria.appendChild(option);
+    });
+  } else {
+    subcategoriaContenedor.style.display = 'none';
+  }
+});
+
+// Mostrar modal al enviar formulario
+formulario.addEventListener('submit', function(event) {
+  event.preventDefault(); // Previene recarga
+  modal.style.display = 'block';
+  fondo.style.display = 'block';
+  formulario.reset(); // Limpia campos
+  subcategoriaContenedor.style.display = 'none'; // Oculta subcategorías
+});
+
+// Cerrar modal
+cerrar.addEventListener('click', function() {
+  modal.style.display = 'none';
+  fondo.style.display = 'none';
+});
+
+fondo.addEventListener('click', function() {
+  modal.style.display = 'none';
+  fondo.style.display = 'none';
+});
+
+// Enviar formulario a Google Apps Script
+document.getElementById('formulario-suscripcion').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const nombre = document.getElementById('nombre').value;
+  const correo = document.getElementById('correo').value;
+  const mensaje = document.getElementById('mensaje').value;
+
+  fetch('https://script.google.com/macros/s/AKfycbyWz2zLUNY_nVx6XfCsqM03is4dC3lFpXkdG5Zy2eTUi-NkGQFc_dj1F5DfYcJIauvHpw/exec', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ nombre, correo, mensaje })
+  })
+  .then(response => response.text())  // Cambié el manejo de la respuesta
+  .then(result => {
+    // Si la respuesta es exitosa, mostrar el modal
+    console.log(result);  // Esto te ayudará a depurar, si lo deseas puedes quitarlo
+    document.getElementById('modal-confirmacion').style.display = 'block';
+    document.getElementById('fondo-modal').style.display = 'block';
+  })
+  .catch(error => {
+    // Si hay un error, mostrarlo en consola
+    console.error('Error:', error);
+  });
+});
+
+
+
 // Chatbot
 const btnPorMayor = document.getElementById("btn-por-mayor"); // Selecciona el botón de pedido al por mayor
-const chatbotToggle = document.getElementById("chatbot-toggle");
-const chatbotWindow = document.getElementById("chatbot-window");
-const chatbotMessages = document.getElementById("chatbot-messages");
-const chatbotOptions = document.getElementById("chatbot-options");
+const chatbotToggle = document.getElementById("chatbot-toggle"); // Selecciona el botón de toggle del chatbot
+const chatbotWindow = document.getElementById("chatbot-window"); // Selecciona la ventana del chatbot
+const chatbotMessages = document.getElementById("chatbot-messages"); // Selecciona el contenedor de mensajes del chatbot
+const chatbotOptions = document.getElementById("chatbot-options"); // Selecciona el contenedor de opciones del chatbot
 
 btnPorMayor.addEventListener("click", function(noRecargar) { // Agrega un evento de clic al botón de pedido al por mayor
   noRecargar.preventDefault(); // Previene que el enlace recargue la página
@@ -94,30 +180,31 @@ btnPorMayor.addEventListener("click", function(noRecargar) { // Agrega un evento
   mostrarMayor(); // Muestra el menú de pedido al por mayor
 });
 
+ 
 chatbotToggle.addEventListener("click", () => {
-  const isVisible = chatbotWindow.classList.contains("visible");
+  const isVisible = chatbotWindow.classList.contains("visible"); // Verifica si el chatbot está visible
 
-  if (isVisible) {
-    chatbotWindow.classList.remove("visible");
-    chatbotWindow.style.display = "none";
+  if (isVisible) { // Si el chatbot está visible
+    chatbotWindow.classList.remove("visible"); // Remueve la clase visible
+    chatbotWindow.style.display = "none"; // Oculta el chatbot
   } else {
-    chatbotWindow.classList.add("visible");
-    chatbotWindow.style.display = "flex";
-    chatbotMessages.innerHTML = "";
+    chatbotWindow.classList.add("visible"); // Agrega la clase visible
+    chatbotWindow.style.display = "flex"; // Muestra el chatbot
+    chatbotMessages.innerHTML = ""; // Limpia los mensajes previos
     agregarMensaje("👋 Bienvenido a La Etiqueta Yopal, ¿en qué te podemos ayudar hoy?");
-    mostrarMenuPrincipal();
+    mostrarMenuPrincipal(); // Muestra el menú principal del chatbot
   }
 });
 
-function agregarMensaje(texto) {
-    const msg = document.createElement("div");
+function agregarMensaje(texto) { // Función para agregar un mensaje al chatbot
+    const msg = document.createElement("div"); // Crea un nuevo elemento div para el mensaje
     msg.innerHTML = texto; // permite HTML dentro de los mensajes
-    msg.style.padding = "8px";
-    msg.style.borderRadius = "10px";
-    msg.style.marginBottom = "6px";
-    msg.style.backgroundColor = "#f1f1f1";
-    chatbotMessages.appendChild(msg);
-    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    msg.style.padding = "8px"; // Espaciado interno del mensaje
+    msg.style.borderRadius = "10px"; // Bordes redondeados del mensaje
+    msg.style.marginBottom = "6px";  // Espaciado entre mensajes
+    msg.style.backgroundColor = "#f1f1f1"; // Color de fondo del mensaje
+    chatbotMessages.appendChild(msg); // Agrega el mensaje al contenedor de mensajes
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight; // Desplaza el contenedor de mensajes hacia abajo para mostrar el último mensaje
   }
   
 
@@ -137,8 +224,7 @@ function mostrarMenuPrincipal() {
     `;
   }
 
-
-function mostrarBotonVolver() {
+function mostrarBotonVolver() { // Función para mostrar el botón de volver al menú principal
   chatbotOptions.innerHTML += `
     <button onclick="mostrarMenuPrincipal()">🔙 Volver al menú principal</button>
   `;
@@ -297,8 +383,8 @@ function mostrarMayor() {
   
   // Paso final después de elegir un producto
   function mostrarPasoFinal(producto) {
-    chatbotMessages.innerHTML = "";
-    chatbotOptions.innerHTML = "";
+    chatbotMessages.innerHTML = ""; // Limpia los mensajes previos
+    chatbotOptions.innerHTML = ""; // Limpia las opciones previas
     agregarMensaje(`✅ Perfecto, ya sabemos que estás interesado en ${producto}.`);
     chatbotOptions.innerHTML = `
       <p>📲 Déjanos tu número de teléfono para ponernos en contacto contigo:</p>
@@ -308,14 +394,14 @@ function mostrarMayor() {
     `;
   }
   
-  function validarTelefono() {
-    const input = document.getElementById("telefono");
-    const telefono = input.value;
-    const regex = /^[0-9]{10}$/;
+  function validarTelefono() { // Función para validar el número de teléfono
+    const input = document.getElementById("telefono"); // Selecciona el input de teléfono
+    const telefono = input.value; // Obtiene el valor del input de teléfono
+    const regex = /^[0-9]{10}$/; // Expresión regular para validar un número de 10 dígitos
   
-    if (regex.test(telefono)) {
-      chatbotMessages.innerHTML = "";
-      chatbotOptions.innerHTML = "";
+    if (regex.test(telefono)) { // Si el número es válido
+      chatbotMessages.innerHTML = ""; // Limpia los mensajes previos
+      chatbotOptions.innerHTML = "";  // Limpia los mensajes y opciones previos
       agregarMensaje("✅ ¡Gracias! Te contactaremos pronto al número: " + telefono);
       chatbotOptions.innerHTML = `<button onclick="mostrarMenuPrincipal()">🔙 Volver al menú principal</button>`;
     } else {
@@ -330,9 +416,6 @@ function mostrarMayor() {
     `;
   }
   
-  
-  
-
 // SUSCRIPCIONES
 function mostrarSuscripciones() {
   chatbotMessages.innerHTML = "";
@@ -344,14 +427,14 @@ function mostrarSuscripciones() {
   mostrarBotonVolver();
 }
 
-function mostrarBeneficiosSuscripcion() {
-  chatbotMessages.innerHTML = "";
+function mostrarBeneficiosSuscripcion() { 
+  chatbotMessages.innerHTML = ""; // Limpia los mensajes previos
   agregarMensaje("🎉 Al suscribirte podrás disfrutar de:<br>✅ Acceso anticipado a nuevos lanzamientos.<br>✅ Descuentos exclusivos solo para suscriptores.<br>✅ Recomendaciones personalizadas.<br>✅ Novedades directamente en tu correo.");
   chatbotOptions.innerHTML = `<button onclick="mostrarSuscripciones()">🔙 Volver al menú anterior</button>`;
 }
 
-function mostrarFormularioSuscripcion() {
-  chatbotMessages.innerHTML = "";
+function mostrarFormularioSuscripcion() { 
+  chatbotMessages.innerHTML = ""; // Limpia los mensajes previos
   agregarMensaje("📝 Por favor completa el siguiente formulario para suscribirte:");
   chatbotOptions.innerHTML = `
     <input type="text" id="nombreSuscripcion" placeholder="Tu nombre" style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 8px; border: 1px solid #ccc;" />
@@ -369,17 +452,17 @@ function mostrarFormularioSuscripcion() {
   `;
 }
 
-function enviarFormularioSuscripcion() {
-  const correo = document.getElementById("correoSuscripcion").value;
-  const intereses = document.getElementById("intereses").value;
-  const nombre = document.getElementById("nombreSuscripcion").value;
+function enviarFormularioSuscripcion() { // Función para enviar el formulario de suscripción
+  const correo = document.getElementById("correoSuscripcion").value; // Obtiene el valor del input de correo
+  const intereses = document.getElementById("intereses").value; // Obtiene el valor del select
+  const nombre = document.getElementById("nombreSuscripcion").value; // Obtiene el nombre del input
 
-  if (correo && correo.includes("@") && nombre.trim() !== "") {
-    chatbotMessages.innerHTML = "";
-    chatbotOptions.innerHTML = "";
+  if (correo && correo.includes("@") && nombre.trim() !== "") { // Verifica que el correo y nombre sean válidos
+    chatbotMessages.innerHTML = "";  // Limpia los mensajes previos
+    chatbotOptions.innerHTML = ""; // Limpia las opciones previas
     agregarMensaje(`✅ ¡Gracias ${nombre}! Te enviaremos información sobre: ${intereses}.`);
     chatbotOptions.innerHTML = `<button onclick="mostrarMenuPrincipal()">🔙 Volver al menú principal</button>`;
-  } else {
+  } else { // Si el correo o nombre no son válidos
     alert("Por favor, completa tu nombre y un correo electrónico válido.");
   }
 }

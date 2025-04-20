@@ -615,50 +615,76 @@
     <p>La Etiqueta Yopal , empresa fundada en 2020 por dos jóvenes emprendedores con una pasión compartida por la moda y el espíritu empresarial, La Etiqueta Yopal nació con el objetivo de ofrecer prendas de alta calidad que reflejen las últimas tendencias y el estilo único de nuestra comunidad.</p>
   </div>
   
-  <!-- Contenedor del formulario -->
-  <div class="form-completo">
-    <div id="imagen-form">
-      <img src  ="./sales/fondo-forms.png" alt="Imagen de ropa en el forms">
-    </div>
-    <div id="formulario">
-      <!-- Formulario de suscripción -->
-      <h2 class="titulo-suscripcion">Suscríbete y déjanos un mensaje para obtener 10% OFF en tu primera compra</h2>
-      <form action="#" method="dialog" id="formulario-suscripcion">
-        <!-- Campo para el nombre -->
-        <label for="nombre">Nombre *</label>
-        <input type="text" id="nombre" name="nombre" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" title="Ingresa solo letras" required>
-
-        <!-- Campo para el correo electrónico -->
-        <label for="correo">Correo Electrónico *</label>
-        <input type="email" id="correo" name="correo" title="Ingrese un correo válido (ejemplo@dominio.com)" required>
-
-        <!-- Campo para el mensaje -->
-        <label for="mensaje">Mensaje *</label>
-        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-        <!-- Aviso legal -->
-        <p class="mensaje-legal">
-          Al enviar tu mensaje autorizas recibir ofertas y otros mensajes comerciales. También aceptas la 
-          <a href="#" class="politica-datos">política de tratamiento de datos</a>.
-        </p>
-        <!-- Botón para enviar el formulario -->
-        <button type="submit" class="boton-enviar">Enviar mensaje</button>
-      </form>
-    </div>
+<!-- Contenedor del formulario --> 
+<div class="form-completo">
+  <div id="imagen-form">
+    <img src="./sales/fondo-forms.png" alt="Imagen de ropa en el forms">
   </div>
+
+  <div id="formulario">
+    <!-- Formulario de suscripción -->
+    <h2 class="titulo-suscripcion">Suscríbete y déjanos un mensaje para obtener 10% OFF en tu primera compra</h2>
+    <form action="#" method="dialog" id="formulario-suscripcion">
+      
+      <!-- Campo para el nombre -->
+      <label for="nombre">Nombre *</label>
+      <input type="text" id="nombre" name="nombre" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" title="Ingresa solo letras" required>
+
+      <!-- Campo para el correo electrónico -->
+      <label for="correo">Correo Electrónico *</label>
+      <input type="email" id="correo" name="correo" title="Ingrese un correo válido (ejemplo@dominio.com)" required>
+
+      <!-- Nueva selección de categoría -->
+      <label for="categoria">¿Qué información te gustaría recibir? *</label>
+      <select id="categoria" required>
+        <option value="" disabled selected>Selecciona una categoría</option>
+        <option value="mujer">Descuentos en prendas para mujer</option>
+        <option value="hombre">Descuentos en prendas para hombre</option>
+        <option value="niño">Descuentos en prendas para niño</option>
+        <option value="accesorios">Descuentos en accesorios</option>
+      </select>
+
+      <!-- Subcategorías dinámicas -->
+      <div id="subcategoria-contenedor" style="display: none;">
+        <label for="subcategoria">Subcategoría *</label>
+        <select id="subcategoria" required></select>
+      </div>
+
+      <!-- Campo para el mensaje -->
+      <label for="mensaje">Mensaje *</label>
+      <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+      <!-- Aviso legal -->
+      <p class="mensaje-legal">
+        Al enviar tu mensaje autorizas recibir ofertas y otros mensajes comerciales. También aceptas la 
+        <a href="#" class="politica-datos">política de tratamiento de datos</a>.
+      </p>
+
+      <!-- Botón para enviar el formulario -->
+      <button type="submit" class="boton-enviar">Enviar mensaje</button>
+    </form>
+  </div>
+</div>
+
+<!-- Modal de confirmación -->
+<div id="modal-confirmacion" style="display: none; position: fixed; top: 30%; left: 30%; background: #fff; padding: 20px; border: 2px solid #333; z-index: 1000; text-align: center;">
+  <p>¡Gracias por suscribirte! Pronto recibirás nuestras ofertas 🎉</p>
+  <button id="cerrar-modal">Cerrar</button>
+</div>
+
+<!-- Fondo oscuro para el modal -->
+<div id="fondo-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.4); z-index: 999;"></div>
 
 </body>
 
-<!-- CONTENEDOR COMPLETO DEL CHATBOT -->
-  <!-- Botón flotante del chatbot -->
-  <button id="chatbot-toggle">🤖</button>
+<!-- Botón flotante del chatbot -->
+<button id="chatbot-toggle">🤖</button>
 
-  <!-- Ventana del chatbot -->
-  <div id="chatbot-window">
-    <div id="chatbot-messages"></div>
-    <div id="chatbot-options"></div>
-  </div>
-
-
+<!-- Ventana del chatbot -->
+<div id="chatbot-window">
+  <div id="chatbot-messages"></div>
+  <div id="chatbot-options"></div>
+</div>
 
 <!-- Botón flotante de WhatsApp -->
 <div class="boton-whatsapp" id="zoomTarget-whatsapp">
@@ -670,7 +696,6 @@
     </svg>
   </a> 
 </div>
-
 
 <!-- Seccion de footer-->
 <footer>

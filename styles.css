@@ -578,10 +578,10 @@ nav {
 
 /* Contenedor del formulario */
 .form-completo {
-    max-height: 700px;
-    margin: 6rem 12rem;
-    padding: 0 6rem 0 0;
-    border-radius: 1rem;
+    max-height: 1000px; /* Establece una altura máxima para el formulario */
+    margin: 4rem 12rem; /* Margen alrededor del formulario */
+    padding: 0 6rem 0 0; /* Espaciado interno */
+    border-radius: 1rem; /* Bordes redondeados */
     background-color: var(--primario-color);
     display: flex;
     align-items: center;
@@ -598,7 +598,7 @@ nav {
 
 #imagen-form img{
     width: 90%;
-    height: 700px;
+    height: 800px;
     object-fit: cover;
     border-radius: 1rem;
     mask-image: linear-gradient(to right, rgba(210, 211, 213, .8)40%, rgba(210, 211, 213, 0)90%);
@@ -612,17 +612,36 @@ nav {
 
 input, textarea {
   width: 100%; /* Ancho completo */
-  margin-bottom: 1rem;
+  margin-bottom: 1rem; /* Espaciado inferior */
   padding: 10px; /* Espaciado interno */
   border: 1px solid var(--tono-azul); /* Borde */
   border-radius: 10px; /* Bordes redondeados */
 }
 
+select {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 10px;
+    border: 1px solid var(--tono-azul);
+    border-radius: 10px;
+    background-color: white;
+    font-family: inherit;
+    font-size: 1rem;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  select:focus {
+    outline: none;
+    border-color: var(--terciario-color);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+  }
+  
 
 .boton-enviar { /* Estilos del botón de envío */
     border-radius: 0.5rem;
     width: 100%; /* Hace que el botón ocupe todo el ancho disponible */
-    padding: 10px; /* Agrega espacio interno para mejorar la apariencia */
+    padding: 9px; /* Agrega espacio interno para mejorar la apariencia */
     background-color: var(--tono-azul); /* Define el color de fondo del botón usando una variable */
     border: none; /* Elimina el borde predeterminado */
     color: white; /* Define el color del texto en blanco */
@@ -707,9 +726,9 @@ input, textarea {
     color: white;
   }
   
-  
-  
-  
+
+
+
   
   
   

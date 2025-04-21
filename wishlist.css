@@ -1,82 +1,139 @@
-/* wishlist.css */
+/* wishlist.css - Estilo profesional con colores fríos */
 
 /* Estilo general para el contenedor de la Wishlist */
 .wishlist-container {
     position: fixed;
     top: 0;
     right: 0;
-    width: 300px;
+    width: 350px; /* Un poco más ancho para mejor legibilidad */
     height: 100%;
-    background-color: white;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
-    padding: 20px;
+    background-color: #f4f7f8; /* Gris claro azulado */
+    box-shadow: -3px 0 10px rgba(0, 0, 0, 0.15); /* Sombra sutil */
+    padding: 30px; /* Más espacio interior */
     z-index: 1000;
     display: none; /* Inicialmente oculto */
+    overflow-y: auto;
+    border-left: 1px solid #e0e6e8; /* Borde sutil */
 }
 
 /* Estilo para el encabezado de la Wishlist */
+.wishlist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #cdd2d5; /* Línea divisoria más marcada */
+}
+
 .wishlist-header h2 {
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 1.8em;
+    font-weight: 500; /* Un poco menos bold */
+    color: #37474f; /* Gris azulado oscuro */
+    margin: 0;
+}
+
+/* Estilo para el botón de cerrar la Wishlist */
+.cerrar-wishlist {
+    font-size: 2em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #78909c; /* Gris azulado medio */
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 0;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.cerrar-wishlist:hover {
+    color: #263238; /* Gris muy oscuro al pasar el ratón */
 }
 
 /* Estilo para los productos en la Wishlist */
 .wishlist-items {
-    margin-top: 20px;
+    margin-top: 25px;
     overflow-y: auto;
-    max-height: 80%;
+    max-height: 75%; /* Ajustado para más espacio si es necesario */
 }
 
 /* Estilo para cada item en la Wishlist */
 .wishlist-item {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-bottom: 1px solid #e0e6e8;
+    background-color: #fff; /* Fondo blanco para resaltar el item */
+    border-radius: 5px; /* Bordes redondeados sutiles */
+}
+
+.wishlist-item:last-child {
+    border-bottom: none; /* Quitar el borde del último item */
 }
 
 /* Estilo de la imagen del producto en la Wishlist */
 .wishlist-product-img {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
     object-fit: cover;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Sombra muy suave */
 }
 
-/* Estilo para el nombre y precio del producto */
+/* Estilo para el nombre, talla y color del producto */
+.wishlist-item div {
+    flex-grow: 1;
+}
+
 .wishlist-item p {
-    margin: 0;
-    font-size: 14px;
-    color: #333;
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #455a64; /* Otro tono de gris azulado */
+}
+
+.wishlist-item p strong {
+    font-weight: 500;
+    color: #263238;
 }
 
 /* Estilo para el botón de eliminar */
 .eliminar-wishlist {
-    background-color: #ff6347;
+    background-color: #ef5350; /* Rojo más moderno */
     color: white;
     border: none;
     cursor: pointer;
-    padding: 5px 10px;
-    margin-left: 10px;
+    padding: 8px 12px;
+    margin-left: 15px;
     border-radius: 5px;
+    font-size: 0.85em;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-/* Efecto al pasar el cursor sobre el botón de eliminar */
 .eliminar-wishlist:hover {
-    background-color: #ff4500;
+    background-color: #e53935; /* Tono más oscuro al pasar el ratón */
 }
 
-/* Estilo para el botón de cerrar en la Wishlist */
-.cerrar-wishlist {
-    font-size: 24px;
-    background: none;
+/* Estilo para el botón de agregar al carrito (si lo tienes) */
+.agregar-al-carrito-wishlist {
+    background-color: #43a047; /* Verde más profesional */
+    color: white;
     border: none;
     cursor: pointer;
-    color: #333;
-    position: absolute;
-    top: 10px;
-    right: 10px;
+    padding: 8px 12px;
+    margin-left: 10px;
+    border-radius: 5px;
+    font-size: 0.85em;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.agregar-al-carrito-wishlist:hover {
+    background-color: #388e3c;
 }
 
 /* Estilo para el botón de Wishlist en cada producto */
@@ -84,24 +141,28 @@
     background: none;
     border: none;
     cursor: pointer;
-    padding: 5px;
+    padding: 8px; /* Un poco más de padding para el ícono */
+    outline: none; /* Quitar el outline al enfocar */
 }
 
 /* Estilo para el ícono del corazón */
 .wishlist-icon {
-    width: 20px;
-    height: 20px;
-    transition: all 0.3s ease;
+    width: 22px;
+    height: 22px;
+    transition: transform 0.2s ease-in-out; /* Transición más suave */
+    opacity: 0.8; /* Un poco de transparencia */
 }
 
 /* Estilo para los botones de Wishlist cuando el producto está en la wishlist */
-.wishlist-button .wishlist-icon {
-    transition: all 0.3s ease;
+.wishlist-button .wishlist-icon.filled {
+    /* Puedes añadir estilos específicos para cuando el corazón está lleno */
+    opacity: 1;
 }
 
 /* Efecto hover en el botón de Wishlist */
 .wishlist-button:hover .wishlist-icon {
-    transform: scale(1.2);
+    transform: scale(1.1);
+    opacity: 1;
 }
 
 /* Estilo para cuando la Wishlist está visible */

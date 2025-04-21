@@ -179,7 +179,7 @@
     width: 450px;
     background: #fff;
     box-shadow: -4px 0 30px rgba(0, 0, 0, 0.1); /* Sombra más suave */
-    height: 100vh;
+    height: 100vh;  
     max-height: 100vh;
     overflow-y: auto;
     padding: 30px;

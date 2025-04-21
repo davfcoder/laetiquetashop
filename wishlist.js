@@ -11,8 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <button id="cerrar-wishlist" class="cerrar-wishlist">&times;</button>
         </div>
         <div id="wishlist-items" class="wishlist-items">
-            <!-- Los items de la Wishlist irán aquí -->
-        </div>
+            </div>
     `;
 
     // Estilos del contenedor del Wishlist
@@ -31,40 +30,38 @@ document.addEventListener("DOMContentLoaded", function () {
     const wishlistButton = document.getElementById("wishlist-link");
 
     // Mostrar el contenedor del Wishlist al hacer clic en el botón
-    wishlistButton.addEventListener("click", function () {
-        wishlistContainer.style.display = "block"; // Mostrar el contenedor del Wishlist
-        renderWishlist(); // Mostrar los productos de la Wishlist
-    });
+    if (wishlistButton) {
+        wishlistButton.addEventListener("click", function () {
+            wishlistContainer.style.display = "block"; // Mostrar el contenedor del Wishlist
+            renderWishlist(); // Mostrar los productos de la Wishlist
+        });
+    }
 
     // Cerrar el contenedor del Wishlist al hacer clic en el botón de cerrar
     const cerrarWishlist = document.getElementById("cerrar-wishlist");
-    cerrarWishlist.addEventListener("click", function () {
-        wishlistContainer.style.display = "none"; // Ocultar el contenedor del Wishlist
-    });
+    if (cerrarWishlist) {
+        cerrarWishlist.addEventListener("click", function () {
+            wishlistContainer.style.display = "none"; // Ocultar el contenedor del Wishlist
+        });
+    }
 
     // Cargar los productos guardados en localStorage
     let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
     // Función para agregar el producto a la Wishlist
-    function agregarAlWishlist(productId, productName, productPrice, productImg) {
-        // Verificar si el producto ya está en la wishlist
-        if (wishlist.some((product) => product.productId === productId)) {
-            return; // Si ya está, no hacer nada
+    function agregarAlWishlist(productId, productName, productPrice, productImg, productTalla, productColor) {
+        if (wishlist.some((product) => product.productId === productId && product.productTalla === productTalla && product.productColor === productColor)) {
+            return; // Si ya está con la misma talla y color, no hacer nada
         }
-
-        // Crear un nuevo item en la Wishlist
-        wishlist.push({ productId, productName, productPrice, productImg });
+        wishlist.push({ productId, productName, productPrice, productImg, productTalla, productColor });
         localStorage.setItem("wishlist", JSON.stringify(wishlist));
-
         renderWishlist(); // Actualizar la vista de la Wishlist
     }
 
     // Función para eliminar un producto de la Wishlist
-    function eliminarDeWishlist(productId) {
-        // Filtrar el producto a eliminar
-        wishlist = wishlist.filter((product) => product.productId !== productId);
+    function eliminarDeWishlist(productId, productTalla, productColor) {
+        wishlist = wishlist.filter((product) => product.productId !== productId || product.productTalla !== productTalla || product.productColor !== productColor);
         localStorage.setItem("wishlist", JSON.stringify(wishlist));
-
         renderWishlist(); // Actualizar la vista de la Wishlist
         updateHeartIcon(productId, "vacío"); // Actualizar ícono de corazón al eliminar
     }
@@ -82,14 +79,46 @@ document.addEventListener("DOMContentLoaded", function () {
                     <img src="${product.productImg}" alt="${product.productName}" class="wishlist-product-img">
                     <p>${product.productName}</p>
                     <p>Precio: ${product.productPrice}</p>
-                    <button class="eliminar-wishlist" data-product-id="${product.productId}">Eliminar</button>
+                    <p>Talla: ${product.productTalla}</p>
+                    <p>Color: ${product.productColor}</p>
+                    <button class="eliminar-wishlist" data-product-id="${product.productId}" data-product-talla="${product.productTalla}" data-product-color="${product.productColor}">Eliminar</button>
+                    <button class="agregar-al-carrito-wishlist"
+                            data-product-id="${product.productId}"
+                            data-product-name="${product.productName}"
+                            data-product-price="${product.productPrice}"
+                            data-product-img="${product.productImg}"
+                            data-product-talla="${product.productTalla}"
+                            data-product-color="${product.productColor}">
+                        Agregar al Carrito
+                    </button>
                 </div>
             `;
             wishlistItems.appendChild(item);
 
             // Lógica para eliminar el producto de la Wishlist al hacer clic en el botón eliminar
             item.querySelector(".eliminar-wishlist").addEventListener("click", function () {
-                eliminarDeWishlist(product.productId);
+                const productId = this.getAttribute("data-product-id");
+                const productTalla = this.getAttribute("data-product-talla");
+                const productColor = this.getAttribute("data-product-color");
+                eliminarDeWishlist(productId, productTalla, productColor);
+            });
+
+            // Lógica para agregar el producto al carrito
+            item.querySelector(".agregar-al-carrito-wishlist").addEventListener("click", function () {
+                const productId = this.getAttribute("data-product-id");
+                const productName = this.getAttribute("data-product-name");
+                const productPriceText = this.getAttribute("data-product-price");
+                const productPrice = parseFloat(productPriceText.replace(/[^\d,.-]/g, '').replace('.', '').replace(',', '.'));
+                const productImg = this.getAttribute("data-product-img");
+                const productTalla = this.getAttribute("data-product-talla");
+                const productColor = this.getAttribute("data-product-color");
+
+                if (typeof agregarAlCarrito === 'function') {
+                    agregarAlCarrito(productName, productId, productTalla, productColor, productPrice, productImg);
+                    eliminarDeWishlist(productId, productTalla, productColor); // Opcional: eliminar de la wishlist al agregar al carrito
+                } else {
+                    console.error("La función agregarAlCarrito no está definida.");
+                }
             });
         });
     }
@@ -103,29 +132,38 @@ document.addEventListener("DOMContentLoaded", function () {
             const productId = button.getAttribute("data-product-id");
 
             // Obtener los detalles del producto usando el productId directamente
-            const productElement = document.getElementById(productId);  // Ahora con el mismo id
+            const productElement = document.getElementById(productId); // Ahora con el mismo id
             if (!productElement) {
                 console.error("Producto no encontrado en la página");
                 return;
             }
 
             const productTitle = productElement.querySelector(".product-title");
-            const productPrice = productElement.querySelector(".price-discount");
-            const productImg = productElement.querySelector(".product img");
+            const productPriceElement = productElement.querySelector(".price-discount");
+            const productImgElement = productElement.querySelector(".product img");
+            const productTallaElement = productElement.querySelector(".size-letter.selected"); // Obtener la talla seleccionada
+            const productTalla = productTallaElement ? productTallaElement.textContent : "Talla no definida";
+            const productColorElement = productElement.querySelector('.color-option.selected'); // Adaptar el selector según tu estructura de color
+            const productColor = productColorElement ? productColorElement.getAttribute('data-color') : "Color no definido"; // Adaptar el atributo según tu estructura de color
 
-            // Ya no se maneja la talla
-            if (!productTitle || !productPrice || !productImg) {
-                console.error("Producto no encontrado en la página");
+
+            if (!productTitle || !productPriceElement || !productImgElement) {
+                console.error("Información del producto incompleta");
                 return;
             }
 
+            const productPriceText = productPriceElement.textContent;
+            const productPrice = productPriceText ? parseFloat(productPriceText.replace(/[^\d,.-]/g, '').replace('.', '').replace(',', '.')) : 0;
+            const productImgSrc = productImgElement.src;
+            const productName = productTitle.textContent;
+
             // Agregar a la wishlist
-            if (wishlist.some((product) => product.productId === productId)) {
-                eliminarDeWishlist(productId);
-                icon.src = "./assets/corazon_vacio.ico";
+            if (wishlist.some((product) => product.productId === productId && product.productTalla === productTalla && product.productColor === productColor)) {
+                eliminarDeWishlist(productId, productTalla, productColor); // Pasar la talla y el color al eliminar
+                updateHeartIcon(productId, "vacío");
             } else {
-                agregarAlWishlist(productId, productTitle.textContent, productPrice.textContent, productImg.src);
-                icon.src = "./assets/corazon_lleno.ico";
+                agregarAlWishlist(productId, productName, productPrice, productImgSrc, productTalla, productColor);
+                updateHeartIcon(productId, "lleno");
             }
         });
     });
@@ -133,18 +171,17 @@ document.addEventListener("DOMContentLoaded", function () {
     wishlist.forEach((product) => {
         const icon = document.querySelector(`[data-product-id="${product.productId}"] .wishlist-icon`);
         if (icon) {
-            icon.src = "./assets/corazon_lleno.ico";
+            updateHeartIcon(product.productId, "lleno", icon);
         }
     });
 
-    function updateHeartIcon(productId, action) {
-        const icon = document.querySelector(`[data-product-id="${productId}"] .wishlist-icon`);
+    function updateHeartIcon(productId, action, iconElement = null) {
+        const icon = iconElement || document.querySelector(`[data-product-id="${productId}"] .wishlist-icon`);
         if (icon) {
-            if (action === "lleno") {
-                icon.src = "./assets/corazon_lleno.ico";
-            } else if (action === "vacío") {
-                icon.src = "./assets/corazon_vacio.ico";
-            }
+            icon.src = action === "lleno" ? "./assets/corazon_lleno.ico" : "./assets/corazon_vacio.ico";
         }
     }
+
+    // Asegúrate de que la wishlist se renderice al cargar la página
+    renderWishlist();
 });

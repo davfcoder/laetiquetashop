@@ -30,12 +30,20 @@
                     <h1>Ingresa los datos que se solicitan a continuación para realizar una devolución</h1> <!-- Título del formulario -->
                     <form action="forms-devoluciones.html" method="POST"> <!-- Formulario que envía datos a la misma página -->
                         <div class="mb-3"> <!-- Contenedor para el campo de nombre -->
-                            <label for="numero-compra" class="form-label">Número de la compra</label> <!-- Etiqueta para el campo del número de la compra -->
+                            <label for="numero-compra" class="form-label">Número de la compra *</label> <!-- Etiqueta para el campo del número de la compra -->
                             <input placeholder id="numero-compra" type="text" name="num-compra" title="Ingresa el número de la compra" class="form-control" required> <!-- Campo de entrada para el nombre -->
                         </div>
                         <div class="mb-3"> <!-- Contenedor para el campo de correo electrónico -->
-                            <label for="correo-compra" class="form-label">Correo electrónico asociado a la compra</label> <!-- Etiqueta para el campo de correo electrónico -->
+                            <label for="correo-compra" class="form-label">Correo electrónico asociado a la compra *</label> <!-- Etiqueta para el campo de correo electrónico -->
                             <input type="email" id="correo-compra" name="validation" title="Ingresa el correo electrónico asociado a la compra" class="form-control" required> <!-- Campo de entrada para el correo electrónico -->
+                        </div>
+                        <div class="mb-3">
+                            <label for="devoluciones" class="form-label">Tipo de solicitud *</label>
+                            <select id="solicitud" class="form-control" required>
+                                <option value="" disabled selected>Selecciona una opción</option> <!-- Opción por defecto -->
+                                <option value="devoluciones">Solicitud de reembolso</option>
+                                <option value="cambio">Solicitud de cambio</option>
+                            </select>
                         </div>
                         
                         <button type="submit" class="btn-primary">Ingresar</button> <!-- Botón para enviar el formulario -->

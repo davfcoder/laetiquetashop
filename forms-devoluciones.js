@@ -23,5 +23,5 @@
         botonEnviar.textContent = "Enviar"; // Restaura texto original
         mensajeExito.style.display = "none";
       }, 6000); 
-    }, 5000); // Simula segundos de carga
+    }, 1500); // Simula segundos de carga
   });

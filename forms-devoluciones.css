@@ -118,6 +118,13 @@ a {
   margin: 0;
 }
 
+#mensaje-exito {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 @media (max-width: 450px) {
     .container-devoluciones {
         max-width: 95%; /* O el ancho que prefieras en móviles */

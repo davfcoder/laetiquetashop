@@ -10,7 +10,7 @@
   <script src="https://kit.fontawesome.com/YOUR-FONT-AWESOME-KEY.js" crossorigin="anonymous"></script> <!-- Importa FontAwesome para iconos -->
   <link rel="stylesheet" href="styles.css"> <!-- Enlaza el archivo CSS externo principal -->
   <link rel="stylesheet" href="carrito.css"> <!-- Enlaza el archivo CSS específico para el carrito -->
-<link rel="stylesheet" href="wishlist.css"><!-- Enlazar el archivo CSS del Wishlist -->
+  <link rel="stylesheet" href="wishlist.css"><!-- Enlazar el archivo CSS del Wishlist -->
   <link rel="icon" href="favicon/favicon.png"> <!-- Define el ícono de la pestaña del navegador -->
 </head>
 <body>
@@ -152,39 +152,39 @@
     un fragmento de texto citado de otra fuente. Visualmente, los navegadores suelen aplicar sangría 
     y un estilo distintivo a este elemento para diferenciarlo del resto del contenido. -->
     <blockquote class="blockquote text-center">
-      <h3>TODO EN ROPA PARA MUJER</h3>
+      <h3>TODO EN ROPA PARA NIÑOS</h3>
     </blockquote> <!-- Cita en bloque con el título de la sección -->
-    <h1>Filtros</h1>
-    <div class="filters">
+    <h1 style="display: none;">Filtros</h1>
+    <div style="display: none;" class="filters">
         <label class="label-filter">Tipo de prenda</label>
-        <button>Camisas y blusas</button>
-        <button>Vestidos</button>
-        <button>Faldas</button>
+        <button>Camisetas</button>
         <button>Pantalones</button>
-        <button>Ropa interior</button>
+        <button>Vestidos</button>
+        <button>Medias</button>
+        <button>Trajes de baño</button>
     </div>
     <article class="sales"> <!-- Contenedor de las ofertas para hombre -->
-        <div class="hotsales productos" id="hs-mujer1">
+        <div class="hotsales productos" id="hs-kid1">
         <div class="percentage-product">
           <div class="product">
-            <img src="./sales/foto-mujer1a.jpeg" alt="Foto principal de mujer 1a" class="img-normal"> <!-- Imagen del producto normal -->
-            <img src="./sales/foto-mujer1b.jpeg" alt="Foto principal de mujer 1b" class="img-hover"> <!-- Imagen del producto en hover -->
+            <img src="./sales/foto-niño1a.jpg" alt="Foto principal de niño 1a" class="img-normal"> <!-- Imagen del producto normal -->
+            <img src="./sales/foto-niño1b.jpg" alt="Foto principal de niño 1b" class="img-hover"> <!-- Imagen del producto en hover -->
           </div>
         </div>
         <div class="info-product">
-          <h2 class="product-title">Camisa negra manga corta de algodón para mujer</h2>
-          <span class="price-discount price-normal">$95.000</span>
+          <h2 class="product-title">Camiseta con estampado unisex para niños</h2>
+          <span class="price-discount price-normal">$99.900</span>
 
-          <button class="wishlist-button" data-product-id="hs-mujer1">
+          <button class="wishlist-button" data-product-id="hs-kid1">
             <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
           </button>
 
           <div class="addCart-size">
             <div class="size">
               <ul class="list-size">
-                <li class="size-letter selected">M</li>
-                <li class="size-letter">L</li>
-                <li class="size-letter">XL</li>
+                <li class="size-letter selected">XS</li>
+                <li class="size-letter">S</li>
+                <li class="size-letter">M</li>
               </ul>
             </div>
             <button class="add-to-cart">Agregar al carrito</button>
@@ -192,18 +192,46 @@
           </div>
         </div>
         </div>
-        <div class="hotsales productos" id="hs-mujer2">
+        <div class="hotsales productos" id="hs-kid2">
             <div class="percentage-product">
               <div class="product">
-                <img src="./sales/foto-mujer2a.jpg" alt="Foto principal de mujer 2a" class="img-normal"> <!-- Imagen del producto normal -->
-                <img src="./sales/foto-mujer2b.jpg" alt="Foto principal de mujer 2b" class="img-hover"> <!-- Imagen del producto en hover -->
+                <img src="./sales/foto-niño2a.png" alt="Foto principal de niño 2a" class="img-normal"> <!-- Imagen del producto normal -->
+                <img src="./sales/foto-niño2b.png" alt="Foto principal de niño 2b" class="img-hover"> <!-- Imagen del producto en hover -->
               </div>
             </div>
             <div class="info-product">
-              <h2 class="product-title">Camiseta blanca con estampado para mujer</h2>
+              <h2 class="product-title">Polo azul oscuro unisex para niños</h2>
+              <span class="price-discount price-normal">$110.000</span>
+    
+              <button class="wishlist-button" data-product-id="hs-kid2">
+                <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
+              </button>
+    
+              <div class="addCart-size">
+                <div class="size">
+                  <ul class="list-size">
+                    <li class="size-letter selected">XS</li> <!-- Talla "XS" seleccionada predefinida -->
+                    <li class="size-letter">S</li> <!-- Talla "S" -->
+                    <li class="size-letter"></li> <!-- Talla "M" -->
+                  </ul>
+                </div>
+                <button class="add-to-cart">Agregar al carrito</button>
+                <input type="hidden" name="id-product-m1" id="addCartProduct">
+              </div>
+            </div>
+        </div>
+        <div class="hotsales productos" id="hs-kid3">
+            <div class="percentage-product">
+              <div class="product">
+                <img src="./sales/foto-niño3a.jpg" alt="Foto principal de niño 3a" class="img-normal"> <!-- Imagen del producto normal -->
+                <img src="./sales/foto-niño3b.jpg" alt="Foto principal de niño 3b" class="img-hover"> <!-- Imagen del producto en hover -->
+              </div>
+            </div>
+            <div class="info-product">
+              <h2 class="product-title">Camiseta blanca con estampado unisex para niños</h2>
               <span class="price-discount price-normal">$90.000</span>
     
-              <button class="wishlist-button" data-product-id="hs-mujer2">
+              <button class="wishlist-button" data-product-id="hs-kid3">
                 <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
               </button>
     
@@ -213,34 +241,6 @@
                     <li class="size-letter selected">XS</li> <!-- Talla "XS" seleccionada predefinida -->
                     <li class="size-letter">S</li> <!-- Talla "S" -->
                     <li class="size-letter">M</li> <!-- Talla "M" -->
-                  </ul>
-                </div>
-                <button class="add-to-cart">Agregar al carrito</button>
-                <input type="hidden" name="id-product-m1" id="addCartProduct">
-              </div>
-            </div>
-        </div>
-        <div class="hotsales productos" id="hs-mujer3">
-            <div class="percentage-product">
-              <div class="product">
-                <img src="./sales/foto-mujer3a.jpeg" alt="Foto principal de mujer 2a" class="img-normal"> <!-- Imagen del producto normal -->
-                <img src="./sales/foto-mujer3b.jpeg" alt="Foto principal de mujer 2b" class="img-hover"> <!-- Imagen del producto en hover -->
-              </div>
-            </div>
-            <div class="info-product">
-              <h2 class="product-title">Camiseta negra con estampado para mujer</h2>
-              <span class="price-discount price-normal">$90.000</span>
-    
-              <button class="wishlist-button" data-product-id="hs-mujer3">
-                <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
-              </button>
-    
-              <div class="addCart-size">
-                <div class="size">
-                  <ul class="list-size">
-                    <li class="size-letter selected">S</li> <!-- Talla "XS" seleccionada predefinida -->
-                    <li class="size-letter">M</li> <!-- Talla "S" -->
-                    <li class="size-letter">L</li> <!-- Talla "M" -->
                   </ul>
                 </div>
                 <button class="add-to-cart">Agregar al carrito</button>

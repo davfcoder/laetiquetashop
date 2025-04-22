@@ -135,36 +135,6 @@ fondo.addEventListener('click', function() {
   fondo.style.display = 'none';
 });
 
-// Enviar formulario a Google Apps Script
-document.getElementById('formulario-suscripcion').addEventListener('submit', function(event) {
-  event.preventDefault();
-
-  const nombre = document.getElementById('nombre').value;
-  const correo = document.getElementById('correo').value;
-  const mensaje = document.getElementById('mensaje').value;
-
-  fetch('https://script.google.com/macros/s/AKfycbyWz2zLUNY_nVx6XfCsqM03is4dC3lFpXkdG5Zy2eTUi-NkGQFc_dj1F5DfYcJIauvHpw/exec', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ nombre, correo, mensaje })
-  })
-  .then(response => response.text())  // Cambié el manejo de la respuesta
-  .then(result => {
-    // Si la respuesta es exitosa, mostrar el modal
-    console.log(result);  // Esto te ayudará a depurar, si lo deseas puedes quitarlo
-    document.getElementById('modal-confirmacion').style.display = 'block';
-    document.getElementById('fondo-modal').style.display = 'block';
-  })
-  .catch(error => {
-    // Si hay un error, mostrarlo en consola
-    console.error('Error:', error);
-  });
-});
-
-
-
 // Chatbot
 const btnPorMayor = document.getElementById("btn-por-mayor"); // Selecciona el botón de pedido al por mayor
 const chatbotToggle = document.getElementById("chatbot-toggle"); // Selecciona el botón de toggle del chatbot

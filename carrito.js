@@ -161,6 +161,12 @@ function mostrarMetodoPago() {
         <div class="metodo-pago-footer">
             <button id="confirmar-pago">Pagar</button>
         </div>
+        <div id="modal-carrito" class="modal-carrito">
+            <p>✅ ¡Gracias por tu compra! Tu pago fue procesado con éxito.</p>
+            <button id="cerrar-modal">Cerrar</button>
+        </div>
+        <div id="fondo-modal" class="fondo-modal"></div>
+
     `;
 
     document.getElementById("cerrar-pago").addEventListener("click", () => {
@@ -184,8 +190,16 @@ function mostrarMetodoPago() {
             carrito = [];
             localStorage.removeItem("carrito");
             actualizarCarrito();
-            alert("Pago procesado exitosamente. ¡Gracias por tu compra!");
-            metodoPagoContainer.style.display = "none";
+            const modal = document.getElementById("modal-carrito");
+            const fondoModal = document.getElementById("fondo-modal");
+            modal.style.display = "block";
+            fondoModal.style.display = "block";
+
+document.getElementById("cerrar-modal").addEventListener("click", () => {
+    modal.style.display = "none";
+    fondoModal.style.display = "none";
+});
+
         } else {
             alert("Por favor, completa todos los campos de la dirección de envío.");
         }

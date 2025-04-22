@@ -288,7 +288,8 @@ function mostrarMayor() {
       <button onclick="mostrarPasoFinal('👗 Vestidos')">👗 Vestidos</button>
       <button onclick="mostrarPasoFinal('👗 Faldas')">👗 Faldas</button>
       <button onclick="mostrarPasoFinal('👖 Pantalones mujer')">👖 Pantalones</button>
-    `;
+      <button onclick="mostrarPasoFinal('👙 Ropa interior')">👙 Ropa interior</button>
+      `;
     mostrarBotonVolverAnterior();
   }
   
@@ -299,10 +300,10 @@ function mostrarMayor() {
     agregarMensaje("👕 ¿Qué tipo de prendas deseas para hombres al por mayor?");
     chatbotOptions.innerHTML = `
       <button onclick="mostrarPasoFinal('👕 Polos')">👕 Polos</button>
-      <button onclick="mostrarPasoFinal('🩳 Bermudas')">🩳 Bermudas</button>
-      <button onclick="mostrarPasoFinal('👔 Camisas y camisetas')">👔 Camisas y camisetas</button>
-      <button onclick="mostrarPasoFinal('👖 Pantalones hombre')">👖 Pantalones</button>
-    `;
+<button onclick="mostrarPasoFinal('🩳 Bermudas')">🩳 Bermudas</button>
+<button onclick="mostrarPasoFinal('👔 Camisas')">👔 Camisas y camisetas</button> 
+<button onclick="mostrarPasoFinal('👖 Pantalones hombre')">👖 Pantalones</button>
+<button onclick="mostrarPasoFinal('🩲 Ropa interior')">🩲 Ropa interior</button>`;
     mostrarBotonVolverAnterior();
   }
   
@@ -312,11 +313,12 @@ function mostrarMayor() {
     agregarMensaje("🔔 Recuerda que para un pedido al por mayor mínimo podrás pedir 10 piezas de la misma referencia, pero pueden ser diferentes tallas.");
     agregarMensaje("🧒 ¿Qué tipo de prendas infantiles necesitas?");
     chatbotOptions.innerHTML = `
-      <button onclick="mostrarPasoFinal('👕 Camisetas y pantalones niño')">👕 Camisetas y pantalones</button>
-      <button onclick="mostrarPasoFinal('👗 Ropa para niñas')">👗 Ropa para niñas</button>
-      <button onclick="mostrarPasoFinal('🍼 Ropa de bebé')">🍼 Bebés</button>
-      <button onclick="mostrarPasoFinal('🎽 Conjuntos infantiles')">🎽 Conjuntos</button>
-    `;
+      <button onclick="mostrarPasoFinal('👕 Camisas')">👕 Camisas</button>
+      <button onclick="mostrarPasoFinal('🧦 Medias')">🧦 Medias</button>
+      <button onclick="mostrarPasoFinal('👖 Pantalones')">👖 Pantalones</button>
+      <button onclick="mostrarPasoFinal('🩳 Traje de baño')">🩳 Traje de baño</button>
+      <button onclick="mostrarPasoFinal('👗 Vestidos')">👗 Vestidos</button>
+`;
     mostrarBotonVolverAnterior();
   }
   

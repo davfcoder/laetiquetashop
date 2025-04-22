@@ -16,7 +16,7 @@ a {
     display: flex; /* Utiliza flexbox para alinear los elementos */
     flex-direction: column; /* Coloca los elementos en una columna */
     width: 100%; /* Ocupa todo el ancho disponible */
-    gap: 30px; /* Espacio entre columnas */
+    gap: 20px; /* Espacio entre columnas */
 }
 
 .regresar {
@@ -30,7 +30,7 @@ a {
 }
 
 .regresar-tienda h1 {
-    font-size: 16px; /* Tamaño de fuente más grande para el encabezado */
+    font-size: 14px; /* Tamaño de fuente más grande para el encabezado */
     color: white; /* Color del texto blanco */
     margin: 0; /* Elimina el margen predeterminado del encabezado */
     word-break: break-all;
@@ -57,10 +57,10 @@ a {
     display: flex; /* Utiliza flexbox para alinear los elementos */
     justify-content: center; /* Centra los elementos horizontalmente */
     align-items: center; /* Centra los elementos verticalmente */
-    margin-bottom: 20px; /* Espacio inferior para el logo */
+    margin-bottom: 10px; /* Espacio inferior para el logo */
 }
 .container-logo img {
-    width: 70px; /* Ancho del logo */
+    width: 50px; /* Ancho del logo */
 }
 
 .container-form {
@@ -71,7 +71,7 @@ a {
 }
 
 .container-form h1 {
-    font-size: 15px; /* Tamaño de fuente más grande para el encabezado */
+    font-size: 13px; /* Tamaño de fuente más grande para el encabezado */
     color: #757575; /* Color del texto gris */
 }
 
@@ -80,12 +80,12 @@ a {
 }
 
 .form-label {
-    font-size: 15px; /* Tamaño de fuente más grande para la etiqueta */
+    font-size: 13px; /* Tamaño de fuente más grande para la etiqueta */
     margin-bottom: 5px;
 }
 
 .form-control {
-    font-size: 15px; /* Tamaño de fuente más grande para el campo de entrada */
+    font-size: 13px; /* Tamaño de fuente más grande para el campo de entrada */
     border-radius: 5px; /* Bordes redondeados */
     border: 1px solid #757575; /* Borde gris */
     padding: 5px 10px; /* Espaciado interno */
@@ -102,7 +102,7 @@ a {
 
 .container-ayuda {
     text-align: center;
-    font-size: 12px; /* Tamaño de fuente más pequeño para el texto de ayuda */
+    font-size: 10px; /* Tamaño de fuente más pequeño para el texto de ayuda */
     color: #242424; /* Color del texto gris */
     margin-top: 20px; /* Espacio superior para el contenedor de ayuda */
 }
@@ -110,6 +110,12 @@ a {
 .container-ayuda a {
     color: #242424; /* Color del texto gris */
     text-decoration:underline; /* Quita el subrayado */
+}
+
+#numero-compra::-webkit-outer-spin-button,
+#numero-compra::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 @media (max-width: 450px) {

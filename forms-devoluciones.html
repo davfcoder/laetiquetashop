@@ -31,7 +31,7 @@
                     <form action="forms-devoluciones.html" method="POST"> <!-- Formulario que envía datos a la misma página -->
                         <div class="mb-3"> <!-- Contenedor para el campo de nombre -->
                             <label for="numero-compra" class="form-label">Número de la compra *</label> <!-- Etiqueta para el campo del número de la compra -->
-                            <input placeholder id="numero-compra" type="text" name="num-compra" title="Ingresa el número de la compra" class="form-control" required> <!-- Campo de entrada para el nombre -->
+                            <input placeholder id="numero-compra" type="number" name="num-compra" title="Ingresa el número de la compra" class="form-control" required> <!-- Campo de entrada para el nombre -->
                         </div>
                         <div class="mb-3"> <!-- Contenedor para el campo de correo electrónico -->
                             <label for="correo-compra" class="form-label">Correo electrónico asociado a la compra *</label> <!-- Etiqueta para el campo de correo electrónico -->
@@ -44,6 +44,10 @@
                                 <option value="devoluciones">Solicitud de reembolso</option>
                                 <option value="cambio">Solicitud de cambio</option>
                             </select>
+                        </div>
+                        <div class="mb-3"> <!-- Contenedor para el campo de teléfono -->
+                            <label for="mensaje" class="form-label">Observaciones *</label>
+                            <textarea id="mensaje" name="mensaje" rows="2.5" class="form-control" placeholder="Revisa nuestra página de Devoluciones para entender cómo diligenciar el campo de Observaciones" required></textarea> <!-- Campo de entrada para el mensaje -->
                         </div>
                         
                         <button type="submit" class="btn-primary">Ingresar</button> <!-- Botón para enviar el formulario -->

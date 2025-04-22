@@ -344,6 +344,9 @@ nav {
     margin: 1rem 0.5rem 1rem 0; /* Margen alrededor */
 }
 
+.price-normal {
+    color: var(--tono-azul); /* Color de descuento */
+}
 /* Precio regular tachado */
 .regular-price {
     font-size: clamp(9px, 1vw, 13px); /* Tamaño adaptable */

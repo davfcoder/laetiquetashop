@@ -226,7 +226,7 @@ function mostrarComprasHombre() {
   chatbotMessages.innerHTML = "";
   agregarMensaje("👕 Ropa para hombre:");
   chatbotOptions.innerHTML = `
-    <button onclick="abrirEnlace('https://laetiqueta.com/hombre')">🛒 Ver catálogo hombre</button>
+    <button onclick="<a href="http://127.0.0.1:5500/devoluciones.html"">🛒 Ver catálogo hombre</button>
     <button onclick="mostrarCompras()">🔙 Volver al menú anterior</button>
   `;
 }
@@ -256,13 +256,10 @@ function mostrarDevoluciones() {
   
     agregarMensaje("📦 Aquí tienes el paso a paso para devoluciones:");
   
-    agregarMensaje(`1. Comunícate con nosotros por 
-  👉 <a href="https://wa.me/message/F5MZRJDCEXLIK1" target="_blank">WhatsApp</a> 
-  o escribe a 📧 <a href="mailto:laetiquetayopal@gmail.com">laetiquetayopal@gmail.com</a>.<br>
-  2. Indica el motivo y número de pedido.<br>
-  3. Empaca el producto en su estado original.<br>
-  4. Te enviaremos una guía para el envío.<br>
-  5. Recibirás el cambio o reembolso.`);
+    agregarMensaje(`1. Dirigete a nuestra página de 
+  👉 <a href="http://127.0.0.1:5500/devoluciones.html" target="_blank">Devoluciones</a>.<br>
+  2. Indica el motivo y sigue las instrucciones.<br>
+  3. Recibirás el cambio o reembolso.`);
   
     mostrarBotonVolver();
   }

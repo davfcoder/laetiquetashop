@@ -49,14 +49,17 @@ document.querySelectorAll(".add-to-cart").forEach(boton => {
             const talla = tallaElement ? tallaElement.textContent : "Talla no definida";
             const color = "Color por definir";
             const precioTexto = productoElement.querySelector(".price-discount").textContent;
-            // Limpiar el formato del precio antes de parsear
             const precioNumerico = parseFloat(precioTexto.replace(/[^\d,.-]/g, '').replace('.', '').replace(',', '.'));
             const imagen = productoElement.querySelector(".product img").src;
 
             agregarAlCarrito(nombre, referencia, talla, color, precioNumerico, imagen);
+
+            // Mostrar mensaje de producto añadido
+            mostrarMensajeProducto(); // Llama a la función que muestra el mensaje
         }
     });
 });
+
 
 function crearItemCarritoHTML(item, index) {
     const carritoItem = document.createElement("div");
@@ -267,16 +270,37 @@ function actualizarMetodoPago() {
     }
 }
 
-// Función para agregar productos al carrito
-function agregarAlCarrito(nombre, referencia, talla, color, precio, imagen) {
-    // Asegurarse de que el precio sea un número
-    const precioNumerico = typeof precio === 'string' ? parseFloat(precio.replace(/[^\d,.-]/g, '').replace('.', '').replace(',', '.')) : precio;
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.insertAdjacentHTML("beforeend", `
+      <div id="mensaje-producto" class="mensaje-producto">Producto añadido exitosamente 🛒</div>
+    `);
+  });
+  
 
+// Mostrar mensaje de producto añadido al carrito
+function mostrarMensajeProducto() {
+    const mensaje = document.getElementById("mensaje-producto");
+    mensaje.classList.add("mostrar");
+  
+    setTimeout(() => {
+      mensaje.classList.remove("mostrar");
+    }, 3000); // Duración de 3 segundos
+  }
+  
+  // Función para agregar productos al carrito
+  function agregarAlCarrito(nombre, referencia, talla, color, precio, imagen) {
+    const precioNumerico = typeof precio === 'string' ? parseFloat(precio.replace(/[^\d,.-]/g, '').replace('.', '').replace(',', '.')) : precio;
+  
     let productoExistente = carrito.find(item => item.nombre === nombre && item.talla === talla);
     if (productoExistente) {
-        productoExistente.cantidad++;
+      productoExistente.cantidad++;
     } else {
-        carrito.push({ nombre, referencia, talla, color, precio: precioNumerico, imagen, cantidad: 1 });
+      carrito.push({ nombre, referencia, talla, color, precio: precioNumerico, imagen, cantidad: 1 });
     }
     actualizarCarrito();
-}
+  
+    // Llama a la función que muestra el mensaje flotante
+    mostrarMensajeProducto();
+  }
+  
+      

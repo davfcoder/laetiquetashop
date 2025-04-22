@@ -355,4 +355,22 @@
     to { opacity: 1; transform: translate(-50%, -50%); }
   }
   
+  .mensaje-producto {  
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color:#1d1d43e8;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    z-index: 9999;
+  }
+  
+  .mensaje-producto.mostrar {
+    opacity: 1;
+  }
   

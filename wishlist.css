@@ -169,3 +169,27 @@
 .wishlist-container.show {
     display: block; /* Muestra el contenedor de la Wishlist */
 }
+
+#wishlist-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #1d1d43e8;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 2000;
+    display: none;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    animation: fadeInOut 2s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(-10px); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-10px); }
+}
+

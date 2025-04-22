@@ -50,7 +50,7 @@
                             <textarea id="mensaje" name="mensaje" rows="2.5" class="form-control" placeholder="Revisa nuestra página de Devoluciones para entender cómo diligenciar el campo de Observaciones" required></textarea> <!-- Campo de entrada para el mensaje -->
                         </div>
                         
-                        <button type="submit" class="btn-primary">Ingresar</button> <!-- Botón para enviar el formulario -->
+                        <button type="submit" class="btn btn-primary" id="btn-enviar">Enviar</button> <!-- Botón para enviar el formulario -->
                     </form>
                     <div class="container-ayuda"> <!-- Contenedor para el mensaje de ayuda -->
                         <span>Si tienes dudas, consulta nuestra página de devoluciones en</span> <!-- Mensaje de ayuda para el usuario -->
@@ -60,4 +60,10 @@
             </div>
         </div>
     </div>
-</body>
+    <div id="mensaje-exito" class="alert alert-success mt-3" style="display: none;">
+        ✅ ¡Tu solicitud ha sido enviada con éxito!
+        <button type="button" class="btn-close float-end" aria-label="Cerrar" onclick="document.getElementById('mensaje-exito').style.display='none';"></button>
+      </div>
+     
+</body> <!-- Cierre del cuerpo de la página -->
+<script src="forms-devoluciones.js"></script><!-- Enlazar el archivo JS externo -->

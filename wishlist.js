@@ -1,4 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Crear mensaje flotante para Wishlist (sin HTML)
+    const wishlistMessage = document.createElement("div");
+    wishlistMessage.id = "wishlist-message";
+    wishlistMessage.textContent = "Producto añadido correctamente a la Wishlist";
+    document.body.appendChild(wishlistMessage);
+
+    function mostrarMensajeWishlist() {
+        wishlistMessage.style.display = "block"; // ✅ Mostrar mensaje
+        wishlistMessage.classList.add("show");
+
+        setTimeout(() => {
+            wishlistMessage.style.display = "none"; // ✅ Ocultarlo después
+            wishlistMessage.classList.remove("show");
+        }, 2000);
+    }
+
     // Crear el contenedor de la Wishlist y añadirlo al DOM
     const wishlistContainer = document.createElement("div");
     wishlistContainer.classList.add("wishlist-container");
@@ -51,11 +67,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // Función para agregar el producto a la Wishlist
     function agregarAlWishlist(productId, productName, productPrice, productImg, productTalla, productColor) {
         if (wishlist.some((product) => product.productId === productId && product.productTalla === productTalla && product.productColor === productColor)) {
-            return; // Si ya está con la misma talla y color, no hacer nada
+            return; // Ya existe ese producto con talla y color
         }
+
         wishlist.push({ productId, productName, productPrice, productImg, productTalla, productColor });
         localStorage.setItem("wishlist", JSON.stringify(wishlist));
-        renderWishlist(); // Actualizar la vista de la Wishlist
+        renderWishlist(); // Actualizar la vista
+        mostrarMensajeWishlist(); // Mostrar el mensaje de éxito
     }
 
     // Función para eliminar un producto de la Wishlist
@@ -145,7 +163,6 @@ document.addEventListener("DOMContentLoaded", function () {
             const productTalla = productTallaElement ? productTallaElement.textContent : "Talla no definida";
             const productColorElement = productElement.querySelector('.color-option.selected'); // Adaptar el selector según tu estructura de color
             const productColor = productColorElement ? productColorElement.getAttribute('data-color') : "Color no definido"; // Adaptar el atributo según tu estructura de color
-
 
             if (!productTitle || !productPriceElement || !productImgElement) {
                 console.error("Información del producto incompleta");

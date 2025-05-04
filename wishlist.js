@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const productId = this.getAttribute("data-product-id");
                 const productTalla = this.getAttribute("data-product-talla");
                 const productColor = this.getAttribute("data-product-color");
-                eliminarDeWishlist(productId, productTalla, productColor);
+                eliminarDeWishlist(productId, productTalla, productColor);  
             });
 
             // Lógica para agregar el producto al carrito
@@ -142,27 +142,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Función para manejar los clics en los botones de "corazón"
-    const wishlistButtons = document.querySelectorAll(".wishlist-button");
+    document.addEventListener('click', function(event) {
+        if (event.target.closest('.wishlist-button')) {
+            const button = event.target.closest('.wishlist-button');
+            const icon = button.querySelector('.wishlist-icon');
+            const productId = button.getAttribute('data-product-id');
+            
+            // Obtener el contenedor del producto
+            const productContainer = button.closest('.hotsales');
+            if (!productContainer) return;
 
-    wishlistButtons.forEach((button) => {
-        button.addEventListener("click", function () {
-            const icon = button.querySelector(".wishlist-icon");
-            const productId = button.getAttribute("data-product-id");
-
-            // Obtener los detalles del producto usando el productId directamente
-            const productElement = document.getElementById(productId); // Ahora con el mismo id
-            if (!productElement) {
-                console.error("Producto no encontrado en la página");
-                return;
-            }
-
-            const productTitle = productElement.querySelector(".product-title");
-            const productPriceElement = productElement.querySelector(".price-discount");
-            const productImgElement = productElement.querySelector(".product img");
-            const productTallaElement = productElement.querySelector(".size-letter.selected"); // Obtener la talla seleccionada
+            // Obtener los detalles del producto
+            const productTitle = productContainer.querySelector('.product-title');
+            const productPriceElement = productContainer.querySelector('.price-discount');
+            const productImgElement = productContainer.querySelector('.product img');
+            const productTallaElement = productContainer.querySelector('.size-letter.selected');
             const productTalla = productTallaElement ? productTallaElement.textContent : "Talla no definida";
-            const productColorElement = productElement.querySelector('.color-option.selected'); // Adaptar el selector según tu estructura de color
-            const productColor = productColorElement ? productColorElement.getAttribute('data-color') : "Color no definido"; // Adaptar el atributo según tu estructura de color
+            const productColor = "Color por definir"; // Por ahora fijo, se puede modificar si se agrega selección de color
 
             if (!productTitle || !productPriceElement || !productImgElement) {
                 console.error("Información del producto incompleta");
@@ -176,13 +172,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Agregar a la wishlist
             if (wishlist.some((product) => product.productId === productId && product.productTalla === productTalla && product.productColor === productColor)) {
-                eliminarDeWishlist(productId, productTalla, productColor); // Pasar la talla y el color al eliminar
+                eliminarDeWishlist(productId, productTalla, productColor);
                 updateHeartIcon(productId, "vacío");
             } else {
                 agregarAlWishlist(productId, productName, productPrice, productImgSrc, productTalla, productColor);
                 updateHeartIcon(productId, "lleno");
             }
-        });
+        }
     });
 
     wishlist.forEach((product) => {
@@ -192,10 +188,16 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    function updateHeartIcon(productId, action, iconElement = null) {
-        const icon = iconElement || document.querySelector(`[data-product-id="${productId}"] .wishlist-icon`);
+    function updateHeartIcon(productId, action) {
+        const icon = document.querySelector(`[data-product-id="${productId}"] .wishlist-icon`);
         if (icon) {
-            icon.src = action === "lleno" ? "./assets/corazon_lleno.ico" : "./assets/corazon_vacio.ico";
+            if (action === "lleno") {
+                icon.classList.add('filled');
+                icon.setAttribute('fill', 'currentColor');
+            } else {
+                icon.classList.remove('filled');
+                icon.setAttribute('fill', 'none');
+            }
         }
     }
 

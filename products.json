@@ -1,0 +1,148 @@
+{
+  "products": [
+    {
+      "id": "hs-mujer1",
+      "nombre": "Camisa negra manga corta de algodón para mujer",
+      "descuento": 50,
+      "precio_normal": 120000,
+      "precio_descuento": 60000,
+      "tallas": ["S", "M", "L"],
+      "stock": 3,
+      "categoria": "mujer",
+      "imagen_normal": "./sales/foto-mujer1a.jpeg",
+      "imagen_hover": "./sales/foto-mujer1b.jpeg"
+    },
+    {
+      "id": "hs-mujer2",
+      "nombre": "Camiseta blanca con estampado para mujer",
+      "descuento": 40,
+      "precio_normal": 90000,
+      "precio_descuento": 54000,
+      "tallas": ["XS", "S", "M"],
+      "stock": 8,
+      "categoria": "mujer",
+      "imagen_normal": "./sales/foto-mujer2a.jpg",
+      "imagen_hover": "./sales/foto-mujer2b.jpg"
+    },
+    {
+      "id": "hs-mujer3",
+      "nombre": "Camiseta negra con estampado para mujer",
+      "descuento": 30,
+      "precio_normal": 90000,
+      "precio_descuento": 63000,
+      "tallas": ["S", "M", "L"],
+      "stock": 12,
+      "categoria": "mujer",
+      "imagen_normal": "./sales/foto-mujer3b.jpeg",
+      "imagen_hover": "./sales/foto-mujer3a.jpeg"
+    },
+    {
+      "id": "hs-hombre1",
+      "nombre": "Camiseta negra con estampado para hombre",
+      "descuento": 45,
+      "precio_normal": 95000,
+      "precio_descuento": 52250,
+      "tallas": ["M", "L", "XL"],
+      "stock": 15,
+      "categoria": "hombre",
+      "imagen_normal": "./sales/foto-hombre1a.jpeg",
+      "imagen_hover": "./sales/foto-hombre1b.jpeg"
+    },
+    {
+      "id": "hs-hombre2",
+      "nombre": "Camiseta blanca con estampado para hombre",
+      "descuento": 50,
+      "precio_normal": 95000,
+      "precio_descuento": 47500,
+      "tallas": ["M", "L"],
+      "stock": 4,
+      "categoria": "hombre",
+      "imagen_normal": "./sales/foto-hombre2a.jpeg",
+      "imagen_hover": "./sales/foto-hombre2b.jpeg"
+    },
+    {
+      "id": "hs-hombre3",
+      "nombre": "Camiseta negra con estampado para hombre",
+      "descuento": 30,
+      "precio_normal": 90000,
+      "precio_descuento": 63000,
+      "tallas": ["M", "L", "XL"],
+      "stock": 10,
+      "categoria": "hombre",
+      "imagen_normal": "./sales/foto-hombre3a.jpg",
+      "imagen_hover": "./sales/foto-hombre3b.jpg"
+    },
+    {
+      "id": "hs-kid1",
+      "nombre": "Camiseta con estampado unisex para niños",
+      "descuento": 45,
+      "precio_normal": 99900,
+      "precio_descuento": 54945,
+      "tallas": ["XS", "S", "M"],
+      "stock": 6,
+      "categoria": "niño",
+      "imagen_normal": "./sales/foto-niño1a.jpg",
+      "imagen_hover": "./sales/foto-niño1b.jpg"
+    },
+    {
+      "id": "hs-kid2",
+      "nombre": "Polo azul oscuro unisex para niños",
+      "descuento": 30,
+      "precio_normal": 110000,
+      "precio_descuento": 77000,
+      "tallas": ["XS", "S"],
+      "stock": 7,
+      "categoria": "niño",
+      "imagen_normal": "./sales/foto-niño2a.png",
+      "imagen_hover": "./sales/foto-niño2b.png"
+    },
+    {
+      "id": "hs-kid3",
+      "nombre": "Camiseta blanca con estampado unisex para niños",
+      "descuento": 50,
+      "precio_normal": 90000,
+      "precio_descuento": 63000,
+      "tallas": ["XS", "S", "M"],
+      "stock": 9,
+      "categoria": "niño",
+      "imagen_normal": "./sales/foto-niño3a.jpg",
+      "imagen_hover": "./sales/foto-niño3b.jpg"
+    },
+    {
+      "id": "hs-accesorio1",
+      "nombre": "Gafas rosadas o negras - Ray Ban",
+      "descuento": null,
+      "precio_normal": 119900,
+      "precio_descuento": 119900,
+      "tallas": [],
+      "stock": 5,
+      "categoria": "accesorios",
+      "imagen_normal": "./sales/foto-accesorio1a.jpg",
+      "imagen_hover": "./sales/foto-accesorio1b.jpg"
+    },
+    {
+      "id": "hs-accesorio2",
+      "nombre": "Gorra Básica Color Negro - Polo",
+      "descuento": null,
+      "precio_normal": 59900,
+      "precio_descuento": 59900,
+      "tallas": [],
+      "stock": 8,
+      "categoria": "accesorios",
+      "imagen_normal": "./sales/foto-accesorio2a.webp",
+      "imagen_hover": "./sales/foto-accesorio2b.webp"
+    },
+    {
+      "id": "hs-accesorio3",
+      "nombre": "Cinturón trenzado verde elástico - HSB",
+      "descuento": null,
+      "precio_normal": 79900,
+      "precio_descuento": 79900,
+      "tallas": [],
+      "stock": 3,
+      "categoria": "accesorios",
+      "imagen_normal": "./sales/foto-accesorio3a.webp",
+      "imagen_hover": "./sales/foto-accesorio3b.webp"
+    }
+  ]
+} 

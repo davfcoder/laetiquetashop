@@ -1,4 +1,3 @@
-
 // Navbar fijo
 const navbar = document.getElementById("navbar"); // Selecciona el navbar
 const logo = document.getElementById("logo-secundario"); // Selecciona el logo secundario
@@ -466,6 +465,337 @@ document.getElementById("btn-aliados").addEventListener("click", function (event
             element.classList.remove("zoom"); // Quitar el efecto de zoom
         }, 650);
     }, 600); // Ajusta este tiempo si el desplazamiento es más lento o rápido
+});
+
+// Función para aplicar filtros
+function applyFilters() {
+    const category = document.getElementById('category-filter').value;
+    const selectedSize = document.getElementById('size-filter').value;
+    const minPrice = document.getElementById('price-min').value ? parseFloat(document.getElementById('price-min').value) : 0;
+    const maxPrice = document.getElementById('price-max').value ? parseFloat(document.getElementById('price-max').value) : Infinity;
+
+    // Obtener todos los productos
+    const products = document.querySelectorAll('.hotsales');
+    const filteredContainer = document.getElementById('filtered-products');
+    const originalSections = document.getElementById('original-sections');
+    
+    // Variable para verificar si hay algún filtro activo
+    const hasActiveFilters = category || selectedSize || minPrice > 0 || maxPrice !== Infinity;
+
+    if (hasActiveFilters) {
+        // Limpiar el contenedor de productos filtrados
+        filteredContainer.innerHTML = '';
+        
+        // Ocultar las secciones originales
+        originalSections.style.display = 'none';
+        
+        // Mostrar el contenedor de productos filtrados
+        filteredContainer.style.display = 'grid';
+
+        // Filtrar y mostrar productos
+        products.forEach(product => {
+            // Verificar precio
+            const priceElement = product.querySelector('.price-discount');
+            if (!priceElement) return;
+            
+            // Extraer el precio como número
+            const priceText = priceElement.textContent.replace(/[^\d]/g, '');
+            const price = parseInt(priceText, 10);
+
+            // Verificar si el precio está dentro del rango
+            const matchesPrice = price >= minPrice && (maxPrice === Infinity || price <= maxPrice);
+            
+            // Verificar talla
+            const sizeElements = product.querySelectorAll('.size-letter');
+            const matchesSize = !selectedSize || Array.from(sizeElements).some(el => el.textContent === selectedSize);
+            
+            // Verificar categoría
+            const productSection = product.closest('article');
+            if (!productSection) return;
+            
+            const matchesCategory = !category || 
+                (category === 'mujer' && productSection.id === 'sales-mujer') ||
+                (category === 'hombre' && productSection.id === 'sales-hombre') ||
+                (category === 'kid' && productSection.id === 'sales-kid') ||
+                (category === 'accesorios' && productSection.id === 'sale-accesorios');
+
+            // Si el producto coincide con todos los filtros, clonarlo y agregarlo al contenedor
+            if (matchesPrice && matchesCategory && matchesSize) {
+                const productClone = product.cloneNode(true);
+                filteredContainer.appendChild(productClone);
+            }
+        });
+
+        // Si no hay productos que coincidan con los filtros, mostrar un mensaje
+        if (filteredContainer.children.length === 0) {
+            filteredContainer.innerHTML = '<div class="no-results">No se encontraron productos que coincidan con los filtros seleccionados.</div>';
+        }
+    } else {
+        // Si no hay filtros activos, mostrar las secciones originales
+        filteredContainer.style.display = 'none';
+        originalSections.style.display = 'block';
+    }
+
+    // Reinicializar la selección de tallas para los productos clonados
+    initializeSizeSelection();
+}
+
+// Configurar event listeners para los filtros
+document.addEventListener('DOMContentLoaded', () => {
+    // Event listeners para filtros
+    const filterInputs = [
+        document.getElementById('category-filter'),
+        document.getElementById('size-filter'),
+        document.getElementById('price-min'),
+        document.getElementById('price-max')
+    ];
+
+    filterInputs.forEach(input => {
+        if (input) {
+            input.addEventListener('change', applyFilters);
+            input.addEventListener('input', applyFilters);
+        }
+    });
+
+    // Cargar productos inicialmente
+    loadAndDisplayProducts();
+});
+
+// Función para cargar y mostrar productos
+async function loadAndDisplayProducts() {
+    try {
+        const response = await fetch('products.json');
+        const data = await response.json();
+        const products = data.products;
+
+        // Agrupar productos por categoría
+        const productsByCategory = {
+            'mujer': products.filter(p => p.categoria === 'mujer'),
+            'hombre': products.filter(p => p.categoria === 'hombre'),
+            'kid': products.filter(p => p.categoria === 'niño'),
+            'accesorios': products.filter(p => p.categoria === 'accesorios')
+        };
+
+        // Mostrar productos en cada sección
+        Object.entries(productsByCategory).forEach(([category, categoryProducts]) => {
+            const containerId = category === 'kid' ? 'sales-kid' : 
+                              category === 'accesorios' ? 'sale-accesorios' : 
+                              `sales-${category}`;
+            
+            const container = document.getElementById(containerId);
+            
+            if (container) {
+                container.innerHTML = categoryProducts.map(product => renderProduct(product)).join('');
+            }
+        });
+
+        // Inicializar selección de tallas
+        initializeSizeSelection();
+
+    } catch (error) {
+        console.error('Error al cargar los productos:', error);
+    }
+}
+
+// Función para renderizar productos
+function renderProduct(product) {
+    // Debug: Verificar el producto que se está renderizando
+    console.log('Renderizando producto:', product);
+
+    // Asegurarse de que los precios sean números
+    const precioNormal = typeof product.precio_normal === 'number' ? product.precio_normal : parseFloat(product.precio_normal);
+    const precioDescuento = typeof product.precio_descuento === 'number' ? product.precio_descuento : parseFloat(product.precio_descuento);
+
+    return `
+        <div class="hotsales" id="${product.id}" data-category="${product.categoria}">
+            <div class="percentage-product">
+                ${product.descuento ? `<div class="percentage">${product.descuento}%</div>` : ''}
+                <div class="product">
+                    <img src="${product.imagen_normal}" alt="${product.nombre}" class="img-normal">
+                    <img src="${product.imagen_hover || product.imagen_normal}" alt="${product.nombre}" class="img-hover">
+                </div>
+                ${product.stock <= 5 ? '<div class="stock">¡Últimas unidades disponibles!</div>' : ''}
+            </div>
+            <div class="info-product">
+                <h2 class="product-title">${product.nombre}</h2>
+                <span class="price-discount">$${precioDescuento.toLocaleString()}</span>
+                ${product.descuento ? `<span class="regular-price">$${precioNormal.toLocaleString()}</span>` : ''}
+                
+                <button class="wishlist-button" data-product-id="${product.id}">
+                  <svg alt="Wishlist Icon" class="wishlist-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
+                  </svg>
+                </button>
+
+                <div class="addCart-size">
+                    ${Array.isArray(product.tallas) && product.tallas.length > 0 ? `
+                        <div class="size">
+                            <ul class="list-size">
+                                ${product.tallas.map((talla, index) => `
+                                    <li class="size-letter ${index === 0 ? 'selected' : ''}">${talla}</li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                    ` : ''}
+                    <button class="add-to-cart">Agregar al carrito</button>
+                    <input type="hidden" name="id-product" value="${product.id}">
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+// Función para inicializar la selección de tallas
+function initializeSizeSelection() {
+    const sizeContainers = document.querySelectorAll('.size');
+    
+    sizeContainers.forEach(container => {
+        const sizeLetters = container.querySelectorAll('.size-letter');
+        
+        sizeLetters.forEach(letter => {
+            letter.addEventListener('click', () => {
+                // Remover la clase 'selected' de todas las tallas en el mismo contenedor
+                sizeLetters.forEach(l => l.classList.remove('selected'));
+                // Agregar la clase 'selected' a la talla clickeada
+                letter.classList.add('selected');
+            });
+        });
+    });
+}
+
+// Funcionalidad del botón de búsqueda
+document.addEventListener('DOMContentLoaded', function() {
+    const searchBottom = document.getElementById('search-bottom');
+    let searchInput = null;
+    let suggestionsContainer = null;
+    let isSearchVisible = false;
+
+    // Crear el contenedor de sugerencias
+    function createSuggestionsContainer() {
+        suggestionsContainer = document.createElement('div');
+        suggestionsContainer.className = 'suggestions-container';
+        searchBottom.appendChild(suggestionsContainer);
+    }
+
+    // Mostrar sugerencias basadas en la búsqueda
+    async function showSuggestions(searchTerm) {
+        if (!suggestionsContainer) return;
+        
+        try {
+            const response = await fetch('products.json');
+            const data = await response.json();
+            const products = data.products;
+            
+            // Filtrar productos que coincidan con el término de búsqueda
+            const matches = products.filter(product => 
+                product.nombre.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                product.categoria.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+
+            // Limpiar sugerencias anteriores
+            suggestionsContainer.innerHTML = '';
+
+            if (matches.length > 0) {
+                matches.forEach(product => {
+                    const item = document.createElement('div');
+                    item.className = 'suggestion-item';
+                    item.innerHTML = `
+                        <img src="${product.imagen_normal}" alt="${product.nombre}">
+                        <div class="suggestion-info">
+                            <span class="suggestion-name">${product.nombre}</span>
+                            <span class="suggestion-price">$${product.precio_descuento.toLocaleString()}</span>
+                        </div>
+                    `;
+                    
+                    // Al hacer clic en una sugerencia
+                    item.addEventListener('click', () => {
+                        // Aquí puedes agregar la lógica para navegar al producto
+                        console.log('Producto seleccionado:', product);
+                        hideSuggestions();
+                    });
+
+                    suggestionsContainer.appendChild(item);
+                });
+                suggestionsContainer.style.display = 'block';
+            } else {
+                hideSuggestions();
+            }
+        } catch (error) {
+            console.error('Error al cargar sugerencias:', error);
+        }
+    }
+
+    function hideSuggestions() {
+        if (suggestionsContainer) {
+            suggestionsContainer.style.display = 'none';
+        }
+    }
+
+    searchBottom.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        if (!isSearchVisible) {
+            // Crear el input si no existe
+            if (!searchInput) {
+                searchInput = document.createElement('input');
+                searchInput.type = 'text';
+                searchInput.placeholder = 'Buscar productos...';
+                searchBottom.appendChild(searchInput);
+            }
+            
+            // Crear el contenedor de sugerencias si no existe
+            if (!suggestionsContainer) {
+                createSuggestionsContainer();
+            }
+            
+            // Mostrar el input
+            searchInput.style.display = 'block';
+            searchInput.focus();
+            isSearchVisible = true;
+
+            // Agregar evento input para mostrar sugerencias mientras se escribe
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.trim();
+                if (searchTerm.length >= 2) {
+                    showSuggestions(searchTerm);
+                } else {
+                    hideSuggestions();
+                }
+            });
+        } else {
+            // Ocultar el input y las sugerencias
+            if (searchInput) {
+                searchInput.style.display = 'none';
+                searchInput.value = '';
+            }
+            hideSuggestions();
+            isSearchVisible = false;
+        }
+    });
+
+    // Cerrar la búsqueda al hacer clic fuera
+    document.addEventListener('click', function(e) {
+        if (isSearchVisible && !searchBottom.contains(e.target)) {
+            if (searchInput) {
+                searchInput.style.display = 'none';
+                searchInput.value = '';
+            }
+            hideSuggestions();
+            isSearchVisible = false;
+        }
+    });
+
+    // Manejar la búsqueda cuando se presiona Enter
+    if (searchInput) {
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const searchTerm = this.value.trim().toLowerCase();
+                // Aquí puedes implementar la lógica de búsqueda completa
+                console.log('Buscando:', searchTerm);
+                hideSuggestions();
+            }
+        });
+    }
 });
 
 

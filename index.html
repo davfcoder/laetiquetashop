@@ -39,15 +39,9 @@
     <div id="menu-right" class="header-top-menu">  <!-- Sección para elementos alineados a la derecha -->
       <div class="justify-bottoms"> <!-- Contenedor de elementos alineados a la derecha -->
         <div id="search-bottom" class="right-bottoms">
-          <a>
+          <a href="#">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-search"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
-            <span class="left-title">Buscar</span>
-          </a>
-        </div>
-        <div id="login-bottom" class="right-bottoms"> <!-- Contenedor de elementos alineados a la derecha -->
-          <a> <!-- Enlace para iniciar sesión -->
-            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-user"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg>
-            <span class="left-title">Iniciar Sesión</span>  <!-- Texto de enlace -->
+            <span class="right-title">Buscar</span>
           </a>
         </div>
         <div id="shopping-bag-bottom" class="right-bottoms"> <!-- Contenedor de elementos alineados a la derecha -->
@@ -58,7 +52,7 @@
         </div>
         <div id="wishlist-bottom" class="right-bottoms"> <!-- Contenedor de elementos alineados a la derecha -->
           <a href="#" id="wishlist-link">
-            <img src="../assets/corazon.ico" alt="Wishlist Icon" width="20" height="20" />
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="22"  height="22"  viewBox="0 0 24 24"  fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-heart"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6.979 3.074a6 6 0 0 1 4.988 1.425l.037 .033l.034 -.03a6 6 0 0 1 4.733 -1.44l.246 .036a6 6 0 0 1 3.364 10.008l-.18 .185l-.048 .041l-7.45 7.379a1 1 0 0 1 -1.313 .082l-.094 -.082l-7.493 -7.422a6 6 0 0 1 3.176 -10.215z" /></svg>
             <span class="right-title">Wishlist</span>
           </a>
         </div>
@@ -201,389 +195,93 @@
 
   <!-- Sección de ofertas de todas las categorías (mujer, hombre, niño) -->
   <section class="container-sales">
-    <!-- Sección de ofertas de mujer -->
-     <!-- Blockquote es una etiqueta en HTML utilizada para representar una cita en bloque, es decir, 
-  un fragmento de texto citado de otra fuente. Visualmente, los navegadores suelen aplicar sangría 
-  y un estilo distintivo a este elemento para diferenciarlo del resto del contenido. -->
-    <blockquote class="blockquote text-center">
-      <h3>PRENDAS EN OFERTA
-        <small class="text-muted"><h6>Para damas</h6></small> <!-- Subtítulo con el hashtag promocional -->
-      </h3>
-    </blockquote>
-    <article class="sales" id="sales-mujer"> <!-- Contenedor de las ofertas para mujer -->
-      <div class="hotsales" id="hs-mujer1"> <!-- Contenedor de las ofertas -->
-        <div class="percentage-product"> <!-- Contenedor del porcentaje y el producto -->
-          <div class="percentage">50%</div> <!-- Etiqueta de porcentaje de descuento -->
-          <div class="product"> <!-- Contenedor de producto -->
-            <img src="./sales/foto-mujer1a.jpeg" alt="Foto principal de mujer 1a" class="img-normal"> <!-- Imagen del producto normal -->
-            <img src="./sales/foto-mujer1b.jpeg" alt="Foto principal de mujer 1b" class="img-hover"> <!-- Imagen del producto en hover -->
-          </div>
-          <div class="stock">¡Últimas unidades disponibles!</div> <!-- Etiqueta de stock -->
+    <!-- Filtros de productos -->
+    <div class="filters-container">
+        <div class="filters-title">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-filter">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M4 4h16v2.172a2 2 0 0 1 -.586 1.414l-4.414 4.414v7l-6 2v-8.5l-4.48 -4.928a2 2 0 0 1 -.52 -1.345v-2.227z" />
+            </svg>
+            <h2>Filtros</h2>
         </div>
-        <div class="info-product"> <!-- Contenedor de información del producto -->
-          <h2 class="product-title">Camisa negra manga corta de algodón para mujer</h2> <!-- Título del producto -->
-          <span class="price-discount">$60.000</span> <!-- Precio con descuento -->
-          <span class="regular-price">$120.000</span> <!-- Precio regular -->
-
-          <button class="wishlist-button" data-product-id="hs-mujer1">
-            <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
-          </button>
-
-          <div class="addCart-size"> <!-- Contenedor de botón de agregar al carrito y tallas -->
-            <div class="size"> <!-- Contenedor de tallas -->
-              <ul class="list-size"> <!-- Lista de tallas disponibles -->
-                <li class="size-letter selected">S</li> <!-- Talla "S" seleccionada predefinida -->
-                <li class="size-letter">M</li> <!-- Talla "M" -->
-                <li class="size-letter">L</li> <!-- Talla "L" -->
-              </ul>
-            </div>
-            <button class="add-to-cart">Agregar al carrito</button> <!-- Botón de agregar al carrito -->
-            <input type="hidden" name="id-product-m1" id="addCartProduct"> <!-- Campo oculto para almacenar el ID del producto -->
-
-            
-          </div>
+        <div class="filter-group">
+            <label for="category-filter">Categoría</label>
+            <select id="category-filter">
+                <option value="">Todas las categorías</option>
+                <option value="mujer">Mujer</option>
+                <option value="hombre">Hombre</option>
+                <option value="kid">Niños</option>
+                <option value="accesorios">Accesorios</option>
+            </select>
         </div>
-      </div>
-      <!-- La estructura es la misma en el resto de productos en las secciones de ofertas para mujer, hombre y niño -->
-      <div class="hotsales" id="hs-mujer2"> <!-- Contenedor de las ofertas -->
-        <div class="percentage-product"> <!-- Contenedor del porcentaje y el producto -->
-          <div class="percentage">40%</div> <!-- Etiqueta de porcentaje de descuento -->
-          <div class="product"> <!-- Contenedor de producto -->
-            <img src="./sales/foto-mujer2a.jpg" alt="Foto principal de mujer 2a" class="img-normal"> <!-- Imagen del producto normal -->
-            <img src="./sales/foto-mujer2b.jpg" alt="Foto principal de mujer 2b" class="img-hover"> <!-- Imagen del producto en hover -->
-          </div>
-          <div class="stock">¡Últimas unidades disponibles!</div> <!-- Etiqueta de stock -->
+        <div class="filter-group">
+            <label for="size-filter">Talla</label>
+            <select id="size-filter">
+                <option value="">Todas las tallas</option>
+                <option value="XS">XS</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
         </div>
-        <div class="info-product"> <!-- Contenedor de información del producto -->
-          <h2 class="product-title">Camiseta blanca con estampado para mujer</h2>
-          <span class="price-discount">$54.000</span> <!-- Precio con descuento -->
-          <span class="regular-price">$90.000</span> <!-- Precio regular -->
-
-          <button class="wishlist-button" data-product-id="hs-mujer2">
-            <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
-          </button>
-
-          <div class="addCart-size"> <!-- Contenedor de botón de agregar al carrito y tallas -->
-            <div class="size"> <!-- Contenedor de tallas -->
-              <ul class="list-size"> <!-- Lista de tallas disponibles -->
-                <li class="size-letter selected">XS</li> <!-- Talla "XS" seleccionada predefinida -->
-                <li class="size-letter">S</li> <!-- Talla "S" -->
-                <li class="size-letter">M</li> <!-- Talla "M" -->
-              </ul>
-            </div>
-            <button class="add-to-cart">Agregar al carrito</button> <!-- Botón de agregar al carrito -->
-            <input type="hidden" name="id-product-m1" id="addCartProduct"> <!-- Campo oculto para almacenar el ID del producto -->
-          </div>
+        <div class="filter-group">
+            <label for="price-min">Precio mínimo</label>
+            <input type="number" id="price-min" placeholder="Ej: 66560" min="0">
         </div>
-      </div>
-      <div class="hotsales" id="hs-mujer3"> <!-- Contenedor de las ofertas -->
-        <div class="percentage-product">  <!-- Contenedor del porcentaje y el producto -->
-          <div class="percentage">30%</div> <!-- Etiqueta de porcentaje de descuento -->
-          <div class="product"> <!-- Contenedor de producto -->
-            <img src="./sales/foto-mujer3b.jpeg" alt="Foto principal de mujer 3a" class="img-normal"> <!-- Imagen del producto normal -->
-            <img src="./sales/foto-mujer3a.jpeg" alt="Foto principal de mujer 3b" class="img-hover"> <!-- Imagen del producto en hover -->
-          </div>
-          <div class="no-stock"></div> <!-- Etiqueta de stock -->
+        <div class="filter-group">
+            <label for="price-max">Precio máximo</label>
+            <input type="number" id="price-max" placeholder="Ej: 115900" min="0">
         </div>
-        <div class="info-product"> <!-- Contenedor de información del producto -->
-          <h2 class="product-title">Camiseta negra con estampado para mujer</h2>  <!-- Título del producto -->
-          <span class="price-discount">$63.000</span>   <!-- Precio con descuento -->
-          <span class="regular-price">$90.000</span> <!-- Precio regular -->
+    </div>
 
-          <button class="wishlist-button" data-product-id="hs-mujer3">
-            <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
-          </button>
+    <!-- Contenedor para productos filtrados -->
+    <div id="filtered-products" class="filtered-products-container">
+        <!-- Los productos filtrados se mostrarán aquí -->
+    </div>
 
-          <div class="addCart-size"> <!-- Contenedor de botón de agregar al carrito y tallas -->
-            <div class="size"> <!-- Contenedor de tallas -->
-              <ul class="list-size"> <!-- Lista de tallas disponibles -->
-                <li class="size-letter selected">S</li> <!-- Talla "S" seleccionada predefinida -->
-                <li class="size-letter">M</li> <!-- Talla "M" -->
-                <li class="size-letter">L</li> <!-- Talla "L" -->
-              </ul>
-            </div>
-            <button class="add-to-cart">Agregar al carrito</button> <!-- Botón de agregar al carrito -->
-            <input type="hidden" name="id-product-m1" id="addCartProduct"> <!-- Campo oculto para almacenar el ID del producto -->
-          </div>
-        </div>
-      </div>
-    </article>
-    <!-- Sección de ofertas de hombre -->
-    <blockquote class="blockquote text-center">
-      <h3>PRENDAS EN OFERTA
-        <small class="text-muted"><h6>Para caballeros</h6></small> <!-- Subtítulo con el hashtag promocional -->
-      </h3>
-    </blockquote> <!-- Cita en bloque con el título de la sección -->
-    <article class="sales" id="sales-hombre"> <!-- Contenedor de las ofertas para hombre -->
-      <div class="hotsales" id="hs-hombre1">
-        <div class="percentage-product">
-          <div class="percentage">45%</div>
-          <div class="product">
-            <img src="./sales/foto-hombre1a.jpeg" alt="Foto principal de hombre 1a" class="img-normal"> <!-- Imagen del producto normal -->
-            <img src="./sales/foto-hombre1b.jpeg" alt="Foto principal de hombre 1b" class="img-hover"> <!-- Imagen del producto en hover -->
-          </div>
-          <div class="no-stock"></div>
-        </div>
-        <div class="info-product">
-          <h2 class="product-title">Camiseta negra con estampado para hombre</h2>
-          <span class="price-discount">$52.250</span>
-          <span class="regular-price">$95.000</span>
+    <!-- Secciones originales de productos -->
+    <div id="original-sections">
+        <!-- Sección de ofertas de mujer -->
+        <blockquote class="blockquote text-center">
+          <h3>PRENDAS EN OFERTA
+            <small class="text-muted"><h6>Para damas</h6></small>
+          </h3>
+        </blockquote>
+        <article class="sales" id="sales-mujer">
+          <!-- Los productos de mujer se cargarán aquí dinámicamente -->
+        </article>
 
-          <button class="wishlist-button" data-product-id="hs-hombre1">
-            <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
-          </button>
+        <!-- Sección de ofertas de hombre -->
+        <blockquote class="blockquote text-center">
+          <h3>PRENDAS EN OFERTA
+            <small class="text-muted"><h6>Para caballeros</h6></small>
+          </h3>
+        </blockquote>
+        <article class="sales" id="sales-hombre">
+          <!-- Los productos de hombre se cargarán aquí dinámicamente -->
+        </article>
 
-          <div class="addCart-size">
-            <div class="size">
-              <ul class="list-size">
-                <li class="size-letter selected">M</li>
-                <li class="size-letter">L</li>
-                <li class="size-letter">XL</li>
-              </ul>
-            </div>
-            <button class="add-to-cart">Agregar al carrito</button>
-            <input type="hidden" name="id-product-m1" id="addCartProduct">
-          </div>
-        </div>
-      </div>
-      <div class="hotsales" id="hs-hombre2">
-        <div class="percentage-product">
-          <div class="percentage">50%</div>
-          <div class="product">
-            <img src="./sales/foto-hombre2a.jpeg" alt="Foto principal de hombre 2a" class="img-normal"> <!-- Imagen del producto normal -->
-            <img src="./sales/foto-hombre2b.jpeg" alt="Foto principal de hombre 2b" class="img-hover"> <!-- Imagen del producto en hover -->
-          </div>
-          <div class="stock">¡Últimas unidades disponibles!</div>
-        </div>
-        <div class="info-product">
-          <h2 class="product-title">Camiseta blanca con estampado para hombre</h2>
-          <span class="price-discount">$47.500</span>
-          <span class="regular-price">$95.000</span>
+        <!-- Sección de ofertas de niño -->
+        <blockquote class="blockquote text-center">
+          <h3>PRENDAS EN OFERTA
+            <small class="text-muted"><h6>Para niños y niñas</h6></small>
+          </h3>
+        </blockquote>
+        <article class="sales" id="sales-kid">
+          <!-- Los productos de niños se cargarán aquí dinámicamente -->
+        </article>
 
-          <button class="wishlist-button" data-product-id="hs-hombre2">
-            <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
-          </button>
-
-          <div class="addCart-size">
-            <div class="size">
-              <ul class="list-size">
-                <li class="size-letter selected">M</li>
-                <li class="size-letter">L</li>
-                <li class="no-size-letter"></li>
-              </ul>
-            </div>
-            <button class="add-to-cart">Agregar al carrito</button>
-            <input type="hidden" name="id-product-m1" id="addCartProduct">
-          </div>
-        </div>
-      </div>
-      <div class="hotsales" id="hs-hombre3">
-        <div class="percentage-product">
-          <div class="percentage">30%</div>
-          <div class="product">
-            <img src="./sales/foto-hombre3a.jpg" alt="Foto principal de hombre 3a" class="img-normal"> <!-- Imagen del producto normal -->
-            <img src="./sales/foto-hombre3b.jpg" alt="Foto principal de hombre 3b" class="img-hover"> <!-- Imagen del producto en hover -->
-          </div>
-          <div class="no-stock"></div>
-        </div>
-        <div class="info-product">
-          <h2 class="product-title">Camiseta negra con estampado para hombre</h2>
-          <span class="price-discount">$63.000</span>
-          <span class="regular-price">$90.000</span>
-
-          <button class="wishlist-button" data-product-id="hs-hombre3">
-            <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
-          </button>
-
-          <div class="addCart-size">
-            <div class="size">
-              <ul class="list-size">
-                <li class="size-letter selected">M</li>
-                <li class="size-letter">L</li>
-                <li class="size-letter">XL</li>
-              </ul>
-            </div>
-            <button class="add-to-cart">Agregar al carrito</button>
-            <input type="hidden" name="id-product-m1" id="addCartProduct">
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <!-- Sección de ofertas de niño -->
-    <blockquote class="blockquote text-center"> <!-- Cita en bloque con el título de la sección -->
-      <h3>PRENDAS EN OFERTA
-        <small class="text-muted"><h6>Para niños y niñas</h6></small>
-      </h3>
-    </blockquote>
-    <article class="sales" id="sales-kid"> <!-- Contenedor de las ofertas para niños -->
-      <div class="hotsales" id="hs-kid1">
-        <div class="percentage-product">
-          <div class="percentage">45%</div>
-          <div class="product">
-            <img src="./sales/foto-niño1a.jpg" alt="Foto principal de niño 1a" class="img-normal"> 
-            <img src="./sales/foto-niño1b.jpg" alt="Foto principal de niño 1b" class="img-hover">
-          </div>
-          <div class="stock">¡Últimas unidades disponibles!</div>
-        </div>
-        <div class="info-product">
-          <h2 class="product-title">Camiseta con estampado unisex para niños</h2>
-          <span class="price-discount">$54.945</span>
-          <span class="regular-price">$99.900</span>
-
-          <button class="wishlist-button" data-product-id="hs-kid1">
-            <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
-          </button>
-
-          <div class="addCart-size">
-            <div class="size">
-              <ul class="list-size">
-                <li class="size-letter selected">XS</li>
-                <li class="size-letter">S</li>
-                <li class="size-letter">M</li>
-              </ul>
-            </div>
-            <button class="add-to-cart">Agregar al carrito</button>
-            <input type="hidden" name="id-product-m1" id="addCartProduct">
-          </div>
-        </div>
-      </div>
-      <div class="hotsales" id="hs-kid2">
-        <div class="percentage-product">
-          <div class="percentage">30%</div>
-          <div class="product">
-            <img src="./sales/foto-niño2a.png" alt="Foto principal de niño 2a" class="img-normal">
-            <img src="./sales/foto-niño2b.png" alt="Foto principal de niño 2b" class="img-hover">
-          </div>
-          <div class="no-stock">  </div>
-        </div>
-        <div class="info-product">
-          <h2 class="product-title">Polo azul oscuro unisex para niños</h2>
-          <span class="price-discount">$77.000</span>
-          <span class="regular-price">$110.000</span>
-
-          <button class="wishlist-button" data-product-id="hs-niño2">
-            <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
-          </button>
-
-          <div class="addCart-size">
-            <div class="size">
-              <ul class="list-size">
-                <li class="size-letter selected">XS</li>
-                <li class="size-letter">S</li>
-                <li class="no-size-letter"></li>
-              </ul>
-            </div>
-            <button class="add-to-cart">Agregar al carrito</button>
-            <input type="hidden" name="id-product-m1" id="addCartProduct">
-          </div>
-        </div>
-      </div>
-      <div class="hotsales" id="hs-kid3">
-        <div class="percentage-product">
-          <div class="percentage">50%</div>
-          <div class="product">
-            <img src="./sales/foto-niño3a.jpg" alt="Foto principal de niño 3a" class="">
-            <img src="./sales/foto-niño3b.jpg" alt="Foto principal de niño 3b" class="img-hover">
-          </div>
-          <div class="no-stock"></div>
-        </div>
-        <div class="info-product">
-          <h2 class="product-title">Camiseta blanca con estampado unisex para niños</h2>
-          <span class="price-discount">$63.000</span>
-          <span class="regular-price">$90.000</span>
-
-          <button class="wishlist-button" data-product-id="hs-kid3">
-            <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
-          </button>
-
-          <div class="addCart-size">
-            <div class="size">
-              <ul class="list-size">
-                <li class="size-letter selected">XS</li>
-                <li class="size-letter">S</li>
-                <li class="size-letter">M</li>
-              </ul>
-            </div>
-            <button class="add-to-cart">Agregar al carrito</button>
-            <input type="hidden" name="id-product-m1" id="addCartProduct">
-          </div>
-        </div>
-      </div>
-    </article>
-
-
-    <blockquote class="blockquote text-center"> <!-- Cita en bloque con alineación centrada -->
-      <h3>ACCESORIOS
-        <small class="text-muted"><h6>¡Complementa tu look!</h6></small>
-      </h3>
-    </blockquote>
-    <article class="sales" id="sale-accesorios"> <!-- Contenedor de las ofertas de accesorios -->  
-      <div class="hotsales" id="hs-accesorio1">
-        <div class="percentage-product">
-          <div class="no-percentage"></div>
-          <div class="product">
-            <img src="./sales/foto-accesorio1a.jpg" alt="Foto principal de accesorio 1a" class="img-normal">
-            <img src="./sales/foto-accesorio1b.jpg" alt="Foto principal de accesorio 1b" class="img-hover">
-          </div>  
-        </div>
-        <div class="info-product">
-          <h2 class="product-title">Gafas rosadas o negras - Ray Ban</h2>
-          <span class="price-discount price-normal">$119.900</span>
-
-          <button class="wishlist-button" data-product-id="hs-accesorio1">
-            <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
-          </button>
-
-          <div class="addCart-size">
-            <button class="add-to-cart">Agregar al carrito</button>
-            <input type="hidden" name="id-product-m1" id="addCartProduct">
-          </div>
-        </div>
-      </div>
-      <div class="hotsales" id="hs-accesorio2">
-        <div class="percentage-product">
-          <div class="product">
-            <img src="./sales/foto-accesorio2a.webp" alt="Foto principal de accesorio 2a" class="img-normal">
-            <img src="./sales/foto-accesorio2b.webp" alt="Foto principal de accesorio 2b" class="img-hover">
-          </div>
-        </div>
-        <div class="info-product">
-          <h2 class="product-title">Gorra Básica Color Negro - Polo</h2>
-          <span class="price-discount price-normal">$59.900</span>
-
-          <button class="wishlist-button" data-product-id="hs-accesorio2">
-            <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
-          </button>
-
-          <div class="addCart-size">
-            <button class="add-to-cart">Agregar al carrito</button>
-            <input type="hidden" name="id-product-m1" id="addCartProduct">
-          </div>
-        </div>
-      </div>
-      <div class="hotsales" id="hs-accesorio3">
-        <div class="percentage-product">
-          <div class="product">
-            <img src="./sales/foto-accesorio3a.webp" alt="Foto principal de accesorio 3a" class="img-normal">
-            <img src="./sales/foto-accesorio3b.webp" alt="Foto principal de accesorio 3b" class="img-hover">
-          </div>
-        </div>
-        <div class="info-product">
-          <h2 class="product-title">Cinturón trenzado verde elástico - HSB</h2>
-          <span class="price-discount price-normal">$79.900</span>
-
-          <button class="wishlist-button" data-product-id="hs-accesorio3">
-            <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
-          </button>
-
-          <div class="addCart-size">
-            <button class="add-to-cart">Agregar al carrito</button>
-            <input type="hidden" name="id-product-m1" id="addCartProduct">
-          </div>
-        </div>
-      </div>
-    </article>
+        <!-- Sección de accesorios -->
+        <blockquote class="blockquote text-center">
+          <h3>ACCESORIOS
+            <small class="text-muted"><h6>¡Complementa tu look!</h6></small>
+          </h3>
+        </blockquote>
+        <article class="sales" id="sale-accesorios">
+          <!-- Los accesorios se cargarán aquí dinámicamente -->
+        </article>
+    </div>
   </section>
 
 
@@ -685,8 +383,6 @@
 
 <!-- Fondo oscuro para el modal -->
 <div id="fondo-modal" class="fondo-modal"></div>
-
-</body>
 
 <!-- Botón flotante del chatbot -->
 <button id="chatbot-toggle">🤖</button>
@@ -795,4 +491,5 @@
 <script src="wishlist.js"></script><!-- Enlazar el archivo JS del Wishlist -->
 
 
+</body>
 </html>

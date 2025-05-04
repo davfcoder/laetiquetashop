@@ -5,11 +5,6 @@ const carritoContainer = document.createElement("div");
 carritoContainer.classList.add("carrito-container");
 document.body.appendChild(carritoContainer);
 
-// Contenedor del método de pago (se mostrará cuando se finalice la compra)
-const metodoPagoContainer = document.createElement("div");
-metodoPagoContainer.classList.add("metodo-pago-container");
-document.body.appendChild(metodoPagoContainer);
-
 carritoContainer.innerHTML = `
     <div class="carrito-header">
         <h2>Bolsa (<span id="cantidad-productos">0</span>)</h2>
@@ -23,7 +18,6 @@ carritoContainer.innerHTML = `
 `;
 
 carritoContainer.style.display = "none";
-metodoPagoContainer.style.display = "none"; // Inicialmente oculto
 
 const carritoBoton = document.getElementById("shopping-bag-bottom");
 if (carritoBoton) {
@@ -39,27 +33,28 @@ if (cerrarCarritoBoton) {
     });
 }
 
-document.querySelectorAll(".add-to-cart").forEach(boton => {
-    boton.addEventListener("click", (event) => {
-        const productoElement = event.target.closest(".hotsales");
-        if (productoElement) {
-            const nombre = productoElement.querySelector(".product-title").textContent;
-            const referencia = productoElement.getAttribute("data-ref");
-            const tallaElement = productoElement.querySelector(".size-letter.selected");
-            const talla = tallaElement ? tallaElement.textContent : "Talla no definida";
-            const color = "Color por definir";
-            const precioTexto = productoElement.querySelector(".price-discount").textContent;
-            const precioNumerico = parseFloat(precioTexto.replace(/[^\d,.-]/g, '').replace('.', '').replace(',', '.'));
-            const imagen = productoElement.querySelector(".product img").src;
+// Event listener para los botones de "Agregar al carrito"
+document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('add-to-cart')) {
+        const button = event.target;
+        const productContainer = button.closest('.hotsales');
+        
+        if (!productContainer) return;
 
-            agregarAlCarrito(nombre, referencia, talla, color, precioNumerico, imagen);
+        // Obtener los detalles del producto
+        const productId = productContainer.id;
+        const productName = productContainer.querySelector('.product-title').textContent;
+        const productPriceText = productContainer.querySelector('.price-discount').textContent;
+        const productPrice = parseFloat(productPriceText.replace(/[^\d,.-]/g, '').replace('.', '').replace(',', '.'));
+        const productImg = productContainer.querySelector('.product img').src;
+        const productTallaElement = productContainer.querySelector('.size-letter.selected');
+        const productTalla = productTallaElement ? productTallaElement.textContent : "Talla no definida";
+        const productColor = "Color por definir"; // Por ahora fijo, se puede modificar si se agrega selección de color
 
-            // Mostrar mensaje de producto añadido
-            mostrarMensajeProducto(); // Llama a la función que muestra el mensaje
-        }
-    });
+        // Agregar al carrito
+        agregarAlCarrito(productName, productId, productTalla, productColor, productPrice, productImg);
+    }
 });
-
 
 function crearItemCarritoHTML(item, index) {
     const carritoItem = document.createElement("div");
@@ -125,10 +120,13 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function mostrarMetodoPago() {
-    metodoPagoContainer.style.display = "block";
     let totalCompra = carrito.reduce((total, item) => total + (item.precio * item.cantidad), 0);
     let costoEnvio = 20; // Simulación de costo de envío
     let totalConEnvio = totalCompra + costoEnvio;
+
+    const metodoPagoContainer = document.createElement("div");
+    metodoPagoContainer.classList.add("metodo-pago-container");
+    document.body.appendChild(metodoPagoContainer);
 
     metodoPagoContainer.innerHTML = `
         <div class="metodo-pago-header">
@@ -150,8 +148,8 @@ function mostrarMetodoPago() {
                 <option value="tarjetaC">Tarjeta de Crédito</option>
                 <option value="tarjetaD">Tarjeta de Debito</option>
                 <option value="paypal">PayPal</option>
-                <option value="googlepay">googlepay</option>
-                <option value="applepay">applepay</option>
+                <option value="googlepay">Google Pay</option>
+                <option value="applepay">Apple Pay</option>
             </select>
 
             <div id="metodo-pago-form"></div>
@@ -169,8 +167,9 @@ function mostrarMetodoPago() {
             <button id="cerrar-modal">Cerrar</button>
         </div>
         <div id="fondo-modal" class="fondo-modal"></div>
-
     `;
+
+    metodoPagoContainer.style.display = "block";
 
     document.getElementById("cerrar-pago").addEventListener("click", () => {
         metodoPagoContainer.style.display = "none";
@@ -198,11 +197,10 @@ function mostrarMetodoPago() {
             modal.style.display = "block";
             fondoModal.style.display = "block";
 
-document.getElementById("cerrar-modal").addEventListener("click", () => {
-    modal.style.display = "none";
-    fondoModal.style.display = "none";
-});
-
+            document.getElementById("cerrar-modal").addEventListener("click", () => {
+                modal.style.display = "none";
+                fondoModal.style.display = "none";
+            });
         } else {
             alert("Por favor, completa todos los campos de la dirección de envío.");
         }

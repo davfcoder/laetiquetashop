@@ -216,7 +216,7 @@ function mostrarComprasMujer() {
   chatbotMessages.innerHTML = "";
   agregarMensaje("👗 Ropa para mujer:");
   chatbotOptions.innerHTML = `
-    <button onclick="abrirEnlace('https://laetiqueta.com/mujer')">🛒 Ver catálogo mujer</button>
+    <button onclick="abrirEnlace('./mujer.html')">🛒 Ver catálogo mujer</button>
     <button onclick="mostrarCompras()">🔙 Volver al menú anterior</button>
   `;
 }
@@ -225,7 +225,7 @@ function mostrarComprasHombre() {
   chatbotMessages.innerHTML = "";
   agregarMensaje("👕 Ropa para hombre:");
   chatbotOptions.innerHTML = `
-    <button onclick="<a href="http://127.0.0.1:5500/devoluciones.html"">🛒 Ver catálogo hombre</button>
+    <button onclick="abrirEnlace('./hombre.html')">🛒 Ver catálogo hombre</button>
     <button onclick="mostrarCompras()">🔙 Volver al menú anterior</button>
   `;
 }

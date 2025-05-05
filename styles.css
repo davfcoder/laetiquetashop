@@ -1231,3 +1231,380 @@ footer {
     margin-bottom: 2rem;
 }
 
+
+
+/*reponsive*/
+/* --- Estilos Responsivos --- */
+
+/* TABLETAS: ≤ 992px */
+@media (max-width: 992px) {
+    body {
+      font-size: 1rem;
+    }
+  
+    .message-text {
+      font-size: 1rem;
+      padding: 1rem;
+    }
+  
+    .header-top {
+      padding: 1.5rem 5vw;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  
+    .header-top-menu {
+      width: 100%;
+      order: 2;
+      margin-top: 1rem;
+      justify-content: center;
+      font-size: 1rem;
+    }
+  
+    .header-top-menu a img {
+      width: 50%;
+    }
+  
+    .logo-laetiqueta {
+      width: 50%;
+      order: 1;
+      margin: 0 auto;
+      display: flex;
+      justify-content: flex-start;
+    }
+  
+    .logo-laetiqueta img {
+      width: 60%;
+      margin: 0 auto;
+    }
+  
+    .right-bottoms {
+      width: auto;
+      order: 3;
+      gap: 1rem;
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+  
+    #wishlist-link img {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  
+    nav {
+      padding: 0.5rem 5vw;
+      position: relative;
+    }
+  
+    .nav-links {
+      gap: 2rem;
+      font-size: 1rem;
+    }
+  
+    .submenu {
+      padding: 1.5rem 10%;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 1rem;
+    }
+  
+    .sales,
+    .filtered-products-container {
+      grid-template-columns: repeat(2, 1fr);
+      margin: 0 2rem;
+      padding: 1.5rem;
+    }
+  
+    .product {
+      height: 35vw;
+    }
+  
+    .product-title,
+    .price-discount,
+    .regular-price,
+    .regular-price-catalogo,
+    .add-to-cart,
+    .size-letter {
+      font-size: clamp(0.8rem, 1.2vw, 1.125rem);
+    }
+  
+    .form-completo {
+      margin: 3rem 5vw;
+      padding: 2rem 3rem;
+      flex-direction: column;
+    }
+  
+    #imagen-form {
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 2rem;
+    }
+  
+    .gallery {
+      width: 90vw;
+      height: 40vw;
+    }
+  
+    .image-container img {
+      width: 25vw;
+      height: 38vw;
+    }
+  
+    .nosotros-section {
+      height: 70vw;
+    }
+  
+    .nosotros-section h1 {
+      font-size: clamp(1.5rem, 5vw, 2.5rem);
+    }
+  
+    .nosotros-section p {
+      font-size: clamp(0.9rem, 3vw, 1.3rem);
+      margin-top: 2rem;
+    }
+  
+    .secciones-footer {
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      text-align: center;
+    }
+  }
+  
+  /* MÓVILES: ≤ 768px */
+  @media (max-width: 768px) {
+    .message-text {
+      font-size: 1.1rem;
+    }
+  
+    .header-top {
+      padding: 1rem 5vw;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  
+    .header-top-menu,
+    .logo-laetiqueta,
+    .right-bottoms {
+      width: 100%;
+      justify-content: center;
+      font-size: 1rem;
+    }
+  
+    .logo-laetiqueta img {
+      width: 50%;
+    }
+  
+    #wishlist-link img {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  
+    .right-title {
+      font-size: 1rem;
+    }
+  
+    nav {
+      padding: 0.8rem 5vw;
+      justify-content: space-between;
+    }
+  
+    .menu-toggle {
+      display: block;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      z-index: 1101;
+    }
+  
+    .nav-links {
+      display: none;
+      position: fixed;
+      inset: 0;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(250, 249, 248, 0.98);
+      backdrop-filter: blur(5px);
+      gap: 1.5rem;
+      z-index: 1050;
+      overflow-y: auto;
+    }
+  
+    nav.mobile-nav-active .nav-links,
+    body.mobile-nav-active .nav-links {
+      display: flex;
+    }
+  
+    .nav-links li {
+      font-size: 1.3rem;
+      font-weight: bold;
+      width: 100%;
+      text-align: center;
+    }
+  
+    .nav-links li:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+  
+    #logo-secundario,
+    #bolsa-icon.visible {
+      display: none;
+    }
+  
+    .submenu {
+      position: static;
+      display: none;
+      width: 100%;
+      grid-template-columns: 1fr;
+      background-color: transparent;
+    }
+  
+    .dropdown.active .submenu {
+      display: block;
+    }
+  
+    .submenu li {
+      text-align: center;
+    }
+  
+    .submenu li a {
+      font-size: 1rem;
+    }
+  
+    .sales,
+    .filtered-products-container {
+      grid-template-columns: 1fr;
+      margin: 0 1rem;
+      padding: 1rem;
+      gap: 1.5rem;
+    }
+  
+    .product {
+      height: 65vw;
+    }
+  
+    .product-title,
+    .price-discount,
+    .regular-price,
+    .regular-price-catalogo,
+    .add-to-cart,
+    .size-letter {
+      font-size: clamp(0.9rem, 4vw, 1.125rem);
+    }
+  
+    .list-size {
+      margin: 10px auto;
+      flex-wrap: wrap;
+    }
+  
+    .form-completo {
+      margin: 2rem 1rem;
+      padding: 1.5rem;
+    }
+  
+    input,
+    textarea,
+    select,
+    .boton-enviar {
+      padding: 0.8rem;
+      font-size: 1rem;
+      border-radius: 8px;
+    }
+  
+    .mensaje-legal {
+      font-size: 0.75rem;
+    }
+  
+    .cookie-banner {
+      flex-direction: column;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      max-width: 95%;
+      bottom: 1rem;
+    }
+  
+    .cookie-banner button {
+      padding: 0.6rem 1rem;
+    }
+  
+    .carousel {
+      margin-bottom: 4rem;
+    }
+  
+    .gallery {
+      height: 50vw;
+      border-radius: 10px;
+    }
+  
+    .image-container img {
+      width: 40vw;
+      height: 48vw;
+    }
+  
+    .nosotros-section {
+      height: auto;
+      padding: 3rem 1rem;
+      background-attachment: scroll;
+    }
+  
+    .nosotros-section h1 {
+      font-size: clamp(1.8rem, 7vw, 2.2rem);
+    }
+  
+    .nosotros-section p {
+      font-size: clamp(1rem, 4vw, 1.2rem);
+      margin-top: 1.5rem;
+    }
+  
+    #chatbot-toggle {
+      padding: 0.8rem;
+      bottom: 1rem;
+      left: 1rem;
+    }
+  
+    #chatbot-window {
+      width: 80vw;
+      bottom: 60px;
+      left: 1rem;
+      max-height: 70vh;
+    }
+  
+    #chatbot-messages {
+      max-height: 50vh;
+    }
+  
+    #chatbot-options button,
+    .boton-whatsapp {
+      padding: 0.8rem;
+      font-size: 1rem;
+    }
+  
+    .boton-whatsapp {
+      bottom: 1rem;
+      right: 1rem;
+      border-radius: 50px;
+      padding: 0.5rem 0.8rem;
+    }
+  
+    .boton-whatsapp h4 {
+      display: none;
+    }
+  
+    .boton-whatsapp.zoom {
+      transform: scale(1.2);
+      right: 1.5rem;
+      bottom: 1.5rem;
+    }
+  
+    .contenedor-footer {
+      padding: 0 1rem;
+    }
+  
+    .secciones-footer {
+      gap: 20px;
+    }
+  }
+  

@@ -385,6 +385,14 @@ nav {
     font-size: clamp(9px, 1vw, 13px); /* Tamaño adaptable */
     text-decoration: line-through; /* Texto tachado */
     font-style: italic; /* Estilo en cursiva */
+
+
+
+
+
+
+
+    
     margin: 1rem 0.5rem 1rem 0; /* Margen alrededor */
 }
 
@@ -948,18 +956,6 @@ footer {
     color: var(--primario-color); /* Color del texto */
 }
 
-/* Estilos para el input de búsqueda */
-.search-input {
-    width: 200px;
-    height: 30px;
-    padding: 5px 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
-    outline: none;
-    background-color: white;
-}
-
 #search-bottom {
     position: relative;
     z-index: 1000;
@@ -1111,20 +1107,6 @@ footer {
     margin: 20px auto;
 }
 
-#search-input {
-    width: 100%;
-    padding: 12px 20px;
-    border: 2px solid #ddd;
-    border-radius: 25px;
-    font-size: 16px;
-    outline: none;
-    transition: border-color 0.3s;
-}
-
-#search-input:focus {
-    border-color: #ff6b6b;
-}
-
 /* Estilos para el contenedor de sugerencias */
 .suggestions-container {
     position: absolute;
@@ -1231,7 +1213,16 @@ footer {
     margin-bottom: 2rem;
 }
 
-
+.no-products-message {
+    text-align: center;
+    font-size: 1.2em;
+    color: #666;
+    padding: 2em;
+    margin: 2em auto;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    max-width: 600px;
+}
 
 /*reponsive*/
 /* --- Estilos Responsivos --- */

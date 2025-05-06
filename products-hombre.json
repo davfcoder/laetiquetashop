@@ -1,0 +1,112 @@
+{
+  "productos": [
+    {
+      "id": "hs-hombre1",
+      "nombre": "Camiseta con estampado para hombre",
+      "precio": 94900,
+      "categoria": "Camisetas",
+      "tallas": ["M", "L", "XL"],
+      "imagenNormal": "./sales/hombre/foto-hombrecamiseta3a.jpeg",
+      "imagenHover": "./sales/hombre/foto-hombrecamiseta3b.jpeg"
+    },
+    {
+      "id": "hs-hombre2",
+      "nombre": "Polo azul o blanco con estampado para hombre",
+      "precio": 89900,
+      "categoria": "Polos",
+      "tallas": ["S", "M", "L"],
+      "imagenNormal": "./sales/hombre/foto-hombrepolo2a.jpeg",
+      "imagenHover": "./sales/hombre/foto-hombrepolo2b.jpeg"
+    },
+    {
+      "id": "hs-hombre3",
+      "nombre": "Polo blanco con estampado para hombre",
+      "precio": 89900,
+      "categoria": "Polos",
+      "tallas": ["M", "L", "XL"],
+      "imagenNormal": "./sales/hombre/foto-hombrepolo1a.jpeg",
+      "imagenHover": "./sales/hombre/foto-hombrepolo1b.jpeg"
+    },
+    {
+      "id": "hs-hombre4",
+      "nombre": "Pantalón cargo para hombre",
+      "precio": 119900,
+      "categoria": "Pantalones",
+      "tallas": ["M", "L", "XL"],
+      "imagenNormal": "./sales/hombre/foto-hombrepants1a.jpeg",
+      "imagenHover": "./sales/hombre/foto-hombrepants1b.jpeg"
+    },
+    {
+      "id": "hs-hombre5",
+      "nombre": "Bermuda jean para hombre",
+      "precio": 84900,
+      "categoria": "Bermudas",
+      "tallas": ["M", "L", "XL"],
+      "imagenNormal": "./sales/hombre/foto-hombrebermuda1a.jpeg",
+      "imagenHover": "./sales/hombre/foto-hombrebermuda1b.jpeg"
+    },
+    {
+      "id": "hs-hombre6",
+      "nombre": "Ropa interior boxer para hombre",
+      "precio": 44900,
+      "categoria": "Ropa interior",
+      "tallas": ["M", "L", "XL"],
+      "imagenNormal": "./sales/hombre/foto-hombreinterior1a.jpeg",
+      "imagenHover": "./sales/hombre/foto-hombreinterior1b.jpeg"
+    },
+    {
+      "id": "hs-hombre7",
+      "nombre": "Polo negro con estampado para hombre",
+      "precio": 94900,
+      "categoria": "Polos",
+      "tallas": ["S", "M", "L"],
+      "imagenNormal": "./sales/hombre/foto-hombrepolo4a.jpeg",
+      "imagenHover": "./sales/hombre/foto-hombrepolo4b.jpeg"
+    },
+    {
+      "id": "hs-hombre8",
+      "nombre": "Polo gris con estampado para hombre",
+      "precio": 87900,
+      "categoria": "Polos",
+      "tallas": ["M", "L", "XL"],
+      "imagenNormal": "./sales/hombre/foto-hombrepolo5a.jpeg",
+      "imagenHover": "./sales/hombre/foto-hombrepolo5b.jpeg"
+    },
+    {
+      "id": "hs-hombre9",
+      "nombre": "Pantalón jean para hombre",
+      "precio": 109900,
+      "categoria": "Pantalones",
+      "tallas": ["M", "L", "XL"],
+      "imagenNormal": "./sales/hombre/foto-hombrepants2a.jpeg",
+      "imagenHover": "./sales/hombre/foto-hombrepants2b.jpeg"
+    },
+    {
+      "id": "hs-hombre10",
+      "nombre": "Bermuda cargo para hombre",
+      "precio": 84900,
+      "categoria": "Bermudas",
+      "tallas": ["S", "M", "L"],
+      "imagenNormal": "./sales/hombre/foto-hombrebermuda2a.jpeg",
+      "imagenHover": "./sales/hombre/foto-hombrebermuda2b.jpeg"
+    },
+    {
+      "id": "hs-hombre11",
+      "nombre": "Ropa interior boxer premium para hombre",
+      "precio": 54900,
+      "categoria": "Ropa interior",
+      "tallas": ["M", "L", "XL"],
+      "imagenNormal": "./sales/hombre/foto-hombreinterior2a.jpeg",
+      "imagenHover": "./sales/hombre/foto-hombreinterior2b.jpeg"
+    },
+    {
+      "id": "hs-hombre12",
+      "nombre": "Pantalón cargo premium para hombre",
+      "precio": 133900,
+      "categoria": "Pantalones",
+      "tallas": ["S", "M", "L"],
+      "imagenNormal": "./sales/hombre/foto-hombrepants3a.jpeg",
+      "imagenHover": "./sales/hombre/foto-hombrepants3b.jpeg"
+    }
+  ]
+} 

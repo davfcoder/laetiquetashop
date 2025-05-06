@@ -664,8 +664,10 @@ function initializeSizeSelection() {
 }
 
 // Funcionalidad del botón de búsqueda
-document.addEventListener('DOMContentLoaded', function() {
+function initializeSearch() {
     const searchBottom = document.getElementById('search-bottom');
+    if (!searchBottom) return; // Si no existe el elemento, salimos
+
     let searchInput = null;
     let suggestionsContainer = null;
     let isSearchVisible = false;
@@ -677,40 +679,67 @@ document.addEventListener('DOMContentLoaded', function() {
         searchBottom.appendChild(suggestionsContainer);
     }
 
+    // Función para obtener el archivo JSON según la página actual
+    function getJsonFile() {
+        const currentPage = window.location.pathname.split('/').pop();
+        switch(currentPage) {
+            case 'hombre.html':
+                return 'products-hombre.json';
+            case 'mujer.html':
+                return 'products-mujer.json';
+            case 'kid.html':
+                return 'products-kid.json';
+            case 'accesorios.html':
+                return 'products-accesorios.json';
+            case 'index.html':
+            case '':
+            default:
+                return 'products.json';
+        }
+    }
+
     // Mostrar sugerencias basadas en la búsqueda
     async function showSuggestions(searchTerm) {
         if (!suggestionsContainer) return;
         
         try {
-            const response = await fetch('products.json');
+            const jsonFile = getJsonFile();
+            const response = await fetch(jsonFile);
             const data = await response.json();
-            const products = data.products;
+            
+            // Determinar si estamos en index.html o en otra página
+            const isIndexPage = window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/');
+            const productos = isIndexPage ? data.products : data.productos;
             
             // Filtrar productos que coincidan con el término de búsqueda
-            const matches = products.filter(product => 
-                product.nombre.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                product.categoria.toLowerCase().includes(searchTerm.toLowerCase())
+            const matches = productos.filter(producto => 
+                producto.nombre.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                producto.categoria.toLowerCase().includes(searchTerm.toLowerCase())
             );
 
             // Limpiar sugerencias anteriores
             suggestionsContainer.innerHTML = '';
 
             if (matches.length > 0) {
-                matches.forEach(product => {
+                matches.forEach(producto => {
                     const item = document.createElement('div');
                     item.className = 'suggestion-item';
+                    
+                    // Determinar la estructura de la imagen y precio según la página
+                    const imagen = isIndexPage ? producto.imagen_normal : producto.imagenNormal;
+                    const precio = isIndexPage ? producto.precio_descuento : producto.precio;
+                    
                     item.innerHTML = `
-                        <img src="${product.imagen_normal}" alt="${product.nombre}">
+                        <img src="${imagen}" alt="${producto.nombre}">
                         <div class="suggestion-info">
-                            <span class="suggestion-name">${product.nombre}</span>
-                            <span class="suggestion-price">$${product.precio_descuento.toLocaleString()}</span>
+                            <span class="suggestion-name">${producto.nombre}</span>
+                            <span class="suggestion-price">$${precio.toLocaleString()}</span>
                         </div>
                     `;
                     
                     // Al hacer clic en una sugerencia
                     item.addEventListener('click', () => {
-                        // Aquí puedes agregar la lógica para navegar al producto
-                        console.log('Producto seleccionado:', product);
+                        console.log('Producto seleccionado:', producto);
                         hideSuggestions();
                     });
 
@@ -718,10 +747,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
                 suggestionsContainer.style.display = 'block';
             } else {
-                hideSuggestions();
+                suggestionsContainer.innerHTML = '<div class="no-suggestions">No se encontraron productos</div>';
+                suggestionsContainer.style.display = 'block';
             }
         } catch (error) {
             console.error('Error al cargar sugerencias:', error);
+            suggestionsContainer.innerHTML = '<div class="error-suggestions">Error al cargar sugerencias</div>';
+            suggestionsContainer.style.display = 'block';
         }
     }
 
@@ -784,19 +816,13 @@ document.addEventListener('DOMContentLoaded', function() {
             isSearchVisible = false;
         }
     });
+}
 
-    // Manejar la búsqueda cuando se presiona Enter
-    if (searchInput) {
-        searchInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                const searchTerm = this.value.trim().toLowerCase();
-                // Aquí puedes implementar la lógica de búsqueda completa
-                console.log('Buscando:', searchTerm);
-                hideSuggestions();
-            }
-        });
-    }
-});
+// Inicializar la búsqueda cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', initializeSearch);
+
+// También exportamos la función para poder llamarla desde otros scripts
+window.initializeSearch = initializeSearch;
 
 
 

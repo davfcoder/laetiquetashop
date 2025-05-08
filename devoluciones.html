@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"> <!-- Define la codificación de caracteres como UTF-8 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que la página sea responsive -->
-  <title>La Etiqueta</title> <!-- Título de la página en la pestaña del navegador -->
+  <title>La Etiqueta - Devoluciones</title> <!-- Título de la página en la pestaña del navegador -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"> <!-- Importa el CSS de Bootstrap (BOOTSTRAP) -->
   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> <!-- Importa la fuente Raleway desde Google Fonts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> <!-- Importa los scripts de Bootstrap (BOOTSTRAP) -->
@@ -19,124 +19,114 @@
     
 <!-- Seccion del navbar-->
 <header>  <!-- Encabezado de la página -->
-    <div class="header-message"> <!-- Mensaje de envío gratis -->
-      <div class="message-text">ENVÍO GRATIS a toda Colombia por compras superiores a $150.000 | Tiempo de envío: 3 a 7 días hábiles</div>
+  <div class="header-message"> <!-- Mensaje de envío gratis -->
+    <div class="message-text">ENVÍO GRATIS a toda Colombia por compras superiores a $150.000 | Tiempo de envío: 3 a 7 días hábiles</div>
+  </div>
+  <div class="header-top"> <!-- Sección superior del encabezado -->
+    <div class="header-top-menu" id="left-empty"></div> <!-- Espacio vacio para alineado a la izquierda -->
+    
+    <div id="logo-principal" class="header-top-menu">  <!-- Sección para el logo alineado al centro -->
+      <a href="/index.html">
+        <img src="./assets/logo-horizontal.png" alt="Logo oficial de La Etiqueta Shop">
+      </a>
     </div>
-    <div class="header-top"> <!-- Sección superior del encabezado -->
-      <div class="header-top-menu" id="left-empty"></div> <!-- Espacio vacio para alineado a la izquierda -->
-      <div id="logo-principal" class="header-top-menu">  <!-- Sección para el logo alineado al centro -->
-        <a href="/index.html">
-          <img src="./assets/logo-horizontal.png" alt="Logo oficial de La Etiqueta Shop">
-        </a>
-      </div>
-      <div id="menu-right" class="header-top-menu">  <!-- Sección para elementos alineados a la derecha -->
-        <div class="justify-bottoms"> <!-- Contenedor de elementos alineados a la derecha -->
-          <div id="search-bottom" class="right-bottoms">
-            <a>
-              <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-search"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
-              <span class="left-title">Buscar</span>
-            </a>
-          </div>
-          <div id="login-bottom" class="right-bottoms"> <!-- Contenedor de elementos alineados a la derecha -->
-            <a> <!-- Enlace para iniciar sesión -->
-              <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-user"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg>
-              <span class="left-title">Iniciar Sesión</span>  <!-- Texto de enlace -->
-            </a>
-          </div>
-          <div id="shopping-bag-bottom" class="right-bottoms"> <!-- Contenedor de elementos alineados a la derecha -->
-            <a href="#">
-              <svg id="bolsa-icon"  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-bag"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6.331 8h11.339a2 2 0 0 1 1.977 2.304l-1.255 8.152a3 3 0 0 1 -2.966 2.544h-6.852a3 3 0 0 1 -2.965 -2.544l-1.255 -8.152a2 2 0 0 1 1.977 -2.304z" /><path d="M9 11v-5a3 3 0 0 1 6 0v5" /></svg>
-              <span class="right-title">Carrito</span>
-            </a>
-          </div>
-          <div id="wishlist-bottom" class="right-bottoms"> <!-- Contenedor de elementos alineados a la derecha -->
-            <a href="#" id="wishlist-link">
-              <img src="../assets/corazon.ico" alt="Wishlist Icon" width="20" height="20" />
-              <span class="right-title">Wishlist</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-      <nav id="navbar">   <!-- Menú de navegación principal -->
-        <div id="logo-secundario"> <!-- Logo pequeño de la tienda -->
-          <a href="/index.html">
-            <img src="./favicon/favicon.png" alt="Logo pequeño de La Etiqueta Shop">
+    <div id="menu-right" class="header-top-menu">  <!-- Sección para elementos alineados a la derecha -->
+      <div class="justify-bottoms"> <!-- Contenedor de elementos alineados a la derecha -->
+        <div id="shopping-bag-bottom" class="right-bottoms"> <!-- Contenedor de elementos alineados a la derecha -->
+          <a href="#">
+            <svg id="bolsa-icon"  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-bag"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6.331 8h11.339a2 2 0 0 1 1.977 2.304l-1.255 8.152a3 3 0 0 1 -2.966 2.544h-6.852a3 3 0 0 1 -2.965 -2.544l-1.255 -8.152a2 2 0 0 1 1.977 -2.304z" /><path d="M9 11v-5a3 3 0 0 1 6 0v5" /></svg>
+            <span class="right-title">Carrito</span>
           </a>
         </div>
-        <ul class="nav-links">  <!-- Lista de enlaces del menú -->
-          <li class="dropdown"> <!-- Elemento de menú con submenú -->
-            <a href="index.html">
-              <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-rosette-discount"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 15l6 -6" /><circle cx="9.5" cy="9.5" r=".5" fill="currentColor" /><circle cx="14.5" cy="14.5" r=".5" fill="currentColor" /><path d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7a2.2 2.2 0 0 0 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1a2.2 2.2 0 0 0 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1" /></svg>
-              <span>SALE</span>
+        <div id="wishlist-bottom" class="right-bottoms"> <!-- Contenedor de elementos alineados a la derecha -->
+          <a href="#" id="wishlist-link">
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="22"  height="22"  viewBox="0 0 24 24"  fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-heart"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6.979 3.074a6 6 0 0 1 4.988 1.425l.037 .033l.034 -.03a6 6 0 0 1 4.733 -1.44l.246 .036a6 6 0 0 1 3.364 10.008l-.18 .185l-.048 .041l-7.45 7.379a1 1 0 0 1 -1.313 .082l-.094 -.082l-7.493 -7.422a6 6 0 0 1 3.176 -10.215z" /></svg>
+            <span class="right-title">Wishlist</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+    <nav id="navbar">   <!-- Menú de navegación principal -->
+      <div id="logo-secundario"> <!-- Logo pequeño de la tienda -->
+        <a href="/index.html">
+          <img src="./favicon/favicon.png" alt="Logo pequeño de La Etiqueta Shop">
+        </a>
+        </div>
+      <ul class="nav-links">  <!-- Lista de enlaces del menú -->
+        <li class="dropdown"> <!-- Elemento de menú con submenú -->
+          <a href="index.html"> <!-- Enlace principal -->
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-rosette-discount"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 15l6 -6" /><circle cx="9.5" cy="9.5" r=".5" fill="currentColor" /><circle cx="14.5" cy="14.5" r=".5" fill="currentColor" /><path d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7a2.2 2.2 0 0 0 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1a2.2 2.2 0 0 0 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1" /></svg>
+            <span>SALE</span>
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg>
+          </a>
+          <ul class="submenu"> <!-- Submenú de la categoría SALE -->
+            <li><a><span id="sale">Hasta 50% OFF</span></a></li> <!-- Enlace de submenú -->
+            <li><a href="index.html#sales-mujer">Ropa de mujer</a></li> <!-- Enlace de submenú -->
+            <li><a href="index.html#sales-hombre">Ropa de hombre</a></li>  <!-- Enlace de submenú -->
+            <li><a href="index.html#sales-kid">Ropa de niños</a></li> <!-- Enlace de submenú -->
+            <li><a href="index.html#sales-mujer">Ver todo</a></li> <!-- Enlace de submenú -->
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="hombre.html"> <!-- Enlace principal -->
+              <span>Hombre</span>   <!-- Texto de enlace -->
               <svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg>
-            </a>
-            <ul class="submenu"> <!-- Submenú de la categoría SALE -->
-              <li><a><span id="sale">Hasta 50% OFF</span></a></li> <!-- Enlace de submenú -->
-              <li><a href="index.html#sales-mujer">Ropa de mujer</a></li> <!-- Enlace de submenú -->
-              <li><a href="index.html#sales-hombre">Ropa de hombre</a></li>  <!-- Enlace de submenú -->
-              <li><a href="index.html#sales-kid">Ropa de niños</a></li> <!-- Enlace de submenú -->
-              <li><a href="index.html#sales-mujer">Ver todo</a></li> <!-- Enlace de submenú -->
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="hombre.html"> <!-- Enlace principal -->
-                <span>Hombre</span>   <!-- Texto de enlace -->
-                <svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg>
-            </a>
-            <ul class="submenu"> <!-- Submenú de la categoría Hombre -->
-                <li><a href="hombre.html">Polos</a></li> <!-- Enlace de submenú -->
-                <li><a href="hombre.html">Camisas</a></li>
-                <li><a href="hombre.html">Pantalones</a></li>
-                <li><a href="hombre.html">Bermudas</a></li> <!-- Enlace de submenú -->
-                <li><a href="hombre.html">Ropa interior</a></li>
-            </ul>
-        </li>
-        <li class="dropdown"> <!-- Elemento de menú con submenú -->
-            <a href="mujer.html">
-              <span>Mujer</span> <!-- Texto de enlace -->
+          </a>
+          <ul class="submenu"> <!-- Submenú de la categoría Hombre -->
+              <li><a href="hombre.html">Polos</a></li> <!-- Enlace de submenú -->
+              <li><a href="hombre.html">Camisas</a></li>
+              <li><a href="hombre.html">Pantalones</a></li>
+              <li><a href="hombre.html">Bermudas</a></li> <!-- Enlace de submenú -->
+              <li><a href="hombre.html">Ropa interior</a></li>
+          </ul>
+      </li>
+      <li class="dropdown"> <!-- Elemento de menú con submenú -->
+          <a href="mujer.html">
+            <span>Mujer</span> <!-- Texto de enlace -->
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg>
+          </a>
+          <ul class="submenu"> <!-- Submenú de la categoría Mujer -->
+            <li><a href="mujer.html">Camisas y blusas</a></li>
+            <li><a href="mujer.html">Vestidos</a></li>
+            <li><a href="mujer.html">Faldas</a></li>
+            <li><a href="mujer.html">Pantalones</a></li>
+            <li><a href="mujer.html">Ropa interior</a></li>
+          </ul>
+      </li>
+      <li class="dropdown"> <!-- Elemento de menú con submenú -->
+          <a href="kid.html">
+              <span>Niños</span> <!-- Texto de enlace -->
               <svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg>
-            </a>
-            <ul class="submenu"> <!-- Submenú de la categoría Mujer -->
-              <li><a href="mujer.html">Camisas y blusas</a></li>
-              <li><a href="mujer.html">Vestidos</a></li>
-              <li><a href="mujer.html">Faldas</a></li>
-              <li><a href="mujer.html">Pantalones</a></li>
-              <li><a href="mujer.html">Ropa interior</a></li>
-            </ul>
+          </a>
+          <ul class="submenu"> <!-- Submenú de la categoría Mujer -->
+              <li><a href="kid.html">Camisetas</a></li>
+              <li><a href="kid.html">Pantalones</a></li>
+              <li><a href="kid.html">Vestidos</a></li>
+              <li><a href="kid.html">Medias</a></li>
+              <li><a href="kid.html">Trajes de baño</a></li>
+          </ul>
+      </li>
+      <li class="dropdown"> <!-- Elemento de menú con submenú -->
+          <a href="accesorios.html">
+              <span>Accesorios</span>   <!-- Texto de enlace -->
+              <svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg>
+          </a>
+          <ul class="submenu">
+              <li><a href="accesorios.html">Gorras</a></li> <!-- Enlace de submenú -->
+              <li><a href="accesorios.html">Bolsos</a></li>
+              <li><a href="accesorios.html">Carteras</a></li>
+              <li><a href="accesorios.html">Cinturones</a></li>
+              <li><a href="accesorios.html">Gafas</a></li>
+          </ul>
         </li>
-        <li class="dropdown"> <!-- Elemento de menú con submenú -->
-            <a href="kid.html">
-                <span>Niños</span> <!-- Texto de enlace -->
-                <svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg>
-            </a>
-            <ul class="submenu"> <!-- Submenú de la categoría Mujer -->
-                <li><a href="kid.html">Camisetas</a></li>
-                <li><a href="kid.html">Pantalones</a></li>
-                <li><a href="kid.html">Vestidos</a></li>
-                <li><a href="kid.html">Medias</a></li>
-                <li><a href="kid.html">Trajes de baño</a></li>
-            </ul>
-        </li>
-        <li class="dropdown"> <!-- Elemento de menú con submenú -->
-            <a href="accesorios.html">
-                <span>Accesorios</span>   <!-- Texto de enlace -->
-                <svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg>
-            </a>
-            <ul class="submenu">
-                <li><a href="accesorios.html">Gorras</a></li> <!-- Enlace de submenú -->
-                <li><a href="accesorios.html">Bolsos</a></li>
-                <li><a href="accesorios.html">Carteras</a></li>
-                <li><a href="accesorios.html">Cinturones</a></li>
-                <li><a href="accesorios.html">Gafas</a></li>
-            </ul>
-        </li>
-          <li class="no-dropdown" id="btn-aliados"><a href="#comercios-aliados">Aliados</a></li>  <!-- Enlace de menú -->
-          <li class="no-dropdown"><a href="index.html#nosotros-id">Nosotros</a></li> <!-- Enlace de menú -->
-          <li class="no-dropdown" id="btn-contacto"><a href="">Contáctanos</a></li> <!-- Enlace de menú -->
-        </ul>
-      </nav>
-    </header>
+        <li class="no-dropdown" id="btn-aliados"><a href="#comercios-aliados">Aliados</a></li>  <!-- Enlace de menú -->
+        <li class="no-dropdown"><a href="index.html#nosotros-id">Nosotros</a></li> <!-- Enlace de menú -->
+        <li class="no-dropdown" id="btn-contacto"><a href="">Contáctanos</a></li> <!-- Enlace de menú -->
+      </ul>
+    </nav>
+  </header>
+
     <section id="texto-devoluciones"> <!-- Sección de devoluciones online -->
       <div class="container-devoluciones" id="titulo-devoluciones-fisicas">
         <h2><strong>DEVOLUCIONES DE COMPRAS EN TIENDA FÍSICA</strong></h2>
@@ -342,9 +332,9 @@
         <!-- Información sobre la empresa -->
         <div class="empresa"> 
           <h4>SOBRE LA MARCA</h4>
-          <a href="#nosotros-id">CULTURA</a>
+          <a href="index.html#nosotros-id">CULTURA</a>
           <a href="mailto:laeetiquetacol@gmail.com">TRABAJA CON NOSOTROS</a>
-          <a href="#nosotros-id">LA VIDA EN LA ETIQUETA</a>
+          <a href="index.html#nosotros-id">LA VIDA EN LA ETIQUETA</a>
         </div>
   
         <!-- Sección de envíos -->

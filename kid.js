@@ -1,11 +1,12 @@
-// Inicializar cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', inicializar); 
+// Iniciar cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', inicializar);
+
 // Función para cargar los productos desde el JSON
 async function cargarProductos() {
     try {
-        const response = await fetch('products-hombre.json');
+        const response = await fetch('products-kid.json');
         const data = await response.json();
-        return data.productos;
+        return data;
     } catch (error) {
         console.error('Error al cargar los productos:', error);
         return [];
@@ -48,6 +49,27 @@ function crearProductoHTML(producto) {
     `;
 }
 
+// Función para mostrar los productos
+function mostrarProductos(productos) {
+    const contenedor = document.getElementById('original-products');
+    contenedor.innerHTML = productos.map(crearProductoHTML).join('');
+    initializeSizeSelection();
+}
+
+// Función para inicializar la selección de tallas
+function initializeSizeSelection() {
+    const sizeContainers = document.querySelectorAll('.size');
+    sizeContainers.forEach(container => {
+        const sizeLetters = container.querySelectorAll('.size-letter');
+        sizeLetters.forEach(letter => {
+            letter.addEventListener('click', () => {
+                sizeLetters.forEach(l => l.classList.remove('selected'));
+                letter.classList.add('selected');
+            });
+        });
+    });
+}
+
 // Función para filtrar productos
 function filtrarProductos(productos, filtros) {
     return productos.filter(producto => {
@@ -75,24 +97,6 @@ function filtrarProductos(productos, filtros) {
     });
 }
 
-// Función para inicializar la selección de tallas
-function initializeSizeSelection() {
-    const sizeContainers = document.querySelectorAll('.size');
-    
-    sizeContainers.forEach(container => {
-        const sizeLetters = container.querySelectorAll('.size-letter');
-        
-        sizeLetters.forEach(letter => {
-            letter.addEventListener('click', () => {
-                // Remover la clase 'selected' de todas las tallas en el mismo contenedor
-                sizeLetters.forEach(l => l.classList.remove('selected'));
-                // Agregar la clase 'selected' a la talla clickeada
-                letter.classList.add('selected');
-            });
-        });
-    });
-}
-
 // Función para actualizar la visualización de productos
 function actualizarProductos(productos) {
     const contenedor = document.getElementById('original-products');
@@ -100,7 +104,6 @@ function actualizarProductos(productos) {
         contenedor.innerHTML = '<p class="no-products-message">No se encontraron productos que coincidan con los filtros seleccionados.</p>';
     } else {
         contenedor.innerHTML = productos.map(crearProductoHTML).join('');
-        // Inicializar la selección de tallas después de cargar los productos
         initializeSizeSelection();
     }
 }
@@ -108,7 +111,7 @@ function actualizarProductos(productos) {
 // Función principal
 async function inicializar() {
     const productos = await cargarProductos();
-    actualizarProductos(productos);
+    actualizarProductos(productos.productos);
 
     // Event listeners para los filtros
     const filtros = {
@@ -120,29 +123,29 @@ async function inicializar() {
 
     document.getElementById('category-filter').addEventListener('change', (e) => {
         filtros.categoria = e.target.value;
-        const productosFiltrados = filtrarProductos(productos, filtros);
+        const productosFiltrados = filtrarProductos(productos.productos, filtros);
         actualizarProductos(productosFiltrados);
     });
 
     document.getElementById('size-filter').addEventListener('change', (e) => {
         filtros.talla = e.target.value;
-        const productosFiltrados = filtrarProductos(productos, filtros);
+        const productosFiltrados = filtrarProductos(productos.productos, filtros);
         actualizarProductos(productosFiltrados);
     });
 
     document.getElementById('price-min').addEventListener('change', (e) => {
         filtros.precioMin = e.target.value ? parseInt(e.target.value) : null;
-        const productosFiltrados = filtrarProductos(productos, filtros);
+        const productosFiltrados = filtrarProductos(productos.productos, filtros);
         actualizarProductos(productosFiltrados);
     });
 
     document.getElementById('price-max').addEventListener('change', (e) => {
         filtros.precioMax = e.target.value ? parseInt(e.target.value) : null;
-        const productosFiltrados = filtrarProductos(productos, filtros);
+        const productosFiltrados = filtrarProductos(productos.productos, filtros);
         actualizarProductos(productosFiltrados);
     });
 
-    // Inicializar la funcionalidad de búsqueda
+    // Inicializar el buscador
     if (typeof initializeSearch === 'function') {
         initializeSearch();
     }

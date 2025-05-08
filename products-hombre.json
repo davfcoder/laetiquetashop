@@ -20,7 +20,7 @@
     },
     {
       "id": "hs-hombre3",
-      "nombre": "Polo blanco con estampado para hombre",
+      "nombre": "Polo multicolor para hombre",
       "precio": 89900,
       "categoria": "Polos",
       "tallas": ["M", "L", "XL"],
@@ -38,7 +38,7 @@
     },
     {
       "id": "hs-hombre5",
-      "nombre": "Bermuda jean para hombre",
+      "nombre": "Bermuda premium para hombre",
       "precio": 84900,
       "categoria": "Bermudas",
       "tallas": ["M", "L", "XL"],
@@ -56,7 +56,7 @@
     },
     {
       "id": "hs-hombre7",
-      "nombre": "Polo negro con estampado para hombre",
+      "nombre": "Polo amarillo con estampado para hombre",
       "precio": 94900,
       "categoria": "Polos",
       "tallas": ["S", "M", "L"],
@@ -65,7 +65,7 @@
     },
     {
       "id": "hs-hombre8",
-      "nombre": "Polo gris con estampado para hombre",
+      "nombre": "Polo azul con estampado para hombre",
       "precio": 87900,
       "categoria": "Polos",
       "tallas": ["M", "L", "XL"],
@@ -83,7 +83,7 @@
     },
     {
       "id": "hs-hombre10",
-      "nombre": "Bermuda cargo para hombre",
+      "nombre": "Bermuda tipo jean para hombre",
       "precio": 84900,
       "categoria": "Bermudas",
       "tallas": ["S", "M", "L"],

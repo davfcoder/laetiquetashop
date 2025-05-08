@@ -1,0 +1,76 @@
+{
+    "productos": [
+        {
+            "id": "acc1",
+            "nombre": "Gafas rosadas o negras - Ray Ban",
+            "precio": 119900,
+            "categoria": "Gafas",
+            "imagenNormal": "./sales/accesorio/foto-accesorio1a.jpg",
+            "imagenHover": "./sales/accesorio/foto-accesorio1b.jpg"
+        },
+        {
+            "id": "acc2",
+            "nombre": "Gorra Básica Color Negro - Polo",
+            "precio": 59900,
+            "categoria": "Gorras",
+            "imagenNormal": "./sales/accesorio/foto-accesorio2a.webp",
+            "imagenHover": "./sales/accesorio/foto-accesorio2b.webp"
+        },
+        {
+            "id": "acc3",
+            "nombre": "Cinturón trenzado verde elástico - HSB",
+            "precio": 79900,
+            "categoria": "Cinturones",
+            "imagenNormal": "./sales/accesorio/foto-accesorio3a.webp",
+            "imagenHover": "./sales/accesorio/foto-accesorio3b.webp"
+        },
+        {
+            "id": "acc4",
+            "nombre": "Gorra blanca - Lacoste",
+            "precio": 38000,
+            "categoria": "Gorras",
+            "imagenNormal": "./sales/accesorio/foto-accesorio4a.jpeg",
+            "imagenHover": "./sales/accesorio/foto-accesorio4b.jpeg"
+        },
+        {
+            "id": "acc5",
+            "nombre": "Bolso manos libres estampado",
+            "precio": 45500,
+            "categoria": "Bolsos",
+            "imagenNormal": "./sales/accesorio/foto-accesorio5a.jpeg",
+            "imagenHover": "./sales/accesorio/foto-accesorio5b.jpeg"
+        },
+        {
+            "id": "acc6",
+            "nombre": "Bolso unicolor para mujer",
+            "precio": 56000,
+            "categoria": "Bolsos",
+            "imagenNormal": "./sales/accesorio/foto-accesorio6a.jpeg",
+            "imagenHover": "./sales/accesorio/foto-accesorio6b.jpeg"
+        },
+        {
+            "id": "acc7",
+            "nombre": "Mini cartera negra para mujer",
+            "precio": 43000,
+            "categoria": "Carteras",
+            "imagenNormal": "./sales/accesorio/foto-accesorio7a.jpeg",
+            "imagenHover": "./sales/accesorio/foto-accesorio7b.jpeg"
+        },
+        {
+            "id": "acc8",
+            "nombre": "Cinturon con ojales - hebilla metálica",
+            "precio": 56000,
+            "categoria": "Cinturones",
+            "imagenNormal": "./sales/accesorio/foto-accesorio8a.jpeg",
+            "imagenHover": "./sales/accesorio/foto-accesorio8b.jpeg"
+        },
+        {
+            "id": "acc9",
+            "nombre": "Gafas verdes - Ray Ban",
+            "precio": 119900,
+            "categoria": "Gafas",
+            "imagenNormal": "./sales/accesorio/foto-accesorio9a.jpeg",
+            "imagenHover": "./sales/accesorio/foto-accesorio9b.jpeg"
+        }
+    ]
+} 

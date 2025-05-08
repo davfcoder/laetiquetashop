@@ -1,9 +1,10 @@
 // Inicializar cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', inicializar); 
+document.addEventListener('DOMContentLoaded', inicializar);
+
 // Función para cargar los productos desde el JSON
 async function cargarProductos() {
     try {
-        const response = await fetch('products-hombre.json');
+        const response = await fetch('products-accesorios.json');
         const data = await response.json();
         return data.productos;
     } catch (error) {
@@ -33,13 +34,6 @@ function crearProductoHTML(producto) {
                 </button>
 
                 <div class="addCart-size">
-                    <div class="size">
-                        <ul class="list-size">
-                            ${producto.tallas.map((talla, index) => `
-                                <li class="size-letter ${index === 0 ? 'selected' : ''}">${talla}</li>
-                            `).join('')}
-                        </ul>
-                    </div>
                     <button class="add-to-cart">Agregar al carrito</button>
                     <input type="hidden" name="id-product-${producto.id}" id="addCartProduct">
                 </div>
@@ -53,11 +47,6 @@ function filtrarProductos(productos, filtros) {
     return productos.filter(producto => {
         // Filtro por categoría
         if (filtros.categoria && producto.categoria !== filtros.categoria) {
-            return false;
-        }
-
-        // Filtro por talla
-        if (filtros.talla && !producto.tallas.includes(filtros.talla)) {
             return false;
         }
 
@@ -75,24 +64,6 @@ function filtrarProductos(productos, filtros) {
     });
 }
 
-// Función para inicializar la selección de tallas
-function initializeSizeSelection() {
-    const sizeContainers = document.querySelectorAll('.size');
-    
-    sizeContainers.forEach(container => {
-        const sizeLetters = container.querySelectorAll('.size-letter');
-        
-        sizeLetters.forEach(letter => {
-            letter.addEventListener('click', () => {
-                // Remover la clase 'selected' de todas las tallas en el mismo contenedor
-                sizeLetters.forEach(l => l.classList.remove('selected'));
-                // Agregar la clase 'selected' a la talla clickeada
-                letter.classList.add('selected');
-            });
-        });
-    });
-}
-
 // Función para actualizar la visualización de productos
 function actualizarProductos(productos) {
     const contenedor = document.getElementById('original-products');
@@ -100,8 +71,6 @@ function actualizarProductos(productos) {
         contenedor.innerHTML = '<p class="no-products-message">No se encontraron productos que coincidan con los filtros seleccionados.</p>';
     } else {
         contenedor.innerHTML = productos.map(crearProductoHTML).join('');
-        // Inicializar la selección de tallas después de cargar los productos
-        initializeSizeSelection();
     }
 }
 
@@ -113,19 +82,12 @@ async function inicializar() {
     // Event listeners para los filtros
     const filtros = {
         categoria: '',
-        talla: '',
         precioMin: null,
         precioMax: null
     };
 
     document.getElementById('category-filter').addEventListener('change', (e) => {
         filtros.categoria = e.target.value;
-        const productosFiltrados = filtrarProductos(productos, filtros);
-        actualizarProductos(productosFiltrados);
-    });
-
-    document.getElementById('size-filter').addEventListener('change', (e) => {
-        filtros.talla = e.target.value;
         const productosFiltrados = filtrarProductos(productos, filtros);
         actualizarProductos(productosFiltrados);
     });
@@ -146,4 +108,4 @@ async function inicializar() {
     if (typeof initializeSearch === 'function') {
         initializeSearch();
     }
-}
+} 

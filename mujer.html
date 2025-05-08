@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"> <!-- Define la codificación de caracteres como UTF-8 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que la página sea responsive -->
-  <title>La Etiqueta</title> <!-- Título de la página en la pestaña del navegador -->
+  <title>La Etiqueta - Mujer</title> <!-- Título de la página en la pestaña del navegador -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"> <!-- Importa el CSS de Bootstrap (BOOTSTRAP) -->
   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> <!-- Importa la fuente Raleway desde Google Fonts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> <!-- Importa los scripts de Bootstrap (BOOTSTRAP) -->
@@ -74,10 +74,10 @@
           </a>
           <ul class="submenu"> <!-- Submenú de la categoría SALE -->
             <li><a><span id="sale">Hasta 50% OFF</span></a></li> <!-- Enlace de submenú -->
-            <li><a href="#sales-mujer">Ropa de mujer</a></li> <!-- Enlace de submenú -->
-            <li><a href="#sales-hombre">Ropa de hombre</a></li>  <!-- Enlace de submenú -->
-            <li><a href="#sales-kid">Ropa de niños</a></li> <!-- Enlace de submenú -->
-            <li><a href="#sales-mujer">Ver todo</a></li> <!-- Enlace de submenú -->
+            <li><a href="index.html#sales-mujer">Ropa de mujer</a></li> <!-- Enlace de submenú -->
+            <li><a href="index.html#sales-hombre">Ropa de hombre</a></li>  <!-- Enlace de submenú -->
+            <li><a href="index.html#sales-kid">Ropa de niños</a></li> <!-- Enlace de submenú -->
+            <li><a href="index.html#sales-mujer">Ver todo</a></li> <!-- Enlace de submenú -->
           </ul>
         </li>
         <li class="dropdown">
@@ -99,11 +99,11 @@
             <svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg>
           </a>
           <ul class="submenu"> <!-- Submenú de la categoría Mujer -->
-            <li><a href="mujer.html">Camisas y blusas</a></li>
-            <li><a href="mujer.html">Vestidos</a></li>
-            <li><a href="mujer.html">Faldas</a></li>
-            <li><a href="mujer.html">Pantalones</a></li>
-            <li><a href="mujer.html">Ropa interior</a></li>
+            <li><a href="mujer.html#hs-mujer1">Camisas y blusas</a></li>
+            <li><a href="mujer.html#hs-mujer3">Vestidos</a></li>
+            <li><a href="mujer.html#hs-mujer7">Faldas</a></li>
+            <li><a href="mujer.html#hs-mujer5">Pantalones</a></li>
+            <li><a href="mujer.html#hs-mujer9">Ropa interior</a></li>
           </ul>
       </li>
       <li class="dropdown"> <!-- Elemento de menú con submenú -->
@@ -131,9 +131,9 @@
               <li><a href="accesorios.html">Cinturones</a></li>
               <li><a href="accesorios.html">Gafas</a></li>
           </ul>
-      </li>
+        </li>
         <li class="no-dropdown" id="btn-aliados"><a href="#comercios-aliados">Aliados</a></li>  <!-- Enlace de menú -->
-        <li class="no-dropdown"><a href="#nosotros-id">Nosotros</a></li> <!-- Enlace de menú -->
+        <li class="no-dropdown"><a href="index.html#nosotros-id">Nosotros</a></li> <!-- Enlace de menú -->
         <li class="no-dropdown" id="btn-contacto"><a href="">Contáctanos</a></li> <!-- Enlace de menú -->
       </ul>
     </nav>
@@ -142,370 +142,59 @@
   <!-- Sección de ofertas de todas las categorías (mujer, hombre, niño) -->
   <section class="container-sales">
     <!-- Sección de todo para mujer -->
-    <!-- Blockquote es una etiqueta en HTML utilizada para representar una cita en bloque, es decir, 
-    un fragmento de texto citado de otra fuente. Visualmente, los navegadores suelen aplicar sangría 
-    y un estilo distintivo a este elemento para diferenciarlo del resto del contenido. -->
     <blockquote class="blockquote text-center">
       <h3>TODO EN ROPA PARA MUJER</h3>
-    </blockquote> <!-- Cita en bloque con el título de la sección -->
-    <h1 style="display: none;">Filtros</h1>
-    <div style="display: none;" class="filters">
-        <label class="label-filter">Tipo de prenda</label>
-        <button>Camisas y blusas</button>
-        <button>Vestidos</button>
-        <button>Faldas</button>
-        <button>Pantalones</button>
-        <button>Ropa interior</button>
+    </blockquote>
+
+    <!-- Filtros de productos -->
+    <div class="filters-container">
+        <div class="filters-title">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-filter">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M4 4h16v2.172a2 2 0 0 1 -.586 1.414l-4.414 4.414v7l-6 2v-8.5l-4.48 -4.928a2 2 0 0 1 -.52 -1.345v-2.227z" />
+            </svg>
+            <h2>Filtros</h2>
+        </div>
+        <div class="filter-group">
+            <label for="category-filter">Categoría</label>
+            <select id="category-filter">
+                <option value="">Todas las categorías</option>
+                <option value="Camisas y blusas">Camisas y blusas</option>
+                <option value="Vestidos">Vestidos</option>
+                <option value="Faldas">Faldas</option>
+                <option value="Pantalones">Pantalones</option>
+                <option value="Ropa interior">Ropa interior</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label for="size-filter">Talla</label>
+            <select id="size-filter">
+                <option value="">Todas las tallas</option>
+                <option value="XS">XS</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label for="price-min">Precio mínimo</label>
+            <input type="number" id="price-min" placeholder="Ej: 45000" min="0">
+        </div>
+        <div class="filter-group">
+            <label for="price-max">Precio máximo</label>
+            <input type="number" id="price-max" placeholder="Ej: 120000" min="0">
+        </div>
     </div>
-    <article class="sales"> <!-- Contenedor de las ofertas para muejer -->
-        <div class="hotsales productos" id="hs-mujer1">
-        <div class="percentage-product">
-          <div class="product">
-            <img src="./sales/foto-mujer1a.jpeg" alt="Foto principal de mujer 1a" class="img-normal"> <!-- Imagen del producto normal -->
-            <img src="./sales/foto-mujer1b.jpeg" alt="Foto principal de mujer 1b" class="img-hover"> <!-- Imagen del producto en hover -->
-          </div>
-        </div>
-        <div class="info-product">
-          <h2 class="product-title">Polo negro de algodón para mujer</h2>
-          <span class="price-discount price-normal">$95.000</span>
 
-          <button class="wishlist-button" data-product-id="hs-mujer1">
-            <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
-          </button>
+    <!-- Contenedor para productos filtrados -->
+    <div id="filtered-products" class="filtered-products-container">
+        <!-- Los productos filtrados se mostrarán aquí -->
+    </div>
 
-          <div class="addCart-size">
-            <div class="size">
-              <ul class="list-size">
-                <li class="size-letter selected">M</li>
-                <li class="size-letter">L</li>
-                <li class="size-letter">XL</li>
-              </ul>
-            </div>
-            <button class="add-to-cart">Agregar al carrito</button>
-            <input type="hidden" name="id-product-m1" id="addCartProduct">
-            </div>
-          </div>
-        </div>
-
-        <div class="hotsales productos" id="hs-mujer2">
-            <div class="percentage-product">
-              <div class="product">
-                <img src="./sales/foto-mujer2a.jpg" alt="Foto principal de mujer 2a" class="img-normal"> <!-- Imagen del producto normal -->
-                <img src="./sales/foto-mujer2b.jpg" alt="Foto principal de mujer 2b" class="img-hover"> <!-- Imagen del producto en hover -->
-              </div>
-            </div>
-            <div class="info-product">
-              <h2 class="product-title">Camiseta blanca con estampado para mujer</h2>
-              <span class="price-discount price-normal">$90.000</span>
-    
-              <button class="wishlist-button" data-product-id="hs-mujer2">
-                <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
-              </button>
-    
-              <div class="addCart-size">
-                <div class="size">
-                  <ul class="list-size">
-                    <li class="size-letter selected">XS</li> <!-- Talla "XS" seleccionada predefinida -->
-                    <li class="size-letter">S</li> <!-- Talla "S" -->
-                    <li class="size-letter">M</li> <!-- Talla "M" -->
-                  </ul>
-                </div>
-                <button class="add-to-cart">Agregar al carrito</button>
-                <input type="hidden" name="id-product-m1" id="addCartProduct">
-              </div>
-            </div>
-        </div>
-
-        <div class="hotsales productos" id="hs-mujer3">
-            <div class="percentage-product">
-              <div class="product">
-                <img src="./sales/foto-mujer3a.jpeg" alt="Foto principal de mujer 3a" class="img-normal"> <!-- Imagen del producto normal -->
-                <img src="./sales/foto-mujer3b.jpeg" alt="Foto principal de mujer 3b" class="img-hover"> <!-- Imagen del producto en hover -->
-              </div>
-            </div>
-            <div class="info-product">
-              <h2 class="product-title">Camiseta negra con estampado para mujer</h2>
-              <span class="price-discount price-normal">$90.000</span>
-    
-              <button class="wishlist-button" data-product-id="hs-mujer3">
-                <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
-              </button>
-    
-              <div class="addCart-size">
-                <div class="size">
-                  <ul class="list-size">
-                    <li class="size-letter selected">S</li> <!-- Talla "XS" seleccionada predefinida -->
-                    <li class="size-letter">M</li> <!-- Talla "S" -->
-                    <li class="size-letter">L</li> <!-- Talla "M" -->
-                  </ul>
-                </div>
-                <button class="add-to-cart">Agregar al carrito</button>
-                <input type="hidden" name="id-product-m1" id="addCartProduct">
-              </div>
-            </div>
-        </div>
-
-        <div class="hotsales productos" id="hs-mujer4">
-          <div class="percentage-product">
-            <div class="product">
-              <img src="./sales/foto-mujercamisa1a.jpeg" alt="Foto principal de mujer 1a" class="img-normal"> <!-- Imagen del producto normal -->
-              <img src="./sales/foto-mujercamisa1b.jpeg" alt="Foto principal de mujer 1b" class="img-hover"> <!-- Imagen del producto en hover -->
-            </div>
-          </div>
-          <div class="info-product">
-            <h2 class="product-title">Camisa formal azul para mujer</h2>
-            <span class="price-discount price-normal">$105.000</span>
-  
-            <button class="wishlist-button" data-product-id="hs-mujer1">
-              <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
-            </button>
-  
-            <div class="addCart-size">
-              <div class="size">
-                <ul class="list-size">
-                  <li class="size-letter selected">M</li>
-                  <li class="size-letter">L</li>
-                  <li class="size-letter">XL</li>
-                </ul>
-              </div>
-              <button class="add-to-cart">Agregar al carrito</button>
-              <input type="hidden" name="id-product-m1" id="addCartProduct">
-            </div>
-          </div>
-          </div>
-          
-          <div class="hotsales productos" id="hs-mujer5">
-            <div class="percentage-product">
-              <div class="product">
-                <img src="./sales/foto-mujerpants1a.jpeg" alt="Foto principal de mujer 1a" class="img-normal"> <!-- Imagen del producto normal -->
-                <img src="./sales/foto-mujerpants1b.jpeg" alt="Foto principal de mujer 1b" class="img-hover"> <!-- Imagen del producto en hover -->
-              </div>
-            </div>
-            <div class="info-product">
-              <h2 class="product-title">Pantalones jeans cargo para mujer</h2>
-              <span class="price-discount price-normal">$135.000</span>
-    
-              <button class="wishlist-button" data-product-id="hs-mujer1">
-                <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
-              </button>
-    
-              <div class="addCart-size">
-                <div class="size">
-                  <ul class="list-size">
-                    <li class="size-letter selected">M</li>
-                    <li class="size-letter">L</li>
-                    <li class="size-letter">XL</li>
-                  </ul>
-                </div>
-                <button class="add-to-cart">Agregar al carrito</button>
-                <input type="hidden" name="id-product-m1" id="addCartProduct">
-              </div>
-            </div>
-          </div>
-
-          <div class="hotsales productos" id="hs-mujer6">
-            <div class="percentage-product">
-              <div class="product">
-                <img src="./sales/foto-mujerpants2a.jpeg" alt="Foto principal de mujer 1a" class="img-normal"> <!-- Imagen del producto normal -->
-                <img src="./sales/foto-mujerpants2b.jpeg" alt="Foto principal de mujer 1b" class="img-hover"> <!-- Imagen del producto en hover -->
-              </div>
-            </div>
-            <div class="info-product">
-              <h2 class="product-title">Pantalón blanco para mujer</h2>
-              <span class="price-discount price-normal">$128.000</span>
-    
-              <button class="wishlist-button" data-product-id="hs-mujer1">
-                <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
-              </button>
-    
-              <div class="addCart-size">
-                <div class="size">
-                  <ul class="list-size">
-                    <li class="size-letter selected">M</li>
-                    <li class="size-letter">L</li>
-                    <li class="size-letter">XL</li>
-                  </ul>
-                </div>
-                <button class="add-to-cart">Agregar al carrito</button>
-                <input type="hidden" name="id-product-m1" id="addCartProduct">
-              </div>
-            </div>
-          </div>
-
-          <div class="hotsales productos" id="hs-mujer7">
-            <div class="percentage-product">
-              <div class="product">
-                <img src="./sales/foto-mujerinterior1a.jpeg" alt="Foto principal de mujer 1a" class="img-normal"> <!-- Imagen del producto normal -->
-                <img src="./sales/foto-mujerinterior1b.jpeg" alt="Foto principal de mujer 1b" class="img-hover"> <!-- Imagen del producto en hover -->
-              </div>
-            </div>
-            <div class="info-product">
-              <h2 class="product-title">Ropa interior de dos piezas para mujer</h2>
-              <span class="price-discount price-normal">$57.000</span>
-    
-              <button class="wishlist-button" data-product-id="hs-mujer1">
-                <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
-              </button>
-    
-              <div class="addCart-size">
-                <div class="size">
-                  <ul class="list-size">
-                    <li class="size-letter selected">M</li>
-                    <li class="size-letter">L</li>
-                    <li class="size-letter">XL</li>
-                  </ul>
-                </div>
-                <button class="add-to-cart">Agregar al carrito</button>
-                <input type="hidden" name="id-product-m1" id="addCartProduct">
-              </div>
-            </div>
-          </div>
-        
-          <div class="hotsales productos" id="hs-mujer8">
-            <div class="percentage-product">
-              <div class="product">
-                <img src="./sales/foto-mujerpants3a.jpeg" alt="Foto principal de mujer 1a" class="img-normal"> <!-- Imagen del producto normal -->
-                <img src="./sales/foto-mujerpants3b.jpeg" alt="Foto principal de mujer 1b" class="img-hover"> <!-- Imagen del producto en hover -->
-              </div>
-            </div>
-            <div class="info-product">
-              <h2 class="product-title">Falda jean cargo para mujer</h2>
-              <span class="price-discount price-normal">$82.000</span>
-    
-              <button class="wishlist-button" data-product-id="hs-mujer1">
-                <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
-              </button>
-    
-              <div class="addCart-size">
-                <div class="size">
-                  <ul class="list-size">
-                    <li class="size-letter selected">M</li>
-                    <li class="size-letter">L</li>
-                    <li class="size-letter">XL</li>
-                  </ul>
-                </div>
-                <button class="add-to-cart">Agregar al carrito</button>
-                <input type="hidden" name="id-product-m1" id="addCartProduct">
-              </div>
-            </div>
-          </div>
-
-          <div class="hotsales productos" id="hs-mujer9">
-            <div class="percentage-product">
-              <div class="product">
-                <img src="./sales/foto-mujerpants4a.jpeg" alt="Foto principal de mujer 1a" class="img-normal"> <!-- Imagen del producto normal -->
-                <img src="./sales/foto-mujerpants4b.jpeg" alt="Foto principal de mujer 1b" class="img-hover"> <!-- Imagen del producto en hover -->
-              </div>
-            </div>
-            <div class="info-product">
-              <h2 class="product-title">Pantalones jeans con aberturas para mujer</h2>
-              <span class="price-discount price-normal">$140.000</span>
-    
-              <button class="wishlist-button" data-product-id="hs-mujer1">
-                <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
-              </button>
-    
-              <div class="addCart-size">
-                <div class="size">
-                  <ul class="list-size">
-                    <li class="size-letter selected">M</li>
-                    <li class="size-letter">L</li>
-                    <li class="size-letter">XL</li>
-                  </ul>
-                </div>
-                <button class="add-to-cart">Agregar al carrito</button>
-                <input type="hidden" name="id-product-m1" id="addCartProduct">
-              </div>
-            </div>
-          </div>
-
-          <div class="hotsales productos" id="hs-mujer10">
-            <div class="percentage-product">
-              <div class="product">
-                <img src="./sales/foto-mujervestido1a.jpeg" alt="Foto principal de mujer 1a" class="img-normal"> <!-- Imagen del producto normal -->
-                <img src="./sales/foto-mujervestido1b.jpeg" alt="Foto principal de mujer 1b" class="img-hover"> <!-- Imagen del producto en hover -->
-              </div>
-            </div>
-            <div class="info-product">
-              <h2 class="product-title">Vestido de rayas para mujer</h2>
-              <span class="price-discount price-normal">$74.000</span>
-    
-              <button class="wishlist-button" data-product-id="hs-mujer1">
-                <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
-              </button>
-    
-              <div class="addCart-size">
-                <div class="size">
-                  <ul class="list-size">
-                    <li class="size-letter selected">M</li>
-                    <li class="size-letter">L</li>
-                    <li class="size-letter">XL</li>
-                  </ul>
-                </div>
-                <button class="add-to-cart">Agregar al carrito</button>
-                <input type="hidden" name="id-product-m1" id="addCartProduct">
-              </div>
-            </div>
-          </div>
-
-          <div class="hotsales productos" id="hs-mujer11">
-            <div class="percentage-product">
-              <div class="product">
-                <img src="./sales/foto-mujerinterior2a.jpeg" alt="Foto principal de mujer 1a" class="img-normal"> <!-- Imagen del producto normal -->
-                <img src="./sales/foto-mujerinterior2b.jpeg" alt="Foto principal de mujer 1b" class="img-hover"> <!-- Imagen del producto en hover -->
-              </div>
-            </div>
-            <div class="info-product">
-              <h2 class="product-title">Ropa interior blanca para mujer</h2>
-              <span class="price-discount price-normal">$68.000</span>
-    
-              <button class="wishlist-button" data-product-id="hs-mujer1">
-                <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
-              </button>
-    
-              <div class="addCart-size">
-                <div class="size">
-                  <ul class="list-size">
-                    <li class="size-letter selected">M</li>
-                    <li class="size-letter">L</li>
-                    <li class="size-letter">XL</li>
-                  </ul>
-                </div>
-                <button class="add-to-cart">Agregar al carrito</button>
-                <input type="hidden" name="id-product-m1" id="addCartProduct">
-              </div>
-            </div>
-          </div>
-
-          <div class="hotsales productos" id="hs-mujer12">
-            <div class="percentage-product">
-              <div class="product">
-                <img src="./sales/foto-mujerpants5a.jpeg"Foto principal de mujer 1a" class="img-normal"> <!-- Imagen del producto normal -->
-                <img src="./sales/foto-mujerpants5b.jpeg" alt="Foto principal de mujer 1b" class="img-hover"> <!-- Imagen del producto en hover -->
-              </div>
-            </div>
-            <div class="info-product">
-              <h2 class="product-title">Falda jean para mujer</h2>
-              <span class="price-discount price-normal">$79.500</span>
-    
-              <button class="wishlist-button" data-product-id="hs-mujer1">
-                <img src="./assets/corazon_vacio.ico" alt="Wishlist Icon" class="wishlist-icon" />
-              </button>
-    
-              <div class="addCart-size">
-                <div class="size">
-                  <ul class="list-size">
-                    <li class="size-letter selected">M</li>
-                    <li class="size-letter">L</li>
-                    <li class="size-letter">XL</li>
-                  </ul>
-                </div>
-                <button class="add-to-cart">Agregar al carrito</button>
-                <input type="hidden" name="id-product-m1" id="addCartProduct">
-              </div>
-            </div>
-          </div>
-
+    <!-- Sección original de productos -->
+    <article class="sales" id="original-products">
+        <!-- Los productos se cargarán aquí dinámicamente -->
     </article>
 
   </section>
@@ -532,6 +221,12 @@
   </a> 
 </div>
 
+<script src="script.js"></script> <!-- Enlaza el archivo JavaScript externo -->
+<script src="carrito.js"></script> <!-- Enlaza el archivo JavaScript externo -->
+<script src="wishlist.js"></script><!-- Enlazar el archivo JS del Wishlist -->
+<script src="mujer.js"></script> <!-- Enlaza el archivo JavaScript externo -->
+
+</body>
 <!-- Seccion de footer-->
 <footer>
   <div class="contenedor-footer">
@@ -566,9 +261,9 @@
       <!-- Información sobre la empresa -->
       <div class="empresa"> 
         <h4>SOBRE LA MARCA</h4>
-        <a href="#nosotros-id">CULTURA</a>
+        <a href="index.html#nosotros-id">CULTURA</a>
         <a href="mailto:laeetiquetacol@gmail.com">TRABAJA CON NOSOTROS</a>
-        <a href="#nosotros-id">LA VIDA EN LA ETIQUETA</a>
+        <a href="index.html#nosotros-id">LA VIDA EN LA ETIQUETA</a>
       </div>
 
       <!-- Sección de envíos -->
@@ -612,12 +307,4 @@
     <p>&copy; 2025 La Etiqueta Yopal. David Ramirez, Vanessa Reyes & Tifany Carvajal. Todos los derechos reservados.</p>
   </div> 
 </footer>
-
-
-<script src="script.js"></script> <!-- Enlaza el archivo JavaScript externo -->
-<script src="carrito.js"></script> <!-- Enlaza el archivo JavaScript externo -->
-<script src="wishlist.js"></script><!-- Enlazar el archivo JS del Wishlist -->
-
-</body>
-
 </html>

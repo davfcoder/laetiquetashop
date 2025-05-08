@@ -1,0 +1,112 @@
+{
+"productos": [
+    {
+        "id": "kid1",
+        "nombre": "Camiseta con estampado unisex para niños",
+        "precio": 99900,
+        "categoria": "Camisetas",
+        "tallas": ["2", "3", "4"],
+        "imagenNormal": "./sales/kid/foto-niño1a.jpg",
+        "imagenHover": "./sales/kid/foto-niño1b.jpg"
+    },
+    {
+        "id": "kid2",
+        "nombre": "Camiseta azul oscuro unisex para niños",
+        "precio": 110000,
+        "categoria": "Camisetas",
+        "tallas": ["3", "4"],
+        "imagenNormal": "./sales/kid/foto-niño2a.png",
+        "imagenHover": "./sales/kid/foto-niño2b.png"
+    },
+    {
+        "id": "kid3",
+        "nombre": "Camiseta blanca con estampado unisex para niños",
+        "precio": 85000,
+        "categoria": "Camisetas",
+        "tallas": ["2", "5"],
+        "imagenNormal": "./sales/kid/foto-niño3a.jpg",
+        "imagenHover": "./sales/kid/foto-niño3b.jpg"
+    },
+    {
+        "id": "kid4",
+        "nombre": "Medias de dinosaurio unisex para niños",
+        "precio": 35000,
+        "categoria": "Medias",
+        "tallas": ["2", "6"],
+        "imagenNormal": "./sales/kid/foto-niñomedias1a.jpeg",
+        "imagenHover": "./sales/kid/foto-niñomedias1b.jpeg"
+    },
+    {
+        "id": "kid5",
+        "nombre": "Traje de baño playero para niño",
+        "precio": 60000,
+        "categoria": "Trajes de baño",
+        "tallas": ["5", "6"],
+        "imagenNormal": "./sales/kid/foto-niñobaño1a.jpeg",
+        "imagenHover": "./sales/kid/foto-niñobaño1b.jpeg"
+    },
+    {
+        "id": "kid6",
+        "nombre": "Pantalón blanco para niñas",
+        "precio": 138000,
+        "categoria": "Pantalones",
+        "tallas": ["2", "3"],
+        "imagenNormal": "./sales/kid/foto-niñopants1a.jpeg",
+        "imagenHover": "./sales/kid/foto-niñopants1b.jpeg"
+    },
+    {
+        "id": "kid7",
+        "nombre": "Vestido elegante para niñas",
+        "precio": 105000,
+        "categoria": "Vestidos",
+        "tallas": ["3", "4"],
+        "imagenNormal": "./sales/kid/foto-niñovestido1a.jpeg",
+        "imagenHover": "./sales/kid/foto-niñovestido1b.jpeg"
+    },
+    {
+        "id": "kid8",
+        "nombre": "Pantalón cargo unisex para niños",
+        "precio": 85000,
+        "categoria": "Pantalones",
+        "tallas": ["3", "6"],
+        "imagenNormal": "./sales/kid/foto-niñopants2a.jpeg",
+        "imagenHover": "./sales/kid/foto-niñopants2b.jpeg"
+    },
+    {
+        "id": "kid9",
+        "nombre": "Medias blancas con moño para niñas",
+        "precio": 30000,
+        "categoria": "Medias",
+        "tallas": ["2", "3"],
+        "imagenNormal": "./sales/kid/foto-niñomedias2a.jpeg",
+        "imagenHover": "./sales/kid/foto-niñomedias2b.jpeg"
+    },
+    {
+        "id": "kid10",
+        "nombre": "Vestido de jean para niñas",
+        "precio": 77000,
+        "categoria": "Vestidos",
+        "tallas": ["3", "4", "5", "6"],
+        "imagenNormal": "./sales/kid/foto-niñovestido2a.jpeg",
+        "imagenHover": "./sales/kid/foto-niñovestido2b.jpeg"
+    },
+    {
+        "id": "kid11",
+        "nombre": "Traje de baño naranja para niñas",
+        "precio": 68000,
+        "categoria": "Trajes de baño",
+        "tallas": ["5", "6"],
+        "imagenNormal": "./sales/kid/foto-niñobaño4a.jpeg",
+        "imagenHover": "./sales/kid/foto-niñobaño4b.jpeg"
+    },
+    {
+        "id": "kid12",
+        "nombre": "Traje de baño enterizo para niños",
+        "precio": 67500,
+        "categoria": "Trajes de baño",
+        "tallas": ["2"],
+        "imagenNormal": "./sales/kid/foto-niñobaño2a.jpeg",
+        "imagenHover": "./sales/kid/foto-niñobaño2b.jpeg"
+    }
+]
+}

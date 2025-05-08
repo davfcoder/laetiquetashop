@@ -92,7 +92,7 @@ const subcategoria = document.getElementById('subcategoria');
 const opciones = {
   mujer: ['Camisas y blusas', 'Vestidos', 'Faldas', 'Pantalones'],
   hombre: ['Polos', 'Bermudas', 'Camisas y camisetas', 'Pantalones'],
-  niño: ['Camisas y pantalones', 'Ropa para niña', 'Bebés', 'Conjuntos'],
+  kid: ['Camisas y pantalones', 'Ropa para niña', 'Bebés', 'Conjuntos'],
   accesorios: ['Gorras', 'Cinturones', 'Bolsos', 'Gafas', 'Carteras']
 };
 
@@ -464,7 +464,7 @@ document.getElementById("btn-aliados").addEventListener("click", function (event
         setTimeout(() => { // Esperar un poco antes de quitar zoom
             element.classList.remove("zoom"); // Quitar el efecto de zoom
         }, 650);
-    }, 600); // Ajusta este tiempo si el desplazamiento es más lento o rápido
+    }, 660); // Ajusta este tiempo si el desplazamiento es más lento o rápido
 });
 
 // Función para aplicar filtros
@@ -739,8 +739,29 @@ function initializeSearch() {
                     
                     // Al hacer clic en una sugerencia
                     item.addEventListener('click', () => {
-                        console.log('Producto seleccionado:', producto);
+                        // Ocultar el buscador y las sugerencias
                         hideSuggestions();
+                        if (searchInput) {
+                            searchInput.style.display = 'none';
+                            searchInput.value = '';
+                        }
+                        isSearchVisible = false;
+
+                        // Encontrar el producto en la página
+                        const productElement = document.getElementById(producto.id);
+                        if (productElement) {
+                            // Hacer scroll suave hasta el producto
+                            productElement.scrollIntoView({ 
+                                behavior: 'smooth', 
+                                block: 'center'
+                            });
+
+                            // Agregar un efecto de resaltado temporal
+                            productElement.classList.add('highlight-product');
+                            setTimeout(() => {
+                                productElement.classList.remove('highlight-product');
+                            }, 2500);
+                        }
                     });
 
                     suggestionsContainer.appendChild(item);

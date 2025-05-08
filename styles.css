@@ -233,19 +233,13 @@ nav {
     padding: 0.5vw; /* Espaciado interno */
 }
 
-.wishlist-icon {
-    width: 0.2vw;
-    height: 0.2vw;
-    transition: all 0.3s ease;
-}
-
 /* Estilo para los botones de Wishlist cuando el producto está en la wishlist */
-.wishlist-button .wishlist-icon {
+.wishlist-button {
     transition: all 0.3s ease;
 }
 
 /* Puedes agregar más estilos si quieres que se vea más bonito */
-.wishlist-button:hover .wishlist-icon {
+.wishlist-button:hover {
     transform: scale(1.2);
 }
 
@@ -958,7 +952,6 @@ footer {
 
 #search-bottom {
     position: relative;
-    z-index: 1000;
     min-width: 200px;
     display: flex;
     align-items: center;
@@ -976,7 +969,6 @@ footer {
     outline: none;
     background: white;
     font-size: 16px;
-    z-index: 1001;
     min-width: 200px;
 }
 
@@ -1060,7 +1052,7 @@ footer {
     align-items: center;
     padding: 10px;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s ease;
 }
 
 .suggestion-item:hover {
@@ -1077,11 +1069,11 @@ footer {
 .suggestion-info {
     display: flex;
     flex-direction: column;
+    gap: 4px;
 }
 
 .suggestion-name {
     font-weight: 500;
-    color: #333;
 }
 
 .suggestion-price {
@@ -1126,7 +1118,7 @@ footer {
 .suggestion-item {
     padding: 10px 15px;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s ease;
 }
 
 .suggestion-item:hover {
@@ -1598,4 +1590,46 @@ footer {
       gap: 20px;
     }
   }
+  
+/* Estilo para el resaltado de producto */
+.highlight-product {
+    animation: highlight 2s ease-in-out;
+}
+
+@keyframes highlight {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+    50% {
+        box-shadow: 0 0 20px 10px rgba(255, 215, 0, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+
+/* Mejoras en las sugerencias de búsqueda */
+.suggestion-item {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.suggestion-item:hover {
+    background-color: #f5f5f5;
+}
+
+.suggestion-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.suggestion-name {
+    font-weight: 500;
+}
+
+.suggestion-price {
+    color: #666;
+    font-size: 0.9em;
+}
   

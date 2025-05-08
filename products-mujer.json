@@ -1,0 +1,85 @@
+{
+  "productos": [
+    {
+      "id": "hs-mujer1",
+      "nombre": "Camisa manga larga para mujer",
+      "precio": 120000,
+      "categoria": "Camisas y blusas",
+      "tallas": ["S", "M", "L"],
+      "imagenNormal": "./sales/mujer/foto-mujercamisa1a.jpeg",
+      "imagenHover": "./sales/mujer/foto-mujercamisa1b.jpeg"
+    },
+    {
+      "id": "hs-mujer2",
+      "nombre": "Vestido elegante blanco con patrones para mujer",
+      "precio": 150000,
+      "categoria": "Vestidos",
+      "tallas": ["XS", "S", "M"],
+      "imagenNormal": "./sales/mujer/foto-mujervestido1a.jpeg",
+      "imagenHover": "./sales/mujer/foto-mujervestido1b.jpeg"
+    },
+    {
+      "id": "hs-mujer3",
+      "nombre": "Pantalones jeans cargo para mujer",
+      "precio": 135000,
+      "categoria": "Pantalones",
+      "tallas": ["M", "L"],
+      "imagenNormal": "./sales/mujer/foto-mujerpants1a.jpeg",
+      "imagenHover": "./sales/mujer/foto-mujerpants1b.jpeg"
+    },
+    {
+      "id": "hs-mujer4",
+      "nombre": "Pantalón blanco para mujer",
+      "precio": 128000,
+      "categoria": "Pantalones",
+      "tallas": ["M", "L", "XL"],
+      "imagenNormal": "./sales/mujer/foto-mujerpants2a.jpeg",
+      "imagenHover": "./sales/mujer/foto-mujerpants2b.jpeg"
+    },
+    {
+      "id": "hs-mujer5",
+      "nombre": "Pantalones corto para mujer",
+      "precio": 140000,
+      "categoria": "Pantalones",
+      "tallas": ["XS", "M", "L"],
+      "imagenNormal": "./sales/mujer/foto-mujerpants3a.jpeg",
+      "imagenHover": "./sales/mujer/foto-mujerpants3b.jpeg"
+    },
+    {
+      "id": "hs-mujer6",
+      "nombre": "Pantalones jeans con aberturas para mujer",
+      "precio": 145000,
+      "categoria": "Pantalones",
+      "tallas": ["M", "L", "XL"],
+      "imagenNormal": "./sales/mujer/foto-mujerpants4a.jpeg",
+      "imagenHover": "./sales/mujer/foto-mujerpants4b.jpeg"
+    },
+    {
+      "id": "hs-mujer7",
+      "nombre": "Faldas tipo jean para mujer",
+      "precio": 138000,
+      "categoria": "Faldas",
+      "tallas": ["M", "L", "XL"],
+      "imagenNormal": "./sales/mujer/foto-mujerpants5a.jpeg",
+      "imagenHover": "./sales/mujer/foto-mujerpants5b.jpeg"
+    },
+    {
+      "id": "hs-mujer8",
+      "nombre": "Ropa interior de dos piezas para mujer",
+      "precio": 57000,
+      "categoria": "Ropa interior",
+      "tallas": ["M", "L", "XL"],
+      "imagenNormal": "./sales/mujer/foto-mujerinterior1a.jpeg",
+      "imagenHover": "./sales/mujer/foto-mujerinterior1b.jpeg"
+    },
+    {
+      "id": "hs-mujer9",
+      "nombre": "Ropa interior premium para mujer",
+      "precio": 65000,
+      "categoria": "Ropa interior",
+      "tallas": ["S", "M", "L"],
+      "imagenNormal": "./sales/mujer/foto-mujerinterior2a.jpeg",
+      "imagenHover": "./sales/mujer/foto-mujerinterior2b.jpeg"
+    }
+  ]
+} 

@@ -22,7 +22,7 @@ label { font-size: 1em; }
 
 .font-size-controls {
     position: fixed;
-    right: 20px;
+    right: 1.5vw;
     top: 50%;
     transform: translateY(-50%);
     display: flex;

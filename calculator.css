@@ -1,6 +1,6 @@
 .btn-calculadora {
     position: fixed;
-    right: 20px;
+    right: 1.5vw;
     top: 60%;
     border: 0.5px solid #4e4d4d44;
     border-radius: 50%; /* Bordes redondeados */
@@ -18,8 +18,8 @@
 
 .calculadora {
     position: fixed;
-    right: 70px;
-    top: 20%;
+    right: 5vw;
+    top: 26%;
     background-color: #000000;
     color: rgb(0, 0, 0);
     width: 150px;

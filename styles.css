@@ -1858,7 +1858,7 @@ body.active .add-to-cart:hover {
 
 .dark-mode {
     position: fixed;
-    right: 25px;
+    right: 1.5vw;
     top: 35%;
     transform: translateY(-50%);
     width: var(--dark-mode-width);

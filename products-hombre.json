@@ -32,7 +32,7 @@
       "nombre": "Pantalón cargo para hombre",
       "precio": 119900,
       "categoria": "Pantalones",
-      "tallas": ["M", "L", "XL"],
+      "tallas": ["M", "L"],
       "imagenNormal": "./sales/hombre/foto-hombrepants1a.jpeg",
       "imagenHover": "./sales/hombre/foto-hombrepants1b.jpeg"
     },
@@ -68,7 +68,7 @@
       "nombre": "Polo azul con estampado para hombre",
       "precio": 87900,
       "categoria": "Polos",
-      "tallas": ["M", "L", "XL"],
+      "tallas": ["XS", "M", "L"],
       "imagenNormal": "./sales/hombre/foto-hombrepolo5a.jpeg",
       "imagenHover": "./sales/hombre/foto-hombrepolo5b.jpeg"
     },
@@ -77,7 +77,7 @@
       "nombre": "Pantalón jean para hombre",
       "precio": 109900,
       "categoria": "Pantalones",
-      "tallas": ["M", "L", "XL"],
+      "tallas": ["S", "L", "XL"],
       "imagenNormal": "./sales/hombre/foto-hombrepants2a.jpeg",
       "imagenHover": "./sales/hombre/foto-hombrepants2b.jpeg"
     },
@@ -95,7 +95,7 @@
       "nombre": "Ropa interior boxer premium para hombre",
       "precio": 54900,
       "categoria": "Ropa interior",
-      "tallas": ["M", "L", "XL"],
+      "tallas": ["L", "XL"],
       "imagenNormal": "./sales/hombre/foto-hombreinterior2a.jpeg",
       "imagenHover": "./sales/hombre/foto-hombreinterior2b.jpeg"
     },

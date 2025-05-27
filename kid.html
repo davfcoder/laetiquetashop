@@ -11,8 +11,11 @@
   <link rel="stylesheet" href="styles.css"> <!-- Enlaza el archivo CSS externo principal -->
   <link rel="stylesheet" href="carrito.css"> <!-- Enlaza el archivo CSS específico para el carrito -->
   <link rel="stylesheet" href="wishlist.css"><!-- Enlazar el archivo CSS del Wishlist -->
+  <link rel="stylesheet" href="css/fontSizeControl.css">
   <link rel="icon" href="favicon/favicon.png"> <!-- Define el ícono de la pestaña del navegador -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
 
@@ -59,6 +62,7 @@
         </div>
       </div>
     </div>
+    
   </div>
     <nav id="navbar">   <!-- Menú de navegación principal -->
       <div id="logo-secundario"> <!-- Logo pequeño de la tienda -->
@@ -113,11 +117,11 @@
               <svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg>
           </a>
           <ul class="submenu"> <!-- Submenú de la categoría Mujer -->
-              <li><a href="kid.html#kid1">Camisetas</a></li>
-              <li><a href="kid.html#kid8">Pantalones</a></li>
-              <li><a href="kid.html#kid7">Vestidos</a></li>
-              <li><a href="kid.html#kid4">Medias</a></li>
-              <li><a href="kid.html#kid11">Trajes de baño</a></li>
+              <li><a href="" data-category="Camisetas">Camisetas</a></li>
+              <li><a href="" data-category="Pantalones">Pantalones</a></li>
+              <li><a href="" data-category="Vestidos">Vestidos</a></li>
+              <li><a href="" data-category="Medias">Medias</a></li>
+              <li><a href="" data-category="Trajes de baño">Trajes de baño</a></li>
           </ul>
       </li>
       <li class="dropdown"> <!-- Elemento de menú con submenú -->
@@ -186,123 +190,156 @@
             <input type="number" id="price-max" placeholder="Ej: 85000" min="0">
         </div>
     </div>
+    <div id="original-products" class="sales">
+      <!-- Los productos se cargarán dinámicamente aquí -->
+  </div>
 
-    <!-- Contenedor para productos filtrados -->
-    <div id="filtered-products" class="filtered-products-container">
-        <!-- Los productos filtrados se mostrarán aquí -->
-    </div>
-
-    <!-- Sección original de productos -->
-    <article class="sales" id="original-products">
-        <!-- Los productos se cargarán aquí dinámicamente -->
-    </article>
-  </section>
-
-<script src="script.js"></script> <!-- Enlaza el archivo JavaScript externo -->
-<script src="carrito.js"></script> <!-- Enlaza el archivo JavaScript externo -->
-<script src="wishlist.js"></script><!-- Enlazar el archivo JS del Wishlist -->
-<script src="kid.js"></script>
+</section>
 
 </body>
-
+<!-- Dark Mode Toggle -->
+<div class="dark-mode">
+<div class="circle">
+  <ion-icon class="sun" name="sunny"></ion-icon>
+  <ion-icon class="moon" name="moon"></ion-icon>
+</div>
+</div>
 <!-- Botón flotante del chatbot -->
 <button id="chatbot-toggle">🤖</button>
 
 <!-- Ventana del chatbot -->
 <div id="chatbot-window">
-  <div id="chatbot-messages"></div>
-  <div id="chatbot-options"></div>
+<div id="chatbot-messages"></div>
+<div id="chatbot-options"></div>
 </div>
 
 <!-- Botón flotante de WhatsApp -->
 <div class="boton-whatsapp" id="zoomTarget-whatsapp">
-  <!-- Enlace a WhatsApp con un mensaje predefinido -->
-  <a href="https://wa.me/message/F5MZRJDCEXLIK1" target="_blank">
-  <h4>¡Escríbenos!</h4>
-  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 48 48">
-    <circle cx="28" cy="28" r="17" fill="#a5d6a7"></circle><path fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M39.982,14.675	C36.773,9.186,30.817,5.499,24,5.499c-10.217,0-18.5,8.283-18.5,18.5c0,0.7,0.039,1.39,0.115,2.07"></path><path fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M7.84,32.993l-2.301,8.238	c-0.21,0.75,0.481,1.442,1.232,1.232l8.242-2.3c2.662,1.483,5.724,2.336,8.987,2.336c10.217,0,18.5-8.283,18.5-18.5	c0-0.427-0.014-0.85-0.043-1.269"></path><path fill="#18193f" d="M33.357,30.651c-0.398,1.116-2.348,2.191-3.224,2.269c-0.876,0.08-1.697,0.396-5.731-1.194	c-4.855-1.914-7.92-6.891-8.158-7.208c-0.239-0.32-1.95-2.589-1.95-4.939s1.234-3.506,1.672-3.982	C16.405,15.119,16.922,15,17.241,15c0.318,0,0.637,0,0.915,0.011c0.341,0.013,0.718,0.031,1.075,0.825	c0.425,0.945,1.353,3.307,1.472,3.546s0.199,0.519,0.04,0.836c-0.159,0.318-0.239,0.517-0.476,0.796	c-0.239,0.279-0.501,0.622-0.716,0.836c-0.239,0.237-0.488,0.498-0.21,0.974c0.279,0.478,1.236,2.042,2.656,3.307	c1.826,1.627,3.362,2.13,3.841,2.371c0.478,0.239,0.756,0.199,1.035-0.121c0.279-0.318,1.194-1.393,1.512-1.871	s0.637-0.398,1.075-0.239c0.438,0.159,2.786,1.315,3.263,1.554c0.478,0.239,0.796,0.358,0.915,0.557	C33.755,28.579,33.755,29.535,33.357,30.651z"></path>
-    </svg>
-  </a> 
+<!-- Enlace a WhatsApp con un mensaje predefinido -->
+<a href="https://wa.me/message/F5MZRJDCEXLIK1" target="_blank">
+<h4>¡Escríbenos!</h4>
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 48 48">
+  <circle cx="28" cy="28" r="17" fill="#a5d6a7"></circle><path fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M39.982,14.675	C36.773,9.186,30.817,5.499,24,5.499c-10.217,0-18.5,8.283-18.5,18.5c0,0.7,0.039,1.39,0.115,2.07"></path><path fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M7.84,32.993l-2.301,8.238	c-0.21,0.75,0.481,1.442,1.232,1.232l8.242-2.3c2.662,1.483,5.724,2.336,8.987,2.336c10.217,0,18.5-8.283,18.5-18.5	c0-0.427-0.014-0.85-0.043-1.269"></path><path fill="#18193f" d="M33.357,30.651c-0.398,1.116-2.348,2.191-3.224,2.269c-0.876,0.08-1.697,0.396-5.731-1.194	c-4.855-1.914-7.92-6.891-8.158-7.208c-0.239-0.32-1.95-2.589-1.95-4.939s1.234-3.506,1.672-3.982	C16.405,15.119,16.922,15,17.241,15c0.318,0,0.637,0,0.915,0.011c0.341,0.013,0.718,0.031,1.075,0.825	c0.425,0.945,1.353,3.307,1.472,3.546s0.199,0.519,0.04,0.836c-0.159,0.318-0.239,0.517-0.476,0.796	c-0.239,0.279-0.501,0.622-0.716,0.836c-0.239,0.237-0.488,0.498-0.21,0.974c0.279,0.478,1.236,2.042,2.656,3.307	c1.826,1.627,3.362,2.13,3.841,2.371c0.478,0.239,0.756,0.199,1.035-0.121c0.279-0.318,1.194-1.393,1.512-1.871	s0.637-0.398,1.075-0.239c0.438,0.159,2.786,1.315,3.263,1.554c0.478,0.239,0.796,0.358,0.915,0.557	C33.755,28.579,33.755,29.535,33.357,30.651z"></path>
+  </svg>
+</a> 
 </div>
 
 <!-- Seccion de footer-->
 <footer>
-  <div class="contenedor-footer">
+<div class="contenedor-footer">
 
-    <!-- Logo y descripción -->
-    <div class="logo">
-      <img src="./assets/logo2020.png" alt="logo2020" />
-      <p>Calidad y Exclusividad</p>
+  <!-- Logo y descripción -->
+  <div class="logo">
+    <img src="./assets/logo2020.png" alt="logo2020" />
+    <p>Calidad y Exclusividad</p>
+  </div>
+
+  <!-- Redes sociales -->
+  <div class="redes">
+    <div class="redes-sociales">
+      <a href="https://wa.me/message/F5MZRJDCEXLIK1">
+        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" /><path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" /></svg>
+      </a>
+      <a href="https://www.facebook.com/people/La-Etiqueta-Yopal/61555951907749/">
+        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-facebook"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
+      </a>
+      <a href="https://www.instagram.com/laetiqueta_yopal">
+        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M16.5 7.5v.01" /></svg>
+      </a>
+      <a href="https://www.tiktok.com/@laetiquetayopal?_t=ZS-8tWk9GFZxvl&_r=1">
+        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-tiktok"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M21 7.917v4.034a9.948 9.948 0 0 1 -5 -1.951v4.5a6.5 6.5 0 1 1 -8 -6.326v4.326a2.5 2.5 0 1 0 4 2v-11.5h4.083a6.005 6.005 0 0 0 4.917 4.917z" /></svg>
+      </a>
+    </div>
+  </div>
+
+
+  <!-- Secciones del footer -->
+  <div class="secciones-footer">
+    <!-- Información sobre la empresa -->
+    <div class="empresa"> 
+      <h4>SOBRE LA MARCA</h4>
+      <a href="index.html#nosotros-id">CULTURA</a>
+      <a href="mailto:laeetiquetacol@gmail.com">TRABAJA CON NOSOTROS</a>
+      <a href="index.html#nosotros-id">LA VIDA EN LA ETIQUETA</a>
     </div>
 
-    <!-- Redes sociales -->
-    <div class="redes">
-      <div class="redes-sociales">
-        <a href="https://wa.me/message/F5MZRJDCEXLIK1">
-          <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" /><path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" /></svg>
-        </a>
-        <a href="https://www.facebook.com/people/La-Etiqueta-Yopal/61555951907749/">
-          <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-facebook"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
-        </a>
-        <a href="https://www.instagram.com/laetiqueta_yopal">
-          <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M16.5 7.5v.01" /></svg>
-        </a>
-        <a href="https://www.tiktok.com/@laetiquetayopal?_t=ZS-8tWk9GFZxvl&_r=1">
-          <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-tiktok"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M21 7.917v4.034a9.948 9.948 0 0 1 -5 -1.951v4.5a6.5 6.5 0 1 1 -8 -6.326v4.326a2.5 2.5 0 1 0 4 2v-11.5h4.083a6.005 6.005 0 0 0 4.917 4.917z" /></svg>
-        </a>
-      </div>
+    <!-- Sección de envíos -->
+    <div class="envios">
+      <h4>AYUDA</h4>
+      <a href="mailto:laeetiquetacol@gmail.com">ENVÍOS</a>
+      <a href="/devoluciones.html">DEVOLUCIONES</a>
+      <a href="" id="btn-por-mayor">PRODUCTOS AL POR MAYOR</a>
     </div>
 
-
-    <!-- Secciones del footer -->
-    <div class="secciones-footer">
-      <!-- Información sobre la empresa -->
-      <div class="empresa"> 
-        <h4>SOBRE LA MARCA</h4>
-        <a href="index.html#nosotros-id">CULTURA</a>
-        <a href="mailto:laeetiquetacol@gmail.com">TRABAJA CON NOSOTROS</a>
-        <a href="index.html#nosotros-id">LA VIDA EN LA ETIQUETA</a>
-      </div>
-
-      <!-- Sección de envíos -->
-      <div class="envios">
-        <h4>AYUDA</h4>
-        <a href="mailto:laeetiquetacol@gmail.com">ENVÍOS</a>
-        <a href="/devoluciones.html">DEVOLUCIONES</a>
-        <a href="" id="btn-por-mayor">PRODUCTOS AL POR MAYOR</a>
-      </div>
-
-      <!-- Comercios Aliados-->
-      <div class="comercio_aliados" id="comercios-aliados">
-        <h4>COMERCIOS ALIADOS</h4>
-        <a href="https://www.instagram.com/nusaconcept_store/">Nusa Concept Store</a>
-        <a href="https://www.instagram.com/monopolyformen/">Monopoly For Men</a>
-        <a href="https://www.instagram.com/laetiqueta_yopal/">La Etiqueta Yopal</a>
-      </div>
+    <!-- Comercios Aliados-->
+    <div class="comercio_aliados" id="comercios-aliados">
+      <h4>COMERCIOS ALIADOS</h4>
+      <a href="https://www.instagram.com/nusaconcept_store/">Nusa Concept Store</a>
+      <a href="https://www.instagram.com/monopolyformen/">Monopoly For Men</a>
+      <a href="https://www.instagram.com/laetiqueta_yopal/">La Etiqueta Yopal</a>
     </div>
+  </div>
 
-    <!-- Mapa -->
-    <div class="mapa">
-      <!-- iframe permite incrustar el mapa de Google Maps -->
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.466738585618!2d-72.40172542635742!3d5.345497435733362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6b0c4ae580cd61%3A0x5b13c56b30364e29!2sLA%20ETIQUETA!5e0!3m2!1ses!2sco!4v1742055113617!5m2!1ses!2sco" 
-        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
+  <!-- Mapa -->
+  <div class="mapa">
+    <!-- iframe permite incrustar el mapa de Google Maps -->
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.466738585618!2d-72.40172542635742!3d5.345497435733362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6b0c4ae580cd61%3A0x5b13c56b30364e29!2sLA%20ETIQUETA!5e0!3m2!1ses!2sco!4v1742055113617!5m2!1ses!2sco" 
+      width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
 
 
-    <!-- Enlaces legales -->
-    <div class="legales">
-      <a>TÉRMINOS Y CONDICIONES</a>
-      <a>POLÍTICA DE PRIVACIDAD</a>
-      <a>SUPERINTENDENCIA</a>
-    </div>
-  </div>         
+  <!-- Enlaces legales -->
+  <div class="legales">
+    <a>TÉRMINOS Y CONDICIONES</a>
+    <a>POLÍTICA DE PRIVACIDAD</a>
+    <a>SUPERINTENDENCIA</a>
+  </div>
+</div>         
 
-  <!-- Derechos de autor -->
-  <div class="derechos">
-    <p>&copy; 2025 La Etiqueta Yopal. David Ramirez, Vanessa Reyes & Tifany Carvajal. Todos los derechos reservados.</p>
-  </div> 
+<!-- Derechos de autor -->
+<div class="derechos">
+  <p>&copy; 2025 La Etiqueta Yopal. David Ramirez, Vanessa Reyes & Tifany Carvajal. Todos los derechos reservados.</p>
+</div> 
 </footer>
+
+
+<script src="script.js"></script> <!-- Enlaza el archivo JavaScript externo -->
+<script src="carrito.js"></script> <!-- Enlaza el archivo JavaScript externo -->
+<script src="wishlist.js"></script><!-- Enlazar el archivo JS del Wishlist -->
+<script src="kid.js"></script>
+<script src="js/fontSizeControl.js"></script>
+<script src="darkMode.js"></script> <!-- Enlaza el archivo JavaScript del modo oscuro -->
+<script src="contactoAliados.js"></script>
+<script src="chatbot.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Obtener todos los enlaces del submenú
+        const submenuLinks = document.querySelectorAll('.submenu a');
+        
+        // Agregar event listener a cada enlace
+        submenuLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevenir el comportamiento por defecto del enlace
+                
+                // Obtener la categoría del enlace
+                const category = this.getAttribute('data-category');
+                
+                // Seleccionar el elemento select de categoría
+                const categoryFilter = document.getElementById('category-filter');
+                
+                // Establecer el valor del select
+                categoryFilter.value = category;
+                
+                // Disparar el evento change para activar el filtrado
+                const event = new Event('change');
+                categoryFilter.dispatchEvent(event);
+            });
+        });
+    });
+</script>
+
 </html>

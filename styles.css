@@ -6,6 +6,11 @@
     --tono-azul: #1d1d43e8; /* Color azul semitransparente */
     --fondo-stock: #FF9A52; /* Color de fondo para el stock */
     --color-sale: #e50010; /* Color de descuento */
+    --dark-mode-width: 30px;
+    --dark-mode-height: 60px;
+    --dark-bg: #2C2C2E;
+    --dark-text: #ffffff;
+    --dark-secondary: #3A3A3C;
 }
 
 /* Estilos generales del cuerpo de la página */
@@ -13,6 +18,131 @@ body {
     font-family: "Raleway", sans-serif; /* Establece la fuente "Raleway" como predeterminada */
     padding: 0; /* Elimina cualquier relleno predeterminado del cuerpo */
     box-sizing: border-box; /* Asegura que el padding y border no afecten el tamaño total de los elementos */
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body.active {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+body.active .suggestion-name {
+    color: #212529;
+}
+
+body.active .header-message {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+body.active .header-top {
+    background-color: var(--dark-secondary);
+}
+
+body.active nav {
+    background-color: var(--dark-bg);
+}
+
+body.active .nav-links a {
+    color: var(--dark-text);
+}
+
+body.active .submenu {
+    background-color: var(--dark-secondary);
+}
+
+body.active .submenu a {
+    color: var(--dark-text);
+}
+
+body.active .right-bottoms a {
+    color: var(--dark-text);
+}
+
+body.active .right-bottoms svg {
+    stroke: var(--dark-text);
+}
+body.active #wishlist-link {
+    color: var(--dark-text);
+}
+
+body.active .right-bottoms .icon-tabler-heart {
+    fill: var(--dark-text);
+}
+
+body.active h6 {
+    color: var(--secondario-color);
+}
+
+body.active h2.titulo-suscripcion {
+    color: var(--dark-text);
+}
+
+body.active p.mensaje-legal {
+    color: var(--dark-text);
+}
+
+body.active .filters-title {
+    color: var(--dark-text);
+}
+
+body.active .filters-title svg {
+    stroke: var(--dark-text);
+}
+
+body.active .filter-group label {
+    color: var(--dark-text);
+}
+
+body.active .container-sales {
+    background-color: var(--dark-bg);
+}
+
+body.active .filters-container {
+    background-color: var(--dark-secondary);
+    color: var(--dark-text);
+}
+
+body.active .filters-title h2 {
+    color: white;
+}
+
+body.active .filtered-products-container {
+    background-color: var(--dark-bg);
+}
+
+body.active .gallery {
+    background-color: var(--dark-bg);
+}
+
+body.active .nosotros-section {
+    background-color: var(--dark-secondary);
+    color: var(--dark-text);
+}
+
+body.active .form-completo {
+    background-color: var(--dark-bg);
+}
+
+body.active .formulario {
+    background-color: var(--dark-secondary);
+    color: var(--dark-text);
+}
+
+body.active footer {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+body.active .contenedor-footer {
+    background-color: var(--dark-secondary);
+}
+
+body.active #logo-principal img {
+    content: url('./assets/logo-horizontal-blanco.png');
+}
+
+body.active #logo-secundario img {
+    content: url('./favicon/favicon-blanco.png');
 }
 
 .header-message {
@@ -1631,5 +1761,175 @@ footer {
 .suggestion-price {
     color: #666;
     font-size: 0.9em;
+}
+
+/* Dark Mode Styles */
+body.active .container-sales {
+    background-color: var(--dark-bg);
+}
+
+body.active .filters-container {
+    background-color: var(--dark-secondary);
+    color: var(--dark-text);
+}
+
+body.active .filtered-products-container {
+    background-color: var(--dark-bg);
+}
+
+body.active .size-letter {
+    border: #ffffff solid 0.5px;
+}
+
+body.active .size-letter.selected {
+    background-color: #230bff57;
+}
+
+body.active #modal-carrito {
+    color: var(--dark-text);
+    background-color: var(--dark-bg);
+}
+
+body.active .cantidad-control span {
+    color: black;
+}
+
+body.active .accordion-button, .accordion-body {
+    background-color: var(--dark-bg);
+    color: white;
+}
+
+body.active .accordion-body a, #texto-devoluciones a, .politica-datos {
+    color: #007bff;
+}
+
+body.active #chatbot-window {
+    background-color: var(--dark-bg);
+}
+
+body.active #chatbot-options button {
+    background-color: var(--dark-bg);
+    color: #2C2C2E;
+    color: #f1f1f1;
+}
+
+body.active #chatbot-options button:hover {
+    background-color: var(--dark-secondary);
+    color: var(--dark-text);
+}
+
+body.active .gallery {
+    background-color: var(--dark-bg);
+}
+
+body.active .nosotros-section {
+    background-color: var(--dark-secondary);
+    color: var(--dark-text);
+}
+
+body.active .form-completo {
+    background-color: var(--dark-secondary);
+}
+
+body.active .formulario {
+    background-color: var(--dark-secondary);
+    color: var(--dark-text);
+}
+
+body.active .boton-enviar {
+    background-color: var(--terciario-color);
+}
+
+body.active footer {
+    background-color: var(--dark-secondary);
+}
+
+body.active .contenedor-footer {
+    background-color: var(--dark-secondary);
+}
+
+body.active .price-normal {
+    color:#230bff;
+}
+
+body.active .add-to-cart:hover {
+    background-color: #230bff57;
+}
+
+.dark-mode {
+    position: fixed;
+    right: 25px;
+    top: 35%;
+    transform: translateY(-50%);
+    width: var(--dark-mode-width);
+    height: var(--dark-mode-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    background-color: #DFDEDE;
+    border: 0.5px solid #4e4d4d44;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    padding: 1px;
+    z-index: 1000;
+}
+
+body.active .dark-mode {
+    background-color: white;
+}
+
+.dark-mode .circle {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    transform: translateY(-13px);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s ease, background-color 0.5s ease;
+}
+
+body.active .circle {
+    transform: translateY(13px);
+    background-color: #2A2A2C;
+}
+
+.dark-mode .circle ion-icon {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    transition: transform 0.5s ease;
+}
+
+.dark-mode .circle .moon {
+    color: white;
+    transform: translateY(-200%);
+}
+
+body.active .circle .moon {
+    transform: translateY(0);
+}
+
+.dark-mode .circle .sun {
+    color: #FCDE5B;
+    transform: translateY(0);
+}
+
+body.active .circle .sun {
+    transform: translateY(200%);
+}
+
+/* Responsive styles for dark mode */
+@media (max-width: 768px) {
+    .dark-mode {
+        right: 10px;
+        width: 25px;
+        height: 50px;
+    }
 }
   

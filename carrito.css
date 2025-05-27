@@ -19,11 +19,10 @@
 
 /* Encabezado del carrito */
 .carrito-header {
+    color: #37474f;
     display: flex; /* Usa flexbox para organizar los elementos en una fila */
     justify-content: space-between; /* Espacia el título y el botón de cierre */
     align-items: center; /* Alinea verticalmente los elementos */
-    font-size: 14px; /* Tamaño de texto ajustado */
-    font-weight: bold; /* Hace que el texto sea más grueso */
     padding-bottom: 15px; /* Espacio debajo del encabezado */
     border-bottom: 1px solid #e0e0e0; /* Línea separadora suave */
 }

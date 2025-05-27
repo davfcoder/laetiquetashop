@@ -7,7 +7,7 @@ document.body.appendChild(carritoContainer);
 
 carritoContainer.innerHTML = `
     <div class="carrito-header">
-        <h2>Bolsa (<span id="cantidad-productos">0</span>)</h2>
+        <h2>Carrito (<span id="cantidad-productos">0</span>)</h2>
         <button id="cerrar-carrito" class="cerrar-carrito">&times;</button>
     </div>
     <div id="carrito-items" class="carrito-items"></div>
@@ -162,12 +162,22 @@ function mostrarMetodoPago() {
         <div class="metodo-pago-footer">
             <button id="confirmar-pago">Pagar</button>
         </div>
-        <div id="modal-carrito" class="modal-carrito">
-            <p>✅ ¡Gracias por tu compra! Tu pago fue procesado con éxito.</p>
-            <button id="cerrar-modal">Cerrar</button>
-        </div>
-        <div id="fondo-modal" class="fondo-modal"></div>
     `;
+
+    // Crear el modal y el fondo modal fuera del contenedor principal
+    const modal = document.createElement("div");
+    modal.id = "modal-carrito";
+    modal.className = "modal-carrito";
+    modal.innerHTML = `
+        <p>✅ ¡Gracias por tu compra! Tu pago fue procesado con éxito.</p>
+        <button id="cerrar-modal">Cerrar</button>
+    `;
+    document.body.appendChild(modal);
+
+    const fondoModal = document.createElement("div");
+    fondoModal.id = "fondo-modal";
+    fondoModal.className = "fondo-modal";
+    document.body.appendChild(fondoModal);
 
     metodoPagoContainer.style.display = "block";
 
@@ -192,20 +202,27 @@ function mostrarMetodoPago() {
             carrito = [];
             localStorage.removeItem("carrito");
             actualizarCarrito();
-            const modal = document.getElementById("modal-carrito");
-            const fondoModal = document.getElementById("fondo-modal");
             modal.style.display = "block";
             fondoModal.style.display = "block";
-
-            document.getElementById("cerrar-modal").addEventListener("click", () => {
-                modal.style.display = "none";
-                fondoModal.style.display = "none";
-            });
+            metodoPagoContainer.style.display = "none";
         } else {
             alert("Por favor, completa todos los campos de la dirección de envío.");
         }
     });
 }
+
+// Agregar el event listener para cerrar el modal fuera de la función mostrarMetodoPago
+document.addEventListener("click", (event) => {
+    if (event.target.id === "cerrar-modal") {
+        const modal = document.getElementById("modal-carrito");
+        const fondoModal = document.getElementById("fondo-modal");
+        if (modal && fondoModal) {
+            modal.style.display = "none";
+            fondoModal.style.display = "none";
+            window.location.reload();
+        }
+    }
+});
 
 // Evento para finalizar la compra y mostrar la pantalla de pago
 document.body.addEventListener("click", (event) => {
@@ -255,13 +272,13 @@ function actualizarMetodoPago() {
         `;
     } else if (metodoPago === "googlepay") {
         metodoPagoForm.innerHTML = `
-            <h4>Cuenta de googlepay</h4>
-            <input type="email" id="googlepay-cuenta" placeholder="Correo electrónico de googlepay" required>
+            <h4>Cuenta de Google Pay</h4>
+            <input type="email" id="googlepay-cuenta" placeholder="Correo electrónico de Google Pay" required>
         `;
     }else if (metodoPago === "applepay") {
         metodoPagoForm.innerHTML = `
-            <h4>Cuenta de applepay</h4>
-            <input type="email" id="applepay-cuenta" placeholder="Correo electrónico de applepay" required>
+            <h4>Cuenta de Apple Pay</h4>
+            <input type="email" id="applepay-cuenta" placeholder="Correo electrónico de Apple Pay" required>
         `;
     }else {
         metodoPagoForm.innerHTML = ""; // Limpiar si no hay selección

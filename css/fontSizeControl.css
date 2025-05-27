@@ -1,0 +1,57 @@
+
+/* Aplicar el tamaño de fuente a todos los elementos de texto */
+body * {
+    font-size: inherit;
+}
+
+/* Elementos específicos que necesitan mantener su tamaño relativo */
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.75em; }
+h4 { font-size: 1.5em; }
+h5 { font-size: 1.25em; }
+h6 { font-size: 1em; }
+p { font-size: 1em; }
+a { font-size: 1em; }
+span { font-size: 1em; }
+button { font-size: 1em; }
+input { font-size: 1em; }
+textarea { font-size: 1em; }
+select { font-size: 1em; }
+label { font-size: 1em; }
+
+.font-size-controls {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.font-size-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 2px solid #333;
+    background-color: white;
+    color: #333;
+    font-size: 1.25rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.font-size-btn:hover {
+    background-color: #333;
+    color: white;
+}
+
+.font-size-btn:active {
+    transform: scale(0.95);
+} 

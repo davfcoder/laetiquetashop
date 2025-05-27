@@ -153,6 +153,10 @@
     cursor: pointer;
 }
 
+body.active .wishlist-icon {
+    color: #ffffff;
+}
+
 /* Estilo para cuando la Wishlist está visible */
 .wishlist-container.show {
     display: block;

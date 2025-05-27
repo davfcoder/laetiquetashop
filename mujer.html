@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="carrito.css"> <!-- Enlaza el archivo CSS específico para el carrito -->
   <link rel="stylesheet" href="wishlist.css"><!-- Enlazar el archivo CSS del Wishlist -->
   <link rel="stylesheet" href="css/fontSizeControl.css">
+  <link rel="stylesheet" href="calculator.css">
   <link rel="icon" href="favicon/favicon.png"> <!-- Define el ícono de la pestaña del navegador -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -199,11 +200,40 @@
 </body>
 <!-- Dark Mode Toggle -->
 <div class="dark-mode">
-<div class="circle">
-  <ion-icon class="sun" name="sunny"></ion-icon>
-  <ion-icon class="moon" name="moon"></ion-icon>
+  <div class="circle">
+    <ion-icon class="sun" name="sunny"></ion-icon>
+    <ion-icon class="moon" name="moon"></ion-icon>
+  </div>
 </div>
+
+<button class="btn-calculadora">
+  <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-calculator"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 3m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 7m0 1a1 1 0 0 1 1 -1h6a1 1 0 0 1 1 1v1a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1z" /><path d="M8 14l0 .01" /><path d="M12 14l0 .01" /><path d="M16 14l0 .01" /><path d="M8 17l0 .01" /><path d="M12 17l0 .01" /><path d="M16 17l0 .01" /></svg>
+</button>
+
+<div class="calculadora">
+
+  <div class="pantalla">0</div>
+
+  <button id="c" class="btn">C</button>
+  <button id="borrar" class="btn">←</button>
+  <button class="btn">/</button>
+  <button class="btn">*</button>
+  <button class="btn">7</button>
+  <button class="btn">8</button>
+  <button class="btn">9</button>
+  <button class="btn">-</button>
+  <button class="btn">4</button>
+  <button class="btn">5</button>
+  <button class="btn">6</button>
+  <button class="btn">+</button>
+  <button class="btn">1</button>
+  <button class="btn">2</button>
+  <button class="btn">3</button>
+  <button id="igual" class="btn">=</button>
+  <button id="cero" class="btn">0</button>
+  <button class="btn">.</button>
 </div>
+
 <!-- Botón flotante del chatbot -->
 <button id="chatbot-toggle">🤖</button>
 
@@ -314,6 +344,8 @@
 <script src="darkMode.js"></script> <!-- Enlaza el archivo JavaScript del modo oscuro -->
 <script src="contactoAliados.js"></script>
 <script src="chatbot.js"></script>
+<script src="calculator.js"></script>
+
 <script>
   document.addEventListener('DOMContentLoaded', function() {
       // Obtener todos los enlaces del submenú

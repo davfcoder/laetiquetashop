@@ -1,46 +1,52 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
+.btn-calculadora {
+    position: fixed;
+    right: 20px;
+    top: 60%;
+    border: 0.5px solid #4e4d4d44;
+    border-radius: 50%; /* Bordes redondeados */
+    padding: .5vw; /* Espaciado interno */
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para el botón */
 }
 
-body {
-    min-height: 100vh;
-    background-color: #090c31;
-    display: grid;
-    place-items: center;
+.btn-calculadora:hover {
+    background-color: #000000;
+    color: white;
+    transition: all 0.3s ease; /* Transición suave para la apertura/cierre */
 }
 
 .calculadora {
-    background-color: #15173c;
-    color: white;
-    width: 350px;
-    max-width: 100%;
-    padding: 1.5rem;
+    position: fixed;
+    right: 70px;
+    top: 20%;
+    background-color: #000000;
+    color: rgb(0, 0, 0);
+    width: 150px;
+    padding: 1rem;
     border-radius: 1rem;
-    display: grid;
+    display: none;
     grid-template-columns: repeat(4, 1fr);
     gap: .5rem;
 }
 
 .pantalla {
     grid-column: 1 / -1;
-    background-color: #090c31;
-    padding: 1.5rem;
-    font-size: 2rem;
+    background-color: #c0c1d5;
+    padding: .5rem;
+    font-size: 1rem;
     text-align: right;
     border-radius: .5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     font-family: monospace;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .btn {
-    background-color: #15173c;;
-    color: white;
+    background-color: #3f3f3f;;
+    color: rgb(255, 255, 255);
     border: 0;
-    padding: 1.5rem .5rem;
+    padding: 0.5rem .2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,7 +55,8 @@ body {
 }
 
 .btn:hover {
-    background-color: #090c31;
+    background-color: #25252c;
+    color: #FF9A52;
 }
 
 #cero {
@@ -58,9 +65,10 @@ body {
 
 #igual {
     grid-row: span 2;
-    background-color: #e6394a;
+    background-color: #FF9A52;
 }
 
 #igual:hover {
-    background-color: #e65766;
+    background-color: #ff6a00;
+    color: black;
 }

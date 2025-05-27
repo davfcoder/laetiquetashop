@@ -1,5 +1,21 @@
 const pantalla = document.querySelector(".pantalla");
 const botones = document.querySelectorAll(".btn");
+const btnCalculadora = document.querySelector(".btn-calculadora");
+const mostrarCalculadora = document.querySelector(".calculadora");
+
+document.addEventListener('DOMContentLoaded', () => {
+    btnCalculadora.addEventListener("click", () => {
+      const isVisible = mostrarCalculadora.classList.contains("visible"); // Verifica si el chatbot está visible
+  
+      if (isVisible) { // Si la calculadora está visible
+        mostrarCalculadora.classList.remove("visible"); // Remueve la clase visible
+        mostrarCalculadora.style.display = "none"; // Oculta el chatbot
+      } else {
+        mostrarCalculadora.classList.add("visible"); // Agrega la clase visible
+        mostrarCalculadora.style.display = "grid"; // Muestra el chatbot
+      }
+    });
+  });
 
 botones.forEach(boton => {
     boton.addEventListener("click", () => {

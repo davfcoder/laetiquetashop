@@ -6,7 +6,7 @@
     border-radius: 50%; /* Bordes redondeados */
     padding: .5vw; /* Espaciado interno */
     cursor: pointer;
-    z-index: 1000;
+    z-index: 10000;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para el botón */
 }
 

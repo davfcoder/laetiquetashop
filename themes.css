@@ -1,0 +1,218 @@
+/* Theme Switcher Styles */
+.theme-switcher {
+  position: fixed;
+  bottom: 15vh;
+  right: 3vh;
+  z-index: 10000;
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(53, 47, 47, 0.64);
+}
+
+.theme-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.theme-button {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.theme-button:hover {
+  transform: scale(1.1);
+}
+
+.theme-button.blue {
+  background: linear-gradient(45deg, #18193f, #223c59);
+}
+
+.theme-button.purple {
+  background: linear-gradient(45deg, #6a1b9a, #9c27b0);
+}
+
+.theme-button.orange {
+  background: linear-gradient(45deg, #e65100, #ff9800);
+}
+
+/* Purple Theme */
+[data-theme="purple"] {
+  --primary-color: #6a1b9a;
+  --secondary-color: #ce93d8;
+  --tertiary-color: #ca99d292;
+  --accent-color: #9c27b0;
+  --text-color: #333333;
+  --header-bg: #f8f9fa;
+  --footer-bg: #4a148c;
+  --button-color: #9c27b0;
+  --button-hover: #7b1fa2;
+  --border-color: #e0e0e0;
+}
+
+/* Orange Theme */
+[data-theme="orange"] {
+  --primary-color: #e65100;
+  --secondary-color: #ffb74d;
+  --tertiary-color: #d8be97b0;
+  --accent-color: #ff9800;
+  --text-color: #333333;
+  --header-bg: #f8f9fa;
+  --button-color: #ff9800;
+  --button-hover: #f57c00;
+  --border-color: #e0e0e0;
+}
+
+[data-theme="purple"] header,
+[data-theme="orange"] header {
+  background-color: var(--header-bg);
+}
+
+[data-theme="purple"] footer,
+[data-theme="orange"] footer {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+
+[data-theme="purple"] .accordion-body,
+[data-theme="orange"] .accordion-body {
+  background-color: var(--tertiary-color);
+  color: var(--primary-color);
+}
+
+[data-theme="purple"] .header-top,
+[data-theme="orange"] .header-top {
+  background-color: var(--tertiary-color);
+}
+
+[data-theme="purple"] footer a,
+[data-theme="orange"] footer a {
+  color: white;
+}
+
+/* Footer logos and section links styling */
+[data-theme="purple"] .logo img,
+[data-theme="orange"] .logo img, .redes-sociales svg {
+  filter: brightness(0);
+}
+
+[data-theme="purple"] .container-devoluciones h2,
+[data-theme="orange"] .container-devoluciones h2 {
+  color: var(--accent-color) !important;
+}
+
+
+[data-theme="purple"] .secciones-footer a,
+[data-theme="orange"] .secciones-footer a,
+[data-theme="purple"] .legales a,
+[data-theme="orange"] .legales a {
+  color: black !important;
+  font-weight: bold;
+}
+
+[data-theme="purple"] .btn:not(.carousel-control-prev):not(.carousel-control-next), .wishlist-button:not,
+[data-theme="purple"] button:not(.carousel-control-prev):not(.carousel-control-next),
+[data-theme="orange"] .btn:not(.carousel-control-prev):not(.carousel-control-next),
+[data-theme="orange"] button:not(.carousel-control-prev):not(.carousel-control-next) {
+  background-color: var(--button-color);
+  color: white;
+}
+
+[data-theme="purple"] .btn:not(.carousel-control-prev):not(.carousel-control-next):hover, .wishlist-button:not:hover, 
+[data-theme="purple"] button:not(.carousel-control-prev):not(.carousel-control-next):hover,
+[data-theme="orange"] .btn:not(.carousel-control-prev):not(.carousel-control-next):hover,
+[data-theme="orange"] button:not(.carousel-control-prev):not(.carousel-control-next):hover {
+  background-color: var(--button-hover);
+}
+
+[data-theme="purple"] a:not(.carousel-control-prev):not(.carousel-control-next),
+[data-theme="orange"] a:not(.carousel-control-prev):not(.carousel-control-next), span, .filter-group label, #formulario-suscripcion label, .filters-title h2 {
+  color: var(--accent-color);
+}
+
+[data-theme="purple"] .text-center h3,
+[data-theme="purple"] .titulo-suscripcion,
+[data-theme="purple"] .text-center h1,
+[data-theme="orange"] .text-center h3,
+[data-theme="orange"] .titulo-suscripcion,
+[data-theme="orange"] .text-center h1 {
+  color: var(--accent-color) !important;
+}
+
+[data-theme="purple"] .text-muted h6,
+[data-theme="orange"] .text-muted h6 {
+  color: var(--tertiary-color);
+}
+
+
+[data-theme="orange"] .form-completo,
+[data-theme="purple"] .form-completo  {
+    background-color: var(--tertiary-color);
+}
+
+[data-theme="purple"] .nav-links a,
+[data-theme="orange"] .nav-links a {
+  color: var(--primary-color);
+}
+
+[data-theme="purple"] .header-message,
+[data-theme="orange"] .header-message {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Heart icon styling */
+[data-theme="purple"] .icon-tabler-heart {
+  fill: var(--button-color);
+}
+
+[data-theme="purple"] .wishlist-icon {
+  fill: none;
+  stroke: var(--button-color);
+}
+
+[data-theme="purple"] .icon-tabler-search {
+    stroke: var(--button-color);
+}
+
+[data-theme="orange"] .wishlist-icon {
+  fill: none;
+  stroke: var(--button-color);
+}
+
+[data-theme="purple"] .size-letter.selected,
+[data-theme="orange"] .size-letter.selected {
+  background-color: var(--button-color);
+  color: white;
+}
+
+[data-theme="orange"] .icon-tabler-heart {
+  fill: var(--button-color);
+}
+
+[data-theme="orange"] .icon-tabler-search {
+    stroke: var(--button-color);
+}
+
+/* Dark mode compatibility */
+[data-theme="purple"] .dark-mode .circle,
+[data-theme="orange"] .dark-mode .circle {
+  background-color: var(--primary-color);
+}
+
+[data-theme="purple"] .calculadora .btn,
+[data-theme="orange"] .calculadora .btn {
+  background-color: var(--button-color);
+  color: white;
+}
+
+/* WhatsApp button theme compatibility */
+[data-theme="purple"] .boton-whatsapp,
+[data-theme="orange"] .boton-whatsapp {
+  background-color: var(--secondary-color);
+} 

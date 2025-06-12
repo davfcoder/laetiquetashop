@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="wishlist.css"><!-- Enlazar el archivo CSS del Wishlist -->
   <link rel="stylesheet" href="css/fontSizeControl.css"><!-- Enlaza el archivo CSS para el control de tamaño de fuente -->
   <link rel="stylesheet" href="calculator.css">
+  <link rel="stylesheet" href="themes.css"><!-- Enlaza el archivo CSS para los temas -->
   <link rel="icon" href="favicon/favicon.png"> <!-- Define el ícono de la pestaña del navegador -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -60,13 +61,6 @@
             <span class="right-title">Wishlist</span>
           </a>
         </div>
-      </div>
-    </div>
-    <!-- Dark Mode Toggle -->
-    <div class="dark-mode">
-      <div class="circle">
-        <ion-icon class="sun" name="sunny"></ion-icon>
-        <ion-icon class="moon" name="moon"></ion-icon>
       </div>
     </div>
   </div>
@@ -386,6 +380,14 @@
   </div>
 </div>
 
+<!-- Dark Mode Toggle -->
+<div class="dark-mode">
+  <div class="circle">
+    <ion-icon class="sun" name="sunny"></ion-icon>
+    <ion-icon class="moon" name="moon"></ion-icon>
+  </div>
+</div>
+
 <!-- Modal de confirmación -->
 <div id="modal-confirmacion" class="modal-confirmacion">
   <p>¡Gracias por suscribirte! Pronto recibirás nuestras ofertas 🎉</p>
@@ -524,6 +526,14 @@
   </div> 
 </footer>
 
+<!-- Theme Switcher -->
+<div class="theme-switcher">
+  <div class="theme-buttons">
+    <button class="theme-button blue" data-theme="default" title="Tema Azul"></button>
+    <button class="theme-button purple" data-theme="purple" title="Tema Lila"></button>
+    <button class="theme-button orange" data-theme="orange" title="Tema Naranja"></button>
+  </div>
+</div>
 
 <script src="script.js"></script> <!-- Enlaza el archivo JavaScript externo -->
 <script src="carrito.js"></script> <!-- Enlaza el archivo JavaScript externo -->
@@ -533,6 +543,7 @@
 <script src="contactoAliados.js"></script>
 <script src="chatbot.js"></script>
 <script src="calculator.js"></script>
+<script src="themeSwitcher.js"></script>
 
 </body>
 </html>

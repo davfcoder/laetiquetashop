@@ -81,16 +81,9 @@ body.active p.mensaje-legal {
     color: var(--dark-text);
 }
 
-body.active .filters-title {
-    color: var(--dark-text);
-}
 
 body.active .filters-title svg {
     stroke: var(--dark-text);
-}
-
-body.active .filter-group label {
-    color: var(--dark-text);
 }
 
 body.active .container-sales {
@@ -100,10 +93,6 @@ body.active .container-sales {
 body.active .filters-container {
     background-color: var(--dark-secondary);
     color: var(--dark-text);
-}
-
-body.active .filters-title h2 {
-    color: white;
 }
 
 body.active .filtered-products-container {
@@ -1781,9 +1770,6 @@ body.active .size-letter {
     border: #ffffff solid 0.5px;
 }
 
-body.active .size-letter.selected {
-    background-color: #230bff57;
-}
 
 body.active #modal-carrito {
     color: var(--dark-text);
